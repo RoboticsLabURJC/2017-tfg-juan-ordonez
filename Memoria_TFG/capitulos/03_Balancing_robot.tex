@@ -227,7 +227,7 @@ Cada vez que se active el flag que indica que un byte esta listo para ser captur
 
 Así, el módulo tendrá como salidas el buffer de la parte entera, el buffer de la parte decimal, y un bus que avisará a los sucesivos módulos de cuándo el dato completo está preparado para ser capturado. De esta forma se ha evitado el problema explicado anteriormente de la no ordenación en los datos llegados del micro-controlador.  \newline
 
-Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las herramientas necesarias para que los sucesivos procesos y módulo puedan conocer el ángulo en cada momento representado por su parte entera (8 bits), parte decimal (8 bits) y un pin que indicará el valor del signo (positivo o negativo).
+Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las herramientas necesarias para que los sucesivos procesos y módulos puedan conocer el ángulo en cada momento representado por su parte entera (8 bits), parte decimal (8 bits) y un pin que indicará el valor del signo (positivo o negativo).
 
 \subsection{Unidad de medida inercial MPU6050 en Arduino Nano}\label{sec:MPU6050}
 \subsection{Control P}
@@ -242,10 +242,18 @@ Para ello, y antes del diseño, es necesario un análisis de los requerimientos,
 \begin{itemize}
 	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II, lo cual permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
 	
-	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el siguiente componente, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
-	\textbf{foto del conector gnd VCC}
+	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
+
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_robot/SCREW.PNG}
+		\caption{Conector GND y VCC.}
+		\label{fig:screw}
+	\end{figure}
 	
-	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Esta conector ira directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en \textbf{seccion de bateria}
+
+	
+	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Esta conector ira directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en \textbf{referencia a seccion de bateria}
 	
 	\item Módulo de pines header para la conexión del MPU6050 anteriormente descrito.
 	
