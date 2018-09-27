@@ -1,0 +1,48 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Motivaci\363n y objetivos}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Planificaci\363n}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Metodolog\355a de trabajo}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Estructura de la memoria}{section.1.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Estado del arte}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Concepto FPGAs}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Evoluci\363n y escenario}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.2}{Arquitectura FPGA}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.3}{Lenguajes de descripci\363n hardware}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.4}{Verilog}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{FPGAs libres}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{Evoluci\363n}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{Escenario}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.3}{IceZum Alhambra}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.4}{IceStudio}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Cohexistencia Microcontrolador-FPGA}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{Diferencia microcontrolador-FPGA}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.2}{Necesidad}{section.2.3}% 20
+\BOOKMARK [1][-]{section.2.4}{Rob\363tica educativa, motivaciones y necesidad.}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.5}{Sensores, actuadores y sistema de control }{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Balancing Robot}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Dise\361o del sistema}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{Descripci\363n del problema}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.2}{Descripci\363n de la soluci\363n. \(Diagrama de bloques alto nivel\)}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.3}{Fisica de un Balancing Robot}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.4}{Integraci\363n IceZum Alhambra-Arduino Nano}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.5}{Controlador PWM}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.6}{Unidad de medida inercial}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.7}{Motores}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.8}{Control PID cl\341sico en un SelfBalancing Robot}{section.3.1}% 32
+\BOOKMARK [2][-]{subsection.3.1.9}{Bater\355a}{section.3.1}% 33
+\BOOKMARK [1][-]{section.3.2}{Implementaci\363n del sistema}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.2.1}{Integraci\363n IceZum Alhambra-Arduino Nano}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.2}{Unidad de medida inercial MPU6050 en Arduino Nano}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.3}{Control P}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.4}{Control D}{section.3.2}% 38
+\BOOKMARK [2][-]{subsection.3.2.5}{Controlador PWM}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.6}{Controlador driver motor}{section.3.2}% 40
+\BOOKMARK [2][-]{subsection.3.2.7}{Dise\361o y fabricaci\363n PCB}{section.3.2}% 41
+\BOOKMARK [2][-]{subsection.3.2.8}{Elecci\363n de materiales y coste del prototipo}{section.3.2}% 42
+\BOOKMARK [1][-]{section.3.3}{Experimentos}{chapter.3}% 43
+\BOOKMARK [1][-]{section.3.4}{Protocolo I2C}{chapter.3}% 44
+\BOOKMARK [1][-]{section.3.5}{Controlador motor burshless}{chapter.3}% 45
+\BOOKMARK [0][-]{chapter.4}{Cuadricoptero con vision artificial}{}% 46
+\BOOKMARK [0][-]{chapter.5}{Conclusiones y trabajo futuro}{}% 47
+\BOOKMARK [0][-]{chapter*.41}{Bibliograf\355a}{}% 48

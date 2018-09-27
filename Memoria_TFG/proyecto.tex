@@ -1,0 +1,323 @@
+%\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,twoside,11pt,titlepage]{book}
+
+\usepackage[top=2.5cm, bottom=2.5cm,
+            left=2.5cm, right=2.5cm, twoside]{geometry}
+
+
+
+%\usepackage{doxygen/doxygen}
+%\usepackage{pdfpages}
+\usepackage{url}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{colortbl,longtable}
+\usepackage[stable]{footmisc}
+%\usepackage{index}
+%\usepackage[chapter]{algorithm}
+\RequirePackage{verbatim}
+%\RequirePackage[Glenn]{fncychap}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref} %referencia
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{afterpage}
+\usepackage[acronyms,toc]{glossaries}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{booktabs}
+\usepackage{stackengine}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{eurosym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[framed,numered]{matlab-prettifier}
+
+\makeglossaries
+\makeindex
+
+%\usepackage{titlesec}
+%\usepackage{pailatino}
+
+\decimalpoint
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{\esperiod}{-1}}
+\makeatletter
+\addto\shorthandsspanish{\let\esperiod\es@period@code}
+\makeatother
+
+%\usepackage{doxygen/doxygen}
+%\usepackage{pdfpages}
+\usepackage{url}
+
+\usepackage{colortbl,longtable}
+\usepackage[stable]{footmisc}
+%\usepackage{index}
+%\usepackage[chapter]{algorithm}
+\RequirePackage{verbatim}
+%\RequirePackage[Glenn]{fncychap}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref} %referencia
+\usepackage{graphicx}
+\usepackage{afterpage}
+\usepackage{glossaries}
+\usepackage{longtable}
+\usepackage{xspace}
+\usepackage{float}
+
+\makeindex
+\makeglossaries
+
+
+
+% ********************************************************************
+% Re-usable information
+% ********************************************************************
+\newcommand{\myTitle}{Título de mi proyecto\xspace}
+\newcommand{\myDegree}{Grado en Ingeniería de Tecnologías de Telecomunicación\xspace}
+\newcommand{\myName}{Juan Ordóñez Cerezo\xspace}
+\newcommand{\myProf}{Encarnación Castillo Morales\xspace}
+\newcommand{\myOtherProf}{Jose María Cañas Plaza \xspace}
+%\newcommand{\mySupervisor}{Put name here\xspace}
+\newcommand{\myFaculty}{Mi facultad}
+\newcommand{\myFacultyShort}{\xspace}
+\newcommand{\myDepartment}{Departamento de Electrónica y Tecnología de Computadores \xspace}
+\newcommand{\myUni}{\protect{Universidad de Granada}\xspace}
+\newcommand{\myLocation}{Granada\xspace}
+\newcommand{\myTime}{\today\xspace}
+\newcommand{\myVersion}{Version 0.1\xspace}
+
+
+\hypersetup{
+pdfauthor = {\myName (email (en) ugr (punto) es)},
+pdftitle = {\myTitle},
+pdfsubject = {},
+pdfkeywords = {},
+pdfcreator = {LaTeX con el paquete ....},
+pdfproducer = {pdflatex}
+}
+
+%\hyphenation{}
+
+
+%Definición de comandos que me son tiles:
+
+\DeclareCaptionSubType[alph]{figure}
+\captionsetup[subfigure]{labelformat=simple,justification=centerlast}
+\renewcommand\thesubfigure{\alph{subfigure})}
+
+\renewcommand{\indexname}{Índice alfabético}
+\renewcommand{\glossaryname}{Glosario}
+\renewcommand{\acronymname}{Acrónimos}
+\renewcommand{\tablename}{Tabla}
+
+\makeatletter
+\renewcommand\p@subfigure{\thefigure~}
+\makeatother
+
+
+\addto\extrasspanish{%
+  \renewcommand{\chapterautorefname}{Capítulo}%
+  \renewcommand{\sectionautorefname}{Sección}
+}
+
+%Encabezados
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+
+\setlength{\headheight}{1.5\headheight}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
+%simplemente poniendo \begin{teorema} \end{teorema} ...
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\newtheorem{definicion}{Definición}[chapter]
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{gray30}{gray}{.94}
+
+\lstset{ frame=Ltb,
+     framerule=0.5pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0.1cm,
+     framesep=0pt,
+     rulesep=.4pt,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+     basicstyle=\scriptsize\ttfamily,
+     commentstyle=\color{gray45},
+     keywordstyle=\bfseries,
+     %
+     numbers=left,
+     numbersep=6pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+   }
+ 
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{CodigoC}
+   {
+	basicstyle=\scriptsize,
+	frame=single,
+	language=C,
+	numbers=left
+   }
+\lstdefinestyle{CodigoC++}
+   {
+	basicstyle=\small,
+	frame=single,
+	backgroundcolor=\color{gray30},
+	language=C++,
+	numbers=left
+   }
+
+ 
+\lstdefinestyle{Consola}
+   {basicstyle=\scriptsize\bf\ttfamily,
+    backgroundcolor=\color{gray30},
+    frame=single,
+    numbers=none
+   }
+
+
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+
+
+%Para conseguir que en las páginas en blanco no ponga cabecerass
+\makeatletter
+\def\clearpage{%
+  \ifvmode
+    \ifnum \@dbltopnum =\m@ne
+      \ifdim \pagetotal <\topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+\usepackage{pdfpages}
+
+
+\setstackEOL{\#}
+\setstackgap{L}{12pt}
+
+
+%Definición del comando de modificación de bibliografía
+\makeatletter
+\def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
+\def\@bstctlcite[#1]#2{\@bsphack
+  \@for\@citeb:=#2\do{%
+    \edef\@citeb{\expandafter\@firstofone\@citeb}%
+    \if@filesw\immediate\write\csname #1\endcsname{\string\citation{\@citeb}}\fi}%
+  \@esphack}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  INICIO DE DOCUMENTO   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\raggedbottom
+
+\bstctlcite{IEEEexample:BSTcontrol} %Modificar la opción de quitar autor repetido de la bibliografía
+
+\input{portada/portada}
+\input{prefacios/prefacio}
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\setlength{\parskip}{5pt}
+
+\input{capitulos/01_Introduccion}
+%
+\input{capitulos/02_EstadoDelArte}
+%
+\input{capitulos/03_Balancing_robot}
+%
+\input{capitulos/04_Cuadricoptero}
+%
+\input{capitulos/05_Conclusiones}
+%
+%\input{capitulos/06_Implementacion}
+%
+%\input{capitulos/07_Pruebas}
+%
+%\input{capitulos/08_Conclusiones}
+%
+%%\chapter{Conclusiones y Trabajos Futuros}
+%
+%
+\glsaddall
+%\cite{a}
+%\cite{q}
+%\acrshort{lvm}
+
+
+
+\renewcommand{\appendixname}{Apéndices}
+\renewcommand{\appendixtocname}{Apéndices}
+\renewcommand{\appendixpagename}{Apéndices}
+
+
+
+%\input{capitulos/apendices}
+%\input{apendices/manual_usuario/manual_usuario}
+\backmatter
+ 
+
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{bibliografia/biblio}\addcontentsline{toc}{chapter}{Bibliografía}
+
+
+%\gls{latex}
+\thispagestyle{empty}
+\input{glosario.tex}
+
+\printglossaries
+
+
+
+
+
+
+\end{document}

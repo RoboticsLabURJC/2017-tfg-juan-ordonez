@@ -1,0 +1,1290 @@
+\ifglsentryexists{latex}{}%
+{%
+\gls@defglossaryentry{latex}%
+{%
+name={latex},%
+sort={latex},%
+type={main},%
+first={latex},%
+firstplural={latexs},%
+text={latex},%
+plural={latexs},%
+description={Is a makdjadñk},%
+descriptionplural={Is a makdjadñk},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{plest}{}%
+{%
+\gls@defglossaryentry{plest}%
+{%
+name={plestimografía},%
+sort={plestimografía},%
+type={main},%
+first={plestimograf\IeC {\'\i }a},%
+firstplural={plestimograf\IeC {\'\i }as},%
+text={plestimograf\IeC {\'\i }a},%
+plural={plestimograf\IeC {\'\i }as},%
+description={Método de obtención de la saturación de oxígeno en sangre mediante luz infrarroja},%
+descriptionplural={Método de obtención de la saturación de oxígeno en sangre mediante luz infrarroja},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{wear}{}%
+{%
+\gls@defglossaryentry{wear}%
+{%
+name={wearable},%
+sort={wearable},%
+type={main},%
+first={wearable},%
+firstplural={wearables},%
+text={wearable},%
+plural={wearables},%
+description={Dispositivo electrónico que por sus características permite llevarlo adherido al cuerpo como si fuera un elemento más de la vestimenta y extiende alguna de las funcionalidades del cuerpo},%
+descriptionplural={Dispositivo electrónico que por sus características permite llevarlo adherido al cuerpo como si fuera un elemento más de la vestimenta y extiende alguna de las funcionalidades del cuerpo},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{alias}{}%
+{%
+\gls@defglossaryentry{alias}%
+{%
+name={aliasing},%
+sort={aliasing},%
+type={main},%
+first={aliasing},%
+firstplural={aliasings},%
+text={aliasing},%
+plural={aliasings},%
+description={Fenómeno producido en la conversión analógico-digital cuando no se cumple el principio de Nyquist. Este fenómeno produce una traslación del espectro a la banda que sí cumple dicho principio},%
+descriptionplural={Fenómeno producido en la conversión analógico-digital cuando no se cumple el principio de Nyquist. Este fenómeno produce una traslación del espectro a la banda que sí cumple dicho principio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{capsense}{}%
+{%
+\gls@defglossaryentry{capsense}%
+{%
+name={CapSense},%
+sort={CapSense},%
+type={main},%
+first={CapSense},%
+firstplural={CapSenses},%
+text={CapSense},%
+plural={CapSenses},%
+description={Sensor capacitivo desarrollado por Cypress que emplea capacidades conmutadas junto con moduladores delta-sigma para el sensado capacitivo de alta sensibilidad},%
+descriptionplural={Sensor capacitivo desarrollado por Cypress que emplea capacidades conmutadas junto con moduladores delta-sigma para el sensado capacitivo de alta sensibilidad},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{potmembrana}{}%
+{%
+\gls@defglossaryentry{potmembrana}%
+{%
+name={potencial de membrana},%
+sort={potencial de membrana},%
+type={main},%
+first={potencial de membrana},%
+firstplural={potencial de membranas},%
+text={potencial de membrana},%
+plural={potencial de membranas},%
+description={Diferencia de potencial entre ambos lados de la membrana celular debido a la diferencia de concentración de iones a ambos lados},%
+descriptionplural={Diferencia de potencial entre ambos lados de la membrana celular debido a la diferencia de concentración de iones a ambos lados},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{potaccion}{}%
+{%
+\gls@defglossaryentry{potaccion}%
+{%
+name={potencial de acción},%
+sort={potencial de acción},%
+type={main},%
+first={potencial de acci\IeC {\'o}n},%
+firstplural={potenciales de acci\IeC {\'o}n},%
+text={potencial de acci\IeC {\'o}n},%
+plural={potenciales de acci\IeC {\'o}n},%
+description={Modificación del potencial de membrana que ocurre cuando se activan los canales iónicos de la célula. Este suele tener una forma característica para cada tipo de membrana},%
+descriptionplural={Modificación del potencial de membrana que ocurre cuando se activan los canales iónicos de la célula. Este suele tener una forma característica para cada tipo de membrana},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kapton}{}%
+{%
+\gls@defglossaryentry{kapton}%
+{%
+name={Kapton},%
+sort={Kapton},%
+type={main},%
+first={Kapton},%
+firstplural={Kaptons},%
+text={Kapton},%
+plural={Kaptons},%
+description={Nombre comercial de la firma DuPont para la poliimida de alta calidad para la realización de \acrshort {pcb} flexible y para protección térmica de los dispositivos durante la soldadura},%
+descriptionplural={Nombre comercial de la firma DuPont para la poliimida de alta calidad para la realización de \acrshort {pcb} flexible y para protección térmica de los dispositivos durante la soldadura},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mylar}{}%
+{%
+\gls@defglossaryentry{mylar}%
+{%
+name={Mylar},%
+sort={Mylar},%
+type={main},%
+first={Mylar},%
+firstplural={Mylars},%
+text={Mylar},%
+plural={Mylars},%
+description={Nombre comercial de film de poliéster de alta resistencia, al igual que el Kapton soporta altas temperaturas y tiene una buena resistencia mecánica},%
+descriptionplural={Nombre comercial de film de poliéster de alta resistencia, al igual que el Kapton soporta altas temperaturas y tiene una buena resistencia mecánica},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{lvm}{}%
+{%
+\gls@defglossaryentry{lvm}%
+{%
+name={LVM},%
+sort={LVM},%
+type={acronym},%
+first={Logical Volume Manager\glsspace (LVM)},%
+firstplural={Logical Volume Managers\glsspace (LVMs)},%
+text={LVM},%
+plural={LVMs},%
+description={Logical Volume Manager},%
+descriptionplural={Logical Volume Manager\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Logical Volume Manager},%
+longplural={Logical Volume Managers},%
+short={LVM},%
+shortplural={LVMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{tfg}{}%
+{%
+\gls@defglossaryentry{tfg}%
+{%
+name={TFG},%
+sort={TFG},%
+type={acronym},%
+first={Trabajo Fin de Grado\glsspace (TFG)},%
+firstplural={Trabajo Fin de Grados\glsspace (TFGs)},%
+text={TFG},%
+plural={TFGs},%
+description={Trabajo Fin de Grado},%
+descriptionplural={Trabajo Fin de Grado\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Trabajo Fin de Grado},%
+longplural={Trabajo Fin de Grados},%
+short={TFG},%
+shortplural={TFGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ecg}{}%
+{%
+\gls@defglossaryentry{ecg}%
+{%
+name={ECG},%
+sort={ECG},%
+type={acronym},%
+first={Electrocardiograma\glsspace (ECG)},%
+firstplural={Electrocardiogramas\glsspace (ECGs)},%
+text={ECG},%
+plural={ECGs},%
+description={Electrocardiograma},%
+descriptionplural={Electrocardiograma\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Electrocardiograma},%
+longplural={Electrocardiogramas},%
+short={ECG},%
+shortplural={ECGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ble}{}%
+{%
+\gls@defglossaryentry{ble}%
+{%
+name={BLE},%
+sort={BLE},%
+type={acronym},%
+first={Bluetooth Low Energy\glsspace (BLE)},%
+firstplural={Bluetooth Low Energys\glsspace (BLEs)},%
+text={BLE},%
+plural={BLEs},%
+description={Bluetooth Low Energy},%
+descriptionplural={Bluetooth Low Energy\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Bluetooth Low Energy},%
+longplural={Bluetooth Low Energys},%
+short={BLE},%
+shortplural={BLEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cpu}{}%
+{%
+\gls@defglossaryentry{cpu}%
+{%
+name={CPU},%
+sort={CPU},%
+type={acronym},%
+first={Central Process Unit\glsspace (CPU)},%
+firstplural={Central Process Units\glsspace (CPUs)},%
+text={CPU},%
+plural={CPUs},%
+description={Central Process Unit},%
+descriptionplural={Central Process Unit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Central Process Unit},%
+longplural={Central Process Units},%
+short={CPU},%
+shortplural={CPUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gpu}{}%
+{%
+\gls@defglossaryentry{gpu}%
+{%
+name={GPU},%
+sort={GPU},%
+type={acronym},%
+first={Graphic Processor Unit\glsspace (GPU)},%
+firstplural={Graphic Processor Units\glsspace (GPUs)},%
+text={GPU},%
+plural={GPUs},%
+description={Graphic Processor Unit},%
+descriptionplural={Graphic Processor Unit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Graphic Processor Unit},%
+longplural={Graphic Processor Units},%
+short={GPU},%
+shortplural={GPUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{emg}{}%
+{%
+\gls@defglossaryentry{emg}%
+{%
+name={EMG},%
+sort={EMG},%
+type={acronym},%
+first={Electromiograma\glsspace (EMG)},%
+firstplural={Electromiogramas\glsspace (EMGs)},%
+text={EMG},%
+plural={EMGs},%
+description={Electromiograma},%
+descriptionplural={Electromiograma\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Electromiograma},%
+longplural={Electromiogramas},%
+short={EMG},%
+shortplural={EMGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ide}{}%
+{%
+\gls@defglossaryentry{ide}%
+{%
+name={IDE},%
+sort={IDE},%
+type={acronym},%
+first={Integrated Developement Enviroment\glsspace (IDE)},%
+firstplural={Integrated Developement Enviroments\glsspace (IDEs)},%
+text={IDE},%
+plural={IDEs},%
+description={Integrated Developement Enviroment},%
+descriptionplural={Integrated Developement Enviroment\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Integrated Developement Enviroment},%
+longplural={Integrated Developement Enviroments},%
+short={IDE},%
+shortplural={IDEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fpga}{}%
+{%
+\gls@defglossaryentry{fpga}%
+{%
+name={FPGA},%
+sort={FPGA},%
+type={acronym},%
+first={Field Programable Gate Array\glsspace (FPGA)},%
+firstplural={Field Programable Gate Arrays\glsspace (FPGAs)},%
+text={FPGA},%
+plural={FPGAs},%
+description={Field Programable Gate Array},%
+descriptionplural={Field Programable Gate Array\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Field Programable Gate Array},%
+longplural={Field Programable Gate Arrays},%
+short={FPGA},%
+shortplural={FPGAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fpaa}{}%
+{%
+\gls@defglossaryentry{fpaa}%
+{%
+name={FPAA},%
+sort={FPAA},%
+type={acronym},%
+first={Field Programable Analog Array\glsspace (FPAA)},%
+firstplural={Field Programable Analog Arrays\glsspace (FPAAs)},%
+text={FPAA},%
+plural={FPAAs},%
+description={Field Programable Analog Array},%
+descriptionplural={Field Programable Analog Array\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Field Programable Analog Array},%
+longplural={Field Programable Analog Arrays},%
+short={FPAA},%
+shortplural={FPAAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{udb}{}%
+{%
+\gls@defglossaryentry{udb}%
+{%
+name={UDB},%
+sort={UDB},%
+type={acronym},%
+first={Universal Digital Block\glsspace (UDB)},%
+firstplural={Universal Digital Blocks\glsspace (UDBs)},%
+text={UDB},%
+plural={UDBs},%
+description={Universal Digital Block},%
+descriptionplural={Universal Digital Block\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Universal Digital Block},%
+longplural={Universal Digital Blocks},%
+short={UDB},%
+shortplural={UDBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{usb}{}%
+{%
+\gls@defglossaryentry{usb}%
+{%
+name={USB},%
+sort={USB},%
+type={acronym},%
+first={Universal Serial Bus\glsspace (USB)},%
+firstplural={Universal Serial Buss\glsspace (USBs)},%
+text={USB},%
+plural={USBs},%
+description={Universal Serial Bus},%
+descriptionplural={Universal Serial Bus\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Universal Serial Bus},%
+longplural={Universal Serial Buss},%
+short={USB},%
+shortplural={USBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pwm}{}%
+{%
+\gls@defglossaryentry{pwm}%
+{%
+name={PWM},%
+sort={PWM},%
+type={acronym},%
+first={Pulse Width Modulation\glsspace (PWM)},%
+firstplural={Pulse Width Modulations\glsspace (PWMs)},%
+text={PWM},%
+plural={PWMs},%
+description={Pulse Width Modulation},%
+descriptionplural={Pulse Width Modulation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Pulse Width Modulation},%
+longplural={Pulse Width Modulations},%
+short={PWM},%
+shortplural={PWMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sram}{}%
+{%
+\gls@defglossaryentry{sram}%
+{%
+name={SRAM},%
+sort={SRAM},%
+type={acronym},%
+first={Static Random Acces Memory\glsspace (SRAM)},%
+firstplural={Static Random Acces Memorys\glsspace (SRAMs)},%
+text={SRAM},%
+plural={SRAMs},%
+description={Static Random Acces Memory},%
+descriptionplural={Static Random Acces Memory\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Static Random Acces Memory},%
+longplural={Static Random Acces Memorys},%
+short={SRAM},%
+shortplural={SRAMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{tqfp}{}%
+{%
+\gls@defglossaryentry{tqfp}%
+{%
+name={TQFP},%
+sort={TQFP},%
+type={acronym},%
+first={Thin Quad Flat Package\glsspace (TQFP)},%
+firstplural={Thin Quad Flat Packages\glsspace (TQFPs)},%
+text={TQFP},%
+plural={TQFPs},%
+description={Thin Quad Flat Package},%
+descriptionplural={Thin Quad Flat Package\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Thin Quad Flat Package},%
+longplural={Thin Quad Flat Packages},%
+short={TQFP},%
+shortplural={TQFPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{qfn}{}%
+{%
+\gls@defglossaryentry{qfn}%
+{%
+name={QFN},%
+sort={QFN},%
+type={acronym},%
+first={Quad Flat No-leads\glsspace (QFN)},%
+firstplural={Quad Flat No-leadss\glsspace (QFNs)},%
+text={QFN},%
+plural={QFNs},%
+description={Quad Flat No-leads},%
+descriptionplural={Quad Flat No-leads\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Quad Flat No-leads},%
+longplural={Quad Flat No-leadss},%
+short={QFN},%
+shortplural={QFNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{adc}{}%
+{%
+\gls@defglossaryentry{adc}%
+{%
+name={ADC},%
+sort={ADC},%
+type={acronym},%
+first={Analog-Digital Converter\glsspace (ADC)},%
+firstplural={Analog-Digital Converters\glsspace (ADCs)},%
+text={ADC},%
+plural={ADCs},%
+description={Analog-Digital Converter},%
+descriptionplural={Analog-Digital Converter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Analog-Digital Converter},%
+longplural={Analog-Digital Converters},%
+short={ADC},%
+shortplural={ADCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dac}{}%
+{%
+\gls@defglossaryentry{dac}%
+{%
+name={DAC},%
+sort={DAC},%
+type={acronym},%
+first={Digital-Analog Converter\glsspace (DAC)},%
+firstplural={Digital-Analog Converters\glsspace (DACs)},%
+text={DAC},%
+plural={DACs},%
+description={Digital-Analog Converter},%
+descriptionplural={Digital-Analog Converter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Digital-Analog Converter},%
+longplural={Digital-Analog Converters},%
+short={DAC},%
+shortplural={DACs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{idosc}{}%
+{%
+\gls@defglossaryentry{idosc}%
+{%
+name={I2C},%
+sort={I2C},%
+type={acronym},%
+first={Inter-Integrated Circuit\glsspace (I2C)},%
+firstplural={Inter-Integrated Circuits\glsspace (I2Cs)},%
+text={I2C},%
+plural={I2Cs},%
+description={Inter-Integrated Circuit},%
+descriptionplural={Inter-Integrated Circuit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Inter-Integrated Circuit},%
+longplural={Inter-Integrated Circuits},%
+short={I2C},%
+shortplural={I2Cs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{tia}{}%
+{%
+\gls@defglossaryentry{tia}%
+{%
+name={TIA},%
+sort={TIA},%
+type={acronym},%
+first={Transimpedance Amplifier\glsspace (TIA)},%
+firstplural={Transimpedance Amplifiers\glsspace (TIAs)},%
+text={TIA},%
+plural={TIAs},%
+description={Transimpedance Amplifier},%
+descriptionplural={Transimpedance Amplifier\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transimpedance Amplifier},%
+longplural={Transimpedance Amplifiers},%
+short={TIA},%
+shortplural={TIAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pga}{}%
+{%
+\gls@defglossaryentry{pga}%
+{%
+name={PGA},%
+sort={PGA},%
+type={acronym},%
+first={Programable Gain Amplifier\glsspace (PGA)},%
+firstplural={Programable Gain Amplifiers\glsspace (PGAs)},%
+text={PGA},%
+plural={PGAs},%
+description={Programable Gain Amplifier},%
+descriptionplural={Programable Gain Amplifier\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Programable Gain Amplifier},%
+longplural={Programable Gain Amplifiers},%
+short={PGA},%
+shortplural={PGAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pcb}{}%
+{%
+\gls@defglossaryentry{pcb}%
+{%
+name={PCB},%
+sort={PCB},%
+type={acronym},%
+first={Printed Circuit Board\glsspace (PCB)},%
+firstplural={Printed Circuit Boards\glsspace (PCBs)},%
+text={PCB},%
+plural={PCBs},%
+description={Printed Circuit Board},%
+descriptionplural={Printed Circuit Board\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Printed Circuit Board},%
+longplural={Printed Circuit Boards},%
+short={PCB},%
+shortplural={PCBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{led}{}%
+{%
+\gls@defglossaryentry{led}%
+{%
+name={LED},%
+sort={LED},%
+type={acronym},%
+first={Light Emitter Diode\glsspace (LED)},%
+firstplural={Light Emitter Diodes\glsspace (LEDs)},%
+text={LED},%
+plural={LEDs},%
+description={Light Emitter Diode},%
+descriptionplural={Light Emitter Diode\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Light Emitter Diode},%
+longplural={Light Emitter Diodes},%
+short={LED},%
+shortplural={LEDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{uart}{}%
+{%
+\gls@defglossaryentry{uart}%
+{%
+name={UART},%
+sort={UART},%
+type={acronym},%
+first={Universal Asynchronous Reciever Transmitter\glsspace (UART)},%
+firstplural={Universal Asynchronous Reciever Transmitters\glsspace (UARTs)},%
+text={UART},%
+plural={UARTs},%
+description={Universal Asynchronous Reciever Transmitter},%
+descriptionplural={Universal Asynchronous Reciever Transmitter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Universal Asynchronous Reciever Transmitter},%
+longplural={Universal Asynchronous Reciever Transmitters},%
+short={UART},%
+shortplural={UARTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pcb}{}%
+{%
+\gls@defglossaryentry{pcb}%
+{%
+name={PCB},%
+sort={PCB},%
+type={acronym},%
+first={Printed Circuit Board\glsspace (PCB)},%
+firstplural={Printed Circuit Boards\glsspace (PCBs)},%
+text={PCB},%
+plural={PCBs},%
+description={Printed Circuit Board},%
+descriptionplural={Printed Circuit Board\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Printed Circuit Board},%
+longplural={Printed Circuit Boards},%
+short={PCB},%
+shortplural={PCBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{td}{}%
+{%
+\gls@defglossaryentry{td}%
+{%
+name={TD},%
+sort={TD},%
+type={acronym},%
+first={Transfer Descriptor\glsspace (TD)},%
+firstplural={Transfer Descriptors\glsspace (TDs)},%
+text={TD},%
+plural={TDs},%
+description={Transfer Descriptor},%
+descriptionplural={Transfer Descriptor\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transfer Descriptor},%
+longplural={Transfer Descriptors},%
+short={TD},%
+shortplural={TDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{snr}{}%
+{%
+\gls@defglossaryentry{snr}%
+{%
+name={SNR},%
+sort={SNR},%
+type={acronym},%
+first={Signal-Noise Ratio\glsspace (SNR)},%
+firstplural={Signal-Noise Ratios\glsspace (SNRs)},%
+text={SNR},%
+plural={SNRs},%
+description={Signal-Noise Ratio},%
+descriptionplural={Signal-Noise Ratio\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Signal-Noise Ratio},%
+longplural={Signal-Noise Ratios},%
+short={SNR},%
+shortplural={SNRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sar}{}%
+{%
+\gls@defglossaryentry{sar}%
+{%
+name={SAR},%
+sort={SAR},%
+type={acronym},%
+first={Sucessive Approximation\glsspace (SAR)},%
+firstplural={Sucessive Approximations\glsspace (SARs)},%
+text={SAR},%
+plural={SARs},%
+description={Sucessive Approximation},%
+descriptionplural={Sucessive Approximation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sucessive Approximation},%
+longplural={Sucessive Approximations},%
+short={SAR},%
+shortplural={SARs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{psoc}{}%
+{%
+\gls@defglossaryentry{psoc}%
+{%
+name={PSoC},%
+sort={PSoC},%
+type={acronym},%
+first={Programable System on Chip\glsspace (PSoC)},%
+firstplural={Programable System on Chips\glsspace (PSoCs)},%
+text={PSoC},%
+plural={PSoCs},%
+description={Programable System on Chip},%
+descriptionplural={Programable System on Chip\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Programable System on Chip},%
+longplural={Programable System on Chips},%
+short={PSoC},%
+shortplural={PSoCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{eeg}{}%
+{%
+\gls@defglossaryentry{eeg}%
+{%
+name={EEG},%
+sort={EEG},%
+type={acronym},%
+first={Electroencefalograma\glsspace (EEG)},%
+firstplural={Electroencefalogramas\glsspace (EEGs)},%
+text={EEG},%
+plural={EEGs},%
+description={Electroencefalograma},%
+descriptionplural={Electroencefalograma\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Electroencefalograma},%
+longplural={Electroencefalogramas},%
+short={EEG},%
+shortplural={EEGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dma}{}%
+{%
+\gls@defglossaryentry{dma}%
+{%
+name={DMA},%
+sort={DMA},%
+type={acronym},%
+first={Direct Memory Access\glsspace (DMA)},%
+firstplural={Direct Memory Accesss\glsspace (DMAs)},%
+text={DMA},%
+plural={DMAs},%
+description={Direct Memory Access},%
+descriptionplural={Direct Memory Access\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Direct Memory Access},%
+longplural={Direct Memory Accesss},%
+short={DMA},%
+shortplural={DMAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ao}{}%
+{%
+\gls@defglossaryentry{ao}%
+{%
+name={AO},%
+sort={AO},%
+type={acronym},%
+first={Amplificador Operacional\glsspace (AO)},%
+firstplural={Amplificador Operacionals\glsspace (AOs)},%
+text={AO},%
+plural={AOs},%
+description={Amplificador Operacional},%
+descriptionplural={Amplificador Operacional\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Amplificador Operacional},%
+longplural={Amplificador Operacionals},%
+short={AO},%
+shortplural={AOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rom}{}%
+{%
+\gls@defglossaryentry{rom}%
+{%
+name={ROM},%
+sort={ROM},%
+type={acronym},%
+first={Read Only Memory\glsspace (ROM)},%
+firstplural={Read Only Memorys\glsspace (ROMs)},%
+text={ROM},%
+plural={ROMs},%
+description={Read Only Memory},%
+descriptionplural={Read Only Memory\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Read Only Memory},%
+longplural={Read Only Memorys},%
+short={ROM},%
+shortplural={ROMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{psoc}{}%
+{%
+\gls@defglossaryentry{psoc}%
+{%
+name={PSoC},%
+sort={PSoC},%
+type={acronym},%
+first={Programable System on Chip\glsspace (PSoC)},%
+firstplural={Programable System on Chips\glsspace (PSoCs)},%
+text={PSoC},%
+plural={PSoCs},%
+description={Programable System on Chip},%
+descriptionplural={Programable System on Chip\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Programable System on Chip},%
+longplural={Programable System on Chips},%
+short={PSoC},%
+shortplural={PSoCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

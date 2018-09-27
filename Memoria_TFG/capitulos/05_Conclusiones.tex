@@ -1,0 +1,60 @@
+\chapter{Conclusiones y trabajo futuro}\label{sec: Conclusione}
+
+\makeatletter
+\def\clearpage{%
+  \ifvmode
+    \ifnum \@dbltopnum =\m@ne
+      \ifdim \pagetotal <\topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+Con este capítulo se cierra la documentación del proyecto. A lo largo de esta memoria, se ha expuesto el desarrollo de un sistema de electrocardiografía portable abordando cada una de las etapas y partes del sistema necesarias para la adquisición, procesado y visualización de las señales. Los puntos o cuestiones clave desarrolladas en este proyecto se podrían resumir en las siguientes:
+
+\begin{itemize}
+	\item \textbf{Diseño del sistema hardware en PSoC}: Se ha desarrollado todo el diseño para la adquisición y transmisión de la señales \acrshort{ecg} basado en electrónica reconfigurable. Se ha empleado la plataforma PSoC por su integración de sistemas tanto analógicos como digitales en la misma arquitectura.
+	
+	\item \textbf{Diseño del filtrado digital en fase lineal}: Conseguir que la respuesta de los filtros sea lo suficientemente selectiva y además cumpla con el criterio de fase lineal ha sido una de las cuestiones clave para conseguir que las señal tenga la calidad adecuada.
+	
+	\item \textbf{Desarrollo de la app para Android}: Es obvio que el objetivo final es que la señal adquirida sea útil para el diagnóstico, para ello es esencial disponer de un sistema donde mostrar la señal. En el presente \acrshort{tfg}, además, se ha añadido el procesado de la señal en la app haciéndola una de las partes clave del proyecto. A la importancia de este punto hay que sumar el reto que ha supuesto debido a la necesidad de un rápido aprendizaje en el desarrollo de aplicaciones partiendo de conocimientos prácticamente nulos en este campo.
+
+	
+	\item \textbf{Diseño del prototipo en PCB}: Este ha sido otro de los grandes retos del proyecto puesto que se debía realizar la integración lo más reducida posible. Empleando uno de los encapsulados más pequeños de Cypress se ha conseguido este objetivo con suficiencia, resultando en una \acrshort{pcb} de 2x5 cm aproximadamente. En este punto el principal reto fue la soldadura de la placa por las reducidas dimensiones de los chips y la necesidad de aprendizaje de la soldadura por \textit{reflow}.
+	
+\end{itemize}
+
+%. Estos retos se plantean como lineas de desarrollo futuro para ser continuadas en una FPU o similar:
+%
+%A pesar de conseguir los objetivos planteados al inicio del proyecto, aún restan varios retos que superar y en los que trabajar en el futuro. 
+
+
+En general se han cumplido los objetivos planteados al inicio de este trabajo, sin embargo, aun restan retos a los que no se les ha podido dar cobertura en este proyecto o que han surgido durante el desarrollo del mismo. Los principales retos que se plantean se pueden resumir en los siguientes:
+
+\begin{itemize}
+	\item \textbf{Desarrollo de aplicación con \acrshort{ble}}: La aplicación desarrollada emplea Bluetooth 2.0 para las comunicaciones. El desarrollo de una aplicación capaz de comunicarse mediante \acrshort{ble} permitiría completar la funcionalidad desarrollada en el prototipo.
+	
+	\item \textbf{Desarrollo prototipo con saturación de oxígeno}: Hasta ahora se han llevado a cabo prototipos independientes para la medida de saturación de oxígeno en sangre y \acrshort{ecg}, en el presente trabajo. Para completar el trabajo de investigación se deben fusionar ambos prototipos en uno que permita realizar la adquisición de las dos señales a un tiempo. 
+	
+	% Existe un prototipo desarrollado para la medida de la saturación de oxígeno en sangre y en este trabajo se ha desarrollado la medida del \acrshort{ecg}, sin embargo, para completar el trabajo de investigación llevado a cabo por el grupo se precisa de un prototipo que integre ambas capacidades. 
+	
+	\item \textbf{Diseño de gafas e integración del dispositivo}: Una vez se haya conseguido un dispositivo totalmente funcional para las medidas descritas en el punto anterior, se debe encapsular de manera que sea vestible y cumpla con las necesidades del soldado en zonas de conflicto en cuanto a movilidad y versatilidad del sistema.
+
+	%Si salen bien se mete en implementación
+	
+	\item \textbf{Implementación de eliminación de artefactos mediante MEMS}: Puesto que el dispositivo estará en movimiento en gran parte de su empleo, existirán gran cantidad de artefactos que provocan una pésima calidad de la señal. Existen trabajos como \cite{Asada_2004,Gibbs_2005,Han_2009} que muestran este tipo de procesado para eliminación de artefactos.
+
+\end{itemize}
+
+Como se puede ver aún quedan retos por superar en este campo, por esta razón se pretende continuar avanzando en el mismo a través de becas de colaboración o a través de una beca FPU.
+
+%%%%%%%%
+%Electrónica flexible
+%%%%%%%%

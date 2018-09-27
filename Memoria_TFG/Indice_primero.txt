@@ -1,0 +1,94 @@
+1Introducción
+	1.1Motivacion y objetivos
+		1.1.2 Planificación
+		1.1.3 Metodología de trabajo
+	1.2Estructura de la memoria
+
+
+
+
+2Estado del arte
+	2.1FPGAs 
+		2.1.1Evolucion
+		2.1.2Escenario
+		2.1.3Propiedades del diseño
+	2.2FPGAs libres
+		2.2.1Evolución
+		2.2.2Escenario
+		2.2.3 IceZum Alhambra
+		2.2.4 IceStudio
+	2.3Coexistencia Microcontrolador-FPGA
+		2.3.1 Necesidad
+		2.3.2 Ventajas e inconvenientes
+	2.4Robótica educativa
+		2.4.1 Motivaciones y necesidad
+		2.4.2 Sensores
+		2.4.3 Actuadores
+		2.4.4 Control PID
+		
+
+3Diseño del sistema
+
+
+
+	3.2Self-Balancing Robot con visión artificial
+		3.2.1 Concepto 
+		3.2.2 Motivaciones
+		3.2.3 Física de un Self-Balancing robot
+		3.2.4 Unidad de medida inercial
+		3.2.4 Motores
+		3.2.5 Control PID Clásico en un SelfBalancing robot
+		3.2.7 Diagrama de bloques a alto nivel del sistema
+	3.4Cuadricóptero con visión artificial
+		3.3.1 Concepto
+		3.3.2 Motivaciones
+		3.3.3 Física de un Self-Balancing robot
+		3.3.4 Camara
+		3.3.4 Unidad de medida inercial
+		3.3.4 Motores Brushless y ESCs
+		3.3.5 Control PID clásico en un cuadricóptero
+		3.3.6 Tratado de imágenes píxel a píxel
+		3.3.7 Diagrama de bloques a alto nivel del sistema
+
+
+	
+EXPERIMENTOS
+	Aqui meter controlador VGA
+
+
+4Implementación del sistem
+/****************************************************************************
+	4.1Controlador VGA IceZum Alhambra
+		4.1.1 Subsistema
+			4.1.1. Modulo "HVSINC_GENERATOR" 
+			4.1.1.Modulo "BD_Number"
+			4.1.1. Modulo "Actual_pixel"
+			4.1.1. Modulo "Completed_VGA3Numbers"
+			4.4.2. Diseño Esquematico electronico
+			4.4.2.2 Diseño y fabricación de la PCB
+		        4.1.3 Elección de materiales y coste del prototipo
+/***********************************************************************************
+	4.2Self-Balancing Robot con visión artificial
+		4.2.1 Subsistema 
+			4.2.1. Integración IceZum Alhambra-Arduino Uno
+			4.2.1. Control P
+			4.2.1. Control D
+			4.4.1. Controlador PWM
+			4.4.1. Controlador Driver Motor MCU..
+			4.2.2. Diseño esquematico electronico
+			4.2.2. Diseño y fabricación de la PCB
+		        4.2.3 Elección de materiales y coste del prototipo
+	4.3 Cuadicóptero autónomo con visión artificial	
+			Misma estrcutura que lo anterior
+			camara
+			ESC
+*************************************************************
+Diseño, implementación, herramienta VGA de depuración y experimentos.
+	3.1Controlador VGA IceZum Alhamba
+		3.1.1 Concepto
+		3.1.2 Motivaciones
+		3.1.2 Estandar de vídeo VGA 	
+	
+5Conclusiones		
+			
+				

@@ -1,0 +1,13 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: proyecto.aux
+The style file: IEEEtran.bst
+Database file #1: bibliografia/biblio.bib
+Warning--string name "j-hewlett-packard-j" is undefined
+--line 312 of file bibliografia/biblio.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+Warning--empty journal in Marion_1997
+
+Done.
+(There were 2 warnings)
