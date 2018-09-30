@@ -84,10 +84,18 @@ La unidad de medida inercial
 \subsection{Diseño PCB}\label{sec:DisenoPCB} 
 Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, podía ser conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
 
-Para ello, y antes del diseño, es necesario un análisis de los requerimientos, no sólo actuales, sino también futuros, así como para la implementación de un vehículo aéreo no tripulado. El circuito impreso debería poder albergar los siguientes componentes y comportamientos:
+Para ello, y antes del diseño, es necesario un análisis funcional de los requerimientos, no sólo actuales, sino también futuros, así como para la implementación de un vehículo aéreo no tripulado. El circuito impreso debería poder albergar los siguientes componentes y comportamientos:
 
 \begin{itemize}
-	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II, lo cual permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
+	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II (figura \ref{fig:pin_headers}), lo cuál permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
+	
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/pin_headers.PNG}
+	\caption{Pin headers para IceZum Alhambra II.}
+	\label{fig:pin_headers}
+	\end{figure}
+
 	
 	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
 	
@@ -102,11 +110,28 @@ Para ello, y antes del diseño, es necesario un análisis de los requerimientos,
 	
 	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Este conector irá directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en subsección \ref{sec:Bateria}
 	
-	\item Módulo de pines "header" para la conexión del MPU6050 anteriormente descrito.
+	\item Módulo de pines "header" para la conexión del MPU6050 anteriormente descrito (figura \ref{fig:mpu6050_connector).
+	
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_robot/mpu6050_connector.PNG}
+		\caption{Módulo MPU6050.}
+		\label{fig:mpu6050_connector}
+	\end{figure}
+	
 	
 	\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
 	
-	\item Se dispone para el usuario final la posibilidad de unos "jumper" para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
+	\item Se dispone para el usuario final la posibilidad de unos "jumpers" (figura \ref{fig:jumpers}) para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
+	
+		\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_robot/jumpers.PNG}
+		\caption{Jumpers para configuración i2c MPU6050.}
+		\label{fig:jumpers}
+	    \end{figure}
+	
+	
 	Al albergar una línea de datos no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
 	
 	\item Gran parte de los micro-controladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el micro-controlador.
@@ -119,6 +144,41 @@ Para ello, y antes del diseño, es necesario un análisis de los requerimientos,
 \end{itemize}
 
 \subsection{Batería} \label{sec:Bateria}
+
+Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes, por lo tanto, y como tarea fundamental, un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
+
+A continuación se nombran los diferentes tipos de bleatería con los se cuenta actualmente en el mercado analizando sus ventajas e inconvenientes más importantes: 
+
+\begin{itemize}
+	\item Baterías de plomo ácido. Son económicas y fáciles de fabricar pero no admiten sobrecargas ni descargas profundas, además, son de un peso y volumen muy elevados para la poca energía que son capaces de almacenar.
+	\item Baterías de niquel-cadmio (Ni-Cd). Funcionan bien en un rango amplio de temperaturas, y se pueden sobrecargar sin sufrir daños. Admiten descargas profundas y proporcionan un buen número de ciclos. Como en la anterior, tienen un peso y volumen muy elevado.
+	\item Baterías de niquel-hidruro metálico (Ni-MH). Mejora las características de las anteriores, sin embargo, proporciona un número menos de ciclos.
+	\item Baterías de iones de litio (Li-ion). En comparación con las anteriores estas son de un desarrollo mas reciente y han facilitado la existencia de tecnologías portátiles. Tienen una capacidad elevada en relación a su peso y volumen, tienen un factor de auto-descarga muy elevado. Casi no se ven afectadas por el efecto memoria y pueden cargarse sin haber sido descargadas previamente. En contrapartida, no soportan bien los cambios de temperatura. 
+	\item Baterías de polímero de litio (Li-Po). Son una variación de las baterías de Li-on que mejoran sus características de peso y volumen así como su tasa de descarga. Quedan prácticamente inutilizadas si se descargan en exceso.
+\end{itemize}
+
+Teniendo en cuenta cuál tiene que el sistema final y más restrictivo es un vehículo aéreo remotamente pilotado y que el balancing-robot necesita de un peso no muy elevado, es importante que las características de peso, volumen, y descarga sean las adecuadas. Por ello se elije para la alimentación de los sistemas en este proyecto las baterías de tipo Li-po, las cuáles pueden almacenar gran cantidad de energía y ofrecen una tasa de descarga muy alta. \newline
+
+Las baterías de tipo Li-Po tienen una nomenclatura diferente del resto, la cuál es necesario analizar:
+
+\begin{itemize}
+	\item Clasificación por número de celdas "S". El número S corresponde con el número de celdas, las cuáles son de 3,7 voltios pero pueden llegar a 4,2 si están totalmente cargadas. Una batería de 3 celdas (3S) está compuesta por tanto de 3 sub-baterías puestas en serie, es decir, un total de 11,1 voltios.
+	\item Capacidad indicada en "mAh". A mayor de número de miliamperios hora más capacidad de carga. Un error común es pensar que a mayor capacidad mas posibilidad de alargar el tiempo del sistema en cuestión. A mayor capacidad, el peso y volumen de la batería aumenta, por lo que hay que encontrar la mejor configuración para nuestro sistema. 
+	\item Tasa de descarga "C". El número C corresponde con la tasa de descarga de la batería. Si una batería es de 1C significa que la máxima tasa de descarga a la que puede llegar es a la que se corresponde a su capacidad. Si el número C es distinto de 1 significa que multiplicamos la tasa de descarga por ese valor, reduciendo el tiempo de descarga proporcionalmente, esto es, una batería de 1000mAh 2C se descargaría a 2A en media hora.
+\end{itemize}
+
+El siguiente planteamiento sería por tanto elegir qué valores anteriores necesita nuestro sistema, para ello se desarrolla la siguiente tabla con los requerimientos de cada componente:
+
+\begin{table}[]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|l|}{Componente}           & \multicolumn{1}{l|}{Voltaje de operación} & \multicolumn{1}{l|}{Corriente de salida por canal} & \multicolumn{1}{l|}{Canales de motor} & \multicolumn{1}{l|}{PWM máximo} \\ \hline
+		\multicolumn{1}{|l|}{MC33926 Motor Driver} & \multicolumn{1}{l|}{5V-28V}               & \multicolumn{1}{l|}{2.5 A}                         & \multicolumn{1}{l|}{2}                & \multicolumn{1}{l|}{20kHz}      \\ \hline
+		&                                           &                                                    &                                       &                                 \\
+		&                                           &                                                    &                                       &                                
+	\end{tabular}
+\end{table}
+
 
 
 \section{Implementación del sistema}
@@ -148,7 +208,7 @@ A continuación se pasa a explicar los aspectos mas relevantes del desarrollo an
 	\item \textbf{1.-}Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
 	\item \textbf{2.-}Una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (figura en la que se ve como se hace esa corrección). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
 	\item \textbf{3.-}Se utiliza un solo pin del micro-controlador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
-	\item \textbf{4.-}Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión. Un ejemplo real de este envío es mostrado en la figura \ref{label}.\newline
+	\item \textbf{4.-}Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
 	Si se intenta enviar todo el ángulo también se enviarán tanto el símbolo como el código ASCII de la coma y esto es un aspecto que no interesa tener en cuenta en lo que al procesamiento sobre la FPGA se refiere. Para corregirlo primero se hace el módulo del ángulo (no se necesita el signo porque ya hay un pin destinado para ello) y posteriormente de hace una separación entre la parte entera y la parte decimal para poder eliminar el carácter "comma". 
 	
 	\item \textbf{5.-}Se envía por el puerto serie el byte correspondiente a la parte entera. 
@@ -307,7 +367,7 @@ Así, la formula se define como en la ecuación \ref{eqn:eqn31}:
 
 \begin{equation}
 		I = K * dT^{0.44}*(W*H)^{0.725}
-\ref{eqn:eqn31}
+\label{eqn:eqn31}
 \end{equation}
 
 Donde: 

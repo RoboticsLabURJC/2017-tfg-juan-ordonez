@@ -40,20 +40,20 @@
 \contentsline {subsection}{\numberline {3.1.9}Dise\IeC {\~n}o estructura mec\IeC {\'a}nica}{24}{subsection.3.1.9}
 \contentsline {subsection}{\numberline {3.1.10}Dise\IeC {\~n}o PCB}{24}{subsection.3.1.10}
 \contentsline {subsection}{\numberline {3.1.11}Bater\IeC {\'\i }a}{25}{subsection.3.1.11}
-\contentsline {section}{\numberline {3.2}Implementaci\IeC {\'o}n del sistema}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Unidad de medida inercial MPU6050 en Arduino Nano}{33}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Control P}{33}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Control D}{33}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Controlador PWM}{33}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Controlador driver motor}{33}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Fabricaci\IeC {\'o}n estructura mec\IeC {\'a}nica}{33}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Fabricaci\IeC {\'o}n PCB}{33}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}Elecci\IeC {\'o}n de materiales y coste del prototipo}{40}{subsection.3.2.9}
-\contentsline {section}{\numberline {3.3}Experimentos}{40}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}VGA Module}{40}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Protocolo I2C}{40}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Controlador motor burshless}{40}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{41}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{43}{chapter.5}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{47}{chapter*.42}
+\contentsline {section}{\numberline {3.2}Implementaci\IeC {\'o}n del sistema}{27}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{27}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Unidad de medida inercial MPU6050 en Arduino Nano}{35}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Control P}{35}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Control D}{35}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Controlador PWM}{35}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Controlador driver motor}{35}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Fabricaci\IeC {\'o}n estructura mec\IeC {\'a}nica}{35}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Fabricaci\IeC {\'o}n PCB}{35}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}Elecci\IeC {\'o}n de materiales y coste del prototipo}{42}{subsection.3.2.9}
+\contentsline {section}{\numberline {3.3}Experimentos}{42}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}VGA Module}{42}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Protocolo I2C}{42}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Controlador motor burshless}{42}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{43}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{45}{chapter.5}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{49}{chapter*.46}
