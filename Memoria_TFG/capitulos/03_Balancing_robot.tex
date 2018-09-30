@@ -34,7 +34,7 @@ Hay varias opciones para hacer una integración Micro-Controlador--FPGA:
 \end{itemize}
 En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
 
-Así, el sistema elegido deberá contar con algún modelo de comunicacion que permita un modelo como si de un solo sistema se tratase, aspecto sobre el que se basa este capítulo. Para claridad por parte del lector un modelo del objetivo final se representa en la figura \ref{fig:coexixtencia1}
+Así, el sistema elegido deberá contar con algún modelo de comunicación que permita una integración como si de un solo sistema se tratase, aspecto sobre el que se basa este capítulo. Para claridad por parte del lector, un esquema básico del objetivo final se representa en la figura \ref{fig:coexixtencia1}.
 
 \begin{figure}[H]
 	\center
@@ -45,17 +45,17 @@ Así, el sistema elegido deberá contar con algún modelo de comunicacion que pe
 
 En este caso la comunicación será solo uni-direccional, el micro-controlador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
 
-Si no se conociese el ángulo actual, el sistema final no sabría reconocer hacia que dirección ni con que velocidad debe corregir este error (recordamos aqui que el objetivo final es conseguir una estabilización). \newline
+Si no se conociese el ángulo actual, el sistema final no sabría reconocer hacia qué dirección ni con qué velocidad debe corregir este error (recordamos aquí que el objetivo final es conseguir una estabilización). \newline
 
 Existen dos tipos de comunicación posibles para este propósito: 
 \begin{itemize}
-	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente.
+	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente y haciendo uso solo de un bus de datos.
 	\item Comunicación en paralelo: Todos los bits de cada símbolo se envían a la vez.
 \end{itemize} 
 
 Para hacer uso de la comunicación en paralelo se necesitan tantos canales como bits tenga la información a transmitir (si se quiere enviar un byte se debería hacer uso de un total de 8 canales, correspondientes a cada bit). En este caso habría que utilizar 8 pines de la FPGA para poder llevar a cabo este tipo de transmisión. Por ello, y a pesar de que la comunicación paralela es mas rápida que en serie, se elije la primera como opción más conveniente. \newline
 
-El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque solo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2} y su desarrollo será explicado en la sección \ref{sec:Integracion}.
+El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque sólo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2} y su desarrollo será explicado en la sección \ref{sec:Integracion}.
 
 \begin{figure}[H]
 	\center
@@ -79,8 +79,46 @@ Un posible ejemplo de una comunicación en serie de un byte de datos podría ser
 La unidad de medida inercial 
 
 \subsection{Motores}
-\subsection{Control PID clásico en un SelfBalancing Robot}
-\subsection{Batería}
+\subsection{Control PID clásico.}
+\subsection{Diseño estructura mecánica}
+\subsection{Diseño PCB}\label{sec:DisenoPCB} 
+Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, podía ser conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
+
+Para ello, y antes del diseño, es necesario un análisis de los requerimientos, no sólo actuales, sino también futuros, así como para la implementación de un vehículo aéreo no tripulado. El circuito impreso debería poder albergar los siguientes componentes y comportamientos:
+
+\begin{itemize}
+	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II, lo cual permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
+	
+	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
+	
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_robot/SCREW.PNG}
+		\caption{Conector GND y VCC.}
+		\label{fig:screw}
+	\end{figure}
+	
+	
+	
+	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Este conector irá directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en subsección \ref{sec:Bateria}
+	
+	\item Módulo de pines "header" para la conexión del MPU6050 anteriormente descrito.
+	
+	\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
+	
+	\item Se dispone para el usuario final la posibilidad de unos "jumper" para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
+	Al albergar una línea de datos no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
+	
+	\item Gran parte de los micro-controladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el micro-controlador.
+	
+	\item Un módulo que pueda albergar la cámara OV7670 formado por pin "headers" de tipo macho y cada uno de los cuales estará unido a uno de los pines in-out de la FPGA, como se verá mas adelante en el esquemático general. 
+	
+	\item Un módulo que pueda albergar el driver del motor DC utilizado en este caso y que permita la conexión directa con los pines de la IceZum Alhambra II, pues por ejemplo la señal pwm que definirá la velocidad de los motores será una salida por uno de los pines de la FPGA, y deberá ser una entrada al driver del motor.
+	
+	\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
+\end{itemize}
+
+\subsection{Batería} \label{sec:Bateria}
 
 
 \section{Implementación del sistema}
@@ -234,44 +272,9 @@ Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las
 \subsection{Control D}
 \subsection{Controlador PWM}
 \subsection{Controlador driver motor}
-\subsection{Diseño y fabricación PCB}
-Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y fpga sino también para el modulo de cámara OV7670 y el driver del motor, podía ser conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
-
-Para ello, y antes del diseño, es necesario un análisis de los requerimientos, no solo actuales, sino también futuros para la implementación de un vehículo aéreo no tripulado. Así el circuito impreso debería poder albergar los siguientes componentes y comportamientos:
-
-\begin{itemize}
-	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II, lo cual permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
-	
-	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
-
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.5]{imagenes/Balancing_robot/SCREW.PNG}
-		\caption{Conector GND y VCC.}
-		\label{fig:screw}
-	\end{figure}
-	
-
-	
-	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Esta conector ira directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en \textbf{referencia a seccion de bateria}
-	
-	\item Módulo de pines header para la conexión del MPU6050 anteriormente descrito.
-	
-	\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
-	
-	\item Se dispone para el usuario final la posibilidad de unos jumper para dar la posibilidad al usuario de elegir quién gobernará la comunicación I2C, la fpga o el micro-controlador, para el cuál se podrá usar los conectores del apartado anterior.\newline
-	Al albergar una línea de datos no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los jumpers pudiesen introducir en la comunicación I2C.
-	
-	\item Gran parte de los microcontroladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin headers a VCC y GND que alimentarán el microcontrolador.
-	
-	\item Un módulo que pueda albergar la cámara OV7670 formado por pin headers del tipo macho y cada uno de los cuales estará unido a una de los pines de la FPGA, como se verá mas adelante en el esquemático general. 
-	 
-	\item Un módulo que pueda albergar el driver del motor utilizado en este caso y que permita la conexión directa con los pines de la IceZum Alhambra, pues por ejemplo la señal pwm que definirá la velocidad de los motores será una salida por uno de los pines de la FPGA, y deberá ser una entrada al driver del motor.
-	
-	\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7KOhm(revisar esto).
-\end{itemize}
-
-Para el desarrollo de una PCB con los requerimientos anteriores se ha usado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
+\subsection{Fabricación estructura mecánica}
+\subsection{Fabricación PCB}
+Para el desarrollo de una PCB con los requerimientos descritos en la subsseccion \ref{sec:DisenoPCB} se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
 
 \begin{itemize}
 	\item 1) En primera instancia se crea el proyecto en cuestión.
@@ -280,7 +283,7 @@ Para el desarrollo de una PCB con los requerimientos anteriores se ha usado Alti
 	\item 4) Con el esquemático ya creado, se puede implementar la pcb, definiendo sus bordes, las pistas, los pads, etc.
 \end{itemize}
 
-El esquemático es representado en la \ref{fig:schematics_tfg}: 
+El esquemático es representado en la figura \ref{fig:schematics_tfg}: 
 \newpage
 
 \begin{center}
@@ -293,23 +296,24 @@ El esquemático es representado en la \ref{fig:schematics_tfg}:
 \end{center}
 \newpage
 
-\textbf{Tamaño de pista: }
+\textbf{Tamaño de pista: } \newline
 A la hora del diseño de la PCB hay que tener en cuenta el tamaño de las pistas de cobre, sobre todo si por estas la corriente puede ser muy elevada. De no ser así, la PCB podría sufrir daños o llegar incluso a quemarse. \newline
 
-Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el calculo de pistas) puede consumir un máximo de 20 amperios. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
+Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el cálculo de pistas) puede consumir un máximo de 20 amperios. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
 
-La fórmula utilizada para la obtención del ancho de pista ha sido extraída del IPC-2221B el cual establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. (añadir link de esto) 
+La fórmula utilizada para la obtención del ancho de pista ha sido extraída del IPC-2221B, el cual establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. \newline
 
-Así, la formula tiene el siguiente aspecto: 
+Así, la formula se define como en la ecuación \ref{eqn:eqn31}: 
 
 \begin{equation}
 		I = K * dT^{0.44}*(W*H)^{0.725}
+\ref{eqn:eqn31}
 \end{equation}
 
 Donde: 
 \begin{itemize}
 	\item I = intensidad máxima en amperios
-	\item dT = aumento de temperatura sobre ambiente ºC
+	\item dT = aumento de temperatura sobre ambiente en ºC
 	\item W,H = ancho y grosor en mils
 	\item K = 0.024 para pistas internas y 0.048 para externas
 \end{itemize}
@@ -329,13 +333,14 @@ W_{internas} =  48.6876 mm
 H_{internas} = 	0.035 mm
 \end{equation*}
 
-El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web para el pedido de las PCBs: \url{https://www.jlcpcb.com//}. El grosor de pista es medido comúnmente en "oz" y en este caso, la empresa fabricante permite una PCB con 1oz de grosor de pista, que equivale a un grosor de 0.035mm.\newline
+El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web para el pedido de las PCBs: \url{https://www.jlcpcb.com//}. \newline 
+El grosor de pista es medido comúnmente en "oz" y en este caso, la empresa fabricante permite una PCB con 1oz de grosor de pista, que equivale a un grosor de 0.035mm.\newline
 
 Si se analizan los resultados obtenidos de la ecuación 3.1 se aprecia claramente la diferencia entre una pista en una capa interna y una pista en una externa. \newline
 
-Una placa de circuito impreso esta dividida en capas, cada una de las capas tiene su función y organizarlas de manera adecuada es una buena práctica para evitar malos comportamientos. Para el presente proyecto y una vez analizados los requerimientos, eran necesarias dos capas para la conexión de pines de datos, además siempre es recomendable un plano de tierra en el que todos los pines conectados a GND tengan una capa común. Esto evita ruidos e interferencias además de asegurar una buena referencia de tierra. \newline
+Una placa de circuito impreso esta dividida en capas, cada una de las capas tiene su función y organizarlas de manera adecuada es una buena práctica para evitar malos comportamientos. Así, una vez analizados los requerimientos, eran necesarias dos capas para la conexión de pines de datos, además siempre es recomendable un plano de tierra en el que todos los pines conectados a GND tengan una capa común. Esto evita ruidos e interferencias además de asegurar una buena referencia de tierra. \newline
 
-En el proveedor de PCBs uttilizado en este proyecto, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores brushless debe ser de 1.8716 cm, se llego a la determinación de la utilización de una de las capas como plano común para las pistas de dichos motores. La distribución de las capas sería por tanto lo representado en \ref{tabla:layers_altium}: 
+En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores "brushless" debe ser de 1.8716cm, se llego a la determinación de la utilización de una de las capas como plano común para las pistas de alimentación de dichos motores. La distribución de las capas será por tanto lo representado en la tabla \ref{tabla:layers_altium}: 
 
 Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1,46 Amperios, más que necesario para esta aplicación
 
@@ -415,5 +420,6 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 
 
 \section{Experimentos}
-\section{Protocolo I2C}
-\section{Controlador motor burshless}
+\subsection{VGA Module}
+\subsection{Protocolo I2C}
+\subsection{Controlador motor burshless}

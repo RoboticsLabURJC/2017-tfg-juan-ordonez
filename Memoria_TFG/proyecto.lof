@@ -15,13 +15,13 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{22}{figure.caption.26}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{23}{figure.caption.27}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{24}{figure.caption.28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{25}{figure.caption.29}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{26}{figure.caption.30}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de flujo de la interfaz para ArduinO.\relax }}{28}{figure.caption.31}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{30}{figure.caption.32}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{31}{figure.caption.33}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Conector GND y VCC.\relax }}{32}{figure.caption.34}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Conector GND y VCC.\relax }}{24}{figure.caption.28}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{26}{figure.caption.29}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{26}{figure.caption.30}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{28}{figure.caption.31}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Diagrama de flujo de la interfaz para ArduinO.\relax }}{29}{figure.caption.32}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{31}{figure.caption.33}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{32}{figure.caption.34}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces \relax }}{34}{figure.caption.35}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces \relax }}{37}{figure.caption.37}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces \relax }}{38}{figure.caption.38}
