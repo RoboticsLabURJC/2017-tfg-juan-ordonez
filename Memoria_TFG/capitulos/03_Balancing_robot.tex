@@ -80,6 +80,22 @@ La unidad de medida inercial
 
 \subsection{Motores}
 \subsubsection{Controlador PWM}
+Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las caracteristicas de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
+La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura tal 
+
+\textbf{figura PWM}
+
+Aplicando esta señal, por ejemplo, a un motor DC clásico se varia la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le esta llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
+
+Así, las características de una señal PWM son: 
+\begin{itemize}
+	\item D = ciclo de trabajo.
+	\item $\theta$
+	\item T = periodo de la función
+\end{itemize}
+
+
+
 \subsection{Control PID clásico.}
 \subsection{Diseño estructura mecánica}
 \subsection{Diseño PCB}\label{sec:DisenoPCB} 
