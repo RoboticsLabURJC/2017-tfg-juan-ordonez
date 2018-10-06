@@ -15,21 +15,21 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{22}{figure.caption.26}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{23}{figure.caption.27}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{24}{figure.caption.29}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Conector GND y VCC.\relax }}{24}{figure.caption.30}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{25}{figure.caption.31}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{25}{figure.caption.32}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{27}{figure.caption.34}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{28}{figure.caption.35}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{29}{figure.caption.36}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama de flujo de la interfaz para ArduinO.\relax }}{31}{figure.caption.37}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{33}{figure.caption.38}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{34}{figure.caption.39}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces \relax }}{36}{figure.caption.40}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces \relax }}{39}{figure.caption.42}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces \relax }}{40}{figure.caption.43}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces \relax }}{40}{figure.caption.44}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces \relax }}{41}{figure.caption.45}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces \relax }}{41}{figure.caption.46}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{25}{figure.caption.29}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Conector GND y VCC.\relax }}{25}{figure.caption.30}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{26}{figure.caption.31}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{26}{figure.caption.32}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{29}{figure.caption.34}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{29}{figure.caption.35}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{31}{figure.caption.36}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama de flujo de la interfaz para ArduinO.\relax }}{32}{figure.caption.37}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{34}{figure.caption.38}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{35}{figure.caption.39}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces \relax }}{37}{figure.caption.40}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces \relax }}{40}{figure.caption.42}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces \relax }}{41}{figure.caption.43}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces \relax }}{41}{figure.caption.44}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces \relax }}{42}{figure.caption.45}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces \relax }}{42}{figure.caption.46}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
