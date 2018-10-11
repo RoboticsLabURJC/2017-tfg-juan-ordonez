@@ -76,11 +76,21 @@ Un posible ejemplo de una comunicación en serie de un byte de datos podría ser
 
 
 \subsection{Unidad de medida inercial}
-La unidad de medida inercial 
+Solo teoria, que es, para que sirve, para que se usara, grados de libertad, giroscopio, acelerometro.
+
+\subsubsection{Concepto}
+
+\subsubsection{Giroscopio}
+
+\subsubsection{Acelerómetro}
+
+\subsubsection{Problema de deriva}
+
+\subsubsection{Posibles soluciones}
 
 \subsection{Motores}
 \subsubsection{Controlador PWM}
-Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las caracteristicas de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
+Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
 La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura tal 
 
 \textbf{figura PWM}
@@ -345,6 +355,27 @@ Así, el módulo tendrá como salidas el buffer de la parte entera, el buffer de
 Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las herramientas necesarias para que los sucesivos procesos y módulos puedan conocer el ángulo en cada momento representado por su parte entera (8 bits), parte decimal (8 bits) y un pin que indicará el valor del signo (positivo o negativo).
 
 \subsection{Unidad de medida inercial MPU6050 en Arduino Nano}\label{sec:MPU6050}
+
+El MPU6050 es un sensor y acelerometro para Arduino con 6 grados de libertad. 
+
+El MPU6050 necesita un voltaje de 3.3V. 
+
+\subsubsection{Pin out}
+
+EL MPU tiene una tension de alimentacion de 3.3V. El pin SCL (Serial Clock Line) y el pin CDA (Serial Data Line) representan la conexión para el bus de i2c con Arduino Nano. El pin AD0 permite al usuario final cambiar la dirección del MPU (slave) la cuál por defecto es 0x68h conectado a GND. Si se conecta a Vcc la dirección cambiaría a 0x69h. El pin INT produce una señal en alta cuando el dato en cuestion esta disponible por parte del MPU, y avisará por medio de una interrupcion al Arduino Nano con el fin de poder ser obtenido. \newline
+
+Una imagen de un MPU6050 puede encontrarse en la figura \ref{MPU6050image}
+
+\textbf{MPU6050image}
+
+\subsubsection{Valores del sensor. DMP. }
+
+Los valores 
+
+\subsubsection{Programa para Arduino nano}
+
+
+
 \subsection{Control P}
 \subsection{Control D}
 \subsection{Controlador PWM}

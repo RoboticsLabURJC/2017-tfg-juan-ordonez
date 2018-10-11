@@ -9,7 +9,6 @@ Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que
 		\caption{PLD vs FPGA}
 		\label{fig:estructura_FPGA}
 	\end{figure}
-	
 \end{center}
  
 
@@ -43,12 +42,12 @@ No obstante, tal y como ya han anunciado las principales empresas de microproces
 
 Después de esa fecha, no resultará económicamente eficiente reducir más el tamaño de los transistores de silicio. La predicción de la industria no es que simplemente su tasa de reducción será cada vez más lenta, sino que se va a detener definitivamente. \newline
 
-Es aquí donde la electrónica digital comenzará a tener un papel importante en los microprocesadores, brindando sus principales características. Estas ventajas e inconvenientes serán presentadas en el los capítulos \ref{sec:ArquitecturaFPGA} y \ref{sec:DescripcionHardware}.
+Es aquí donde la electrónica digital comenzará a tener un papel importante en los microprocesadores. Tanto es así que multinacionales dedicadas a la fabricación de procesadores como pueden ser Intel o AMD ya están trabajando en implementar esos comportamientos en FPGAs. Sus ventajas e inconvenientes serán presentadas en el los capítulos \ref{sec:ArquitecturaFPGA} y \ref{sec:DescripcionHardware}.
 
 \subsection{Arquitectura FPGA}\label{sec:ArquitecturaFPGA}
 
-En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posible habilitar o deshabilitar esta conexión.
-Por el contrario, en una FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos:
+En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posible habilitar o deshabilitar esta conexión. \newline
+Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos:
 \newline
 \begin{center}
 \begin{figure}[H]
@@ -60,11 +59,10 @@ Por el contrario, en una FPGA estas interconexiones no están prefijadas, siendo
 
 \end{center}
 
+A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. \newline
+El número de bloques lógicos determinan la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
 
-
-A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. El número de bloques lógicos determinan la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
-
-A continuación se introducirán los conceptos de granularidad fina y granularidad gruesa, que dará lugar al correcto entendimiento de la arquitectura en una FPGA. (https://carteleras.webcindario.com/fpga_jchl.pdf})
+A continuación se introducirán los conceptos de granularidad fina y granularidad gruesa, que dará lugar al correcto entendimiento de la arquitectura en una FPGA. 
 
 Estos módulos más complejos realizan las operaciones básicas que en conjunto representan la función que operará en una FPGA. Se dice que la FPGA son dispositivos con una arquitectura avanzada por la densidad de sus componentes y por los diferentes caminos de interconexión entre módulos. Así, de acuerdo al tipo de módulos lógicos que la conforman, encontramos dos derivaciones estructurales: 
 \begin{itemize}
@@ -72,15 +70,15 @@ Estos módulos más complejos realizan las operaciones básicas que en conjunto 
 	\item Granularidad Fina.
 \end{itemize}
 
-Los módulos lógicos en una arquitectura de granularidad gruesa son módulos grandes generalmente consistentes de una o más tablas de búsqueda y dos o más flip-flops. La tabla de búsqueda, también conocida como LookUp Table, actúa como una memoria donde se encuentra almacenada la tabla de verdad que representa la función lógica del circuito, así, en una LUT se puede implementar cualquier función deseable.\newline
+Los módulos lógicos en una arquitectura de granularidad gruesa son módulos grandes generalmente consistentes de una o más tablas de búsqueda y dos o más flip-flops. La tabla de búsqueda, también conocida como LookUp Table (LUT), actúa como una memoria donde se encuentra almacenada la tabla de verdad que representa la función lógica del circuito, así, en una LUT se puede implementar cualquier función deseable.\newline
 
-Por otra parte, una arquitectura de granularidad fina, está estructurada por una gran cantidad de módulos lógicos pequeños que realizan funciones relativamente simples. Cada módulo está compuesto de un circuito de dos entradas que realiza una función lógica
-determinada, o en algunos otros casos por un multiplexor. También suele contener algún flip-flop.  \newline
+Por otra parte, una arquitectura de granularidad fina, está estructurada por una gran cantidad de módulos lógicos pequeños que realizan funciones relativamente simples. Cada módulo está compuesto de un circuito de dos entradas que realiza una función lógica determinada, o en algunos otros casos por un multiplexor. También suele contener algún flip-flop.  \newline
 
-La FPGAs mas utilizadas actualemente suelen contar con tecnologia de granularidad gruesa, que permite elevar el nivel de abstracción con respecto a las FPGA de granularidad fina. Así, el primer caso permite implementaciones menos detalladas ya que desde un nivel muy básico se tienen módulos más complejos y el hecho de utilizar LUT deja entrever que se pueden realizar
-diseños grandes. A lo largo de este proyecto se trabajará con el primer caso, ejemplo de ello es la FPGA utilizada, IceZum Alhambra II. \newline
+La FPGAs mas utilizadas actualmente suelen contar con tecnología de granularidad gruesa, que permite elevar el nivel de abstracción con respecto a las FPGA de granularidad fina. \newline
 
-El diseñador propone la función lógica a realizar a través de métodos de descripción hardware y define los parámetros de su problema. Esto se hace por medio de código programable, que puede ser un lenguaje de descripción hardware, los cuáles son introducidos a continuación. 
+El primer caso permite implementaciones menos detalladas ya que desde un nivel muy básico se tienen módulos más complejos y el hecho de utilizar LUT deja entrever que se pueden realizar diseños más grandes. A lo largo de este proyecto se trabajará con el primer caso, ejemplo de ello es la FPGA utilizada, IceZum Alhambra II. \newline
+
+El diseñador propone la función lógica a realizar a través de métodos de descripción hardware y define los parámetros de su problema. Esto se hace por medio de código programable, que puede ser un lenguaje de descripción hardware, los cuáles son introducidos en el capítulo \ref{sec:DescripcionHardware}. 
 
 \subsection{Lenguajes de descripción hardware}\label{sec:DescripcionHardware}
 
@@ -91,37 +89,37 @@ Se tienen dos tipos diferentes de lenguajes de descripción hardware:
 	\item Bajo modelado. No permiten la jerarquezación de módulos y son capaces de realizar solo descripciones simples.
 	\item Alto modelado. Son los mas utilizados actualmente, permiten diseñar sistemas más complejos. Ejemplos de alto modelado son Verilog (Verify Logic) y VHDL (VHSIC Hardware Description Language).
 \end{itemize}	
-En el presente trabajo nos basaremos en Verilog por permitir un nivel mas alto de implementación que VHDL, como veremos en la sección \ref{sec:Verilog} . \newline
+Este trabajo se basará en Verilog por permitir un nivel más alto de implementación que VHDL, como será analizado en la sección \ref{sec:Verilog} . \newline
 
 Ambos lenguajes comparten algunas características comunes, como el soporte para cualquier nivel de modelado y abstracción, y que cada elemento de diseño tiene una interfaz bien definida, para permitir la conexión rápida con otros elementos lógicos.
 
 \subsection{Verilog}\label{sec:Verilog}
-Debido a su utilización a lo largo de este proyecto, se analizarán algunas características importantes.
+Debido a su utilización a lo largo de este proyecto, se analizarán algunas características importantes cuyo conocimiento será básico para entender el código.
 
 \subsubsection{Tipos de datos}
 
-Existen dos tipos de datos en Verilog los cuales tienen que ser entendidos para poder alcanzar la funcionalidad buscada:
+Existen dos tipos de datos en Verilog los cuáles tienen que ser entendidos para poder alcanzar la funcionalidad buscada:
 \begin{itemize}
-	\item reg: Representan variables con capacidad para almacenar informacion.
+	\item reg: Representan variables con capacidad para almacenar información.
 	\item wire: Representan conexiones entre componentes, no tienen capacidad de almacenamiento.
 \end{itemize}
 
 \subsubsection{Implementación en módulos}
 En la mayoría de los casos y para no perder el nivel de abstracción, un proyecto en Verilog suele estar compuesto por un conjunto de módulos los cuáles forman una funcionalidad completa, y cada uno de ellos, una especifica. \newline
 
-Las características principales de la implementación digital por módulos se muestran a continuación:
+Las características principales de la implementación digital por módulos son:
 \begin{itemize}
-	\item Cada módulo dispone de una serie de entradas y salidas cuya función principal es interconectar otros módulos aunque puede no tener entradas y salidas.
+	\item Cada módulo dispone de una serie de entradas y salidas cuya función principal es interconectar otros módulos, aunque puede no tener entradas y salidas.
 	\item No existen variables globales.
 	\item Cada módulo puede describirse de forma arquitectural o de comportamiento.
 \end{itemize}
 
-Esta implementación por módulos Verilog permite la configuración del nivel de abstracción deseado por el usuario final.
-El desarrollo de módulos de funcionalidad especifica puede tener sus ventajas e inconvenientes dependiendo de su uso final.
-Si se quieren reutilizar para otros flujos de trabajo (ejemplo: sumador 8 bits), es bueno tener módulos muy definidos según su funcionalidad. Sin embargo, la modularizacion no tiene porque ser imprescindible, si bien aconsejada.
+Esta implementación por módulos Verilog permite la configuración del nivel de abstracción deseado por el usuario final. \newline
+El desarrollo de módulos de funcionalidad específica puede tener sus ventajas e inconvenientes dependiendo de su uso final. \newline
+Si se quieren reutilizar para otros flujos de trabajo (ejemplo: sumador 8 bits), es bueno tener módulos muy definidos según su funcionalidad (ejemplo: sumador de 2 bits). Sin embargo, la polarización no tiene porque ser imprescindible, si bien aconsejada.
 
 \subsubsection{Paralelización de Procesos}
-Una de las características mas importantes que diferencia a Verilog del resto de lenguajes procedurales es la posibilidad de ejecutar varios procesos en paralelo, aspecto fundamental en el lenguaje, y el cual le brinda gran parte de las ventajas de usar implementacion hardware.
+Una de las características mas importantes que diferencia a Verilog del resto de lenguajes procedurales es la posibilidad de ejecutar varios procesos en paralelo, aspecto fundamental en el lenguaje, y el cuál le brinda gran parte de las ventajas de usar implementación hardware.
 
 \begin{center}
 	\begin{figure}[H]
@@ -133,12 +131,11 @@ Una de las características mas importantes que diferencia a Verilog del resto d
 	
 \end{center}
 Toda la descripción del comportamiento en Verilog debe declarase dentro de un proceso, estos pueden ser dos tipos:
-https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_Verilog/M%C3%B3dulos#Caracter%C3%ADsticas
 
 \begin{itemize}
-		\item Initial: Este tipo de procesos se ejecuta sólo una vez comenzando su ejecución al inicio, y por tanto no existen retardos. Este proceso no es sintetizable, es decir, no puede ser utilizado en una descripción RTL.
+		\item Initial: Este tipo de procesos se ejecutan sólo una vez comenzando su ejecución al inicio, y por tanto no existen retardos. Este proceso no es sintetizable, es decir, no puede ser utilizado en una descripción RTL.
 		
-		\item Always: Este tipo de procesos se ejecuta continuamente a modo de bucle, y como su propio nombre indica, está continuamente ejecutándose. Este proceso si que es sintetizable y es controlada por la temporización o por eventos. Si dicho bloque se ejecuta por más de un evento, dicho conjunto se denomina lista sensible.
+		\item Always: Este tipo de procesos se ejecuta continuamente a modo de bucle, y como su propio nombre indica, está continuamente ejecutándose. Este proceso si que es sintetizable y es controlado por la temporización o por eventos. Si dicho bloque se ejecuta por más de un evento, dicho conjunto se denomina lista sensible.
 \end{itemize}
 
 \subsubsection{Estructuras de control}
@@ -155,11 +152,11 @@ Al igual que los leguajes de tipo procedural, Verilog dispone de una serie de es
 	
 \end{itemize}
 
-\subsubsection{Asignacion continua}
+\subsubsection{Asignación continua}
 
-Mediante la asignación continua se puede modelar lógica combinacional, es decir, mo se necesita una lista de sensibilidad para realizar la asignacion. Sólo puede ser declarada fuera de cualquier proceso.
+Mediante la asignación continua se puede modelar lógica combinacional, es decir, mo se necesita una lista de sensibilidad para realizar la asignación. Sólo puede ser declarada fuera de cualquier proceso.
 
-\subsubsection{Asignacion procedural}
+\subsubsection{Asignación procedural}
 
 A las variables se le asigna un valor dentro de un proceso always o initial, el tipo de variable a la que se le asigna el valor puede ser de cualquier tipo.
 
@@ -193,17 +190,25 @@ Es conocido que existen placas con mejores carácterísticas, pero el hecho de q
 	\center
 	\includegraphics[scale=0.4]{imagenes/EstadoArte/IceZumAlhambra.pdf}
 	\caption{IceZum Alhambra Board}
-	\label{contexto:figura}
+	\label{fig:IceZumAlhambraI}
 \end{figure} 
 \end{center}
-Un punto a tener en cuenta para el desarrollo de hardware con esta FPGA es su limitada memoria de 1K lo que ha supuesto una limitación importante en el desarrollo. Es por eso que también se ha usado la nueva versión de la IceZum Alhambra, la cuál aún no estaba en el mercado al inicio del proyecto y que conlleva algunas mejoras, como la ampliaxión de 8K en su memoria. 
-
+Un punto a tener en cuenta para el desarrollo de hardware con esta FPGA es su limitada memoria de 1K lo que ha supuesto una limitación importante en el desarrollo. Es por ello que también se utilizado para el presetne proyecto la nueva versión de la IceZum Alhambra, IceZum Alhambra II, la cuál aún no estaba en el mercado al inicio del proyecto y que conlleva algunas mejoras, como la ampliación de 8K en su memoria, la mejora del bus de datos i2c, la posibilidad de alimentación mediante batería LIPO, etc. \newline
+La IceZum Alhambra II es la representada en la figura \ref{fig: IceZumAlhambraII}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/EstadoArte/IceZumAlhambra.PNG}
+		\caption{IceZum Alhambra II Board}
+		\label{fig: IceZumAlhambraII}
+	\end{figure} 
+\end{center}
 
 
 \subsection{IceStudio}
 Los lenguajes HDL suelen tener una curva de aprendizaje difícil, debido esto en gran medida al nivel de abstracción tan bajo necesario para diseñar un sistema en concreto. Es necesario conocer las características hardware de nuestro sistema para poder trabajar con este tipo de lógica. \newline
 
-Como hemos visto anteriormente, algunos fabricantes proporcionan herramientas comerciales para programar sus propios FPGA. Si bien en la actualidad son entornos complejos, cuentan con una gran cantidad de herramientas y funcionalidades. Lamentablemente la mayoría de ellos no son gratuitos y están unidos a la arquitectura de un único fabricante.
+Como se ha desarrollado anteriormente, algunos fabricantes proporcionan herramientas comerciales para programar sus propios FPGA. Si bien en la actualidad son entornos complejos, cuentan con una gran cantidad de herramientas y funcionalidades. Lamentablemente la mayoría de ellos no son gratuitos y están unidos a la arquitectura de un único fabricante.
 \newline
 Con la evolución de las FPGAs han empezado a aparecer lenguajes que permiten un mayor nivel de abstracción. 
 Además, también han aparecido herramientas centradas en la implementación gráfica. Un ejemplo de este tipo de implementación es LabVIEW FPGA o IceStudio. \newline
@@ -221,21 +226,21 @@ Para acercar al lector al conocimiento y funcionamiento de IceStudio se irán in
 	\label{fig:Main_IceStudio}
 \end{figure}
 
-El hecho de que IceStudio sea un editor gráfico puede hacer pensar que el nivel de abstracción podría ser más alto de lo deseado, pero lo cierto es que este nivel es configurable.
-Es el usuario final el que decide con que nivel de abstracción trabajo, siendo necesario para eso una amplia biblioteca de módulos como veremos a continuación. Para poder explicar la potencia de IceStudio, se procederá con un ejemplo;\newline
+El hecho de que IceStudio sea un editor gráfico puede hacer pensar que el nivel de abstracción podría ser más alto de lo deseado, pero lo cierto es que este nivel es configurable. \newline
+Es el usuario final el que decide con que nivel de abstracción se trabaja, siendo necesario para eso una amplia biblioteca de módulos como veremos a continuación. Para poder explicar la potencia de IceStudio, se procederá con un ejemplo;\newline
 
-El módulo que se presenta en la siguiente imagen es una escritura normal de i2c, en la cuál se parametriza la dirección del esclavo y la dirección que se quiere leer (más adelante se explicará con más detalle). \newline
+El módulo que se presenta en la imagen \ref{fig:Write_i2c_module} es una escritura normal de i2c, en la cuál se parametriza la dirección del esclavo y la dirección que se quiere leer (más adelante se explicará con más detalle). \newline
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module.pdf}
-	\caption{Escritura I2C IceStudio.}
+	\caption{Escritura I2C IceStudio alto nivel.}
 	\label{fig:Write_i2c_module}
 \end{figure}
 
 Así, si una persona no experimentada con este tipo de código y cuyo fin no es entenderlo quiere hacer uso de eso no deberá de bajar mucho de nivel.\newline
 No obstante, existe la posibilidad de que se requieran cambiar valores como la frecuencia de reloj, el modo de operación i2c...etc.
-Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en este caso, haciendo doble clic: 
+Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en este caso, haciendo doble clic, como aparece en la figura \ref{fig:Write_i2c_module2}: 
 
 \begin{figure}[H]
 	\center
@@ -244,16 +249,18 @@ Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en 
 	\label{fig:Write_i2c_module2}
 \end{figure}
 
-Se podría decir entonces que se ha bajado un nivel más de abstracción, pudiendo entrar ahora en detalles hardware más específicos si es necesario. \newline
+Se podría decir entonces que se ha bajado un nivel más de abstracción, pudiendo entrar ahora en detalles hardware más específicos si fuese necesario. \newline
 
 En la antetior demostración se ha podido ver una de las ventajas de IceStudio. La modularidad permite configurar el nivel de abstracción.
-Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán creados a lo largo de este trabajo.
+Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán desarrollados a lo largo de este trabajo, otros de ellos, están siendo trabajados, y pueden encontrarse en el siguiente enlace: 
+
+\href{https://groups.google.com/forum/#!topic/fpga-wars-explorando-el-lado-libre/I3ZnqKlfh5M}{Foro de Google con discusión sobre temas y módulos para IceStudio.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cohexistencia Microcontrolador-FPGA}
 \subsection{Diferencia microcontrolador-FPGA}
-En un principio puede parecer que un procesador y FPGA son dispositivos similares porque ambos pueden realizar ciertas tareas. Lo cierto es que al prozundizar se pueden encontrar mas diferencias que similitudes. Ambos son capaces de implementar una función de transferencia, pero la forma en la que lo hacen es diferente para cada uno de ellos.\newline
+En un principio puede parecer que un procesador y FPGA son dispositivos similares porque ambos pueden realizar ciertas tareas pre-configuradas. Lo cierto es que al prozundizar se pueden encontrar mas diferencias que similitudes. Ambos son capaces de implementar una función de transferencia, pero la forma en la que lo hacen es diferente para cada uno de ellos.\newline
 
 Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la que tenemos unas entradas y ciertas salidas.\newline
 
