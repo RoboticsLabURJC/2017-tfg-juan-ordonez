@@ -34,13 +34,13 @@
 \contentsline {subsection}{\numberline {3.1.3}Fisica de un Balancing Robot}{22}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{22}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Unidad de medida inercial}{23}{subsection.3.1.5}
-\contentsline {subsubsection}{Concepto}{24}{section*.29}
-\contentsline {subsubsection}{Giroscopio}{24}{section*.30}
-\contentsline {subsubsection}{Aceler\IeC {\'o}metro}{24}{section*.31}
-\contentsline {subsubsection}{Problema de deriva}{24}{section*.32}
-\contentsline {subsubsection}{Posibles soluciones}{24}{section*.33}
+\contentsline {subsubsection}{Concepto}{24}{section*.33}
+\contentsline {subsubsection}{Giroscopio}{24}{section*.34}
+\contentsline {subsubsection}{Aceler\IeC {\'o}metro}{24}{section*.35}
+\contentsline {subsubsection}{Problema de deriva}{24}{section*.36}
+\contentsline {subsubsection}{Posibles soluciones}{24}{section*.37}
 \contentsline {subsection}{\numberline {3.1.6}Motores}{24}{subsection.3.1.6}
-\contentsline {subsubsection}{Controlador PWM}{24}{section*.34}
+\contentsline {subsubsection}{Controlador PWM}{24}{section*.38}
 \contentsline {subsection}{\numberline {3.1.7}Control PID cl\IeC {\'a}sico.}{24}{subsection.3.1.7}
 \contentsline {subsection}{\numberline {3.1.8}Dise\IeC {\~n}o estructura mec\IeC {\'a}nica}{24}{subsection.3.1.8}
 \contentsline {subsection}{\numberline {3.1.9}Dise\IeC {\~n}o PCB}{24}{subsection.3.1.9}
@@ -48,9 +48,9 @@
 \contentsline {section}{\numberline {3.2}Implementaci\IeC {\'o}n del sistema}{28}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{28}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Unidad de medida inercial MPU6050 en Arduino Nano}{36}{subsection.3.2.2}
-\contentsline {subsubsection}{Pin out}{36}{section*.46}
-\contentsline {subsubsection}{Valores del sensor. DMP. }{36}{section*.47}
-\contentsline {subsubsection}{Programa para Arduino nano}{36}{section*.48}
+\contentsline {subsubsection}{Pin out}{36}{section*.50}
+\contentsline {subsubsection}{Valores del sensor. DMP. }{36}{section*.51}
+\contentsline {subsubsection}{Programa para Arduino nano}{36}{section*.52}
 \contentsline {subsection}{\numberline {3.2.3}Control P}{36}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Control D}{36}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Controlador PWM}{36}{subsection.3.2.5}

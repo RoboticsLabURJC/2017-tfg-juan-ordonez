@@ -556,11 +556,46 @@ De entre las carácterísticas técnicas más importantes de un sensor, y hacien
 	\item Derivas: son otras magnitudes, aparte de la medida como magnitud de entrada, que influyen en la variable de salida.
 \end{itemize}
 
-Por lo general, la señal de salida de estos sensores no es apta para su lectura directa y a veces tampoco para su procesado, por lo que se usan circuitos de acondicionamiento. 
+Por lo general, la señal de salida de estos sensores no es apta para su lectura directa y a veces tampoco para su procesado, por lo que se usan circuitos de acondicionamiento. Un ejemplo de algunos sensores se representan en las figuras \ref{fig:camara_CMOS}, \ref{fig:IMU} y \ref{fig:potentiometer}.
 
-\textbf{imagenes de diferentes sensores}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.1]{imagenes/EstadoArte/sensor_imagen_CMOS.jpg}
+		\caption{Sensor CMOS para adquisición de imágenes.}
+		\label{fig:camara_CMOS}
+	\end{figure}
+\end{center}
 
-Los actuadores son los dispositivos que permiten al sistema de control ‘actuar’ sobre el ‘mundo real’ para realizar las acciones deseadas. Uno de los actuadores mas conocidos son los motores, el cuál será muy utilizado a lo largo de esta aplicación.  \newline
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.4]{imagenes/EstadoArte/IMU.jpg}
+		\caption{Unidad de Medida Inercial.}
+		\label{fig:IMU}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.4]{imagenes/EstadoArte/potentiometer.jpg}
+		\caption{Potenciómetro.}
+		\label{fig:potentiometer}
+	\end{figure}
+\end{center}
+
+Los actuadores son dispositivos que permiten al sistema de control ‘actuar’ sobre el ‘mundo real’ para realizar las acciones deseadas. Uno de los actuadores mas conocidos son los motores, el cuál será muy utilizado a lo largo de esta aplicación.  \newline
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.4]{imagenes/EstadoArte/motor.jpg}
+		\caption{Motor DC.}
+		\label{fig:motor_DC}
+	\end{figure}
+\end{center}
+
 
 Sistemas de control hay de muchos tipos en relación de la aplicación la cual se quiere desarrollar, normalmente se elije un micro-controlador como sistema de control y se programa la función de transferencia a ser realizada.\newline
 En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto arduino para las tareas secuenciales como la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
