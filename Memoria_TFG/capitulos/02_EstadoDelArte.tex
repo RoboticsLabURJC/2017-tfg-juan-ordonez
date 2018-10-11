@@ -258,9 +258,9 @@ Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán d
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Cohexistencia Microcontrolador-FPGA}
+\section{Coexistencia Microcontrolador-FPGA}\label{sec:coexistencia}
 \subsection{Diferencia microcontrolador-FPGA}
-En un principio puede parecer que un procesador y FPGA son dispositivos similares porque ambos pueden realizar ciertas tareas pre-configuradas. Lo cierto es que al prozundizar se pueden encontrar mas diferencias que similitudes. Ambos son capaces de implementar una función de transferencia, pero la forma en la que lo hacen es diferente para cada uno de ellos.\newline
+En un principio puede parecer que un procesador y FPGA son dispositivos similares porque ambos pueden realizar ciertas tareas pre-configuradas. Lo cierto es que al profundizar se pueden encontrar mas diferencias que similitudes. Ambos son capaces de implementar una función de transferencia, pero la forma en la que lo hacen es diferente para cada uno de ellos.\newline
 
 Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la que tenemos unas entradas y ciertas salidas.\newline
 
@@ -272,28 +272,28 @@ Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la
 	\label{fig:funcionalidad_FPGA_micro}
 \end{figure}
 
-Para comprobar de forma resumida como implementan de manera diferente esa función de transferencia, se explicará de forma muy resumida la forma de trabajar con un procesador. \newline
-Un procesador contiene una serie de instrucciones que realizan operaciones sobre operaciones binarias (sumar, incrementar, leer y escribir de la memoria). Dependiendo del tipo de procesador y de su arquitectura tenemos más o menos instrucciones asociadas, siendo este aspecto uno de los mas importante que determinan su rendimiento.
+Para comprobar de forma resumida como implementan de manera diferente esa función de transferencia, se explicará brevemente la forma de trabajar con un procesador. \newline
+Un procesador contiene una serie de instrucciones que realizan operaciones sobre un conjunto de operaciones binarias (sumar, incrementar, leer y escribir de la memoria). Dependiendo del tipo de procesador y de su arquitectura tenemos más o menos instrucciones asociadas, siendo este aspecto uno de los mas importantes que determinan su rendimiento.
 
 \textbf{Arquitectura procesador}
 
-Se dispone de una serie de registros, una memoria para almacenar la información y una pila de instrucciones, que contiene el programa que va a ejecutarse en código máquina, además de un relój.\newline
+Se dispone de una serie de registros, una memoria para almacenar la información y una pila de instrucciones, que contiene el programa que va a ejecutarse en código máquina, además de un reloj.\newline
 
-Su modo de funcionamiento a alto nivel; en cada ciclo de reloj el procesador lee de su pila de instrucciones los valores necesarios, llama a la instrucción oportuna y ejecuta un determinando cálculo.
-
-Como se argumentó en el capítulo , al implementar un diseño lógico en una FPGA, se está modificando una matriz de conexiones físicas. Modificando esa matriz de conexiones se pueden implementar diferentes bloques de funcionalidad, es decir, se podría ver como varias funciones de transferencia en un mismo sistema. En la imágen \ref{fig:puertas_logicas} se puede ver una representación de un ejemplo real de como están implementadas las conexiones físicas de puertas lógicas en una FPGA, y de como eso permite tener módulos independientes unos de otros. Además, notese el problema de la memoria en una FPGA, siendo esta el número total de puertas lógicas físicas que pueden ser utilizadas;
+Su modo de funcionamiento a alto nivel; en cada ciclo de reloj el procesador lee de su pila de instrucciones los valores necesarios, llama a la instrucción oportuna y ejecuta un determinando cálculo.\newline
+Como se argumentó en el capítulo \ref{sec:ArquitecturaFPGA}, al implementar un diseño lógico en una FPGA, se está modificando una matriz de conexiones físicas. Modificando esa matriz de conexiones se pueden implementar diferentes bloques de funcionalidad, es decir, se podría ver como varias funciones de transferencia en un mismo sistema.\newline
+En la imágen \ref{fig:puertas_logicas} se representa un ejemplo real de como están implementadas las conexiones físicas de puertas lógicas en una FPGA, y de como eso permite tener módulos independientes unos de otros. Además, notese el problema de la memoria en una FPGA, siendo está el número total de puertas lógicas físicas que pueden ser utilizadas;
 \begin{center}
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.4]{imagenes/EstadoArte/puertas_logicas.pdf}
-	\caption{Puertas lógicas despues de una implementación hardware.}
+	\caption{Puertas lógicas después de una implementación hardware.}
 	\label{fig:puertas_logicas}
 \end{figure}
 \end{center} 
 
 \subsection{Necesidad}
 
-Se imagina un ejemplo real el que se quieren monitorizar con exactitud 4 diferentes sensores provenientes del exterior, de una manera exacta y a la velocidad del reloj, siendo necesario además una posterior actuación por parte del sistema. El diagrama de bloques del flujo de trabajo en un procesador que implemente lo anterior podría parecerse al siguiente:
+Se imagina un ejemplo real el que se quieren monitorizar con exactitud 4 diferentes sensores provenientes del exterior, de una manera exacta, al mismo tiempo y a la velocidad del reloj, siendo necesaria además una posterior actuación por parte del sistema. El diagrama de bloques del flujo de trabajo en un procesador que implemente lo anterior podría parecerse al siguiente:
 
 \tikzstyle{block_circle} = [draw, fill=blue!20, circle, 
 minimum height=3em, minimum width=6em]
@@ -340,7 +340,7 @@ minimum height=3em, minimum width=6em]
 Así, el usuario final de este sistema, deberá de manera cíclica comprobar cada sensor y su posterior actuación, dejando de cumplir entonces las especificaciones de tiempo. \newline
 Si se trabajase con interrupciones se configurarían las diferentes interrupciones externas o se podrían usar ejecutivos cíclicos para acercarse a esos requerimientos finales. No obstante, cualquiera de estas soluciones, no dejan de ser una aproximación.\newline
 
-En cambio, con el uso de un FPGA, el diagrama de bloques del flujo de trabajo tendría el siguiente aspecto:
+En cambio, con el uso de una FPGA, el diagrama de bloques del flujo de trabajo tendría el siguiente aspecto:
 
 \tikzstyle{block} = [draw, fill=blue!20, rectangle, 
 minimum height=3em, minimum width=6em]
@@ -436,7 +436,7 @@ Se implementarían diferentes funciones de transferencia para cada uno de los bl
 
 No obstante, no siempre es necesario un ejecutivo en paralelo, y no solo puede no ser necesario sino que podría ser perjudicial. Cuando un sistema debe ser secuencial, ¿porqué utilizar una implementación de naturaleza paralela?. \newline
 
-Es muy común tener sistemas donde conviene poder implementar ambos tipos de funcionamiento, por eso una coexistencia FPGA- Micro-controlador podría ser suficiente para adaptarse a los requerimientos. \newline
+Es muy común tener sistemas donde conviene poder implementar ambos tipos de funcionamiento, por eso una coexistencia FPGA/Micro-controlador podría ser suficiente para adaptarse a los requerimientos. \newline
 
 En la imagen \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípedo, el cuál se explicará con mas detalle en los siguientes capítulos:
 
@@ -451,9 +451,9 @@ En la imagen \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Robótica educativa, motivaciones y necesidad.}
 
-La robótica se puede considerar sin duda como una de las areas tecnológicas con mas auge de la actualidad y basada en el estudio de los robots. que son sistemas compuestos por mecanismos que le permiten hacer movimientos y realizar tareas especificas, programables e inteligentes. \newline
+La robótica se puede considerar sin duda como una de las áreas tecnológicas con mas auge de la actualidad y basada en el estudio de los robots, que son sistemas compuestos por mecanismos que le permiten hacer movimientos y realizar tareas específicas, programables e inteligentes. \newline
 
-Dependiendo de la aplicación por tanto, la robótica puede extenderse y generar beneficios no solo en la industria sino también en las aulas de clase, posibilitando la aparición de nuevos sistemas de aprendizaje.\newline
+Dependiendo de la aplicación por tanto, la robótica puede extenderse y generar beneficios no sólo en la industria sino también en las aulas de clase, posibilitando la aparición de nuevos sistemas de aprendizaje.\newline
 
 Además en un mundo cuyo futuro va encaminado a la utilización de robots para cualquier actividad, el acercamiento desde las aulas con estos sistemas posibilita su desarrollo tecnológico a una edad temprana, siendo más fácil su integración a una edad adulta.\newline
 
@@ -461,14 +461,14 @@ Algunos beneficios de la robótica educativa son expuestos a continuación:
 \begin{itemize}
 	\item Impulsa la iniciativa y la creatividad
 	\item Mayor sociabilización
-	\item Incentiva el pensamiento algoritimico y matematico
+	\item Incentiva el pensamiento algorítmico y matemático
 	\item Trabajo en equipo
 	\item Resolución de problemas
 	\item Aprendizaje activo
 	\item Aumento de la autoestima
 \end{itemize}
 
-No obstante, para que la integración en las aulas de la robótica educativa sea aun mas fácil, los sistemas deben cumplir algunas características:
+No obstante, para que la integración en las aulas de la robótica educativa sea aún mas fácil, los sistemas deben cumplir algunas características:
 
 \begin{itemize}
 	\item No es recomendable la integración a alto nivel tecnológico.
@@ -485,12 +485,9 @@ Con esta idea nace IceStudio, hacer amigable la electrónica digital para que lo
 
 \section{Sensores, actuadores y sistema de control }
 
-$http://www.micronica.es/files/pdfs/SIHD/SIHD_Sens_Actu_EC.pdf$
-$https://es.wikipedia.org/wiki/Sensor$
-
 Antes de comenzar con el desarrollo del proyecto, es importante tener claro los conceptos de sensores, actuadores y elementos del sistema de control, los cuáles forman parte de cualquier plataforma robótica móvil. \newline
 
-Cualquier instalación de control, ya sea robótica o inmotica, esta compuesta por tres componentes fundamentales:
+Cualquier instalación de control, ya sea robótica o inmótica, esta compuesta por tres componentes fundamentales:
 \begin{itemize}
 	\item Sensores
 	\item Actuadores
@@ -499,9 +496,9 @@ Cualquier instalación de control, ya sea robótica o inmotica, esta compuesta p
 
 Los sensores son dispositivos que recogen información del mundo que nos rodea y lo transforma en señales eléctricas que puedan ser asimiladas por un sistema de control. \newline
 
-Así, el sistema de control recibe información del entorno sobre el que queremos realizar algún tipo de acción por medio de los sensores, es la función de transferencia del sistema, a partir de unas entradas de tipo conocido, son generadas unas salidas, normalmente, dependientes de las entradas.
+Así, el sistema de control recibe información del entorno sobre el que queremos realizar algún tipo de acción por medio de los sensores, es la función de transferencia del sistema, a partir de unas entradas de tipo conocido, son generadas unas salidas, normalmente, dependientes de las entradas. \newline
 
-Estas salidas son denominadas actuadores, que son dispositivos que, siguiendo los parametros dados por el sistema de control realizan acciones que repercuten en el entorno. \newline
+Estas salidas son denominadas actuadores, que son dispositivos que, siguiendo los parámetros dados por el sistema de control realizan acciones que repercuten en el entorno. \newline
 
 \textsl{Ejemplo: Un sensor indica al sistema de control la intensidad lumínica de nuestra habitación, el sistema de control reconoce que el nivel no es el adecuado para la lectura, y activa un actuador, en este caso, una luz, para contrarrestar ese nivel.}
 
@@ -521,7 +518,7 @@ A la hora de elegir un determinado sensor, es importante conocer su modo de oper
 	
 	\item Tipo de parámetros capaces de detectar
 \end{itemize}
- A continuación se muestran algunos de los más interesantes para el desarrollo del proyecto:
+ En tabla \ref{tabla:modo_operacion_sensores} se muestran algunos de los más interesantes para el desarrollo del proyecto:
 
 \begin{table}[H]
 	\begin{center}
@@ -547,9 +544,8 @@ A la hora de elegir un determinado sensor, es importante conocer su modo de oper
 \end{center}
 \end{table}
 
-Otra clasificación posible es la del ámbito de aplicación, es decir, donde y para qué son usados estos sensores. 
-
-De entre las carácterísticas técnicas más importantes de un sensor, y haciendo una introduccion al posible vocabulario que se utilizará, encontramos:
+Otra clasificación posible es la del ámbito de aplicación, es decir, donde y para qué son usados estos sensores. \newline
+De entre las carácterísticas técnicas más importantes de un sensor, y haciendo una introducción al posible vocabulario que se utilizará, encontramos:
 
 \begin{itemize}
 	\item Rango de medida:  dominio en la magnitud medida en el que puede aplicarse el sensor.
@@ -562,9 +558,11 @@ De entre las carácterísticas técnicas más importantes de un sensor, y hacien
 
 Por lo general, la señal de salida de estos sensores no es apta para su lectura directa y a veces tampoco para su procesado, por lo que se usan circuitos de acondicionamiento. 
 
-\textbf{imagenes de sensores}
+\textbf{imagenes de diferentes sensores}
 
-Los actuadores son los dispositivos que permiten al sistema de control ‘actuar’ sobre el ‘mundo real’ para realizar las acciones deseadas. Uno de los actuadores mas conocidos son los motores, el cuál será muy utilizado a lo largo de esta aplicación. 
+Los actuadores son los dispositivos que permiten al sistema de control ‘actuar’ sobre el ‘mundo real’ para realizar las acciones deseadas. Uno de los actuadores mas conocidos son los motores, el cuál será muy utilizado a lo largo de esta aplicación.  \newline
 
+Sistemas de control hay de muchos tipos en relación de la aplicación la cual se quiere desarrollar, normalmente se elije un micro-controlador como sistema de control y se programa la función de transferencia a ser realizada.\newline
+En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto arduino para las tareas secuenciales como la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
 
 

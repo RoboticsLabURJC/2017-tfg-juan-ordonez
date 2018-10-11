@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {2.2.2}Escenario}{9}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}IceZum Alhambra}{9}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}IceStudio}{10}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Cohexistencia Microcontrolador-FPGA}{13}{section.2.3}
+\contentsline {section}{\numberline {2.3}Coexistencia Microcontrolador-FPGA}{13}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Diferencia microcontrolador-FPGA}{13}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Necesidad}{14}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Rob\IeC {\'o}tica educativa, motivaciones y necesidad.}{16}{section.2.4}
