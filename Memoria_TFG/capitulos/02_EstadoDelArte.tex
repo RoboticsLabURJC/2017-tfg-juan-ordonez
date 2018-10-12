@@ -164,7 +164,52 @@ A las variables se le asigna un valor dentro de un proceso always o initial, el 
 
 \section{FPGAs libres}
 \subsection{Evolución}
-\subsection{Escenario}
+Muchos lenguajes de implementación hardware así como su arquitectura de FPGA utilizada están ligados a importantes empresas tales como Xilinx, Intel (anteriormente Altera), etc, y poder trabajar con ellos requiere un elevado presupuesto. \newline
+Lo anterior por lo tanto, lleva a que no muchas empresas ni particulares puedan beneficiarse de las ventajas de la utilización de FPGAs y a su vez, que el avance tecnológico sea aún más lento. Una de las claves del éxito de empresas como Arduino no es más que la comunidad de gente que existe detrás creando nuevas librerías, componentes, etc. Todo ello a su vez gracias al bajo precio de sus productos, y a la posibilidad de encontrar todo el hardware y software en la web. \newline
+
+Para entender el nacimiento de las FPGAs libres es importante conocer qué es el bytestream. \newline
+Un bytestream es una secuencia de bytes que se utiliza en telecomunicaciones y computación. Frecuentemente, el termino bytestream es utilizado para describir la configuración a ser cargada en una FPGA. Este formato detallado de flujo de bits para una FPGA particular es típicamente propietario del proveedor de FPGA. \newline
+
+Es por ello que Clifford Wolf decidió interpretar el bytestream del modelo Lattice iCE40 y desarrollo la herramienta IceStorm. \newline
+IceStorm se desarrollo como software de traducción de Verilog (lenguaje de descripción en FPGAs, sección \ref{sec:Verilog}) al bytestream. Esta traducción fue posible gracias a la ingeniería inversa, esto es, no se le da el uso habitual, sino el inverso. 
+
+Ya no se depende de ningun fabricante y todo el conocimiento además esta disponible. A partir de estas herramientas se puede crear cualquier interfaz o cualquier aplicación que no haya sido prevista por el fabricante. \newline
+
+Sólo las FPGAs de Lattice iCE40 (modelos HX1K-TQ144 y HX8K-CT256) son hasta el momento con las que se pueden trabajar (figura \ref{fig:lattice}), pero al ser un proyecto libre, muchas personas ya están trabajando en aumentar las posibilidades.
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.5]{imagenes/EstadoArte/lattice.png}
+		\caption{Lattice iCE40HX1K}
+		\label{fig:lattice}
+	\end{figure}
+\end{center}
+
+Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figuras \ref{fig:tiny_fpga}, \ref{fig:blackIceII}, \ref{fig:icoBoard}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.2]{imagenes/EstadoArte/tinyFPGABX.jpg}
+		\caption{Tiny FPGA BX}
+		\label{fig:tiny_fpga}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.2]{imagenes/EstadoArte/BlackIce.jpg}
+		\caption{BlackIce II}
+		\label{fig:blackIceII}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/ico_board.jpg}
+		\caption{ico Board}
+		\label{fig:icoBoard}
+	\end{figure}
+\end{center}
 \subsection{IceZum Alhambra}
 Para este trabajo se ha optado por trabajar con la IceZum Alhambra, la cuál ha sido íntegramente diseñada y ensamblada en España.\newline
 Es una FPGA libre y compatible con IceStudio (el cuál se verá a continuación). Alguna de sus características más importantes pueden ser:
