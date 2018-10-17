@@ -76,13 +76,79 @@ Un posible ejemplo de una comunicación en serie de un byte de datos podría ser
 
 
 \subsection{Unidad de medida inercial}
-Solo teoria, que es, para que sirve, para que se usara, grados de libertad, giroscopio, acelerometro.
+El componente central del sistema propuesto esta definido como IMU o unidad de medida inercial. Está compuesto por una serie de sensores los cuales serán utilizados para conocer de manera exacta aspectos de localización del sistema a bordo tales como velocidad, orientación, fuerzas gravitacionales etc. \newline
+Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newline
+Una IMU queda definida por su número de grados de libertad (DOF) los cuáles dependerán del número de sensores a bordo (acelerómetro, giroscopio) y el número de ejes en los que se aplican. Así una IMU con seis grados de libertad (por ejemplo un acelerómetro de 3 ejes y un giroscopio de 3 ejes) se diría que es 6DOF. \newline
 
-\subsubsection{Concepto}
+En las figuras \ref{fig:IMU1}, \ref{fig:IMU2}, \ref{fig:IMU2} se presentan algunos ejemplos de IMUs.
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU1}
+	\caption{Unidad de Medida Inercial.}
+	\label{fig:IMU1}
+\end{figure}
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU2}
+	\caption{Unidad de Medida Inercial.}
+	\label{fig:IMU2}
+\end{figure}
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU3}
+	\caption{Unidad de Medida Inercial.}
+	\label{fig:IMU3}
+\end{figure}
+
+Otra de las características importantes y de la cuál dependerá en gran medida el precio del producto es el rango de los sensores a bordo y de la disponibilidad en el propio sistema de conversores analógico digitales, encargados estos de convertir el valor del sensor a un valor binario que pueda ser utilizado para posterior análisis. \newline
+A continuación se definen algunos de los aspectos más importantes que pueden ser encontrados en una unidad de medida inercial y los cuáles serán muy útiles a lo largo del presente proyecto.
 
 \subsubsection{Giroscopio}
+Un giroscopio es un dispositivo que permite medir 
 
 \subsubsection{Acelerómetro}
+Un acelerómetro, como su propio nombre indica es un dispositivo que permite medir la aceleración a la que un cuerpo está sometido. Es un componente fundamental en las unidades de medida inercial pues se puede detectar por ejemplo, condiciones de caída libre, aunque el principal uso es para determinar la orientación del sensor. \newline
+
+Los acelerómetros normalmente son de tres ejes, es decir, son capaces de medir independientemente la aceleración en el eje X, Y y Z, lo que permite conocer la magnitud y dirección del vector aceleración en cada uno de los ejes. \newline
+
+El caso que interesa en este proyecto es poder determinar la orientación del sensor. Para ello, se debe aplicar tigonometría. Suponiendo un sistema 2D con el representado en la figura \ref{fig:acelerometro1}.
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.4]{imagenes/Balancing_robot/acelerometro1}
+	\caption{Trigonométrica en sensor acelerómetro 2D.}
+	\label{fig:acelerometro1}
+\end{figure}
+
+\begin{equation}
+ 	\alpha = atan\frac{A_{x}}{A_{z}}
+\end{equation}
+
+Si se aplica en una representación 3D como la representada en la \ref{fig: acelerometro2}
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6]{imagenes/Balancing_robot/acelerometro2}
+	\caption{Trigonométrica en sensor acelerómetro 3D.}
+	\label{fig:acelerometro2}
+\end{figure}
+
+\begin{equation}
+	\alpha_{x} = atan\frac{A_{x}}{\sqrt{A_{y^2}+A_{z^2}}}
+\end{equation}
+
+\begin{equation}
+\alpha_{y} = atan\frac{A_{y}}{\sqrt{A_{x^2}+A_{z^2}}}
+\end{equation}
+
+\begin{equation}
+\alpha_{z} = atan\frac{A_{z}}{\sqrt{A_{x^2}+A_{y^2}}}
+\end{equation}
+
+
 
 \subsubsection{Problema de deriva}
 
