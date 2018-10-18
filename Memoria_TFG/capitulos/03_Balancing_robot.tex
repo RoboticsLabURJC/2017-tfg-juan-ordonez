@@ -2,20 +2,26 @@
 \section{Diseño del sistema}
 \subsection{Descripción del problema}
 En el presente capítulo se pretende abordar el problema del péndulo invertido mediante la utilización de una FPGA. Para ello, en los respectivos capítulos se tratará la física de un Balancing robot, el cálculo de su estructura, los sensores y actuadores utilizados, el sistema de control y el diseño y fabricación de una PCB que resuelva de manera más adecuada algunos problemas de los anteriormente planteados. Se utilizará una comunicación entre FPGA-Micro-controlador y se dará una versión más global del sistema propuesto, con un diagrama de bloques general. \newline
-\newline Para entrar el contacto con el problema a resolver, se enunciará brevemente el problema del péndulo invertido, cuya solución ha dado lugar a muchas herramientas muy famosas en la actualidad, una de ellas, por ejemplo, el llamado \textit{SegWay}:
+\newline Para entrar el contacto con el problema a resolver, se enunciará brevemente el problema del péndulo invertido, cuya solución ha dado lugar a muchas herramientas muy famosas en la actualidad, una de ellas, por ejemplo, el llamado \textit{SegWay} (\ref{fig:segway}).
 
-\textbf{SegWay}
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/segway}
+	\caption{SegWay comercial.}
+	\label{fig:segway}
+\end{figure}
 
-(https://academica-e.unavarra.es/bitstream/handle/2454/11723/TFGBasarteBozalLuisFernando.pdf?sequence=1)
 
-(https://es.wikipedia.org/wiki/P%C3%A9ndulo)
-Si nos referimos al concepto literal tal cuál se encuentra en WikiPedia: \newline
+\textsl{Péndulo: Es un sistema físico que puede oscilar bajo la acción gravitatoria u otra característica física (elasticidad, por ejemplo) y que está configurado por una masa suspendida de un punto o de un eje horizontal fijos mediante un hilo, una varilla, u otro dispositivo que sirve para medir el tiempo.} \newline
 
-\newline\textsl{Péndulo: Es un sistema físico que puede oscilar bajo la acción gravitatoria u otra característica física (elasticidad, por ejemplo) y que está configurado por una masa suspendida de un punto o de un eje horizontal fijos mediante un hilo, una varilla, u otro dispositivo que sirve para medir el tiempo.}\newline
+Así, y como el lector podrá imaginar, un péndulo invertido tendrá el aspecto de la figura \ref{fig:pendulo}. 
 
-Así, y como el lector podrá imaginar, un péndulo invertido tendrá el siguiente aspecto: 
-
-\textbf{foto pendulo invertido}
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=1.6]{imagenes/Balancing_robot/pendulo}
+	\caption{Representación péndulo invertido.}
+	\label{fig:pendulo}
+\end{figure}
 
 Consiste en un péndulo donde el centro de masas se encuentra situado por encima del punto o eje de balanceo. Como cabe esperar, esta disposición dota al sistema de una inestabilidad estática. Recordamos que un sistema es estable cuánto mas cercano esta del plano horizontal de apoyo su centro de gravedad. \newline
 El fundamento de este proyecto consistirá por tanto en intentar corregir esta inestabilidad, y forma parte de uno de los problemas mas famosos en cuánto a teoría de control y dinámica de sistemas. 
@@ -77,7 +83,7 @@ Un posible ejemplo de una comunicación en serie de un byte de datos podría ser
 
 \subsection{Unidad de medida inercial}
 El componente central del sistema propuesto esta definido como IMU o unidad de medida inercial. Está compuesto por una serie de sensores los cuales serán utilizados para conocer de manera exacta aspectos de localización del sistema a bordo tales como velocidad, orientación, fuerzas gravitacionales etc. \newline
-Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newlinw
+Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newline
 
 En el caso del presente proyecto, será utilizado para obtener los ángulos de navegación o ángulos de Tait-Brain, en los que la orientación se presenta con tres rotaciones ortogonales en torno al eje X, Y y Z. Un ejemplo de este tipo de representación se encuentra en la figura \ref{fig:orientacion}\newline
 
@@ -578,6 +584,7 @@ En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de
 Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1,46 Amperios, más que necesario para esta aplicación
 
 
+\renewcommand\tablename{Tabla}
 \begin{table}[H]
 	\centering
 

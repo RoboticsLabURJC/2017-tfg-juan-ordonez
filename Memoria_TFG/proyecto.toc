@@ -4,62 +4,62 @@
 \contentsline {subsection}{\numberline {1.1.1}Motivaci\IeC {\'o}n y objetivos}{1}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}Planificaci\IeC {\'o}n (Diagrama de Gantt)}{3}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Metodolog\IeC {\'\i }a de trabajo}{4}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}Estructura de la memoria}{4}{subsection.1.1.4}
-\contentsline {chapter}{\numberline {2}Estado del arte}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Concepto FPGAs}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Evoluci\IeC {\'o}n y escenario}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Arquitectura FPGA}{7}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Lenguajes de descripci\IeC {\'o}n hardware}{8}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Verilog}{9}{subsection.2.1.4}
-\contentsline {subsubsection}{Tipos de datos}{9}{section*.12}
-\contentsline {subsubsection}{Implementaci\IeC {\'o}n en m\IeC {\'o}dulos}{9}{section*.13}
-\contentsline {subsubsection}{Paralelizaci\IeC {\'o}n de Procesos}{9}{section*.14}
-\contentsline {subsubsection}{Estructuras de control}{10}{section*.16}
-\contentsline {subsubsection}{Asignaci\IeC {\'o}n continua}{10}{section*.17}
-\contentsline {subsubsection}{Asignaci\IeC {\'o}n procedural}{11}{section*.18}
-\contentsline {section}{\numberline {2.2}FPGAs libres}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Evoluci\IeC {\'o}n}{11}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}IceZum Alhambra}{13}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}IceStudio}{15}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Coexistencia Microcontrolador-FPGA}{18}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Diferencia microcontrolador-FPGA}{18}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Necesidad}{19}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Rob\IeC {\'o}tica educativa, motivaciones y necesidad.}{21}{section.2.4}
-\contentsline {section}{\numberline {2.5}Sensores, actuadores y sistema de control }{22}{section.2.5}
-\contentsline {chapter}{\numberline {3}Balancing Robot}{27}{chapter.3}
-\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o del sistema}{27}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Descripci\IeC {\'o}n del problema}{27}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Descripci\IeC {\'o}n de la soluci\IeC {\'o}n. (Diagrama de bloques alto nivel)}{28}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Fisica de un Balancing Robot}{28}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{28}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Unidad de medida inercial}{29}{subsection.3.1.5}
-\contentsline {subsubsection}{Aceler\IeC {\'o}metro}{31}{section*.42}
-\contentsline {subsubsection}{Giroscopio}{32}{section*.45}
-\contentsline {subsubsection}{Problema de deriva}{33}{section*.46}
-\contentsline {subsubsection}{Posibles soluciones}{33}{section*.47}
-\contentsline {subsection}{\numberline {3.1.6}Motores}{33}{subsection.3.1.6}
-\contentsline {subsubsection}{Controlador PWM}{33}{section*.48}
-\contentsline {subsection}{\numberline {3.1.7}Control PID cl\IeC {\'a}sico.}{34}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Dise\IeC {\~n}o estructura mec\IeC {\'a}nica}{34}{subsection.3.1.8}
-\contentsline {subsection}{\numberline {3.1.9}Dise\IeC {\~n}o PCB}{34}{subsection.3.1.9}
-\contentsline {subsection}{\numberline {3.1.10}Bater\IeC {\'\i }a}{37}{subsection.3.1.10}
-\contentsline {section}{\numberline {3.2}Implementaci\IeC {\'o}n del sistema}{38}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{38}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Unidad de medida inercial MPU6050 en Arduino Nano}{46}{subsection.3.2.2}
-\contentsline {subsubsection}{Pin out}{46}{section*.60}
-\contentsline {subsubsection}{Valores del sensor. DMP. }{46}{section*.61}
-\contentsline {subsubsection}{Programa para Arduino nano}{46}{section*.62}
-\contentsline {subsection}{\numberline {3.2.3}Control P}{46}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Control D}{46}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Controlador PWM}{46}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Controlador driver motor}{46}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Fabricaci\IeC {\'o}n estructura mec\IeC {\'a}nica}{46}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Fabricaci\IeC {\'o}n PCB}{46}{subsection.3.2.8}
-\contentsline {subsection}{\numberline {3.2.9}Elecci\IeC {\'o}n de materiales y coste del prototipo}{53}{subsection.3.2.9}
-\contentsline {section}{\numberline {3.3}Experimentos}{53}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}VGA Module}{53}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Protocolo I2C}{53}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Controlador motor burshless}{53}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{55}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{57}{chapter.5}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{59}{chapter.5}
+\contentsline {subsection}{\numberline {1.1.4}Estructura de la memoria}{5}{subsection.1.1.4}
+\contentsline {chapter}{\numberline {2}Estado del arte}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Concepto FPGAs}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Evoluci\IeC {\'o}n y escenario}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Arquitectura FPGA}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Lenguajes de descripci\IeC {\'o}n hardware}{10}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Verilog}{11}{subsection.2.1.4}
+\contentsline {subsubsection}{Tipos de datos}{11}{section*.15}
+\contentsline {subsubsection}{Implementaci\IeC {\'o}n en m\IeC {\'o}dulos}{11}{section*.16}
+\contentsline {subsubsection}{Paralelizaci\IeC {\'o}n de Procesos}{11}{section*.17}
+\contentsline {subsubsection}{Estructuras de control}{12}{section*.19}
+\contentsline {subsubsection}{Asignaci\IeC {\'o}n continua}{12}{section*.20}
+\contentsline {subsubsection}{Asignaci\IeC {\'o}n procedural}{13}{section*.21}
+\contentsline {section}{\numberline {2.2}FPGAs libres}{13}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Evoluci\IeC {\'o}n}{13}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}IceZum Alhambra}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}IceStudio}{17}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Coexistencia Microcontrolador-FPGA}{20}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Diferencia microcontrolador-FPGA}{20}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Necesidad}{21}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Rob\IeC {\'o}tica educativa, motivaciones y necesidad.}{23}{section.2.4}
+\contentsline {section}{\numberline {2.5}Sensores, actuadores y sistema de control }{24}{section.2.5}
+\contentsline {chapter}{\numberline {3}Balancing Robot}{29}{chapter.3}
+\contentsline {section}{\numberline {3.1}Dise\IeC {\~n}o del sistema}{29}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Descripci\IeC {\'o}n del problema}{29}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Descripci\IeC {\'o}n de la soluci\IeC {\'o}n. (Diagrama de bloques alto nivel)}{30}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Fisica de un Balancing Robot}{30}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{30}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Unidad de medida inercial}{32}{subsection.3.1.5}
+\contentsline {subsubsection}{Aceler\IeC {\'o}metro}{34}{section*.47}
+\contentsline {subsubsection}{Giroscopio}{35}{section*.50}
+\contentsline {subsubsection}{Problema de deriva}{35}{section*.51}
+\contentsline {subsubsection}{Posibles soluciones}{36}{section*.52}
+\contentsline {subsection}{\numberline {3.1.6}Motores}{36}{subsection.3.1.6}
+\contentsline {subsubsection}{Controlador PWM}{36}{section*.53}
+\contentsline {subsection}{\numberline {3.1.7}Control PID cl\IeC {\'a}sico.}{37}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Dise\IeC {\~n}o estructura mec\IeC {\'a}nica}{37}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.9}Dise\IeC {\~n}o PCB}{37}{subsection.3.1.9}
+\contentsline {subsection}{\numberline {3.1.10}Bater\IeC {\'\i }a}{39}{subsection.3.1.10}
+\contentsline {section}{\numberline {3.2}Implementaci\IeC {\'o}n del sistema}{41}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{41}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Unidad de medida inercial MPU6050 en Arduino Nano}{49}{subsection.3.2.2}
+\contentsline {subsubsection}{Pin out}{49}{section*.65}
+\contentsline {subsubsection}{Valores del sensor. DMP. }{49}{section*.66}
+\contentsline {subsubsection}{Programa para Arduino nano}{49}{section*.67}
+\contentsline {subsection}{\numberline {3.2.3}Control P}{49}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Control D}{49}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Controlador PWM}{49}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Controlador driver motor}{49}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Fabricaci\IeC {\'o}n estructura mec\IeC {\'a}nica}{49}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Fabricaci\IeC {\'o}n PCB}{49}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}Elecci\IeC {\'o}n de materiales y coste del prototipo}{56}{subsection.3.2.9}
+\contentsline {section}{\numberline {3.3}Experimentos}{56}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}VGA Module}{56}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Protocolo I2C}{56}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Controlador motor burshless}{56}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{57}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{59}{chapter.5}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{61}{chapter.5}
