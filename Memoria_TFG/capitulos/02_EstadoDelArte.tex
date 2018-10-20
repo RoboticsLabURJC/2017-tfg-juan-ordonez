@@ -1,6 +1,6 @@
 \chapter{Estado del arte}
 \section{Concepto FPGAs}
-Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un array uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}
+Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}
 
 \begin{center}
 	\begin{figure}[H]
@@ -10,16 +10,13 @@ Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que
 		\label{fig:estructura_FPGA}
 	\end{figure}
 \end{center}
- 
-
-Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD, las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware (HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
+ Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD, las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware (HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
 \newline
 Si bien no es el más usado actualmente, a lo largo de esta memoria se realizará una breve introducción a Verilog, comentando y analizando sus principales características.
 \newpage
 \subsection{Evolución y escenario}
 
-Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx.
-Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. \newline
+Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. \newline
 
 Las FPGAs conforman actualmente la máxima evolución de los PLDs (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. \newline
 
@@ -47,7 +44,7 @@ Es aquí donde la electrónica digital comenzará a tener un papel importante en
 \subsection{Arquitectura FPGA}\label{sec:ArquitecturaFPGA}
 
 En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posible habilitar o deshabilitar esta conexión. \newline
-Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos:
+Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos (figura \ref{fig:pld_fpga}).
 \newline
 \begin{center}
 \begin{figure}[H]
@@ -59,8 +56,7 @@ Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo 
 
 \end{center}
 
-A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. \newline
-El número de bloques lógicos determinan la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
+A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. El número de bloques lógicos determinan la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
 
 A continuación se introducirán los conceptos de granularidad fina y granularidad gruesa, que dará lugar al correcto entendimiento de la arquitectura en una FPGA. 
 
@@ -571,18 +567,18 @@ A la hora de elegir un determinado sensor, es importante conocer su modo de oper
 	\begin{tabular}{|c|l|l|}
 		\hline
 		\textbf{Magnitud}                                                                       & \multicolumn{1}{c|}{\textbf{Transductor}} & \multicolumn{1}{c|}{\textbf{Característica}} \\ \hline
-		\multirow{}{}{\begin{tabular}[c]{@{}c@{}}Posición lineal y\\   angular\end{tabular}}  & Potenciómetro                             & Analógica                                    \\ \cline{2-3} 
+		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Posición lineal y\\   angular\end{tabular}}  & Potenciómetro                             & Analógica                                    \\ \cline{2-3} 
 		& Encoder                                   & Digital                                      \\ \cline{2-3} 
 		& Sensor Hall                               & Digital                                      \\ \hline
-		\multirow{}{}{\begin{tabular}[c]{@{}c@{}}Velocidad\\   lineal y angular\end{tabular}} & Dinamo tacométrica                        & Analógica                                    \\ \cline{2-3} 
+		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Velocidad\\   lineal y angular\end{tabular}} & Dinamo tacométrica                        & Analógica                                    \\ \cline{2-3} 
 		& Encoder                                   & Digital                                      \\ \cline{2-3} 
 		& Detector inductivo                        & Digital                                      \\ \cline{2-3} 
 		& Servo-inclinómetros                       & A/D                                          \\ \cline{2-3} 
 		& RVDT                                      & Analógica                                    \\ \cline{2-3} 
 		& Giróscopo                                 & Digital                                      \\ \hline
-		\multirow{}{}{Aceleración}                                                            & Acelerómetro                              & Analógico                                    \\ \cline{2-3} 
+		\multirow{2}{*}{Aceleración}                                                            & Acelerómetro                              & Analógico                                    \\ \cline{2-3} 
 		& Servo-accelerómetros                      &                                              \\ \hline
-		\multirow{}{}{Visión artificial}                                                      & Cámaras de video                          & Procesamiento digital                        \\ \cline{2-3} 
+		\multirow{2}{*}{Visión artificial}                                                      & Cámaras de video                          & Procesamiento digital                        \\ \cline{2-3} 
 		& Cámaras CCD o CMOS                        & Procesamiento digital                        \\ \hline
 	\end{tabular}
 	\caption{Modo de operación de sensores.}
