@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  22 OCT 2018 07:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  22 OCT 2018 07:57
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -1825,37 +1825,37 @@ usion: found PDF version <1.7>, but at most version <1.5> allowed
 <imagenes/Introduction/Gantt.pdf, id=458, 597.55246pt x 845.07718pt>
 File: imagenes/Introduction/Gantt.pdf Graphic file (type pdf)
 <use imagenes/Introduction/Gantt.pdf>
-Package pdftex.def Info: imagenes/Introduction/Gantt.pdf  used on input line 20
+Package pdftex.def Info: imagenes/Introduction/Gantt.pdf  used on input line 19
 .
 (pdftex.def)             Requested size: 554.872pt x 318.70044pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 \subsection
+l.23 \subsection
                 {Metodología de trabajo} [1
 
 ]
-LaTeX Info: Redefining \. on input line 24.
-LaTeX Info: Redefining \% on input line 24.
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 \subsection
+l.23 \subsection
                 {Metodología de trabajo} [2]
 Overfull \vbox (106.10617pt too high) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 24.
-LaTeX Info: Redefining \% on input line 24.
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 \subsection
+l.23 \subsection
                 {Metodología de trabajo} [3 <./imagenes/Introduction/Gantt.pdf
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
@@ -1863,36 +1863,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 File: imagenes/Introduction/github.jpg Graphic file (type jpg)
 <use imagenes/Introduction/github.jpg>
 Package pdftex.def Info: imagenes/Introduction/github.jpg  used on input line 2
-9.
+8.
 (pdftex.def)             Requested size: 254.5465pt x 124.0613pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--39
+Underfull \hbox (badness 10000) in paragraph at lines 34--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
 
-LaTeX Warning: Hyper reference `' on page 4 undefined on input line 42.
+LaTeX Warning: Hyper reference `' on page 4 undefined on input line 41.
 
 <imagenes/Introduction/CapturaGit.png, id=535, 817.55438pt x 651.93562pt>
 File: imagenes/Introduction/CapturaGit.png Graphic file (type png)
 <use imagenes/Introduction/CapturaGit.png>
 Package pdftex.def Info: imagenes/Introduction/CapturaGit.png  used on input li
-ne 48.
+ne 47.
 (pdftex.def)             Requested size: 408.7762pt x 325.96701pt.
-LaTeX Info: Redefining \. on input line 52.
-LaTeX Info: Redefining \% on input line 52.
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 
+l.51 
       [4 <./imagenes/Introduction/github.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
@@ -1900,28 +1900,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
 File: imagenes/Introduction/appear.png Graphic file (type png)
 <use imagenes/Introduction/appear.png>
 Package pdftex.def Info: imagenes/Introduction/appear.png  used on input line 5
-9.
+8.
 (pdftex.def)             Requested size: 154.17719pt x 154.17719pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--68
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
 
  []
 
-LaTeX Info: Redefining \. on input line 68.
-LaTeX Info: Redefining \% on input line 68.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.68 
+l.67 
       [5 <./imagenes/Introduction/CapturaGit.png> <./imagenes/Introduction/appe
 ar.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
  []
 
@@ -3012,7 +3012,7 @@ pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmti10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on proyecto.pdf (81 pages, 5725404 bytes).
+Output written on proyecto.pdf (81 pages, 5725403 bytes).
 PDF statistics:
  1245 PDF objects out of 1440 (max. 8388607)
  203 named destinations out of 1000 (max. 500000)
