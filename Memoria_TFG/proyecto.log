@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  30 OCT 2018 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  30 OCT 2018 18:30
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -2280,7 +2280,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 302--303
 pdfTeX warning: pdflatex.exe (file ./imagenes/EstadoArte/funcionalidad_FPGA_mic
 ro.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
 wed
-<imagenes/EstadoArte/funcionalidad_FPGA_micro.pdf, id=734, 800.9925pt x 618.31p
+<imagenes/EstadoArte/funcionalidad_FPGA_micro.pdf, id=735, 800.9925pt x 618.31p
 t>
 File: imagenes/EstadoArte/funcionalidad_FPGA_micro.pdf Graphic file (type pdf)
 <use imagenes/EstadoArte/funcionalidad_FPGA_micro.pdf>
@@ -2298,7 +2298,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/EstadoArte/puertas_logicas.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/EstadoArte/puertas_logicas.pdf, id=750, 794.97pt x 614.295pt>
+<imagenes/EstadoArte/puertas_logicas.pdf, id=751, 794.97pt x 614.295pt>
 File: imagenes/EstadoArte/puertas_logicas.pdf Graphic file (type pdf)
 <use imagenes/EstadoArte/puertas_logicas.pdf>
 Package pdftex.def Info: imagenes/EstadoArte/puertas_logicas.pdf  used on input
@@ -2307,24 +2307,34 @@ Package pdftex.def Info: imagenes/EstadoArte/puertas_logicas.pdf  used on input
 LaTeX Info: Redefining \. on input line 329.
 LaTeX Info: Redefining \% on input line 329.
 [22 <./imagenes/EstadoArte/funcionalidad_FPGA_micro.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 377--379
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
-LaTeX Info: Redefining \. on input line 408.
-LaTeX Info: Redefining \% on input line 408.
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
+
+ []
+
+LaTeX Info: Redefining \. on input line 383.
+LaTeX Info: Redefining \% on input line 383.
 [23 <./imagenes/EstadoArte/puertas_logicas.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 474--475
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
  []
 
@@ -2332,95 +2342,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/EstadoArte/bipedo.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/EstadoArte/bipedo.pdf, id=787, 794.97pt x 614.295pt>
+<imagenes/EstadoArte/bipedo.pdf, id=789, 794.97pt x 614.295pt>
 File: imagenes/EstadoArte/bipedo.pdf Graphic file (type pdf)
 <use imagenes/EstadoArte/bipedo.pdf>
-Package pdftex.def Info: imagenes/EstadoArte/bipedo.pdf  used on input line 483
+Package pdftex.def Info: imagenes/EstadoArte/bipedo.pdf  used on input line 487
 .
 (pdftex.def)             Requested size: 397.48402pt x 307.14674pt.
-LaTeX Info: Redefining \. on input line 487.
-LaTeX Info: Redefining \% on input line 487.
+LaTeX Info: Redefining \. on input line 491.
+LaTeX Info: Redefining \% on input line 491.
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 490--492
+Underfull \hbox (badness 10000) in paragraph at lines 494--496
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
-<imagenes/Balancing_robot/orientacion.png, id=794, 392.46625pt x 382.42876pt>
+<imagenes/Balancing_robot/orientacion.png, id=796, 392.46625pt x 382.42876pt>
 File: imagenes/Balancing_robot/orientacion.png Graphic file (type png)
 <use imagenes/Balancing_robot/orientacion.png>
 Package pdftex.def Info: imagenes/Balancing_robot/orientacion.png  used on inpu
-t line 498.
+t line 502.
 (pdftex.def)             Requested size: 196.23264pt x 191.2139pt.
-LaTeX Info: Redefining \. on input line 502.
-LaTeX Info: Redefining \% on input line 502.
+LaTeX Info: Redefining \. on input line 506.
+LaTeX Info: Redefining \% on input line 506.
 [25 <./imagenes/EstadoArte/bipedo.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
-<imagenes/Balancing_robot/IMU1.jpg, id=811, 652.4375pt x 652.4375pt>
+<imagenes/Balancing_robot/IMU1.jpg, id=813, 652.4375pt x 652.4375pt>
 File: imagenes/Balancing_robot/IMU1.jpg Graphic file (type jpg)
 <use imagenes/Balancing_robot/IMU1.jpg>
 Package pdftex.def Info: imagenes/Balancing_robot/IMU1.jpg  used on input line 
-510.
+514.
 (pdftex.def)             Requested size: 130.48518pt x 130.48518pt.
-<imagenes/Balancing_robot/IMU2.png, id=812, 384.43625pt x 276.03125pt>
+<imagenes/Balancing_robot/IMU2.png, id=814, 384.43625pt x 276.03125pt>
 File: imagenes/Balancing_robot/IMU2.png Graphic file (type png)
 <use imagenes/Balancing_robot/IMU2.png>
 Package pdftex.def Info: imagenes/Balancing_robot/IMU2.png  used on input line 
-517.
+521.
 (pdftex.def)             Requested size: 76.88588pt x 55.20526pt.
-<imagenes/Balancing_robot/IMU3.jpg, id=813, 351.3125pt x 349.305pt>
+<imagenes/Balancing_robot/IMU3.jpg, id=815, 351.3125pt x 349.305pt>
 File: imagenes/Balancing_robot/IMU3.jpg Graphic file (type jpg)
 <use imagenes/Balancing_robot/IMU3.jpg>
 Package pdftex.def Info: imagenes/Balancing_robot/IMU3.jpg  used on input line 
-524.
+528.
 (pdftex.def)             Requested size: 70.26125pt x 69.85976pt.
-LaTeX Info: Redefining \. on input line 531.
-LaTeX Info: Redefining \% on input line 531.
+LaTeX Info: Redefining \. on input line 535.
+LaTeX Info: Redefining \% on input line 535.
 [26 <./imagenes/Balancing_robot/orientacion.png> <./imagenes/Balancing_robot/IM
 U1.jpg> <./imagenes/Balancing_robot/IMU2.png> <./imagenes/Balancing_robot/IMU3.
 jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 533--534
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 
  []
 
-<imagenes/Balancing_robot/acelerometro1.png, id=821, 572.1375pt x 317.185pt>
+<imagenes/Balancing_robot/acelerometro1.png, id=823, 572.1375pt x 317.185pt>
 File: imagenes/Balancing_robot/acelerometro1.png Graphic file (type png)
 <use imagenes/Balancing_robot/acelerometro1.png>
 Package pdftex.def Info: imagenes/Balancing_robot/acelerometro1.png  used on in
-put line 541.
+put line 545.
 (pdftex.def)             Requested size: 228.85094pt x 126.87173pt.
-<imagenes/Balancing_robot/acelerometro2.png, id=823, 552.0625pt x 147.55125pt>
+<imagenes/Balancing_robot/acelerometro2.png, id=825, 552.0625pt x 147.55125pt>
 File: imagenes/Balancing_robot/acelerometro2.png Graphic file (type png)
 <use imagenes/Balancing_robot/acelerometro2.png>
 Package pdftex.def Info: imagenes/Balancing_robot/acelerometro2.png  used on in
-put line 554.
+put line 558.
 (pdftex.def)             Requested size: 331.24005pt x 88.53142pt.
-LaTeX Info: Redefining \. on input line 565.
-LaTeX Info: Redefining \% on input line 565.
+LaTeX Info: Redefining \. on input line 569.
+LaTeX Info: Redefining \% on input line 569.
 [27 <./imagenes/Balancing_robot/acelerometro1.png> <./imagenes/Balancing_robot/
 acelerometro2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 572--573
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
@@ -2431,68 +2431,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 578--579
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
 
  []
 
-LaTeX Info: Redefining \. on input line 604.
-LaTeX Info: Redefining \% on input line 604.
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
+
+ []
+
+LaTeX Info: Redefining \. on input line 608.
+LaTeX Info: Redefining \% on input line 608.
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
-LaTeX Info: Redefining \. on input line 638.
-LaTeX Info: Redefining \% on input line 638.
+LaTeX Info: Redefining \. on input line 642.
+LaTeX Info: Redefining \% on input line 642.
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 649--650
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--672
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 673--674
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
-LaTeX Info: Redefining \. on input line 674.
-LaTeX Info: Redefining \% on input line 674.
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--678
+
+ []
+
+LaTeX Info: Redefining \. on input line 678.
+LaTeX Info: Redefining \% on input line 678.
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 679--680
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 688--689
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 690--691
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
 
  []
 
@@ -2501,45 +2501,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
  []
 
-LaTeX Info: Redefining \. on input line 707.
-LaTeX Info: Redefining \% on input line 707.
-[31]
-<imagenes/EstadoArte/sensor_imagen_CMOS.jpg, id=871, 1606.0pt x 1105.12875pt>
-File: imagenes/EstadoArte/sensor_imagen_CMOS.jpg Graphic file (type jpg)
-<use imagenes/EstadoArte/sensor_imagen_CMOS.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/sensor_imagen_CMOS.jpg  used on in
-put line 756.
-(pdftex.def)             Requested size: 160.6094pt x 110.51935pt.
-LaTeX Info: Redefining \. on input line 760.
-LaTeX Info: Redefining \% on input line 760.
- [32]
-<imagenes/EstadoArte/IMU.jpg, id=876, 347.2975pt x 347.2975pt>
-File: imagenes/EstadoArte/IMU.jpg Graphic file (type jpg)
-<use imagenes/EstadoArte/IMU.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/IMU.jpg  used on input line 765.
-(pdftex.def)             Requested size: 138.91653pt x 138.91653pt.
-<imagenes/EstadoArte/potentiometer.jpg, id=877, 245.91875pt x 288.07625pt>
-File: imagenes/EstadoArte/potentiometer.jpg Graphic file (type jpg)
-<use imagenes/EstadoArte/potentiometer.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/potentiometer.jpg  used on input l
-ine 774.
-(pdftex.def)             Requested size: 98.36575pt x 115.22844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 780--781
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
 
  []
 
-<imagenes/EstadoArte/motor.jpg, id=878, 602.25pt x 602.25pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
+
+ []
+
+LaTeX Info: Redefining \. on input line 711.
+LaTeX Info: Redefining \% on input line 711.
+[31]
+<imagenes/EstadoArte/sensor_imagen_CMOS.jpg, id=872, 1606.0pt x 1105.12875pt>
+File: imagenes/EstadoArte/sensor_imagen_CMOS.jpg Graphic file (type jpg)
+<use imagenes/EstadoArte/sensor_imagen_CMOS.jpg>
+Package pdftex.def Info: imagenes/EstadoArte/sensor_imagen_CMOS.jpg  used on in
+put line 760.
+(pdftex.def)             Requested size: 160.6094pt x 110.51935pt.
+LaTeX Info: Redefining \. on input line 764.
+LaTeX Info: Redefining \% on input line 764.
+ [32]
+<imagenes/EstadoArte/IMU.jpg, id=877, 347.2975pt x 347.2975pt>
+File: imagenes/EstadoArte/IMU.jpg Graphic file (type jpg)
+<use imagenes/EstadoArte/IMU.jpg>
+Package pdftex.def Info: imagenes/EstadoArte/IMU.jpg  used on input line 769.
+(pdftex.def)             Requested size: 138.91653pt x 138.91653pt.
+<imagenes/EstadoArte/potentiometer.jpg, id=878, 245.91875pt x 288.07625pt>
+File: imagenes/EstadoArte/potentiometer.jpg Graphic file (type jpg)
+<use imagenes/EstadoArte/potentiometer.jpg>
+Package pdftex.def Info: imagenes/EstadoArte/potentiometer.jpg  used on input l
+ine 778.
+(pdftex.def)             Requested size: 98.36575pt x 115.22844pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
+
+ []
+
+<imagenes/EstadoArte/motor.jpg, id=879, 602.25pt x 602.25pt>
 File: imagenes/EstadoArte/motor.jpg Graphic file (type jpg)
 <use imagenes/EstadoArte/motor.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/motor.jpg  used on input line 785.
+Package pdftex.def Info: imagenes/EstadoArte/motor.jpg  used on input line 789.
 
 (pdftex.def)             Requested size: 240.89572pt x 240.89572pt.
-LaTeX Info: Redefining \. on input line 789.
-LaTeX Info: Redefining \% on input line 789.
+LaTeX Info: Redefining \. on input line 793.
+LaTeX Info: Redefining \% on input line 793.
 [33 <./imagenes/EstadoArte/sensor_imagen_CMOS.jpg> <./imagenes/EstadoArte/IMU.j
 pg> <./imagenes/EstadoArte/potentiometer.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 792--794
+Underfull \hbox (badness 10000) in paragraph at lines 796--798
 
  []
 
@@ -2553,7 +2563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-<imagenes/Balancing_robot/segway.png, id=889, 481.8pt x 264.99pt>
+<imagenes/Balancing_robot/segway.png, id=890, 481.8pt x 264.99pt>
 File: imagenes/Balancing_robot/segway.png Graphic file (type png)
 <use imagenes/Balancing_robot/segway.png>
 Package pdftex.def Info: imagenes/Balancing_robot/segway.png  used on input lin
@@ -2564,7 +2574,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-<imagenes/Balancing_robot/pendulo.png, id=892, 108.05417pt x 85.42595pt>
+<imagenes/Balancing_robot/pendulo.png, id=893, 108.05417pt x 85.42595pt>
 File: imagenes/Balancing_robot/pendulo.png Graphic file (type png)
 <use imagenes/Balancing_robot/pendulo.png>
 Package pdftex.def Info: imagenes/Balancing_robot/pendulo.png  used on input li
@@ -2576,7 +2586,7 @@ ne 20.
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia1.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia1.pdf, id=904, 795.97375pt x 615.29875pt>
+<imagenes/Balancing_robot/coexistencia1.pdf, id=905, 795.97375pt x 615.29875pt>
 
 File: imagenes/Balancing_robot/coexistencia1.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia1.pdf>
@@ -2595,7 +2605,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/extraccion_angulo
 .pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
 d
-<imagenes/Balancing_robot/extraccion_angulo.pdf, id=911, 795.97375pt x 615.2987
+<imagenes/Balancing_robot/extraccion_angulo.pdf, id=912, 795.97375pt x 615.2987
 5pt>
 File: imagenes/Balancing_robot/extraccion_angulo.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/extraccion_angulo.pdf>
@@ -2614,7 +2624,7 @@ LaTeX Info: Redefining \% on input line 60.
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arduino_interface
 fluid.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
-<imagenes/Balancing_robot/arduino_interfacefluid.pdf, id=929, 794.97pt x 614.29
+<imagenes/Balancing_robot/arduino_interfacefluid.pdf, id=930, 794.97pt x 614.29
 5pt>
 File: imagenes/Balancing_robot/arduino_interfacefluid.pdf Graphic file (type pd
 f)
@@ -2636,14 +2646,14 @@ LaTeX Info: Redefining \. on input line 70.
 LaTeX Info: Redefining \% on input line 70.
 
 [39 <./imagenes/Balancing_robot/arduino_interfacefluid.pdf>]
-<imagenes/Balancing_robot/arduino_interface.PNG, id=966, 439.6425pt x 283.65974
+<imagenes/Balancing_robot/arduino_interface.PNG, id=967, 439.6425pt x 283.65974
 pt>
 File: imagenes/Balancing_robot/arduino_interface.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arduino_interface.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/arduino_interface.PNG  used o
 n input line 75.
 (pdftex.def)             Requested size: 263.78752pt x 170.19714pt.
-<imagenes/Balancing_robot/arduino_arrange.PNG, id=968, 673.76718pt x 645.91313p
+<imagenes/Balancing_robot/arduino_arrange.PNG, id=969, 673.76718pt x 645.91313p
 t>
 File: imagenes/Balancing_robot/arduino_arrange.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arduino_arrange.PNG>
@@ -2657,7 +2667,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<imagenes/Balancing_robot/pin_headers.PNG, id=975, 566.86781pt x 472.76625pt>
+<imagenes/Balancing_robot/pin_headers.PNG, id=976, 566.86781pt x 472.76625pt>
 File: imagenes/Balancing_robot/pin_headers.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/pin_headers.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/pin_headers.PNG  used on inpu
@@ -2666,7 +2676,7 @@ t line 105.
 LaTeX Info: Redefining \. on input line 109.
 LaTeX Info: Redefining \% on input line 109.
 [41 <./imagenes/Balancing_robot/arduino_arrange.PNG>]
-<imagenes/Balancing_robot/SCREW.PNG, id=983, 346.29375pt x 398.08725pt>
+<imagenes/Balancing_robot/SCREW.PNG, id=984, 346.29375pt x 398.08725pt>
 File: imagenes/Balancing_robot/SCREW.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/SCREW.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/SCREW.PNG  used on input line
@@ -2684,7 +2694,7 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-<imagenes/Balancing_robot/mpu6050_connector.PNG, id=985, 587.19376pt x 335.0015
+<imagenes/Balancing_robot/mpu6050_connector.PNG, id=986, 587.19376pt x 335.0015
 6pt>
 File: imagenes/Balancing_robot/mpu6050_connector.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/mpu6050_connector.PNG>
@@ -2699,7 +2709,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-<imagenes/Balancing_robot/jumpers.PNG, id=993, 423.83344pt x 505.13719pt>
+<imagenes/Balancing_robot/jumpers.PNG, id=994, 423.83344pt x 505.13719pt>
 File: imagenes/Balancing_robot/jumpers.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/jumpers.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/jumpers.PNG  used on input li
@@ -2746,7 +2756,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia2.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia2.pdf, id=1010, 793.96625pt x 614.295pt>
+<imagenes/Balancing_robot/coexistencia2.pdf, id=1011, 793.96625pt x 614.295pt>
 File: imagenes/Balancing_robot/coexistencia2.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia2.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/coexistencia2.pdf  used on in
@@ -2758,7 +2768,7 @@ LaTeX Info: Redefining \% on input line 240.
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia3.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia3.pdf, id=1025, 798.985pt x 617.30624pt>
+<imagenes/Balancing_robot/coexistencia3.pdf, id=1026, 798.985pt x 617.30624pt>
 File: imagenes/Balancing_robot/coexistencia3.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia3.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/coexistencia3.pdf  used on in
@@ -2806,7 +2816,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
-<imagenes/Balancing_robot/arrange_arduino.PNG, id=1050, 611.28375pt x 315.42844
+<imagenes/Balancing_robot/arrange_arduino.PNG, id=1051, 611.28375pt x 315.42844
 pt>
 File: imagenes/Balancing_robot/arrange_arduino.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arrange_arduino.PNG>
@@ -2819,7 +2829,7 @@ LaTeX Info: Redefining \% on input line 322.
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arrange_angle.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/arrange_angle.pdf, id=1057, 795.97375pt x 615.29875pt
+<imagenes/Balancing_robot/arrange_angle.pdf, id=1058, 795.97375pt x 615.29875pt
 >
 File: imagenes/Balancing_robot/arrange_angle.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/arrange_angle.pdf>
@@ -2853,7 +2863,7 @@ LaTeX Info: Redefining \% on input line 386.
 LaTeX Info: Redefining \. on input line 392.
 LaTeX Info: Redefining \% on input line 392.
  [52]
-<imagenes/Balancing_Robot/pcb_dron_schematic.pdf, id=1083, 845.1575pt x 597.231
+<imagenes/Balancing_Robot/pcb_dron_schematic.pdf, id=1084, 845.1575pt x 597.231
 25pt>
 File: imagenes/Balancing_Robot/pcb_dron_schematic.pdf Graphic file (type pdf)
 <use imagenes/Balancing_Robot/pcb_dron_schematic.pdf>
@@ -2900,7 +2910,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 446--447
 LaTeX Info: Redefining \. on input line 449.
 LaTeX Info: Redefining \% on input line 449.
 [54]
-<imagenes/Balancing_Robot/layers_altium.PNG, id=1119, 813.79031pt x 640.64343pt
+<imagenes/Balancing_Robot/layers_altium.PNG, id=1120, 813.79031pt x 640.64343pt
 >
 File: imagenes/Balancing_Robot/layers_altium.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/layers_altium.PNG>
@@ -2915,7 +2925,7 @@ Overfull \hbox (57.27133pt too wide) in paragraph at lines 483--484
 LaTeX Info: Redefining \. on input line 487.
 LaTeX Info: Redefining \% on input line 487.
 [55]
-<imagenes/Balancing_Robot/top_3D.PNG, id=1124, 546.24075pt x 463.7325pt>
+<imagenes/Balancing_Robot/top_3D.PNG, id=1125, 546.24075pt x 463.7325pt>
 File: imagenes/Balancing_Robot/top_3D.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/top_3D.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/top_3D.PNG  used on input lin
@@ -2924,13 +2934,13 @@ e 492.
 LaTeX Info: Redefining \. on input line 496.
 LaTeX Info: Redefining \% on input line 496.
  [56 <./imagenes/Balancing_Robot/layers_altium.PNG>]
-<imagenes/Balancing_Robot/bottom_3D.PNG, id=1130, 511.31026pt x 416.757pt>
+<imagenes/Balancing_Robot/bottom_3D.PNG, id=1131, 511.31026pt x 416.757pt>
 File: imagenes/Balancing_Robot/bottom_3D.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/bottom_3D.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/bottom_3D.PNG  used on input 
 line 501.
 (pdftex.def)             Requested size: 306.78851pt x 250.05612pt.
-<imagenes/Balancing_Robot/Vista3D1.PNG, id=1131, 599.23875pt x 499.8675pt>
+<imagenes/Balancing_Robot/Vista3D1.PNG, id=1132, 599.23875pt x 499.8675pt>
 File: imagenes/Balancing_Robot/Vista3D1.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/Vista3D1.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/Vista3D1.PNG  used on input l
@@ -2945,7 +2955,7 @@ LaTeX Info: Redefining \. on input line 514.
 LaTeX Info: Redefining \% on input line 514.
 [57 <./imagenes/Balancing_Robot/top_3D.PNG> <./imagenes/Balancing_Robot/bottom_
 3D.PNG>]
-<imagenes/Balancing_Robot/Vista3D2.PNG, id=1138, 532.99126pt x 293.29575pt>
+<imagenes/Balancing_Robot/Vista3D2.PNG, id=1139, 532.99126pt x 293.29575pt>
 File: imagenes/Balancing_Robot/Vista3D2.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/Vista3D2.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/Vista3D2.PNG  used on input l
@@ -3051,9 +3061,9 @@ b><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 blic/amsfonts/cm/cmsy10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jordo/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on proyecto.pdf (85 pages, 5772767 bytes).
+Output written on proyecto.pdf (85 pages, 5773991 bytes).
 PDF statistics:
- 1288 PDF objects out of 1440 (max. 8388607)
+ 1289 PDF objects out of 1440 (max. 8388607)
  214 named destinations out of 1000 (max. 500000)
  818 words of extra memory for PDF output out of 10000 (max. 10000000)
 

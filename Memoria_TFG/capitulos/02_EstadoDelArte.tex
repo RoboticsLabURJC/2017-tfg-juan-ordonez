@@ -330,7 +330,11 @@ En la figura \ref{fig:puertas_logicas} se representa un ejemplo real de como est
 
 \subsection{Necesidad}
 
-Se imagina un ejemplo real el que se quieren monitorizar con exactitud 4 diferentes sensores provenientes del exterior, de una manera exacta, al mismo tiempo y a la velocidad del reloj, siendo necesaria además una posterior actuación por parte del sistema. El diagrama de bloques del flujo de trabajo en un procesador que implemente lo anterior podría parecerse al siguiente:
+Se propone el siguiente caso práctico:\newline
+
+\textsl{Se requiere monitorizar con exactitud 4 diferentes sensores provenientes del exterior, de una manera exacta, los cuatro al mismo tiempo y a una velocidad especificada por un reloj externo, siendo necesario además una posterior actuación por parte del sistema (apertura de válvula, cierra de puertas, etc).}\newline
+
+El diagrama de bloques del flujo de trabajo en un procesador que implemente lo anterior podría parecerse al siguiente:
 
 \tikzstyle{block_circle} = [draw, fill=blue!20, circle, 
 minimum height=3em, minimum width=6em]
@@ -374,7 +378,7 @@ minimum height=3em, minimum width=6em]
 \end{tikzpicture}
 \end{center}
 
-Así, el usuario final de este sistema, deberá de manera cíclica comprobar cada sensor y su posterior actuación, dejando de cumplir entonces las especificaciones de tiempo. \newline
+Así, el usuario final de este sistema, deberá de manera cíclica comprobar cada sensor y su posterior actuación, dejando de cumplir entonces las especificaciones (no se monitorizarían los cuatro sensores al mismo tiempo). \newline
 Si se trabajase con interrupciones se configurarían las diferentes interrupciones externas o se podrían usar ejecutivos cíclicos para acercarse a esos requerimientos finales. No obstante, cualquiera de estas soluciones, no dejan de ser una aproximación.\newline
 
 En cambio, con el uso de una FPGA, el diagrama de bloques del flujo de trabajo tendría el siguiente aspecto:
@@ -471,11 +475,11 @@ minimum height=3em, minimum width=6em]
 
 Se implementarían diferentes funciones de transferencia para cada uno de los bloques a desarrollar, pudiendo ejecutarse estos en paralelo. \newline
 
-No obstante, no siempre es necesario un ejecutivo en paralelo, y no solo puede no ser necesario sino que podría ser perjudicial. Cuando un sistema debe ser secuencial, ¿porqué utilizar una implementación de naturaleza paralela?. \newline
+No obstante, no siempre es necesario un ejecutivo en paralelo, y no solo puede no ser necesario sino que podría ser perjudicial. Cuando un sistema debe ser secuencial, ¿por qué utilizar una implementación de naturaleza paralela? \newline
 
 Es muy común tener sistemas donde conviene poder implementar ambos tipos de funcionamiento, por eso una coexistencia FPGA/Micro-controlador podría ser suficiente para adaptarse a los requerimientos. \newline
 
-En la imagen \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípedo, el cuál se explicará con mas detalle en los siguientes capítulos:
+En la figura \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípedo, el cuál se explicará con mas detalle en los siguientes capítulos.
 
 \begin{center}
 	\begin{figure}[H]
@@ -685,7 +689,7 @@ Cualquier instalación de control, ya sea robótica o inmótica, esta compuesta 
 	\item Sistema de control
 \end{itemize}
 
-Los sensores son dispositivos que recogen información del mundo que nos rodea y lo transforma en señales eléctricas que puedan ser asimiladas por un sistema de control. \newline
+Los sensores son dispositivos que recogen información del mundo que nos rodea y lo transforma en señales eléctricas que puedan ser entradas a un sistema de control. \newline
 
 Así, el sistema de control recibe información del entorno sobre el que queremos realizar algún tipo de acción por medio de los sensores, es la función de transferencia del sistema, a partir de unas entradas de tipo conocido, son generadas unas salidas, normalmente, dependientes de las entradas. \newline
 
@@ -693,7 +697,7 @@ Estas salidas son denominadas actuadores, que son dispositivos que, siguiendo lo
 
 \textsl{Ejemplo: Un sensor indica al sistema de control la intensidad lumínica de nuestra habitación, el sistema de control reconoce que el nivel no es el adecuado para la lectura, y activa un actuador, en este caso, una luz, para contrarrestar ese nivel.}
 
-A la hora de elegir un determinado sensor, es importante conocer su modo de operación, para poder configurar o mantener sistemas que los incorporen. Existen diferentes tipos de sensores según:
+A la hora de elegir un determinado sensor, es importante conocer su modo de operación, para poder configurar o mantener sistemas que lo incorporen. Existen diferentes tipos de sensores según:
 
 \begin{itemize}
 	\item Tipo de salida: \begin{itemize}
@@ -709,7 +713,7 @@ A la hora de elegir un determinado sensor, es importante conocer su modo de oper
 	
 	\item Tipo de parámetros capaces de detectar
 \end{itemize}
- En tabla \ref{tabla:modo_operacion_sensores} se muestran algunos de los más interesantes para el desarrollo del proyecto:
+ En tabla \ref{tabla:modo_operacion_sensores} se muestran algunos de los más interesantes para el desarrollo de este proyecto.
 
 \renewcommand\tablename{Tabla}
 \begin{table}[H]
@@ -748,7 +752,7 @@ De entre las carácterísticas técnicas más importantes de un sensor, y hacien
 	\item Derivas: son otras magnitudes, aparte de la medida como magnitud de entrada, que influyen en la variable de salida.
 \end{itemize}
 
-Por lo general, la señal de salida de estos sensores no es apta para su lectura directa y a veces tampoco para su procesado, por lo que se usan circuitos de acondicionamiento. Un ejemplo de algunos sensores se representan en las figuras \ref{fig:camara_CMOS}, \ref{fig:IMU} y \ref{fig:potentiometer}.
+Por lo general, la señal de salida de estos sensores no es apta para su lectura directa y a veces tampoco para su procesado, por lo que se usan circuitos de acondicionamiento. Las figuras \ref{fig:camara_CMOS}, \ref{fig:IMU} y \ref{fig:potentiometer} muestran ejemplos de algunos sensores.
 
 \begin{center}
 	\begin{figure}[H]
@@ -789,7 +793,7 @@ Los actuadores son dispositivos que permiten al sistema de control ‘actuar’ 
 \end{center}
 
 
-Sistemas de control hay de muchos tipos en relación de la aplicación la cual se quiere desarrollar, normalmente se elije un micro-controlador como sistema de control y se programa la función de transferencia a ser realizada.\newline
-En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto arduino para las tareas secuenciales como la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
+Hay de muchos diferentes tipos de sistemas de control en relación de la aplicación la cual se quiere desarrollar, normalmente se elije un micro-controlador como sistema de control y se programa la función de transferencia a ser realizada.\newline
+En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto Arduino para las tareas secuenciales como la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
 
 
