@@ -1,4 +1,5 @@
 \chapter{Estado del arte}\label{sec:Estado_arte}
+En la presente sección se desarrollarán los aspectos teóricos a tener en cuenta para un correcto entendimiento del trabajo realizado. Además se presentará la evolución de algunos sistemas, así como sus ventajas e inconvenientes.
 \section{Concepto FPGAs}
 Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}
 
@@ -10,22 +11,25 @@ Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que
 		\label{fig:estructura_FPGA}
 	\end{figure}
 \end{center}
- Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD, las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware (HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
+ Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD, las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware (Hardware Description Languaje, HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
 \newline
-Si bien no es el más usado actualmente, a lo largo de esta memoria se realizará una breve introducción a Verilog, comentando y analizando sus principales características.
+Si bien no es el más usado actualmente, a lo largo de la sección \ref{sec:Verilog} se realizará una breve introducción a Verilog, comentando y analizando sus principales características.
 \newpage
 \subsection{Evolución y escenario}
 
-Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. \newline
+Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. Las FPGAs conforman la máxima evolución de los PLDs (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. Algunos de sus usos en la actualidad son: 
+\begin{itemize}
+	\item Sistemas de visión artificial.
+	\item Sistemas de imágenes médicas.
+	\item Codificación y encriptación.
+	\item Reconocimiento de voz.
+	\item Aeronáutica y defensa.
+\end{itemize}
+\newline
 
-Las FPGAs conforman actualmente la máxima evolución de los PLDs (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. \newline
+El revolucionario éxito de estos dispositivos programables puede ser atribuido a la flexibilidad en la implementación del diseño. Así, la capacidad de re-programar al instante la FPGA con varios circuitos sin costo adicional, promueve la re-utilización del dispositivo, permite una rápida verificación del diseño y por ello, reduce el gasto en la etapa de desarrollo. Si bien actualmente no representan todo el sistema de un producto final, sus ventajas en las propiedades del diseño hacen que estén empezando a formar parte de una pieza importante en el desarrollo de un producto electrónico. \newline
 
-El revolucionario éxito de estos dispositivos programables puede ser atribuido a la flexibilidad en la implementación del diseño. Así, la capacidad de re-programar al instante la FPGA con varios circuitos sin costo adicional, promueve la re-utilización del dispositivo, permite una rápida verificación del diseño y por ello, reduce el gasto en la etapa de desarrollo. \newline
-
-Si bien actualmente no representan todo el sistema de un producto final, sus ventajas en las propiedades del diseño hacen que estén empezando a formar parte de una pieza importante en el desarrollo de un producto electrónico. \newline
-
-Para intentar entender el porqué de la importancia de dispositivos de implementación hardware sería adecuado introducir la Ley de Moore. \newline 
-La ley de Moore expresa que aproximadamente cada dos años se duplica el número de transistores en un microprocesador. Como se puede ver en la figura \ref{fig:Ley_de_Moore}, esta ley que formuló el cofundador de Intel E. Moore el 19 de Abril de 1965 no se aleja de la realidad: 
+Para intentar entender el porqué de la importancia de dispositivos de implementación hardware sería adecuado introducir la Ley de Moore. La ley de Moore expresa que aproximadamente cada dos años se duplica el número de transistores en un microprocesador. Como se puede ver en la figura \ref{fig:Ley_de_Moore}, esta ley que formuló el cofundador de Intel E. Moore el 19 de Abril de 1965 no se aleja de la realidad: 
 \newline
 \begin{figure}[H]
 	\center
@@ -35,16 +39,11 @@ La ley de Moore expresa que aproximadamente cada dos años se duplica el número
 \end{figure}
  
 
-No obstante, tal y como ya han anunciado las principales empresas de microprocesadores actuales como son Intel y AMD en su hoja de ruta tecnológica para semiconductores, la ley de Moore llegará a su fin en 2021. \newline
-
-Después de esa fecha, no resultará económicamente eficiente reducir más el tamaño de los transistores de silicio. La predicción de la industria no es que simplemente su tasa de reducción será cada vez más lenta, sino que se va a detener definitivamente. \newline
-
-Es aquí donde la electrónica digital comenzará a tener un papel importante en los microprocesadores. Tanto es así que multinacionales dedicadas a la fabricación de procesadores como pueden ser Intel o AMD ya están trabajando en implementar esos comportamientos en FPGAs. Sus ventajas e inconvenientes serán presentadas en el los capítulos \ref{sec:ArquitecturaFPGA} y \ref{sec:DescripcionHardware}.
+No obstante, tal y como ya han anunciado las principales empresas de microprocesadores actuales como son Intel y AMD en su hoja de ruta tecnológica para semiconductores, la ley de Moore llegará a su fin en 2021. Después de esa fecha, no resultará económicamente eficiente reducir más el tamaño de los transistores de silicio. La predicción de la industria no es que simplemente su tasa de reducción será cada vez más lenta, sino que se va a detener definitivamente. Es aquí donde la electrónica digital comenzará a tener un papel importante en los microprocesadores. Tanto es así que multinacionales dedicadas a la fabricación de procesadores como pueden ser Intel o AMD ya están trabajando en implementar esos comportamientos en FPGAs. Sus ventajas e inconvenientes serán presentadas en el las secciones \ref{sec:ArquitecturaFPGA} y \ref{sec:DescripcionHardware}.
 
 \subsection{Arquitectura FPGA}\label{sec:ArquitecturaFPGA}
 
-En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posible habilitar o deshabilitar esta conexión. \newline
-Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos (figura \ref{fig:pld_fpga}).
+En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posible habilitar o deshabilitar esta conexión. Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos (figura \ref{fig:pld_fpga}).
 \newline
 \begin{center}
 \begin{figure}[H]
@@ -60,13 +59,13 @@ A la hora de elegir una FPGA para un proyecto determinado es importante tener en
 
 A continuación se introducirán los conceptos de granularidad fina y granularidad gruesa, que dará lugar al correcto entendimiento de la arquitectura en una FPGA. 
 
-Estos módulos más complejos realizan las operaciones básicas que en conjunto representan la función que operará en una FPGA. Se dice que la FPGA son dispositivos con una arquitectura avanzada por la densidad de sus componentes y por los diferentes caminos de interconexión entre módulos. Así, de acuerdo al tipo de módulos lógicos que la conforman, encontramos dos derivaciones estructurales: 
+Estos módulos más complejos realizan las operaciones básicas que en conjunto representan la función que operará en una FPGA. Se dice que las FPGAs son dispositivos con una arquitectura avanzada por la densidad de sus componentes y por los diferentes caminos de interconexión entre módulos. Así, de acuerdo al tipo de módulos lógicos que la conforman, encontramos dos derivaciones estructurales: 
 \begin{itemize}
 	\item Granularidad Gruesa.
 	\item Granularidad Fina.
 \end{itemize}
 
-Los módulos lógicos en una arquitectura de granularidad gruesa son módulos grandes generalmente consistentes de una o más tablas de búsqueda y dos o más flip-flops. La tabla de búsqueda, también conocida como LookUp Table (LUT), actúa como una memoria donde se encuentra almacenada la tabla de verdad que representa la función lógica del circuito, así, en una LUT se puede implementar cualquier función deseable.\newline
+Los módulos lógicos en una arquitectura de granularidad gruesa son módulos grandes generalmente consistentes de una o más tablas de consulta y dos o más flip-flops. La tabla de consulta, también conocida como LookUp Table (LUT), actúa como una memoria donde se encuentra almacenada la tabla de verdad que representa la función lógica del circuito, así, en una LUT se puede implementar cualquier función deseable. Dependiendo el tamaño de la LookUp Table, se pueden implementar funciones de más o menos variables. \newline
 
 Por otra parte, una arquitectura de granularidad fina, está estructurada por una gran cantidad de módulos lógicos pequeños que realizan funciones relativamente simples. Cada módulo está compuesto de un circuito de dos entradas que realiza una función lógica determinada, o en algunos otros casos por un multiplexor. También suele contener algún flip-flop.  \newline
 
@@ -74,12 +73,11 @@ La FPGAs mas utilizadas actualmente suelen contar con tecnología de granularida
 
 El primer caso permite implementaciones menos detalladas ya que desde un nivel muy básico se tienen módulos más complejos y el hecho de utilizar LUT deja entrever que se pueden realizar diseños más grandes. A lo largo de este proyecto se trabajará con el primer caso, ejemplo de ello es la FPGA utilizada, IceZum Alhambra II. \newline
 
-El diseñador propone la función lógica a realizar a través de métodos de descripción hardware y define los parámetros de su problema. Esto se hace por medio de código programable, que puede ser un lenguaje de descripción hardware, los cuáles son introducidos en el capítulo \ref{sec:DescripcionHardware}. 
+El diseñador propone la función lógica a realizar a través de métodos de descripción hardware y define los parámetros de su diseño. Esto se hace por medio de código programable, que puede ser un lenguaje de descripción hardware, el cuál es introducido en la sección \ref{sec:DescripcionHardware}. 
 
 \subsection{Lenguajes de descripción hardware}\label{sec:DescripcionHardware}
 
-Un HDL(Hardware Description Languaje) es un lenguaje usado para modelar el funcionamiento de un bloque hardware en una forma textual. \newline 
-Al igual que podemos encontrar diferencias entre los diferentes tipos de lenguajes de programación en cuanto a su sintaxis de codificación y sus métodos de simulación y síntesis, se observan ciertas diferencias entre HDL's. \newline
+Un lenguaje de descripción hardware (Hardware Description Languaje, HDL) es un lenguaje usado para modelar el funcionamiento de un bloque hardware en una forma textual. Al igual que podemos encontrar diferencias entre los diferentes tipos de lenguajes de programación en cuanto a su sintaxis de codificación y sus métodos de simulación y síntesis, se observan ciertas diferencias entre HDL's. \newline
 Se tienen dos tipos diferentes de lenguajes de descripción hardware:
 \begin{itemize}
 	\item Bajo modelado. No permiten la jerarquezación de módulos y son capaces de realizar solo descripciones simples.
@@ -110,12 +108,10 @@ Las características principales de la implementación digital por módulos son:
 	\item Cada módulo puede describirse de forma arquitectural o de comportamiento.
 \end{itemize}
 
-Esta implementación por módulos Verilog permite la configuración del nivel de abstracción deseado por el usuario final. \newline
-El desarrollo de módulos de funcionalidad específica puede tener sus ventajas e inconvenientes dependiendo de su uso final. \newline
-Si se quieren reutilizar para otros flujos de trabajo (ejemplo: sumador 8 bits), es bueno tener módulos muy definidos según su funcionalidad (ejemplo: sumador de 2 bits). Sin embargo, la polarización no tiene porque ser imprescindible, si bien aconsejada.
+Esta implementación por módulos Verilog permite la configuración del nivel de abstracción deseado por el usuario final. El desarrollo de módulos de funcionalidad específica puede tener sus ventajas e inconvenientes dependiendo de su uso final. Si se quieren reutilizar para otros flujos de trabajo (ejemplo: sumador 8 bits), es bueno tener módulos muy definidos según su funcionalidad (ejemplo: sumador de 2 bits). Sin embargo, la polarización no tiene porque ser imprescindible, si bien aconsejada.
 
 \subsubsection{Paralelización de Procesos}
-Una de las características mas importantes que diferencia a Verilog del resto de lenguajes procedurales es la posibilidad de ejecutar varios procesos en paralelo, aspecto fundamental en el lenguaje, y el cuál le brinda gran parte de las ventajas de usar implementación hardware.
+Una de las características mas importantes que diferencia a Verilog del resto de lenguajes procedurales \footnote{lenguajes procedurales: ejecución de la aplicación se inicia con la primera línea de código, y sigue una ruta predefinida a través de la aplicación, llamando procedimientos según sea necesario.} es la posibilidad de ejecutar varios procesos en paralelo, aspecto fundamental en el lenguaje, y el cuál le brinda gran parte de las ventajas de usar implementación hardware.
 
 \begin{center}
 	\begin{figure}[H]
@@ -490,6 +486,160 @@ En la imagen \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípe
 	\end{figure}
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Unidad de medida inercial}
+El componente central del sistema propuesto esta definido como IMU o unidad de medida inercial. Está compuesto por una serie de sensores los cuales serán utilizados para conocer de manera exacta aspectos de localización del sistema a bordo tales como velocidad, orientación, fuerzas gravitacionales etc. \newline
+Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newline
+
+En el caso del presente proyecto, será utilizado para obtener los ángulos de navegación o ángulos de Tait-Brain, en los que la orientación se presenta con tres rotaciones ortogonales en torno al eje X, Y y Z. Un ejemplo de este tipo de representación se encuentra en la figura \ref{fig:orientacion}\newline
+
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/orientacion}
+	\caption{Ángulos de Tait-Brain.}
+	\label{fig:orientacion}
+\end{figure}
+
+
+Una IMU queda definida por su número de grados de libertad (DOF) los cuáles dependerán del número de sensores a bordo (acelerómetro, giroscopio) y el número de ejes en los que se aplican. Así una IMU con seis grados de libertad (por ejemplo un acelerómetro de 3 ejes y un giroscopio de 3 ejes) se diría que es 6DOF. \newline
+
+En las figuras \ref{fig:IMU1}, \ref{fig:IMU2}, \ref{fig:IMU2} se presentan algunos ejemplos de IMUs.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU1}
+	\caption{Unidad de Medida Inercial.}
+	\label{fig:IMU1}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU2}
+	\caption{Unidad de Medida Inercial.}
+	\label{fig:IMU2}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU3}
+	\caption{Unidad de Medida Inercial.}
+	\label{fig:IMU3}
+\end{figure}
+
+Otra de las características importantes y de la cuál dependerá en gran medida el precio del producto es el rango de los sensores a bordo y de la disponibilidad en el propio sistema de conversores analógico digitales, encargados estos de convertir el valor del sensor a un valor binario que pueda ser utilizado para posterior análisis. \newline
+A continuación se definen algunos de los aspectos más importantes que pueden ser encontrados en una unidad de medida inercial y los cuáles serán muy útiles a lo largo del presente proyecto.
+
+\subsubsection{Acelerómetro}
+Un acelerómetro, como su propio nombre indica es un dispositivo que permite medir la aceleración a la que un cuerpo está sometido. Es un componente fundamental en las unidades de medida inercial pues se puede detectar por ejemplo, condiciones de caída libre, aunque el principal uso es para determinar la orientación del sensor. \newline
+
+Los acelerómetros normalmente son de tres ejes, es decir, son capaces de medir independientemente la aceleración en el eje X, Y y Z, lo que permite conocer la magnitud y dirección del vector aceleración en cada uno de los ejes. \newline
+
+El caso que interesa en este proyecto es poder determinar la orientación del sensor. Para ello, se debe aplicar tigonometría. Suponiendo un sistema 2D con el representado en la figura \ref{fig:acelerometro1}.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.4]{imagenes/Balancing_robot/acelerometro1}
+	\caption{Trigonométrica en sensor acelerómetro 2D.}
+	\label{fig:acelerometro1}
+\end{figure}
+
+\begin{equation}
+\theta = atan\frac{A_{x}}{A_{z}}
+\end{equation}
+
+Si se aplica en una representación 3D como la representada en la \ref{fig:acelerometro2}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6]{imagenes/Balancing_robot/acelerometro2}
+	\caption{Trigonométrica en sensor acelerómetro 3D.}
+	\label{fig:acelerometro2}
+\end{figure}
+
+\begin{equation}
+\theta_{x} = atan\frac{A_{x}}{\sqrt{A_{y^2}+A_{z^2}}}
+\end{equation}
+
+\begin{equation}
+\theta_{y} = atan\frac{A_{y}}{\sqrt{A_{x^2}+A_{z^2}}}
+\end{equation}
+
+\begin{equation}
+\theta_{z} = atan\frac{A_{z}}{\sqrt{A_{x^2}+A_{y^2}}}
+\end{equation}
+
+\subsubsection{Giroscopio}
+Un giroscopio es un dispositivo que permite medir el ángulo de rotación de un determinado dispositivo. \newline
+
+En un giroscopio, siempre se miden ángulos relativos a una referencia arbitraria (a diferencia de los acelerómetros). El giroscopio que se emplea en ente proyecto es denominado giroscopio vibratorio de efecto Coriolis. \newline
+
+Al igual que en el acelerometro del apartado anterior, los giroscopios suelen emplear tres ejes, es decir, son capaces de registrar de forma independiente la rotación en los ejes X, Y y Z, se tiene por tanto el modulo y dirección del vector de rotación. \newline
+
+Es importante tener en cuenta que este tipo de giroscopios basados en el efecto Coriolis no detectan el ángulo girado sino la velocidad angular, aspecto importante para su depuración. \newline
+
+Si se recuerda el concepto de velocidad angular (ecuación \ref{equation:velangular});
+
+\begin{equation} \label{equation:velangular}
+\omega = \frac{\delta \omega}{\delta t}
+\end{equation}
+
+Así, para obtener el ángulo es necesario realizar la integración respecto del tiempo (ecuación \ref{equation:integracion}).
+
+\begin{equation}\label{equation:integracion}
+\theta_{gyro} = \omega_{gyro}*\Delta t
+\end{equation}
+
+Los acelerómetros son dispositivos que frecuentemente son muy sensibles a las vibraciones, por lo que para su correcto procesamiento hay que tener en cuenta que presentará mucho ruido de alta frecuencia. Un filtrado a una frecuencia determinada resolverá parte de este problema.\newline
+
+Tener que hacer una integración con respecto al tiempo lleva consigo algunos problemas, los cuáles serán vistos en la siguiente sección. 
+
+\subsubsection{Problema de deriva}
+
+Gran parte de las unidades de medida inercial del mercado están compuestas como mínimo de acelerómetros y giroscopios, el motivo de esta combinación es que uno complementa las limitaciones del otro y viceversa. \newline
+
+La deriva en un sensor electrónico o "drift" es una variación con el tiempo de la salida del medidor (con respecto a la medida real) a pesar de que la variable pueda ser constante, es provocado en cierta medida por cambios en la temperatura o por la acumulación de errores. \newline
+
+Tanto en un acelerómetro con en un giroscopio encontramos errores asociados a la deriva: 
+\begin{itemize}
+	\item Los acelerómetros no tienen deriva a medio o largo plazo, sin embargo, se ven influenciados por los movimientos del sensor y el ruido por lo que no son fiables a medio o corto plazo.
+	\item En cuanto a los giroscopios, funcionan muy bien en movimientos bruscos y cortos pero al realizar una integración con respecto al tiempo aparece el problema de deriva a medio o largo plazo. 
+\end{itemize} 
+
+Después de analizar los problemas de ambos, parece razonable poder combinar ambas mediciones para obtener orientaciones más precisas. 
+
+\subsubsection{Posibles soluciones}
+
+Para solucionar algunos de los problemas anteriores, puede ser muy útil aplicar algunas de las soluciones propuestas a contunuación: 
+
+\begin{itemize}
+	\item Combinar y filtrar las señales mediante un filtro complementario. Es el más utilizado en la actualidad debido a su no muy elevada complejidad. Su expresión más sencilla se representa en la ecuación \ref{equation:complementary_filter}.
+	\begin{equation} \label{equation:complementary_filter}
+	\theta = A * (\theta_{prev}+\theta_{gyro}) + B * \theta_{accel}
+	\end{equation}
+	\item Combinar y filtrar las señales mediante un filtro de Kalman, el cuál realiza una estimación del valor futuro de la medición. Sin embargo, utiliza unos cálculos complejos. 
+	\item Algunas unidades de medida inercial incorporan de manera interna procesadores DMPs (Digital Motion Processor) los cuáles ejecutan complejos algoritmos evitando tener que realizar filtros y liberando al sistema de procesamiento.
+\end{itemize}
+
+
+
+Una vez explicados las características básicas de las IMUs comerciales, en la sección \ref{sec:MPU6050} se desarrollará la IMU elegida para este sistema y sus carácterísticas propias.
+
+\subsection{Controlador de motores}
+Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
+La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura tal 
+
+\textbf{figura PWM}
+
+Aplicando esta señal, por ejemplo, a un motor DC clásico se varia la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le esta llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
+
+Así, las características de una señal PWM son: 
+\begin{itemize}
+	\item D = ciclo de trabajo.
+	\item $\theta$
+	\item T = periodo de la función
+\end{itemize}
+
+\section{PID clásico}
 \section{Robótica educativa, motivaciones y necesidad.}
 
 La robótica se puede considerar sin duda como una de las áreas tecnológicas con mas auge de la actualidad y basada en el estudio de los robots, que son sistemas compuestos por mecanismos que le permiten hacer movimientos y realizar tareas específicas, programables e inteligentes. \newline

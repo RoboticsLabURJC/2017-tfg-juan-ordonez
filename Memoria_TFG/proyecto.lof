@@ -5,51 +5,51 @@
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Appear.in.\relax }}{5}{figure.caption.11}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces PLD vs FPGA\relax }}{7}{figure.caption.12}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Ley de Moore\relax }}{8}{figure.caption.13}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces PLD vs FPGA\relax }}{9}{figure.caption.14}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Paralelizaci\IeC {\'o}n de Procesos\relax }}{12}{figure.caption.18}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Lattice iCE40HX1K\relax }}{14}{figure.caption.22}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Tiny FPGA BX\relax }}{14}{figure.caption.23}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces BlackIce II\relax }}{15}{figure.caption.24}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces ico Board\relax }}{15}{figure.caption.25}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces IceZum Alhambra Board\relax }}{16}{figure.caption.26}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces IceZum Alhambra II Board\relax }}{17}{figure.caption.27}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Ventana principal IceStudio.\relax }}{18}{figure.caption.28}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Escritura I2C IceStudio alto nivel.\relax }}{19}{figure.caption.29}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Escritura I2C IceStudio bajo nivel.\relax }}{19}{figure.caption.30}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Funcionalidad FPGA y Micro-controlador.\relax }}{20}{figure.caption.31}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Puertas l\IeC {\'o}gicas despu\IeC {\'e}s de una implementaci\IeC {\'o}n hardware.\relax }}{21}{figure.caption.32}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Sistema bipedo coexistencia Micro-FPGA.\relax }}{23}{figure.caption.33}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Sensor CMOS para adquisici\IeC {\'o}n de im\IeC {\'a}genes.\relax }}{26}{figure.caption.35}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Unidad de Medida Inercial.\relax }}{26}{figure.caption.36}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Potenci\IeC {\'o}metro.\relax }}{26}{figure.caption.37}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Motor DC.\relax }}{27}{figure.caption.38}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ley de Moore\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces PLD vs FPGA\relax }}{10}{figure.caption.14}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Paralelizaci\IeC {\'o}n de Procesos\relax }}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Lattice iCE40HX1K\relax }}{15}{figure.caption.22}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Tiny FPGA BX\relax }}{15}{figure.caption.23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces BlackIce II\relax }}{16}{figure.caption.24}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ico Board\relax }}{16}{figure.caption.25}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces IceZum Alhambra Board\relax }}{17}{figure.caption.26}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces IceZum Alhambra II Board\relax }}{18}{figure.caption.27}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Ventana principal IceStudio.\relax }}{19}{figure.caption.28}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Escritura I2C IceStudio alto nivel.\relax }}{20}{figure.caption.29}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Escritura I2C IceStudio bajo nivel.\relax }}{20}{figure.caption.30}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Funcionalidad FPGA y Micro-controlador.\relax }}{21}{figure.caption.31}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Puertas l\IeC {\'o}gicas despu\IeC {\'e}s de una implementaci\IeC {\'o}n hardware.\relax }}{22}{figure.caption.32}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Sistema bipedo coexistencia Micro-FPGA.\relax }}{24}{figure.caption.33}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \IeC {\'A}ngulos de Tait-Brain.\relax }}{25}{figure.caption.34}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Unidad de Medida Inercial.\relax }}{25}{figure.caption.35}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Unidad de Medida Inercial.\relax }}{25}{figure.caption.36}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Unidad de Medida Inercial.\relax }}{25}{figure.caption.37}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 2D.\relax }}{26}{figure.caption.39}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 3D.\relax }}{26}{figure.caption.40}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Sensor CMOS para adquisici\IeC {\'o}n de im\IeC {\'a}genes.\relax }}{32}{figure.caption.45}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Unidad de Medida Inercial.\relax }}{32}{figure.caption.46}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Potenci\IeC {\'o}metro.\relax }}{32}{figure.caption.47}
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Motor DC.\relax }}{33}{figure.caption.48}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces SegWay comercial.\relax }}{29}{figure.caption.39}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Representaci\IeC {\'o}n p\IeC {\'e}ndulo invertido.\relax }}{30}{figure.caption.40}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{31}{figure.caption.41}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{32}{figure.caption.42}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \IeC {\'A}ngulos de Tait-Brain.\relax }}{33}{figure.caption.43}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Unidad de Medida Inercial.\relax }}{33}{figure.caption.44}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Unidad de Medida Inercial.\relax }}{33}{figure.caption.45}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Unidad de Medida Inercial.\relax }}{33}{figure.caption.46}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 2D.\relax }}{34}{figure.caption.48}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 3D.\relax }}{34}{figure.caption.49}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{37}{figure.caption.54}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Conector GND y VCC.\relax }}{38}{figure.caption.55}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{38}{figure.caption.56}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{39}{figure.caption.57}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{41}{figure.caption.59}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{42}{figure.caption.60}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{43}{figure.caption.61}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Diagrama de flujo de la interfaz para ArduinO.\relax }}{45}{figure.caption.62}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{47}{figure.caption.63}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{48}{figure.caption.64}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces \relax }}{50}{figure.caption.68}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces \relax }}{53}{figure.caption.70}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces \relax }}{54}{figure.caption.71}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces \relax }}{54}{figure.caption.72}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces \relax }}{55}{figure.caption.73}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces \relax }}{55}{figure.caption.74}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces SegWay comercial.\relax }}{35}{figure.caption.49}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Representaci\IeC {\'o}n p\IeC {\'e}ndulo invertido.\relax }}{36}{figure.caption.50}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{37}{figure.caption.51}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{38}{figure.caption.53}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{40}{figure.caption.56}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Soluci\IeC {\'o}n final en FPGA de la comunicaci\IeC {\'o}n en IceStudio.\relax }}{41}{figure.caption.57}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{42}{figure.caption.58}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Conector GND y VCC.\relax }}{42}{figure.caption.59}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{43}{figure.caption.60}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{43}{figure.caption.61}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{46}{figure.caption.63}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{47}{figure.caption.65}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{49}{figure.caption.67}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{50}{figure.caption.68}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces \relax }}{53}{figure.caption.72}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces \relax }}{56}{figure.caption.74}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces \relax }}{57}{figure.caption.75}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces \relax }}{57}{figure.caption.76}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces \relax }}{58}{figure.caption.77}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces \relax }}{58}{figure.caption.78}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

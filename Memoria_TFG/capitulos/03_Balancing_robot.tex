@@ -1,6 +1,5 @@
 \chapter{Balancing Robot}\label{sec: BalancingRobot}
-\section{Diseño del sistema}
-\subsection{Descripción del problema}
+\section{Descripción del problema}
 En el presente capítulo se pretende abordar el problema del péndulo invertido mediante la utilización de una FPGA. Para ello, en los respectivos capítulos se tratará la física de un Balancing robot, el cálculo de su estructura, los sensores y actuadores utilizados, el sistema de control y el diseño y fabricación de una PCB que resuelva de manera más adecuada algunos problemas de los anteriormente planteados. Se utilizará una comunicación entre FPGA-Micro-controlador y se dará una versión más global del sistema propuesto, con un diagrama de bloques general. \newline
 \newline Para entrar el contacto con el problema a resolver, se enunciará brevemente el problema del péndulo invertido, cuya solución ha dado lugar a muchas herramientas muy famosas en la actualidad, una de ellas, por ejemplo, el llamado \textit{SegWay} (\ref{fig:segway}).
 
@@ -26,21 +25,18 @@ Así, y como el lector podrá imaginar, un péndulo invertido tendrá el aspecto
 Consiste en un péndulo donde el centro de masas se encuentra situado por encima del punto o eje de balanceo. Como cabe esperar, esta disposición dota al sistema de una inestabilidad estática. Recordamos que un sistema es estable cuánto mas cercano esta del plano horizontal de apoyo su centro de gravedad. \newline
 El fundamento de este proyecto consistirá por tanto en intentar corregir esta inestabilidad, y forma parte de uno de los problemas mas famosos en cuánto a teoría de control y dinámica de sistemas. 
 
-\subsection{Descripción de la solución. (Diagrama de bloques alto nivel)}
+\section{Diseño del sistema}
+\subsection{Descripción de la solución. (Diagrama de bloques alto nivel)} \label{sec:descripcion_de_la_solucion}
 En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores. 
-\subsection{Fisica de un Balancing Robot}
+\subsection{Diseño de estructura mecánica.}
+Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de la figura, a partir de la cuál se ensamblarán el resto de los componentes.
+\subsection{Obtención de ángulo en micro-controlador}
+Como se caracteriza en la sección \ref{sec:descripcion_de_la_solucion} , es necesario un conocimiento constante del ángulo del sistema. Para ello se propone el siguiente diagrama de bloques, implementado en C en un Arduino-nano y cuyo código se encuentra en el apéndice. \newline
+Se hace uso de una comunicación i2c con la IMU MPU6050 y para liberar de trabajo al micro-controlador se implementa la librería tal que .\newline
+Un ejemplo de la obtención de ángulos se representa en la figura.
+
 \subsection{Integración IceZum Alhambra-Arduino Nano}
-Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
-
-Hay varias opciones para hacer una integración Micro-Controlador--FPGA:
- 
-\begin{itemize}
-	\item Emular el comportamiento de un micro-controlador en una FPGA.
-	\item Coexistencia física de una FPGA y micro-controlador creando una comunicación entre cada una de ellas.
-\end{itemize}
-En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
-
-Así, el sistema elegido deberá contar con algún modelo de comunicación que permita una integración como si de un solo sistema se tratase, aspecto sobre el que se basa este capítulo. Para claridad por parte del lector, un esquema básico del objetivo final se representa en la figura \ref{fig:coexixtencia1}.
+El ángulo tiene que ser conocido en la IceZum-Alhambra para la toma de decisiones tanto en dirección como velocidad de los motores. Es necesario por tanto una comunicación micro-controlador/FPGA y que además permita separar procesos secuenciales y paralelos (figura \ref{fig:coexistencia1}).
 
 \begin{figure}[H]
 	\center
@@ -49,197 +45,54 @@ Así, el sistema elegido deberá contar con algún modelo de comunicación que p
 	\label{fig:coexistencia1}
 \end{figure}
 
-En este caso la comunicación será solo uni-direccional, el micro-controlador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
+En este caso, la comunicación será solo uni-direccional, el micro-controlador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
 
-Si no se conociese el ángulo actual, el sistema final no sabría reconocer hacia qué dirección ni con qué velocidad debe corregir este error (recordamos aquí que el objetivo final es conseguir una estabilización). \newline
+Se hace una separación por tanto de dos partes de la comunicación, desde el punto de vista del micro-controlador, y desde el punto de vista de la FPGA. Ambos serán explicados más específicamente en la implemtnación del sistema. 
 
-Existen dos tipos de comunicación posibles para este propósito: 
-\begin{itemize}
-	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente y haciendo uso solo de un bus de datos.
-	\item Comunicación en paralelo: Todos los bits de cada símbolo se envían a la vez.
-\end{itemize} 
-
-Para hacer uso de la comunicación en paralelo se necesitan tantos canales como bits tenga la información a transmitir (si se quiere enviar un byte se debería hacer uso de un total de 8 canales, correspondientes a cada bit). En este caso habría que utilizar 8 pines de la FPGA para poder llevar a cabo este tipo de transmisión. Por ello, y a pesar de que la comunicación paralela es mas rápida que en serie, se elije la primera como opción más conveniente. \newline
-
-El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque sólo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2} y su desarrollo será explicado en la sección \ref{sec:Integracion}.
+\subsubsection{Desde el punto de vista del micro-controlador:}
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia2.pdf}
-	\caption{Pines hardware de coexistencia micro-FPGA.}
-	\label{fig:coexistencia2}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.6]{imagenes/Balancing_robot/extraccion_angulo.pdf}
+	\caption{Envío de ángulo usando el puerto serie.}
+	\label{fig:extraccion_angulo}
 \end{figure}
-El sistema general cuenta con dos conexiones:
-\begin{itemize}
-	\item Una línea de datos para el envió de la información.
-	\item Una linea de reloj para que la FPGA pueda obtener en todo momento la velocidad de la información.
-\end{itemize}
 
-Un posible ejemplo de una comunicación en serie de un byte de datos podría ser el siguiente: 
-\textbf{Ejemplo com SPI}
-
-
-
-
-\subsection{Unidad de medida inercial}
-El componente central del sistema propuesto esta definido como IMU o unidad de medida inercial. Está compuesto por una serie de sensores los cuales serán utilizados para conocer de manera exacta aspectos de localización del sistema a bordo tales como velocidad, orientación, fuerzas gravitacionales etc. \newline
-Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newline
-
-En el caso del presente proyecto, será utilizado para obtener los ángulos de navegación o ángulos de Tait-Brain, en los que la orientación se presenta con tres rotaciones ortogonales en torno al eje X, Y y Z. Un ejemplo de este tipo de representación se encuentra en la figura \ref{fig:orientacion}\newline
-
-
+\subsubsection{Desde el punto de vista de la FPGA}
+\begin{center}
 	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 10mm, clip,scale=0.9, angle=90]{imagenes/Balancing_robot/arduino_interfacefluid.pdf}
+		%\caption{Diagrama de flujo de la interfaz para Arduino.}
+		\label{fig:arduino_interfacefluid}
+	\end{figure}
+\end{center}
+
+El aspecto en IceStudio del módulo intermedio a la obtención tanto de la parte entera como de la parte decimal se muestra en la imagen \ref{fig:arduino_interface}. Si se aprecia, sus entradas y salidas tienen mucho que ver con las características requeridas para la lectura correcta de un byte.
+
+\begin{figure}[H]
 	\center
-	\includegraphics[scale=0.5]{imagenes/Balancing_robot/orientacion}
-	\caption{Ángulos de Tait-Brain.}
-	\label{fig:orientacion}
+	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_interface.PNG}
+	\caption{Apariencia del módulo interfaz de Arduino Nano en IceStudio.}
+	\label{fig:arduino_interface}
+\end{figure}
+
+Además, se hace necesario un módulo adicional que ordene tanto la parte entera como la parte decimal del ángulo correspondiente. El sistema final desde el punto de vista de la FPGA se representa en la figura \ref{fig:arduino_arrange}.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_arrange.PNG}
+	\caption{Solución final en FPGA de la comunicación en IceStudio.}
+	\label{fig:arduino_arrange}
 \end{figure}
 
 
-Una IMU queda definida por su número de grados de libertad (DOF) los cuáles dependerán del número de sensores a bordo (acelerómetro, giroscopio) y el número de ejes en los que se aplican. Así una IMU con seis grados de libertad (por ejemplo un acelerómetro de 3 ejes y un giroscopio de 3 ejes) se diría que es 6DOF. \newline
-
-En las figuras \ref{fig:IMU1}, \ref{fig:IMU2}, \ref{fig:IMU2} se presentan algunos ejemplos de IMUs.
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU1}
-	\caption{Unidad de Medida Inercial.}
-	\label{fig:IMU1}
-\end{figure}
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU2}
-	\caption{Unidad de Medida Inercial.}
-	\label{fig:IMU2}
-\end{figure}
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU3}
-	\caption{Unidad de Medida Inercial.}
-	\label{fig:IMU3}
-\end{figure}
-
-Otra de las características importantes y de la cuál dependerá en gran medida el precio del producto es el rango de los sensores a bordo y de la disponibilidad en el propio sistema de conversores analógico digitales, encargados estos de convertir el valor del sensor a un valor binario que pueda ser utilizado para posterior análisis. \newline
-A continuación se definen algunos de los aspectos más importantes que pueden ser encontrados en una unidad de medida inercial y los cuáles serán muy útiles a lo largo del presente proyecto.
-
-\subsubsection{Acelerómetro}
-Un acelerómetro, como su propio nombre indica es un dispositivo que permite medir la aceleración a la que un cuerpo está sometido. Es un componente fundamental en las unidades de medida inercial pues se puede detectar por ejemplo, condiciones de caída libre, aunque el principal uso es para determinar la orientación del sensor. \newline
-
-Los acelerómetros normalmente son de tres ejes, es decir, son capaces de medir independientemente la aceleración en el eje X, Y y Z, lo que permite conocer la magnitud y dirección del vector aceleración en cada uno de los ejes. \newline
-
-El caso que interesa en este proyecto es poder determinar la orientación del sensor. Para ello, se debe aplicar tigonometría. Suponiendo un sistema 2D con el representado en la figura \ref{fig:acelerometro1}.
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.4]{imagenes/Balancing_robot/acelerometro1}
-	\caption{Trigonométrica en sensor acelerómetro 2D.}
-	\label{fig:acelerometro1}
-\end{figure}
-
-\begin{equation}
- 	\theta = atan\frac{A_{x}}{A_{z}}
-\end{equation}
-
-Si se aplica en una representación 3D como la representada en la \ref{fig:acelerometro2}
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.6]{imagenes/Balancing_robot/acelerometro2}
-	\caption{Trigonométrica en sensor acelerómetro 3D.}
-	\label{fig:acelerometro2}
-\end{figure}
-
-\begin{equation}
-	\theta_{x} = atan\frac{A_{x}}{\sqrt{A_{y^2}+A_{z^2}}}
-\end{equation}
-
-\begin{equation}
-\theta_{y} = atan\frac{A_{y}}{\sqrt{A_{x^2}+A_{z^2}}}
-\end{equation}
-
-\begin{equation}
-\theta_{z} = atan\frac{A_{z}}{\sqrt{A_{x^2}+A_{y^2}}}
-\end{equation}
-
-\subsubsection{Giroscopio}
-Un giroscopio es un dispositivo que permite medir el ángulo de rotación de un determinado dispositivo. \newline
-
-En un giroscopio, siempre se miden ángulos relativos a una referencia arbitraria (a diferencia de los acelerómetros). El giroscopio que se emplea en ente proyecto es denominado giroscopio vibratorio de efecto Coriolis. \newline
-
-Al igual que en el acelerometro del apartado anterior, los giroscopios suelen emplear tres ejes, es decir, son capaces de registrar de forma independiente la rotación en los ejes X, Y y Z, se tiene por tanto el modulo y dirección del vector de rotación. \newline
-
-Es importante tener en cuenta que este tipo de giroscopios basados en el efecto Coriolis no detectan el ángulo girado sino la velocidad angular, aspecto importante para su depuración. \newline
-
-Si se recuerda el concepto de velocidad angular (ecuación \ref{equation:velangular});
-
-\begin{equation} \label{equation:velangular}
-	\omega = \frac{\delta \omega}{\delta t}
-\end{equation}
-
-Así, para obtener el ángulo es necesario realizar la integración respecto del tiempo (ecuación \ref{equation:integracion}).
-
-\begin{equation}\label{equation:integracion}
-	\theta_{gyro} = \omega_{gyro}*\Delta t
-\end{equation}
-
-Los acelerómetros son dispositivos que frecuentemente son muy sensibles a las vibraciones, por lo que para su correcto procesamiento hay que tener en cuenta que presentará mucho ruido de alta frecuencia. Un filtrado a una frecuencia determinada resolverá parte de este problema.\newline
-
-Tener que hacer una integración con respecto al tiempo lleva consigo algunos problemas, los cuáles serán vistos en la siguiente sección. 
-
-\subsubsection{Problema de deriva}
-
-Gran parte de las unidades de medida inercial del mercado están compuestas como mínimo de acelerómetros y giroscopios, el motivo de esta combinación es que uno complementa las limitaciones del otro y viceversa. \newline
-
-La deriva en un sensor electrónico o "drift" es una variación con el tiempo de la salida del medidor (con respecto a la medida real) a pesar de que la variable pueda ser constante, es provocado en cierta medida por cambios en la temperatura o por la acumulación de errores. \newline
-
-Tanto en un acelerómetro con en un giroscopio encontramos errores asociados a la deriva: 
-\begin{itemize}
-	\item Los acelerómetros no tienen deriva a medio o largo plazo, sin embargo, se ven influenciados por los movimientos del sensor y el ruido por lo que no son fiables a medio o corto plazo.
-	\item En cuanto a los giroscopios, funcionan muy bien en movimientos bruscos y cortos pero al realizar una integración con respecto al tiempo aparece el problema de deriva a medio o largo plazo. 
-\end{itemize} 
-
-Después de analizar los problemas de ambos, parece razonable poder combinar ambas mediciones para obtener orientaciones más precisas. 
-
-\subsubsection{Posibles soluciones}
-
-Para solucionar algunos de los problemas anteriores, puede ser muy útil aplicar algunas de las soluciones propuestas a contunuación: 
-
-\begin{itemize}
-	\item Combinar y filtrar las señales mediante un filtro complementario. Es el más utilizado en la actualidad debido a su no muy elevada complejidad. Su expresión más sencilla se representa en la ecuación \ref{equation:complementary_filter}.
-	\begin{equation} \label{equation:complementary_filter}
-		\theta = A * (\theta_{prev}+\theta_{gyro}) + B * \theta_{accel}
-	\end{equation}
-	\item Combinar y filtrar las señales mediante un filtro de Kalman, el cuál realiza una estimación del valor futuro de la medición. Sin embargo, utiliza unos cálculos complejos. 
-	\item Algunas unidades de medida inercial incorporan de manera interna procesadores DMPs (Digital Motion Processor) los cuáles ejecutan complejos algoritmos evitando tener que realizar filtros y liberando al sistema de procesamiento.
-\end{itemize}
 
 
+\subsection{Integración control PID en IceZum Alhambra}
 
-Una vez explicados las características básicas de las IMUs comerciales, en la sección \ref{sec:MPU6050} se desarrollará la IMU elegida para este sistema y sus carácterísticas propias.
-
-\subsection{Motores}
-\subsubsection{Controlador PWM}
-Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
-La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura tal 
-
-\textbf{figura PWM}
-
-Aplicando esta señal, por ejemplo, a un motor DC clásico se varia la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le esta llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
-
-Así, las características de una señal PWM son: 
-\begin{itemize}
-	\item D = ciclo de trabajo.
-	\item $\theta$
-	\item T = periodo de la función
-\end{itemize}
-
-
-
-\subsection{Control PID clásico.}
-\subsection{Diseño estructura mecánica}
-\subsection{Diseño PCB}\label{sec:DisenoPCB} 
+\subsection{Controlador de motores en IceZum Alhambra}
+\subsection{Placa de circuito impreso PCB}\label{sec:DisenoPCB} 
 Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, podía ser conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
 
 Para ello, y antes del diseño, es necesario un análisis funcional de los requerimientos, no sólo actuales, sino también futuros, así como para la implementación de un vehículo aéreo no tripulado. El circuito impreso debería poder albergar los siguientes componentes y comportamientos:
@@ -301,7 +154,7 @@ Para ello, y antes del diseño, es necesario un análisis funcional de los reque
 	\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
 \end{itemize}
 
-\subsection{Batería} \label{sec:Bateria}
+\subsection{Sistema de alimentación.} \label{sec:Bateria}
 
 Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes, por lo tanto, y como tarea fundamental, un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
 
@@ -338,10 +191,52 @@ El siguiente planteamiento sería por tanto elegir qué valores anteriores neces
 \end{table}
 
 
-
+\subsection{Materiales y coste del prototipo}
 \section{Implementación del sistema}
-\subsection{Integración IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
-Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido el micro-controlador debido a que este concepto se explica en \ref{sec:MPU6050}. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del micro-controlador, solo se analiza la parte sombreada.  
+\subsection{Fabricación estructura mecánica (Física de un Balancing Robot)}
+\subsection{Implementación PCB}
+\subsection{Implementación IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
+Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
+
+Hay varias opciones para hacer una integración Micro-Controlador--FPGA:
+
+\begin{itemize}
+	\item Emular el comportamiento de un micro-controlador en una FPGA.
+	\item Coexistencia física de una FPGA y micro-controlador creando una comunicación entre cada una de ellas.
+\end{itemize}
+En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
+
+Así se hace necesario una comunicación micro-controlador/FPGA. Existen dos tipos de comunicación posibles para este propósito: 
+\begin{itemize}
+	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente y haciendo uso solo de un bus de datos.
+	\item Comunicación en paralelo: Todos los bits de cada símbolo se envían a la vez.
+\end{itemize} 
+
+Para hacer uso de la comunicación en paralelo se necesitan tantos canales como bits tenga la información a transmitir (si se quiere enviar un byte se debería hacer uso de un total de 8 canales, correspondientes a cada bit). En este caso habría que utilizar 8 pines de la FPGA para poder llevar a cabo este tipo de transmisión. Por ello, y a pesar de que la comunicación paralela es mas rápida que en serie, se elije la primera como opción más conveniente. \newline
+
+El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque sólo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2}.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia2.pdf}
+	\caption{Pines hardware de coexistencia micro-FPGA.}
+	\label{fig:coexistencia2}
+\end{figure}
+El sistema general cuenta con dos conexiones:
+\begin{itemize}
+	\item Una línea de datos para el envió de la información.
+	\item Una linea de reloj para que la FPGA pueda obtener en todo momento la velocidad de la información.
+\end{itemize}
+
+Un posible ejemplo de una comunicación en serie de un byte de datos podría ser el siguiente: 
+\textbf{Ejemplo com SPI}
+
+
+Se introduce a más bajo nivel las dos partes, la comunicación desde el punto de vista del micro-controlador y la comunicación desde el punto de vista de la FPGA. 
+
+\subsubsection{Desde el punto de vista del micro-controlador}
+
+Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido en el micro-controlador. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del micro-controlador, solo se analiza la parte sombreada.  
 
 \begin{figure}[H]
 	\center
@@ -352,15 +247,7 @@ Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo a
 
 El diagrama de flujo sobre el cuál se basa el código en C del micro-controlador se representa en la figura \ref{fig:extraccion_angulo}
 
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.6]{imagenes/Balancing_robot/extraccion_angulo.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
-	\label{fig:extraccion_angulo}
-\end{figure}
-
-
-A continuación se pasa a explicar los aspectos mas relevantes del desarrollo anterior: 
+A continuación se pasa a explicar los aspectos mas relevantes: 
 
 \begin{itemize}
 	\item \textbf{1.-}Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
@@ -375,7 +262,7 @@ A continuación se pasa a explicar los aspectos mas relevantes del desarrollo an
 \end{itemize}
 Un ejemplo real del envío del un ángulo con su correspondiente signo es mostrado en la figura \ref{label}
 
-Ya se ha analizado la parte de la comunicación serie por parte del microcontrolador. A continuación se desarrolla la parte de la lectura de este ángulo sobre la FPGA IceZum Alhambra. \newline
+\subsubsection{Desde el punto de vista de la FPGA} \newline
 
 Por un PIN de entrada a la FPGA le estarán continuamente entrando datos provenientes del pin de transmisión y para que se puede hacer una lectura correcta del byte es necesario conocer: 
 
@@ -386,17 +273,9 @@ Por un PIN de entrada a la FPGA le estarán continuamente entrando datos proveni
 	\item Se vayan almacenando en un buffer los bits necesarios hasta que el byte este completo.
 \end{itemize}
 
-Para poder implementar en la FPGA un módulo intermedio con las anteriores carácteristicas es necesario conocer de antemano la velocidad de la transmisión por parte del micro-controlador, la cuál se ha fijado en 16200 baudios. \newline
+Para poder implementar en la FPGA un módulo intermedio con las anteriores carácteristicas  (figura \ref{fig:arduino_interface})es necesario conocer de antemano la velocidad de la transmisión por parte del micro-controlador, la cuál se ha fijado en 16200 baudios. \newline
 
-\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_interface.PNG}
-	\caption{Apariencia del módulo interfaz de Arduino Nano en IceStudio.}
-	\label{fig:arduino_interface}
-\end{figure}
-
-
-El aspecto en IceStudio del módulo intermedio a la obtención tanto de la parte entera como de la parte decimal tendrá el aspecto que se muestra en la imagen \ref{fig:arduino_interface}. Si se aprecia, sus entradas y salidas tienen mucho que ver con las características requeridas para la lectura correcta de un byte. Como entrada tendrá el bus de transmisión del micro-controlador (TX), y como salidas: 
+Se detallan las diferentes entradas y salidas del módulo anterior: 
 
 \begin{itemize}
 	\item data[7:0]: Consiste en un buffer en el cuál se van almacenando los bits cuando es necesario hasta tener el byte. Es importante que el módulo siguiente conozca cuando el byte esta preparado para su captura.
@@ -405,18 +284,7 @@ El aspecto en IceStudio del módulo intermedio a la obtención tanto de la parte
 	\item bit\_ready: La utilización de esta salida de solo para depuracion.
 \end{itemize} 
 
-La implementación en IceStudio del comportamiento anterior será mediante dos maquinas estados con sus correspondientes listas de sensibilidad y el diagrama de flujo se representa en la figura \ref{fig:arduino_interfacefluid}
-
-\begin{center}
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.9, angle=90]{imagenes/Balancing_robot/arduino_interfacefluid.pdf}
-	\caption{Diagrama de flujo de la interfaz para ArduinO.}
-	\label{fig:arduino_interfacefluid}
-\end{figure}
-\end{center}
-
-
+La implementación en IceStudio del comportamiento anterior está implementada mediante dos máquinas estados con sus correspondientes listas de sensibilidad, y el diagrama de flujo se representa en la figura \ref{fig:arduino_interfacefluid}. Se hace uso de dos procesos bien diferenciados:
 
 \textbf{Proceso 1:} Este proceso solo dota al sistema siguiente del momento exacto en el cual puede capturar un bit y guardarlo en el buffer, para ello, debe conocer la velocidad de la transmisión comentada anteriormente. Los estados serán los siguientes: 
 
@@ -435,9 +303,9 @@ La implementación en IceStudio del comportamiento anterior será mediante dos m
 	\item Cuando el byte este preparado para ser capturado por los consecutivos módulos un canal se pondrá en alta, estando disponibles como salidas tanto el buffer con 8 los bits y este canal de "byte\_ready".
 \end{itemize}
 
-En este punto la FPGA es capaz de diferenciar cuando puede capturar un byte (BYTE\_READY) y de donde tiene que capturar el bus de datos (DATA\_BUFFER). No obstante un aspecto que no forma parte de la comunicación en si es importante de analizar si se quiere conseguir un correcto funcionamiento. Esto es, si se ha dicho anteriormente que el micro-controlador envía continuamente la parte entera y decimal del ángulo, si no se hace una buena interpretación de estos datos, es posible que un ángulo sobre la FPGA este formado por una parte decimal de un angulo n y la parte entera del ángulo n+1. \newline
+En este punto la FPGA es capaz de diferenciar cuando puede capturar un byte (BYTE\_READY) y de donde tiene que capturar el bus de datos (DATA\_BUFFER). No obstante un aspecto que no forma parte de la comunicación en sí es importante de analizar si se quiere conseguir un correcto funcionamiento. Esto es, si se ha dicho anteriormente que el micro-controlador envía continuamente la parte entera y decimal del ángulo, si no se hace una buena interpretación de estos datos, es posible que un ángulo sobre la FPGA este formado por una parte decimal de un angulo n y la parte entera del ángulo n+1. \newline
 
-Para ello se crea un módulo en IceStudio que sea capaz de ordenar estos valores que le llegan. El aspecto de este módulo en IceStudio sera el representado en la figura \ref{fig:arrange_arduino}
+Para ello se crea un módulo en IceStudio que sea capaz de ordenar estos valores. El aspecto de este módulo en IceStudio sera el representado en la figura \ref{fig:arrange_arduino}
 
 \begin{figure}[H]
 	\center
@@ -446,14 +314,14 @@ Para ello se crea un módulo en IceStudio que sea capaz de ordenar estos valores
 	\label{fig:arrange_arduino}
 \end{figure}
 
-Como entradas se podrán encontrar:
+Como entradas:
 
 \begin{itemize}
 	\item data[7:0] : Es el buffer de salida del modulo anterior donde se van acumulando los bits capturados hasta conseguir el byte.
 	\item byte\_ready : Flag de reloj que se activa cuando el byte este disponible para ser capturado.
 \end{itemize}
 
-Es importante tener en cuenta que el dato estará disponible siempre y cuando este disponible tanto la parte entera como la parte decimal del ángulo en cuestión. Así, se pueden encontrar las siguientes salidas:
+Es importante tener en cuenta que el dato estará disponible siempre y cuando este disponible tanto la parte entera como la parte decimal del ángulo en cuestión. Así, como salidas se encuentran:
 
 \begin{itemize}
 	\item integer\_part[7:0] : byte que representa la parte entera del ángulo.
@@ -461,7 +329,7 @@ Es importante tener en cuenta que el dato estará disponible siempre y cuando es
 	\item data\_ready : flag de reloj que se activa cuando el dato (parte decimal y parte entera) este preparado para ser capturado.	
 \end{itemize}
 
-Así, y al igual que se ha profundizado anteriormente, el diagrama de flujo que explica el código en Verilog que implementa el anterior comportamiento se puede encontrar en la figura \ref{fig:arrange_angle} y será comentado mas adelante.
+Como se ha profundizado anteriormente, el diagrama de flujo que explica el código en Verilog que implementa el anterior comportamiento se puede representa en la figura \ref{fig:arrange_angle} y será comentado mas adelante.
 
 \begin{figure}[H]
 	\center
@@ -472,9 +340,9 @@ Así, y al igual que se ha profundizado anteriormente, el diagrama de flujo que 
 
 
 
-En este caso es un proceso con una lista de sensibilidad que cuenta como señal sensible con el bus de "byte\_ready", y que es salida del modulo anterior. \newline
+En este caso es un proceso con una lista de sensibilidad que cuenta como señal sensible el bus de "byte\_ready", y que es salida del modulo anterior. \newline
 
-Cada vez que se active el flag que indica que un byte esta listo para ser capturado comienza una máquina de estados cíclica que cuenta con los dos siguientes estados:
+Cada vez que se active el flag que indica que un byte está listo para ser capturado comienza una máquina de estados cíclica que cuenta con los dos siguientes estados:
 
 \begin{itemize}
 	 \item DATA1: Es el primer dato a ser capturado y corresponde con la parte entera del primer ángulo. La segunda vez que se active el flag de "byte\_ready" corresponderá a la parte decimal del primer ángulo, y por lo tanto pasará al siguiente estado DATA2.
@@ -507,12 +375,10 @@ Los valores
 
 
 
-\subsection{Control P}
+\subsection{Control}
 \subsection{Control D}
 \subsection{Controlador PWM}
 \subsection{Controlador driver motor}
-\subsection{Fabricación estructura mecánica}
-\subsection{Fabricación PCB}
 Para el desarrollo de una PCB con los requerimientos descritos en la subsseccion \ref{sec:DisenoPCB} se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
 
 \begin{itemize}
@@ -655,9 +521,6 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 		\label{fig:Vista3D2}
 	\end{figure}
 \end{center}
-
-\subsection{Elección de materiales y coste del prototipo}
-
 
 \section{Experimentos}
 \subsection{VGA Module}
