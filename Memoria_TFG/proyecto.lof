@@ -16,20 +16,20 @@
 \contentsline {figure}{\numberline {2.10}{\ignorespaces IceZum Alhambra II Board\relax }}{18}{figure.caption.27}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Ventana principal IceStudio.\relax }}{19}{figure.caption.28}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Escritura I2C IceStudio alto nivel.\relax }}{20}{figure.caption.29}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Escritura I2C IceStudio bajo nivel.\relax }}{20}{figure.caption.30}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Funcionalidad FPGA y Micro-controlador.\relax }}{21}{figure.caption.31}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Puertas l\IeC {\'o}gicas despu\IeC {\'e}s de una implementaci\IeC {\'o}n hardware.\relax }}{22}{figure.caption.32}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Sistema bipedo coexistencia Micro-FPGA.\relax }}{24}{figure.caption.33}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces \IeC {\'A}ngulos de Tait-Brain.\relax }}{25}{figure.caption.34}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Unidad de Medida Inercial.\relax }}{25}{figure.caption.35}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Unidad de Medida Inercial.\relax }}{25}{figure.caption.36}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Unidad de Medida Inercial.\relax }}{25}{figure.caption.37}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 2D.\relax }}{26}{figure.caption.39}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 3D.\relax }}{26}{figure.caption.40}
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Sensor CMOS para adquisici\IeC {\'o}n de im\IeC {\'a}genes.\relax }}{32}{figure.caption.45}
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Unidad de Medida Inercial.\relax }}{32}{figure.caption.46}
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Potenci\IeC {\'o}metro.\relax }}{32}{figure.caption.47}
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Motor DC.\relax }}{33}{figure.caption.48}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Escritura I2C IceStudio bajo nivel.\relax }}{21}{figure.caption.30}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Funcionalidad FPGA y Micro-controlador.\relax }}{22}{figure.caption.31}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Puertas l\IeC {\'o}gicas despu\IeC {\'e}s de una implementaci\IeC {\'o}n hardware.\relax }}{23}{figure.caption.32}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Sistema bipedo coexistencia Micro-FPGA.\relax }}{25}{figure.caption.33}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces \IeC {\'A}ngulos de Tait-Brain.\relax }}{26}{figure.caption.34}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Unidad de Medida Inercial.\relax }}{26}{figure.caption.35}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Unidad de Medida Inercial.\relax }}{26}{figure.caption.36}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Unidad de Medida Inercial.\relax }}{26}{figure.caption.37}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 2D.\relax }}{27}{figure.caption.39}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 3D.\relax }}{27}{figure.caption.40}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Sensor CMOS para adquisici\IeC {\'o}n de im\IeC {\'a}genes.\relax }}{33}{figure.caption.45}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Unidad de Medida Inercial.\relax }}{33}{figure.caption.46}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Potenci\IeC {\'o}metro.\relax }}{33}{figure.caption.47}
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Motor DC.\relax }}{34}{figure.caption.48}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces SegWay comercial.\relax }}{35}{figure.caption.49}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Representaci\IeC {\'o}n p\IeC {\'e}ndulo invertido.\relax }}{36}{figure.caption.50}

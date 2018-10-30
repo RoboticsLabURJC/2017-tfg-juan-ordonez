@@ -22,16 +22,16 @@
 \contentsline {subsection}{\numberline {2.2.3}IceStudio}{18}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Coexistencia Microcontrolador-FPGA}{21}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Diferencia microcontrolador-FPGA}{21}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Necesidad}{22}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Unidad de medida inercial}{24}{section.2.4}
-\contentsline {subsubsection}{Aceler\IeC {\'o}metro}{26}{section*.38}
-\contentsline {subsubsection}{Giroscopio}{27}{section*.41}
-\contentsline {subsubsection}{Problema de deriva}{27}{section*.42}
-\contentsline {subsubsection}{Posibles soluciones}{28}{section*.43}
-\contentsline {subsection}{\numberline {2.4.1}Controlador de motores}{28}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}PID cl\IeC {\'a}sico}{29}{section.2.5}
-\contentsline {section}{\numberline {2.6}Rob\IeC {\'o}tica educativa, motivaciones y necesidad.}{29}{section.2.6}
-\contentsline {section}{\numberline {2.7}Sensores, actuadores y sistema de control }{30}{section.2.7}
+\contentsline {subsection}{\numberline {2.3.2}Necesidad}{23}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Unidad de medida inercial}{25}{section.2.4}
+\contentsline {subsubsection}{Aceler\IeC {\'o}metro}{27}{section*.38}
+\contentsline {subsubsection}{Giroscopio}{28}{section*.41}
+\contentsline {subsubsection}{Problema de deriva}{28}{section*.42}
+\contentsline {subsubsection}{Posibles soluciones}{29}{section*.43}
+\contentsline {subsection}{\numberline {2.4.1}Controlador de motores}{29}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}PID cl\IeC {\'a}sico}{30}{section.2.5}
+\contentsline {section}{\numberline {2.6}Rob\IeC {\'o}tica educativa, motivaciones y necesidad.}{30}{section.2.6}
+\contentsline {section}{\numberline {2.7}Sensores, actuadores y sistema de control }{31}{section.2.7}
 \contentsline {chapter}{\numberline {3}Balancing Robot}{35}{chapter.3}
 \contentsline {section}{\numberline {3.1}Descripci\IeC {\'o}n del problema}{35}{section.3.1}
 \contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del sistema}{36}{section.3.2}

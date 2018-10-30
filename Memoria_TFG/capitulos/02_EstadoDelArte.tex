@@ -122,7 +122,7 @@ Una de las características mas importantes que diferencia a Verilog del resto d
 	\end{figure}
 	
 \end{center}
-Toda la descripción del comportamiento en Verilog debe declarase dentro de un proceso, estos pueden ser dos tipos:
+Toda implementación de Verilog se declara dentro de un proceso que puede ser de dos tipos:
 
 \begin{itemize}
 		\item Initial: Este tipo de procesos se ejecutan sólo una vez comenzando su ejecución al inicio, y por tanto no existen retardos. Este proceso no es sintetizable, es decir, no puede ser utilizado en una descripción RTL.
@@ -146,7 +146,7 @@ Al igual que los leguajes de tipo procedural, Verilog dispone de una serie de es
 
 \subsubsection{Asignación continua}
 
-Mediante la asignación continua se puede modelar lógica combinacional, es decir, mo se necesita una lista de sensibilidad para realizar la asignación. Sólo puede ser declarada fuera de cualquier proceso.
+Mediante la asignación continua se puede modelar lógica combinacional, es decir, no se necesita una lista de sensibilidad para realizar la asignación. Sólo puede ser declarada fuera de cualquier proceso.
 
 \subsubsection{Asignación procedural}
 
@@ -160,14 +160,14 @@ Muchos lenguajes de implementación hardware así como su arquitectura de FPGA u
 Lo anterior por lo tanto, lleva a que no muchas empresas ni particulares puedan beneficiarse de las ventajas de la utilización de FPGAs y a su vez, que el avance tecnológico sea aún más lento. Una de las claves del éxito de empresas como Arduino no es más que la comunidad de gente que existe detrás creando nuevas librerías, componentes, etc. Todo ello a su vez gracias al bajo precio de sus productos, y a la posibilidad de encontrar todo el hardware y software en la web. \newline
 
 Para entender el nacimiento de las FPGAs libres es importante conocer qué es el bytestream. \newline
-Un bytestream es una secuencia de bytes que se utiliza en telecomunicaciones y computación. Frecuentemente, el termino bytestream es utilizado para describir la configuración a ser cargada en una FPGA. Este formato detallado de flujo de bits para una FPGA particular es típicamente propietario del proveedor de FPGA. \newline
+Un bytestream es una secuencia de bytes que se utiliza en telecomunicaciones y computación. El término bystream se utiliza para describir la configuración con la que se implementará un determinado diseño en una FPGA. Este formato detallado de flujo de bits para una FPGA particular es típicamente propietario del proveedor de FPGA. \newline
 
-Es por ello que Clifford Wolf decidió interpretar el bytestream del modelo Lattice iCE40 y desarrollo la herramienta IceStorm. \newline
-IceStorm se desarrollo como software de traducción de Verilog (lenguaje de descripción en FPGAs, sección \ref{sec:Verilog}) al bytestream. Esta traducción fue posible gracias a la ingeniería inversa, esto es, no se le da el uso habitual, sino el inverso. 
+Es por ello que Clifford Wolf decidió interpretar el bytestream del modelo Lattice iCE40 y desarrolló la herramienta IceStorm. \newline
+IceStorm se desarrolló como software de traducción de Verilog (lenguaje de descripción en FPGAs, sección \ref{sec:Verilog}) al bytestream. Esta traducción fue posible gracias a la ingeniería inversa, esto es, no se le da el uso habitual, sino el inverso. 
 
 Ya no se depende de ningun fabricante y todo el conocimiento además esta disponible. A partir de estas herramientas se puede crear cualquier interfaz o cualquier aplicación que no haya sido prevista por el fabricante. \newline
 
-Sólo las FPGAs de Lattice iCE40 (modelos HX1K-TQ144 y HX8K-CT256) son hasta el momento con las que se pueden trabajar (figura \ref{fig:lattice}), pero al ser un proyecto libre, muchas personas ya están trabajando en aumentar las posibilidades.
+Sólo las FPGAs de Lattice iCE40 (modelos HX1K-TQ144 y HX8K-CT256) son hasta el momento con las que se pueden trabajar (figura \ref{fig:lattice}), pero al ser un proyecto libre \footnote{Proyecto libre: El término libre se refiere a la libertad de los usuarios para ejecutar, copiar, distribuir, estudiar, cambiar y mejorar ese hardware o software.}, muchas personas ya están aumentando sus posibilidades.
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -204,7 +204,7 @@ Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figur
 \end{center}
 \subsection{IceZum Alhambra}
 Para este trabajo se ha optado por trabajar con la IceZum Alhambra, la cuál ha sido íntegramente diseñada y ensamblada en España.\newline
-Es una FPGA libre y compatible con IceStudio (el cuál se verá a continuación). Alguna de sus características más importantes pueden ser:
+Es una FPGA libre y compatible con IceStudio (el cuál se analizará en a sección \ref{sec:IceStudio}). Alguna de sus características más importantes son:
 \begin{itemize}
 	\item Placa FPGA de desarrollo iCE40HX1K-TQ144 de la empresa Lattice. 
 	\item Open hardware.
@@ -221,7 +221,7 @@ Es una FPGA libre y compatible con IceStudio (el cuál se verá a continuación)
 	\item 4 entradas analógicas disponibles a través de i2c.
 \end{itemize}
 
-Es conocido que existen placas con mejores carácterísticas, pero el hecho de que sea Open Hardware y que se pueda implementar con IceStudio, ha llevado a la elección final de esta placa para el desarrollo del presente proyecto.\newline
+Es conocido que existen placas con mejores carácterísticas, pero el hecho de que sea Open Hardware y que se pueda implementar con IceStudio, ha llevado a la elección final de esta tarjeta para el desarrollo del presente proyecto.\newline
 \begin{center}
 \begin{figure}[H]
 	\center
@@ -230,8 +230,8 @@ Es conocido que existen placas con mejores carácterísticas, pero el hecho de q
 	\label{fig:IceZumAlhambraI}
 \end{figure} 
 \end{center}
-Un punto a tener en cuenta para el desarrollo de hardware con esta FPGA es su limitada memoria de 1K lo que ha supuesto una limitación importante en el desarrollo. Es por ello que también se utilizado para el presetne proyecto la nueva versión de la IceZum Alhambra, IceZum Alhambra II, la cuál aún no estaba en el mercado al inicio del proyecto y que conlleva algunas mejoras, como la ampliación de 8K en su memoria, la mejora del bus de datos i2c, la posibilidad de alimentación mediante batería LIPO, etc. \newline
-La IceZum Alhambra II es la representada en la figura \ref{fig: IceZumAlhambraII}
+Un punto a tener en cuenta para el desarrollo hardware con esta FPGA es su memoria de 1K lo que ha supuesto una limitación importante en el desarrollo. Para el presente proyecto se ha hecho uso también de la nueva versión de la IceZum Alhambra, IceZum Alhambra II, la cuál aún no estaba en el mercado al inicio del proyecto y que conlleva algunas mejoras, como la ampliación de 8K en su memoria, la mejora del bus de datos i2c, la posibilidad de alimentación mediante batería LIPO, etc. \newline
+La IceZum Alhambra se representa en la figura \ref{fig: IceZumAlhambraII}
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -242,54 +242,54 @@ La IceZum Alhambra II es la representada en la figura \ref{fig: IceZumAlhambraII
 \end{center}
 
 
-\subsection{IceStudio}
+\subsection{IceStudio}\label{sec:IceStudio}
 Los lenguajes HDL suelen tener una curva de aprendizaje difícil, debido esto en gran medida al nivel de abstracción tan bajo necesario para diseñar un sistema en concreto. Es necesario conocer las características hardware de nuestro sistema para poder trabajar con este tipo de lógica. \newline
 
-Como se ha desarrollado anteriormente, algunos fabricantes proporcionan herramientas comerciales para programar sus propios FPGA. Si bien en la actualidad son entornos complejos, cuentan con una gran cantidad de herramientas y funcionalidades. Lamentablemente la mayoría de ellos no son gratuitos y están unidos a la arquitectura de un único fabricante.
+Como se ha desarrollado anteriormente, algunos fabricantes proporcionan herramientas comerciales para programar sus propias FPGA. Si bien en la actualidad son entornos complejos, cuentan con una gran cantidad de herramientas y funcionalidades. Lamentablemente la mayoría de ellos no son gratuitos y están unidos a la arquitectura de un único fabricante.
 \newline
 Con la evolución de las FPGAs han empezado a aparecer lenguajes que permiten un mayor nivel de abstracción. 
 Además, también han aparecido herramientas centradas en la implementación gráfica. Un ejemplo de este tipo de implementación es LabVIEW FPGA o IceStudio. \newline
-IceStudio es un proyecto Open Source desarrollado por Jesús Arroyo Torrens y sobre el que nos basaremos a lo largo del presente documento. \newline
+IceStudio es un proyecto Open Source desarrollado por Jesús Arroyo Torrens y en el que nos basaremos a lo largo del presente documento. \newline
 
 IceStudio es IDE gráfico para FPGAs libres y esta construido sobre el proyecto IceStorm. 
 El proyecto IceStorm tiene como objetivo la ingenieria inversa y la documentación del formato bitstream de la FPGA Lattice iCE40 (aunque más adelante fueron surgiendo algunas más). Proporciona herramientas simples para analizar y crear archivos de flujo de bits, esto es, el más bajo de nivel de implementación para una FPGA.\newline
 
-Para acercar al lector al conocimiento y funcionamiento de IceStudio se irán incorporando a lo largo del documento una serie de capturas de pantalla representativas para que no se pierda la visión de lo que se esta haciendo. Por ejemplo, la ventana principal de IceStudio y sobre la que se desarrollará todo lo demás tendrá la siguiente apariencia: \newline
+Para acercar al lector al conocimiento y funcionamiento de IceStudio se irán incorporando a lo largo del documento una serie de capturas de pantalla representativas para que no se pierda la visión de lo que se esta haciendo. Por ejemplo, la ventana principal de IceStudio y sobre la que se desarrollará todo lo demás tendrá la apariencia que se muestra en la \ref{fig:Main_IceStudio}: \newline
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Main_IceStudio.pdf}
+	\includegraphics[trim = 0mm 20mm 0mm 0mm, clip,scale=0.6]{imagenes/EstadoArte/Main_IceStudio.pdf}
 	\caption{Ventana principal IceStudio.}
 	\label{fig:Main_IceStudio}
 \end{figure}
 
 El hecho de que IceStudio sea un editor gráfico puede hacer pensar que el nivel de abstracción podría ser más alto de lo deseado, pero lo cierto es que este nivel es configurable. \newline
-Es el usuario final el que decide con que nivel de abstracción se trabaja, siendo necesario para eso una amplia biblioteca de módulos como veremos a continuación. Para poder explicar la potencia de IceStudio, se procederá con un ejemplo;\newline
+Es el usuario final el que decide con que nivel de abstracción se trabaja, siendo necesario para eso una amplia biblioteca de módulos como veremos a continuación. Para poder explicar la potencia de IceStudio, se procederá con un caso práctico;\newline
 
-El módulo que se presenta en la imagen \ref{fig:Write_i2c_module} es una escritura normal de i2c, en la cuál se parametriza la dirección del esclavo y la dirección que se quiere leer (más adelante se explicará con más detalle). \newline
+El módulo que se presenta en la figura \ref{fig:Write_i2c_module} es una escritura normal de i2c, en la cuál se parametriza la dirección del esclavo y la dirección que se quiere leer (más adelante se explicará con más detalle). \newline
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module.pdf}
+	\includegraphics[trim = 0mm 25mm 0mm 0mm, clip,scale=0.6]{imagenes/EstadoArte/Write_i2c_module.pdf}
 	\caption{Escritura I2C IceStudio alto nivel.}
 	\label{fig:Write_i2c_module}
 \end{figure}
 
 Así, si una persona no experimentada con este tipo de código y cuyo fin no es entenderlo quiere hacer uso de eso no deberá de bajar mucho de nivel.\newline
-No obstante, existe la posibilidad de que se requieran cambiar valores como la frecuencia de reloj, el modo de operación i2c...etc.
-Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en este caso, haciendo doble clic, como aparece en la figura \ref{fig:Write_i2c_module2}: 
+No obstante, existe la posibilidad de que se requieran cambiar valores como la frecuencia de reloj, el modo de operación i2c, etc.
+Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en este caso, haciendo doble clic, como aparece en la figura \ref{fig:Write_i2c_module2}. 
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module2.pdf}
+	\includegraphics[trim = 0mm 20mm 0mm 0mm, clip,scale=0.6]{imagenes/EstadoArte/Write_i2c_module2.pdf}
 	\caption{Escritura I2C IceStudio bajo nivel.}
 	\label{fig:Write_i2c_module2}
 \end{figure}
 
 Se podría decir entonces que se ha bajado un nivel más de abstracción, pudiendo entrar ahora en detalles hardware más específicos si fuese necesario. \newline
 
-En la antetior demostración se ha podido ver una de las ventajas de IceStudio. La modularidad permite configurar el nivel de abstracción.
-Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán desarrollados a lo largo de este trabajo, otros de ellos, están siendo trabajados, y pueden encontrarse en el siguiente enlace: 
+En la anterior caso práctico se ha podido ver una de las ventajas de IceStudio. La modularidad permite configurar el nivel de abstracción.
+Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán desarrollados a lo largo de este trabajo, otros de ellos, están siendo desarrollados, y pueden encontrarse en el siguiente enlace: 
 
 \href{https://groups.google.com/forum/#!topic/fpga-wars-explorando-el-lado-libre/I3ZnqKlfh5M}{Foro de Google con discusión sobre temas y módulos para IceStudio.}
 
@@ -299,7 +299,7 @@ Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán d
 \subsection{Diferencia microcontrolador-FPGA}
 En un principio puede parecer que un procesador y FPGA son dispositivos similares porque ambos pueden realizar ciertas tareas pre-configuradas. Lo cierto es que al profundizar se pueden encontrar mas diferencias que similitudes. Ambos son capaces de implementar una función de transferencia, pero la forma en la que lo hacen es diferente para cada uno de ellos.\newline
 
-Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la que tenemos unas entradas y ciertas salidas.\newline
+Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la que tenemos unas entradas y ciertas salidas tal y como se muestra en la figura \ref{fig:funcionalidad_FPGA_micro}.\newline
 
 
 \begin{figure}[H]
@@ -310,15 +310,15 @@ Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la
 \end{figure}
 
 Para comprobar de forma resumida como implementan de manera diferente esa función de transferencia, se explicará brevemente la forma de trabajar con un procesador. \newline
-Un procesador contiene una serie de instrucciones que realizan operaciones sobre un conjunto de operaciones binarias (sumar, incrementar, leer y escribir de la memoria). Dependiendo del tipo de procesador y de su arquitectura tenemos más o menos instrucciones asociadas, siendo este aspecto uno de los mas importantes que determinan su rendimiento.
+Un procesador contiene una serie de instrucciones que realizan operaciones sobre un conjunto de bits (sumar, incrementar, leer y escribir de la memoria). Dependiendo del tipo de procesador y de su arquitectura tenemos más o menos instrucciones asociadas, siendo este aspecto uno de los mas importantes que determinan su rendimiento.
 
 \textbf{Arquitectura procesador}
 
 Se dispone de una serie de registros, una memoria para almacenar la información y una pila de instrucciones, que contiene el programa que va a ejecutarse en código máquina, además de un reloj.\newline
 
 Su modo de funcionamiento a alto nivel; en cada ciclo de reloj el procesador lee de su pila de instrucciones los valores necesarios, llama a la instrucción oportuna y ejecuta un determinando cálculo.\newline
-Como se argumentó en el capítulo \ref{sec:ArquitecturaFPGA}, al implementar un diseño lógico en una FPGA, se está modificando una matriz de conexiones físicas. Modificando esa matriz de conexiones se pueden implementar diferentes bloques de funcionalidad, es decir, se podría ver como varias funciones de transferencia en un mismo sistema.\newline
-En la imágen \ref{fig:puertas_logicas} se representa un ejemplo real de como están implementadas las conexiones físicas de puertas lógicas en una FPGA, y de como eso permite tener módulos independientes unos de otros. Además, notese el problema de la memoria en una FPGA, siendo está el número total de puertas lógicas físicas que pueden ser utilizadas;
+Como se argumentó en la sección \ref{sec:ArquitecturaFPGA}, al implementar un diseño lógico en una FPGA, se está modificando una matriz de conexiones físicas. Modificando esa matriz de conexiones se pueden implementar diferentes bloques de funcionalidad, es decir, se podría representar como varias funciones de transferencia en un mismo sistema hardware.\newline
+En la figura \ref{fig:puertas_logicas} se representa un ejemplo real de como están implementadas las conexiones físicas de puertas lógicas en una FPGA, y de como eso permite tener módulos independientes unos de otros. Además, notese el problema de la memoria en una FPGA, siendo está el número total de puertas lógicas físicas que pueden ser utilizadas.
 \begin{center}
 \begin{figure}[H]
 	\center
