@@ -27,13 +27,37 @@ El fundamento de este proyecto consistirá por tanto en intentar corregir esta i
 
 \newpage
 \section{Diseño del sistema}
-En esta sección se propone una solución al problema planteado proporcionando la solución final del sistema propuesto, con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
+En esta sección se propone una solución al problema planteado proporcionando la solución final del sistema completo, con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
 \subsection{Descripción de la solución. (Diagrama de bloques alto nivel)} \label{sec:descripcion_de_la_solucion}
 En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores. 
 \subsection{Diseño de estructura mecánica.}
 Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de la figura, a partir de la cuál se ensamblarán el resto de los componentes.
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 40mm 0mm,clip, angle=0, scale = 1]{imagenes/Balancing_Robot/EnsanBalanceFront.PDF}
+		\label{fig:diagramaGantt}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=0, scale = 1]{imagenes/Balancing_Robot/EnsanBalanceLateral.PDF}
+		\label{fig:diagramaGantt}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 20mm 0mm 20mm 0mm,clip, angle=0, scale = 0.8]{imagenes/Balancing_Robot/EnsanBalanceCab.PDF}
+		\label{fig:diagramaGantt}
+	\end{figure}
+\end{center}
 \subsection{Obtención de ángulo en micro-controlador}
-Como se caracteriza en la sección \ref{sec:descripcion_de_la_solucion} , es necesario un conocimiento constante del ángulo del sistema. Para ello se propone el siguiente diagrama de bloques, implementado en C en un Arduino-nano y cuyo código se encuentra en el apéndice. \newline
+Como se caracteriza en la sección \ref{sec:descripcion_de_la_solucion}, es necesario un conocimiento constante del ángulo del sistema. Para ello se propone el siguiente diagrama de bloques, implementado en C en un Arduino-nano y cuyo código se encuentra en el apéndice. \newline
 Se hace uso de una comunicación i2c con la IMU MPU6050 y para liberar de trabajo al micro-controlador se implementa la librería tal que .\newline
 Un ejemplo de la obtención de ángulos se representa en la figura.
 
@@ -93,7 +117,25 @@ Además, se hace necesario un módulo adicional que ordene tanto la parte entera
 
 \subsection{Integración control PID en IceZum Alhambra}
 
-\subsection{Controlador de motores en IceZum Alhambra}
+\subsection{Controlador de motores en IceZum Alhambra mediante}
+El driver del motor utilizado para el control de los motores DC, necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades. Estas configuraciones se detallan en la sección \ref{sec:driver_motores}. El diagrama final de entradas y salidas será el detallado en la figura 
+
+
+\subsubsection{Control PWM}
+
+Los motores son controlados mediante un generador de PWM el cuál tiene el aspecto de la figura \ref{fig:pwm_module} en IceStudio. 
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/PWM_module.PNG}
+	\caption{Aspecto en IceStudio del generador de señal PWM.}
+	\label{fig:pwm_module}
+\end{figure}
+
+El diagrama de bloques de su funcionamiento se expone en la figura tal y se profundizará en su implementación:
+
+
+
 \subsection{Placa de circuito impreso PCB}\label{sec:DisenoPCB} 
 Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, es conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
 
@@ -522,10 +564,11 @@ Los valores
 
 
 
-\subsection{Control}
-\subsection{Control D}
-\subsection{Controlador PWM}
-\subsection{Controlador driver motor}
+\subsection{Control PID}
+\subsection{Driver motores DC} \label{sec:driver_motores}
+
+
+\subsubsection{Control PWM}
 \subsection{Sistema de alimentación}
 y como tarea fundamental, un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
 
