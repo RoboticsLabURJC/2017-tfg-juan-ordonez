@@ -42,10 +42,11 @@
 \BOOKMARK [2][-]{subsection.3.3.6}{Control D}{section.3.3}% 42
 \BOOKMARK [2][-]{subsection.3.3.7}{Controlador PWM}{section.3.3}% 43
 \BOOKMARK [2][-]{subsection.3.3.8}{Controlador driver motor}{section.3.3}% 44
-\BOOKMARK [1][-]{section.3.4}{Experimentos}{chapter.3}% 45
-\BOOKMARK [2][-]{subsection.3.4.1}{VGA Module}{section.3.4}% 46
-\BOOKMARK [2][-]{subsection.3.4.2}{Protocolo I2C}{section.3.4}% 47
-\BOOKMARK [2][-]{subsection.3.4.3}{Controlador motor burshless}{section.3.4}% 48
-\BOOKMARK [0][-]{chapter.4}{Cuadricoptero con vision artificial}{}% 49
-\BOOKMARK [0][-]{chapter.5}{Conclusiones y trabajo futuro}{}% 50
-\BOOKMARK [0][-]{chapter.5}{Bibliograf\355a}{}% 51
+\BOOKMARK [2][-]{subsection.3.3.9}{Sistema de alimentaci\363n}{section.3.3}% 45
+\BOOKMARK [1][-]{section.3.4}{Experimentos}{chapter.3}% 46
+\BOOKMARK [2][-]{subsection.3.4.1}{VGA Module}{section.3.4}% 47
+\BOOKMARK [2][-]{subsection.3.4.2}{Protocolo I2C}{section.3.4}% 48
+\BOOKMARK [2][-]{subsection.3.4.3}{Controlador motor burshless}{section.3.4}% 49
+\BOOKMARK [0][-]{chapter.4}{Cuadricoptero con vision artificial}{}% 50
+\BOOKMARK [0][-]{chapter.5}{Conclusiones y trabajo futuro}{}% 51
+\BOOKMARK [0][-]{chapter.5}{Bibliograf\355a}{}% 52

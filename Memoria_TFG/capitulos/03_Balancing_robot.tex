@@ -25,7 +25,9 @@ Así, y como el lector podrá imaginar, un péndulo invertido tendrá el aspecto
 Consiste en un péndulo donde el centro de masas se encuentra situado por encima del punto o eje de balanceo. Como cabe esperar, esta disposición dota al sistema de una inestabilidad estática. Recordamos que un sistema es estable cuánto mas cercano esta del plano horizontal de apoyo su centro de gravedad. \newline
 El fundamento de este proyecto consistirá por tanto en intentar corregir esta inestabilidad, y forma parte de uno de los problemas mas famosos en cuánto a teoría de control y dinámica de sistemas. 
 
+\newpage
 \section{Diseño del sistema}
+En esta sección se propone una solución al problema planteado proporcionando la solución final del sistema propuesto, con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
 \subsection{Descripción de la solución. (Diagrama de bloques alto nivel)} \label{sec:descripcion_de_la_solucion}
 En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores. 
 \subsection{Diseño de estructura mecánica.}
@@ -53,12 +55,12 @@ Se hace una separación por tanto de dos partes de la comunicación, desde el pu
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.6]{imagenes/Balancing_robot/extraccion_angulo.pdf}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.7]{imagenes/Balancing_robot/extraccion_angulo.pdf}
 	\caption{Envío de ángulo usando el puerto serie.}
 	\label{fig:extraccion_angulo}
 \end{figure}
 
-\subsubsection{Desde el punto de vista de la FPGA}
+\subsubsection{Desde el punto de vista de la FPGA:}
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -82,7 +84,7 @@ Además, se hace necesario un módulo adicional que ordene tanto la parte entera
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_arrange.PNG}
-	\caption{Solución final en FPGA de la comunicación en IceStudio.}
+	\caption{Solución final en FPGA de la comunicación entre Arduino y FPGA.}
 	\label{fig:arduino_arrange}
 \end{figure}
 
@@ -93,20 +95,21 @@ Además, se hace necesario un módulo adicional que ordene tanto la parte entera
 
 \subsection{Controlador de motores en IceZum Alhambra}
 \subsection{Placa de circuito impreso PCB}\label{sec:DisenoPCB} 
-Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, podía ser conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
+Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, es conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
 
-Para ello, y antes del diseño, es necesario un análisis funcional de los requerimientos, no sólo actuales, sino también futuros, así como para la implementación de un vehículo aéreo no tripulado. El circuito impreso debería poder albergar los siguientes componentes y comportamientos:
+El circuito impreso alberga los siguientes componentes y
+comportamientos:
 
 \begin{itemize}
 	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II (figura \ref{fig:pin_headers}), lo cuál permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
 	
 	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.5]{imagenes/Balancing_robot/pin_headers.PNG}
-	\caption{Pin headers para IceZum Alhambra II.}
-	\label{fig:pin_headers}
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_robot/pin_headers.PNG}
+		\caption{Pin headers para IceZum Alhambra II.}
+		\label{fig:pin_headers}
 	\end{figure}
-
+	
 	
 	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
 	
@@ -118,83 +121,227 @@ Para ello, y antes del diseño, es necesario un análisis funcional de los reque
 	\end{figure}
 	
 	
-	
 	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Este conector irá directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en subsección \ref{sec:Bateria}
 	
 	\item Módulo de pines "header" para la conexión del MPU6050 anteriormente descrito (figura \ref{fig:mpu6050_connector).
-	
+		
+		\begin{figure}[H]
+			\center
+			\includegraphics[scale=0.5]{imagenes/Balancing_robot/mpu6050_connector.PNG}
+			\caption{Módulo MPU6050.}
+			\label{fig:mpu6050_connector}
+		\end{figure}
+		
+		
+		\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
+		
+		\item Se dispone para el usuario final la posibilidad de unos "jumpers" (figura \ref{fig:jumpers}) para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
+		
+		\begin{figure}[H]
+			\center
+			\includegraphics[scale=0.5]{imagenes/Balancing_robot/jumpers.PNG}
+			\caption{Jumpers para configuración i2c MPU6050.}
+			\label{fig:jumpers}
+		\end{figure}
+		
+		
+		Al albergar una línea de datos no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
+		
+		\item Gran parte de los micro-controladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el micro-controlador.
+		
+		\item Un módulo que pueda albergar la cámara OV7670 formado por pin "headers" de tipo macho y cada uno de los cuales estará unido a uno de los pines in-out de la FPGA, como se verá mas adelante en el esquemático general. 
+		
+		\item Un módulo que pueda albergar el driver del motor DC utilizado en este caso y que permita la conexión directa con los pines de la IceZum Alhambra II, pues por ejemplo la señal pwm que definirá la velocidad de los motores será una salida por uno de los pines de la FPGA, y deberá ser una entrada al driver del motor.
+		
+		\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
+	\end{itemize}
+
+En las figuras \ref{fig:top_3D}, \ref{fig:bottom_3D}, \ref{fig:Vista3D1}, \ref{fig:Vista3D2} se incluye una representación en 3D del sistema final con todos los componentes añadidos.
+
+\begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.5]{imagenes/Balancing_robot/mpu6050_connector.PNG}
-		\caption{Módulo MPU6050.}
-		\label{fig:mpu6050_connector}
+		\includegraphics[scale=0.6]{imagenes/Balancing_Robot/top_3D.PNG}
+		\caption{}
+		\label{fig:top_3D}
 	\end{figure}
-	
-	
-	\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
-	
-	\item Se dispone para el usuario final la posibilidad de unos "jumpers" (figura \ref{fig:jumpers}) para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
-	
-		\begin{figure}[H]
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.5]{imagenes/Balancing_robot/jumpers.PNG}
-		\caption{Jumpers para configuración i2c MPU6050.}
-		\label{fig:jumpers}
-	    \end{figure}
-	
-	
-	Al albergar una línea de datos no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
-	
-	\item Gran parte de los micro-controladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el micro-controlador.
-	
-	\item Un módulo que pueda albergar la cámara OV7670 formado por pin "headers" de tipo macho y cada uno de los cuales estará unido a uno de los pines in-out de la FPGA, como se verá mas adelante en el esquemático general. 
-	
-	\item Un módulo que pueda albergar el driver del motor DC utilizado en este caso y que permita la conexión directa con los pines de la IceZum Alhambra II, pues por ejemplo la señal pwm que definirá la velocidad de los motores será una salida por uno de los pines de la FPGA, y deberá ser una entrada al driver del motor.
-	
-	\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
-\end{itemize}
+		\includegraphics[scale=0.6]{imagenes/Balancing_Robot/bottom_3D.PNG}
+		\caption{}
+		\label{fig:bottom_3D}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D1.PNG}
+		\caption{}
+		\label{fig:Vista3D1}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D2.PNG}
+		\caption{}
+		\label{fig:Vista3D2}
+	\end{figure}
+\end{center}
 
 \subsection{Sistema de alimentación.} \label{sec:Bateria}
 
-Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes, por lo tanto, y como tarea fundamental, un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
-
-A continuación se nombran los diferentes tipos de bleatería con los se cuenta actualmente en el mercado analizando sus ventajas e inconvenientes más importantes: 
-
+Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes.  \newline
+Se diferencia para ello dos subsistemas independientes en cuánto a la alimentación se refiere:
 \begin{itemize}
-	\item Baterías de plomo ácido. Son económicas y fáciles de fabricar pero no admiten sobrecargas ni descargas profundas, además, son de un peso y volumen muy elevados para la poca energía que son capaces de almacenar.
-	\item Baterías de niquel-cadmio (Ni-Cd). Funcionan bien en un rango amplio de temperaturas, y se pueden sobrecargar sin sufrir daños. Admiten descargas profundas y proporcionan un buen número de ciclos. Como en la anterior, tienen un peso y volumen muy elevado.
-	\item Baterías de niquel-hidruro metálico (Ni-MH). Mejora las características de las anteriores, sin embargo, proporciona un número menos de ciclos.
-	\item Baterías de iones de litio (Li-ion). En comparación con las anteriores estas son de un desarrollo mas reciente y han facilitado la existencia de tecnologías portátiles. Tienen una capacidad elevada en relación a su peso y volumen, tienen un factor de auto-descarga muy elevado. Casi no se ven afectadas por el efecto memoria y pueden cargarse sin haber sido descargadas previamente. En contrapartida, no soportan bien los cambios de temperatura. 
-	\item Baterías de polímero de litio (Li-Po). Son una variación de las baterías de Li-on que mejoran sus características de peso y volumen así como su tasa de descarga. Quedan prácticamente inutilizadas si se descargan en exceso.
+	\item Alimentación para los motores DC.
+	\item Alimentación de la propia tarjeta IceZum Alhambra II.
 \end{itemize}
 
-Teniendo en cuenta cuál tiene que el sistema final y más restrictivo es un vehículo aéreo remotamente pilotado y que el balancing-robot necesita de un peso no muy elevado, es importante que las características de peso, volumen, y descarga sean las adecuadas. Por ello se elije para la alimentación de los sistemas en este proyecto las baterías de tipo Li-po, las cuáles pueden almacenar gran cantidad de energía y ofrecen una tasa de descarga muy alta. \newline
+\subsubsection{Alimentación de los motores DC:}
+Para la alimentación de los motores DC se hace uso de una batería LIPO de 11.1V y 2200maH como en la figura \ref{fig:lipo111}.
 
-Las baterías de tipo Li-Po tienen una nomenclatura diferente del resto, la cuál es necesario analizar:
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/LIPO111}
+		\caption{Batería LIPO 11.1V y 2.2A. }
+		\label{fig:lipo111}
+	\end{figure}
+\end{center}
+
+\subsubsection{Alimentación IceZum Alhambra II:}
+
+Para la alimentación de la IceZum Alhambra II se hace uso de una batería LIPO de 3.7V y 4mAh como la de la figura \ref{fig:lipo37}. 
+
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_Robot/LIPO37}
+		\caption{Batería LIPO 3.7V y 4mAh.}
+		\label{fig:lipo37}
+	\end{figure}
+\end{center}
+
+\subsection{Materiales y coste del prototipo}
+\section{Implementación del sistema}\label{sec:Implementacion}
+\subsection{Fabricación estructura mecánica (Física de un Balancing Robot)}
+\subsection{Implementación PCB}
+
+Para el desarrollo de una PCB con los requerimientos descritos en la sección \ref{sec:DisenoPCB} se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
 
 \begin{itemize}
-	\item Clasificación por número de celdas "S". El número S corresponde con el número de celdas, las cuáles son de 3,7 voltios pero pueden llegar a 4,2 si están totalmente cargadas. Una batería de 3 celdas (3S) está compuesta por tanto de 3 sub-baterías puestas en serie, es decir, un total de 11,1 voltios.
-	\item Capacidad indicada en "mAh". A mayor de número de miliamperios hora más capacidad de carga. Un error común es pensar que a mayor capacidad mas posibilidad de alargar el tiempo del sistema en cuestión. A mayor capacidad, el peso y volumen de la batería aumenta, por lo que hay que encontrar la mejor configuración para nuestro sistema. 
-	\item Tasa de descarga "C". El número C corresponde con la tasa de descarga de la batería. Si una batería es de 1C significa que la máxima tasa de descarga a la que puede llegar es a la que se corresponde a su capacidad. Si el número C es distinto de 1 significa que multiplicamos la tasa de descarga por ese valor, reduciendo el tiempo de descarga proporcionalmente, esto es, una batería de 1000mAh 2C se descargaría a 2A en media hora.
+	\item 1) En primera instancia se crea el proyecto en cuestión.
+	\item 2) Para cada componente utilizado se crea una nueva librería formada por el esquemático (Schematic) y por el layout en la pcb (footprint).
+	\item 3) Una vez todas las librerías creadas se diseña el esquemático de la placa final, teniendo especial cuidado en que las conexiones sean las adecuadas.
+	\item 4) Con el esquemático ya creado, se puede implementar la pcb, definiendo sus bordes, las pistas, los pads, etc.
 \end{itemize}
 
-El siguiente planteamiento sería por tanto elegir qué valores anteriores necesita nuestro sistema, para ello se desarrolla la siguiente tabla con los requerimientos de cada componente:
+El esquemático es representado en la figura \ref{fig:schematics_tfg}: 
+\newpage
 
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.8, angle=90]{imagenes/Balancing_Robot/pcb_dron_schematic.pdf}
+		\caption{}
+		\label{fig:schematics_tfg}
+	\end{figure}
+\end{center}
+\newpage
+
+\textbf{Tamaño de pista: } \newline
+A la hora del diseño de la PCB hay que tener en cuenta el tamaño de las pistas de cobre, sobre todo si por estas la corriente puede ser muy elevada. De no ser así, la PCB podría sufrir daños o llegar incluso a quemarse. \newline
+
+Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el cálculo de pistas) puede consumir un máximo de 20 amperios. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
+
+La fórmula utilizada para la obtención del ancho de pista ha sido extraída del IPC-2221B, el cual establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. \newline
+
+Así, la formula se define como en la ecuación \ref{eqn:eqn31}: 
+
+\begin{equation}
+I = K * dT^{0.44}*(W*H)^{0.725}
+\label{eqn:eqn31}
+\end{equation}
+
+Donde: 
+\begin{itemize}
+	\item I = intensidad máxima en amperios
+	\item dT = aumento de temperatura sobre ambiente en ºC
+	\item W,H = ancho y grosor en mils
+	\item K = 0.024 para pistas internas y 0.048 para externas
+\end{itemize}
+
+Se obtienen los siguientes resultados tanto para pistas internas como externas: 
+
+\begin{equation*}
+W_{externas} = 18.716 mm 
+\end{equation*} 
+\begin{equation*}
+H_{externas} = 	0.035 mm
+\end{equation*}
+\begin{equation*}
+W_{internas} =  48.6876 mm 
+\end{equation*} 
+\begin{equation*}
+H_{internas} = 	0.035 mm
+\end{equation*}
+
+El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web para el pedido de las PCBs: \url{https://www.jlcpcb.com//}. \newline 
+El grosor de pista es medido comúnmente en "oz" y en este caso, la empresa fabricante permite una PCB con 1oz de grosor de pista, que equivale a un grosor de 0.035mm.\newline
+
+Si se analizan los resultados obtenidos de la ecuación 3.1 se aprecia claramente la diferencia entre una pista en una capa interna y una pista en una externa. \newline
+
+Una placa de circuito impreso esta dividida en capas, cada una de las capas tiene su función y organizarlas de manera adecuada es una buena práctica para evitar malos comportamientos. Así, una vez analizados los requerimientos, eran necesarias dos capas para la conexión de pines de datos, además siempre es recomendable un plano de tierra en el que todos los pines conectados a GND tengan una capa común. Esto evita ruidos e interferencias además de asegurar una buena referencia de tierra. \newline
+
+En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores "brushless" debe ser de 1.8716cm, se llego a la determinación de la utilización de una de las capas como plano común para las pistas de alimentación de dichos motores. La distribución de las capas será por tanto lo representado en la tabla \ref{tabla:layers_altium}: 
+
+Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1,46 Amperios, más que necesario para esta aplicación
+
+
+\renewcommand\tablename{Tabla}
 \begin{table}[H]
-	\begin{tabular}{lllll}
+	\centering
+	
+	\begin{tabular}{|l|l|}
 		\hline
-		\multicolumn{1}{|l|}{Componente}           & \multicolumn{1}{l|}{Voltaje de operación} & \multicolumn{1}{l|}{Corriente de salida por canal} & \multicolumn{1}{l|}{Canales de motor} & \multicolumn{1}{l|}{PWM máximo} \\ \hline
-		\multicolumn{1}{|l|}{MC33926 Motor Driver} & \multicolumn{1}{l|}{5V-28V}               & \multicolumn{1}{l|}{2.5 A}                         & \multicolumn{1}{l|}{2}                & \multicolumn{1}{l|}{20kHz}      \\ \hline
-		&                                           &                                                    &                                       &                                 \\
-		&                                           &                                                    &                                       &                                
+		Top Overlay           & Overlay              \\ \hline
+		Top Solder            & Solder Mask/Coverlay \\ \hline
+		\textbf{Top Layer}    & Signal               \\ \hline
+		Dielectric 1          & Dielectric           \\ \hline
+		\textbf{VCC}          & Signal               \\ \hline
+		Dielectric 2          & Dielectric           \\ \hline
+		\textbf{GND}          & Signal               \\ \hline
+		Dielectric 4          & Dielectric           \\ \hline
+		\textbf{Bottom Layer} & Signal               \\ \hline
+		Bottom Solder         & Solder Mask/Coverlay \\ \hline
+		Bottom Overlay        & Overlay              \\ \hline
 	\end{tabular}
+	\caption{Composición de capas en PCB.}
+	\label{tabla:layers_altium}
 \end{table}
 
 
-\subsection{Materiales y coste del prototipo}
-\section{Implementación del sistema}
-\subsection{Fabricación estructura mecánica (Física de un Balancing Robot)}
-\subsection{Implementación PCB}
+
+Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bottom Overlay se representan en la figura \ref{fig:layers_altium}.
+
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.8, angle=90]{imagenes/Balancing_Robot/layers_altium.PNG}
+		\caption{}
+		\label{fig:layers_altium}
+	\end{figure}
+\end{center}
+
+
 \subsection{Implementación IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
 Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
 
@@ -379,148 +526,41 @@ Los valores
 \subsection{Control D}
 \subsection{Controlador PWM}
 \subsection{Controlador driver motor}
-Para el desarrollo de una PCB con los requerimientos descritos en la subsseccion \ref{sec:DisenoPCB} se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
+\subsection{Sistema de alimentación}
+y como tarea fundamental, un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
+
+A continuación se nombran los diferentes tipos de bleatería con los se cuenta actualmente en el mercado analizando sus ventajas e inconvenientes más importantes: 
 
 \begin{itemize}
-	\item 1) En primera instancia se crea el proyecto en cuestión.
-	\item 2) Para cada componente utilizado se crea una nueva librería formada por el esquemático (Schematic) y por el layout en la pcb (footprint).
-	\item 3) Una vez todas las librerías creadas se diseña el esquemático de la placa final, teniendo especial cuidado en que las conexiones sean las adecuadas.
-	\item 4) Con el esquemático ya creado, se puede implementar la pcb, definiendo sus bordes, las pistas, los pads, etc.
+	\item Baterías de plomo ácido. Son económicas y fáciles de fabricar pero no admiten sobrecargas ni descargas profundas, además, son de un peso y volumen muy elevados para la poca energía que son capaces de almacenar.
+	\item Baterías de niquel-cadmio (Ni-Cd). Funcionan bien en un rango amplio de temperaturas, y se pueden sobrecargar sin sufrir daños. Admiten descargas profundas y proporcionan un buen número de ciclos. Como en la anterior, tienen un peso y volumen muy elevado.
+	\item Baterías de niquel-hidruro metálico (Ni-MH). Mejora las características de las anteriores, sin embargo, proporciona un número menos de ciclos.
+	\item Baterías de iones de litio (Li-ion). En comparación con las anteriores estas son de un desarrollo mas reciente y han facilitado la existencia de tecnologías portátiles. Tienen una capacidad elevada en relación a su peso y volumen, tienen un factor de auto-descarga muy elevado. Casi no se ven afectadas por el efecto memoria y pueden cargarse sin haber sido descargadas previamente. En contrapartida, no soportan bien los cambios de temperatura. 
+	\item Baterías de polímero de litio (Li-Po). Son una variación de las baterías de Li-on que mejoran sus características de peso y volumen así como su tasa de descarga. Quedan prácticamente inutilizadas si se descargan en exceso.
 \end{itemize}
 
-El esquemático es representado en la figura \ref{fig:schematics_tfg}: 
-\newpage
+Teniendo en cuenta cuál tiene que el sistema final y más restrictivo es un vehículo aéreo remotamente pilotado y que el balancing-robot necesita de un peso no muy elevado, es importante que las características de peso, volumen, y descarga sean las adecuadas. Por ello se elije para la alimentación de los sistemas en este proyecto las baterías de tipo Li-po, las cuáles pueden almacenar gran cantidad de energía y ofrecen una tasa de descarga muy alta. \newline
 
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8, angle=90]{imagenes/Balancing_Robot/pcb_dron_schematic.pdf}
-		\caption{}
-		\label{fig:schematics_tfg}
-	\end{figure}
-\end{center}
-\newpage
+Las baterías de tipo Li-Po tienen una nomenclatura diferente del resto, la cuál es necesario analizar:
 
-\textbf{Tamaño de pista: } \newline
-A la hora del diseño de la PCB hay que tener en cuenta el tamaño de las pistas de cobre, sobre todo si por estas la corriente puede ser muy elevada. De no ser así, la PCB podría sufrir daños o llegar incluso a quemarse. \newline
-
-Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el cálculo de pistas) puede consumir un máximo de 20 amperios. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
-
-La fórmula utilizada para la obtención del ancho de pista ha sido extraída del IPC-2221B, el cual establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. \newline
-
-Así, la formula se define como en la ecuación \ref{eqn:eqn31}: 
-
-\begin{equation}
-		I = K * dT^{0.44}*(W*H)^{0.725}
-\label{eqn:eqn31}
-\end{equation}
-
-Donde: 
 \begin{itemize}
-	\item I = intensidad máxima en amperios
-	\item dT = aumento de temperatura sobre ambiente en ºC
-	\item W,H = ancho y grosor en mils
-	\item K = 0.024 para pistas internas y 0.048 para externas
+	\item Clasificación por número de celdas "S". El número S corresponde con el número de celdas, las cuáles son de 3,7 voltios pero pueden llegar a 4,2 si están totalmente cargadas. Una batería de 3 celdas (3S) está compuesta por tanto de 3 sub-baterías puestas en serie, es decir, un total de 11,1 voltios.
+	\item Capacidad indicada en "mAh". A mayor de número de miliamperios hora más capacidad de carga. Un error común es pensar que a mayor capacidad mas posibilidad de alargar el tiempo del sistema en cuestión. A mayor capacidad, el peso y volumen de la batería aumenta, por lo que hay que encontrar la mejor configuración para nuestro sistema. 
+	\item Tasa de descarga "C". El número C corresponde con la tasa de descarga de la batería. Si una batería es de 1C significa que la máxima tasa de descarga a la que puede llegar es a la que se corresponde a su capacidad. Si el número C es distinto de 1 significa que multiplicamos la tasa de descarga por ese valor, reduciendo el tiempo de descarga proporcionalmente, esto es, una batería de 1000mAh 2C se descargaría a 2A en media hora.
 \end{itemize}
 
-Se obtienen los siguientes resultados tanto para pistas internas como externas: 
+El siguiente planteamiento sería por tanto elegir qué valores anteriores necesita nuestro sistema, para ello se desarrolla la siguiente tabla con los requerimientos de cada componente:
 
-\begin{equation*}
-		W_{externas} = 18.716 mm 
-\end{equation*} 
-\begin{equation*}
-		H_{externas} = 	0.035 mm
-\end{equation*}
-\begin{equation*}
-W_{internas} =  48.6876 mm 
-\end{equation*} 
-\begin{equation*}
-H_{internas} = 	0.035 mm
-\end{equation*}
-
-El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web para el pedido de las PCBs: \url{https://www.jlcpcb.com//}. \newline 
-El grosor de pista es medido comúnmente en "oz" y en este caso, la empresa fabricante permite una PCB con 1oz de grosor de pista, que equivale a un grosor de 0.035mm.\newline
-
-Si se analizan los resultados obtenidos de la ecuación 3.1 se aprecia claramente la diferencia entre una pista en una capa interna y una pista en una externa. \newline
-
-Una placa de circuito impreso esta dividida en capas, cada una de las capas tiene su función y organizarlas de manera adecuada es una buena práctica para evitar malos comportamientos. Así, una vez analizados los requerimientos, eran necesarias dos capas para la conexión de pines de datos, además siempre es recomendable un plano de tierra en el que todos los pines conectados a GND tengan una capa común. Esto evita ruidos e interferencias además de asegurar una buena referencia de tierra. \newline
-
-En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores "brushless" debe ser de 1.8716cm, se llego a la determinación de la utilización de una de las capas como plano común para las pistas de alimentación de dichos motores. La distribución de las capas será por tanto lo representado en la tabla \ref{tabla:layers_altium}: 
-
-Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1,46 Amperios, más que necesario para esta aplicación
-
-
-\renewcommand\tablename{Tabla}
 \begin{table}[H]
-	\centering
-
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{lllll}
 		\hline
-		Top Overlay           & Overlay              \\ \hline
-		Top Solder            & Solder Mask/Coverlay \\ \hline
-		\textbf{Top Layer}    & Signal               \\ \hline
-		Dielectric 1          & Dielectric           \\ \hline
-		\textbf{VCC}          & Signal               \\ \hline
-		Dielectric 2          & Dielectric           \\ \hline
-		\textbf{GND}          & Signal               \\ \hline
-		Dielectric 4          & Dielectric           \\ \hline
-		\textbf{Bottom Layer} & Signal               \\ \hline
-		Bottom Solder         & Solder Mask/Coverlay \\ \hline
-		Bottom Overlay        & Overlay              \\ \hline
+		\multicolumn{1}{|l|}{Componente}           & \multicolumn{1}{l|}{Voltaje de operación} & \multicolumn{1}{l|}{Corriente de salida por canal} & \multicolumn{1}{l|}{Canales de motor} & \multicolumn{1}{l|}{PWM máximo} \\ \hline
+		\multicolumn{1}{|l|}{MC33926 Motor Driver} & \multicolumn{1}{l|}{5V-28V}               & \multicolumn{1}{l|}{2.5 A}                         & \multicolumn{1}{l|}{2}                & \multicolumn{1}{l|}{20kHz}      \\ \hline
+		&                                           &                                                    &                                       &                                 \\
+		&                                           &                                                    &                                       &                                
 	\end{tabular}
-	\caption{Composición de capas en PCB.}
-    \label{tabla:layers_altium}
 \end{table}
 
-
-
-Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bottom Overlay se representan en la figura \ref{fig:layers_altium} mientras que en las figuras \ref{fig:top_3D}, \ref{fig:bottom_3D}, \ref{fig:Vista3D1}, \ref{fig:Vista3D2} se incluye una representación en 3D del sistema final con todos los componentes añadidos.
-
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8, angle=90]{imagenes/Balancing_Robot/layers_altium.PNG}
-		\caption{}
-		\label{fig:layers_altium}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.6]{imagenes/Balancing_Robot/top_3D.PNG}
-		\caption{}
-		\label{fig:top_3D}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.6]{imagenes/Balancing_Robot/bottom_3D.PNG}
-		\caption{}
-		\label{fig:bottom_3D}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D1.PNG}
-		\caption{}
-		\label{fig:Vista3D1}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D2.PNG}
-		\caption{}
-		\label{fig:Vista3D2}
-	\end{figure}
-\end{center}
 
 \section{Experimentos}
 \subsection{VGA Module}
