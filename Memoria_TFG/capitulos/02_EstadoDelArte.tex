@@ -628,22 +628,6 @@ Para solucionar algunos de los problemas anteriores, puede ser muy útil aplicar
 
 Una vez explicados las características básicas de las IMUs comerciales, en la sección \ref{sec:MPU6050} se desarrollará la IMU elegida para este sistema y sus carácterísticas propias.
 
-\subsection{Controlador de motores}
-Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
-La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura tal 
-
-\textbf{figura PWM}
-
-Aplicando esta señal, por ejemplo, a un motor DC clásico se varia la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le esta llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
-
-Así, las características de una señal PWM son: 
-\begin{itemize}
-	\item D = ciclo de trabajo.
-	\item $\theta$
-	\item T = periodo de la función
-\end{itemize}
-
-\section{PID clásico}
 \section{Robótica educativa, motivaciones y necesidad.}
 
 La robótica se puede considerar sin duda como una de las áreas tecnológicas con mas auge de la actualidad y basada en el estudio de los robots, que son sistemas compuestos por mecanismos que le permiten hacer movimientos y realizar tareas específicas, programables e inteligentes. \newline
@@ -794,6 +778,48 @@ Los actuadores son dispositivos que permiten al sistema de control ‘actuar’ 
 
 
 Hay de muchos diferentes tipos de sistemas de control en relación de la aplicación la cual se quiere desarrollar, normalmente se elije un micro-controlador como sistema de control y se programa la función de transferencia a ser realizada.\newline
-En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto Arduino para las tareas secuenciales como la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
+En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto Arduino para las tareas secuenciales o la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
+\section{Controlador PID clásico}\label{sec:PID}
+
+Proporcional integral y derivativo (Proportional-Integral-Derivative, PID) [] es el más común de los controles utilizados en la industria y ha sido universalmente aceptado en la industria de control. La popularidad de este control viene dada a su robustez y a su facilidad de uso, lo que permite a ingenieros trabajar de manera simple. \newline
+
+Como su nombre indica, el algoritmo consiste en tres operadores básicos, proporcional, integral y derivativo los cuáles son la clave par obtener una respuesta óptima. \newline
+
+La idea básica de un controlador PID es leer un sensor y calcular una respuesta proporcional, integral y derivativa con el objetivo de calcular la mejor salida de un actuador. \newline
+
+Para conocer bien cómo actúa un controlador PID y conocer el significado de cada uno de sus componentes, se hace necesario conocer que significa un sistema en bucle cerrado. 
+
+\subsubsection{Sistema en bucle cerrado}
+Un sistema de control de lazo cerrado [] son los sistemas en los que la acción del control está en función de la señal de salida. Los sistemas de circuito cerrado usan la retroalimentación desde un resultado final para ajustar la acción de control en consecuencia. El punto de consigna se define como el valor el cuál el sistema quiere alcanzar. \newline
+
+Ahora sí se profundiza un poco más es cuál es el significado de cada una de las componentes por las que está formado el control PID.\newline
+\subsubsection{Respuesta Proporcional}
+
+La componente proporcional depende sólo de la diferencia entre el valor actual y la consigna. Esta diferencia es referida como el término Error. Así, la ganancia proporcional $K_{p}$ determina la relación entre la respuesta de salida y la señal de error. Si el error tiene magnitud 10, una ganancia proporcional de 5 produciría una respuesta proporcional de 50. La ganancia indica la velocidad de corrección de ese error, pero si es demasiado rápido, el sistema oscilará. 
+\subsubsection{Respuesta Integral}
+La componente integral suma la componente error en el tiempo, un incremento pequeño del error hasta que la componente integral aumente ligeramente con el tiempo. La respuesta integral aumentará continuamente con el tiempo a menos que el error sea cero, por lo que el efecto es llevar el error de estado estacionario a cero.
+\subsubsection{Respuesta Derivativa}
+La respuesta derivativa hace que la salida disminuya sila variable del proceso aumenta rápidamente. La respuesta derivada es proporcional a la tasa de cambio la variable de proceso. El aumento de la constante derivativa $K_{d}$ hará que el sistema de control reacciones con mayor fuerza a los cambios en el término del error y aumentará la velocidad de la respuesta general del sistema de control. 
+
+Un diagramas de bloques del sistema completo de un controlador PID puede verse en la figura \ref{fig:PID}.
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 4cm 0mm 4cm,clip, angle=0, scale = 0.5]{imagenes/EstadoArte/PID}
+		\caption{Diagrama de bloques controlador PID.}
+		\label{fig:PID}
+	\end{figure}
+\end{center}
+
+\textit{Ejemplo\label{ejemplo:1}: Se hace uso de un PID para el control de la temperatura de una habitación. La consigna es la temperatura a la que se quiere llegar, la planta es la habitación en sí, la cuál puede modelarse como una función de transferencia. Un sensor de temperatura cierra el lazo, indicando la temperatura en cada momento, mientras que una válvula abre y cierra el conducto de aire dependiendo de los valores del controlador PID, que se calcularán en relación al valor de consigna y al valor de la temperatura actual de la habitación.}
+
+
+
+
+
+
+
+
 
 

@@ -16,3 +16,5 @@ $https://es.wikipedia.org/wiki/Sensor$
 
 (https://es.wikipedia.org/wiki/P%C3%A9ndulo)
 Si nos referimos al concepto literal tal cuál se encuentra en WikiPedia: \newline
+
+http://www.ni.com/white-paper/3782/en/

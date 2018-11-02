@@ -40,7 +40,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{caption}
 \usepackage[spanish,es-tabla]{babel}
-\usepackage[framed,numered]{matlab-prettifier}
+ \usepackage[framed,numered]{matlab-prettifier}
 \usepackage{multirow}
 
 \makeglossaries
@@ -138,6 +138,7 @@ pdfproducer = {pdflatex}
 \fancyhead[RO,LE]{\textbf{\thepage}}
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+\renewcommand{\fullref}[1]{\ref{#1} de la página \pageref{#1}}
 
 \setlength{\headheight}{1.5\headheight}
 
@@ -301,6 +302,7 @@ pdfproducer = {pdflatex}
 \nocite{*}
 \bibliographystyle{IEEEtran}
 \bibliography{bibliografia/biblio}\addcontentsline{toc}{chapter}{Bibliografía}
+%\bibliography{biblio}
 
 
 %\gls{latex}
@@ -308,10 +310,5 @@ pdfproducer = {pdflatex}
 \input{glosario.tex}
 
 \printglossaries
-
-
-
-
-
 
 \end{document}
