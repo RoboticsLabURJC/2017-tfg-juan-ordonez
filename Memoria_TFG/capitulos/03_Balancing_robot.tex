@@ -29,6 +29,14 @@ El fundamento de este proyecto consistirá por tanto en intentar corregir esta i
 \section{Diseño del sistema}
 En esta sección se propone una solución al problema planteado proporcionando la solución final del sistema completo, con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
 \subsection{Descripción de la solución. (Diagrama de bloques alto nivel)} \label{sec:descripcion_de_la_solucion}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=90, scale = 0.8]{imagenes/Balancing_Robot/final.pdf}
+		\caption{Diagrama de bloques final.}
+		\label{fig:final}
+	\end{figure}
+\end{center}
 En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores. 
 \subsection{Diseño de estructura mecánica.}
 Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de las figuras \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab}, y a partir de la cuál se ensamblarán el resto de los componentes.
@@ -119,7 +127,33 @@ Además, se hace necesario un módulo adicional que ordene tanto la parte entera
 
 
 \subsection{Integración control PID en IceZum Alhambra}
-Como se indica en la página \pageref{ejemplo:1}, un controlador PID puede ser utilizado de manera sencilla para controlar la estabilidad del sistema. 
+Como ha sido explicado en la sección \ref{sec:PID}, un controlador PID puede ser utilizado de manera sencilla para controlar la estabilidad del sistema. \newline
+El aspecto en IceStudio de estos bloques de control se ilustra en las figuras \ref{fig:Pcontrol} y \ref{fig:Dcontrol}.
+
+	\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Pcontrol}
+	\caption{Aspecto en IceStudio del módulo de control P.}
+	\label{fig:Pcontrol}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Dcontrol}
+	\caption{Aspecto en IceStudio del módulo de control D.}
+	\label{fig:Dcontrol}
+\end{figure}
+
+Referido al sistema de realimentación por lazo cerrado analizado en la sección \ref{sec:PID}, es importante mostrar el resultado final del aspecto del presente proyecto en IceStudio, haciendo una comparativa directa entre éste (figura \ref{fig:finalIceStudio} ) y la figura \ref{fig:PID}.
+ \newpage
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6, angle=90]{imagenes/Balancing_robot/finalIceStudio}
+	\caption{Aspecto final en IceStudio del Balancing-Robot.}
+	\label{fig:finalIceStudio}
+\end{figure}
+
+
 \subsection{Controlador de motores en IceZum Alhambra mediante}
 El driver del motor utilizado para el control de los motores DC, necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades. Estas configuraciones se detallan en la sección \ref{sec:driver_motores}. El diagrama final de entradas y salidas será el detallado en la figura 
 

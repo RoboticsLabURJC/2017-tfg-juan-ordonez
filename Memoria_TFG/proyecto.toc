@@ -38,39 +38,39 @@
 \contentsline {chapter}{\numberline {3}Balancing Robot}{37}{chapter.3}
 \contentsline {section}{\numberline {3.1}Descripci\IeC {\'o}n del problema}{37}{section.3.1}
 \contentsline {section}{\numberline {3.2}Dise\IeC {\~n}o del sistema}{39}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Descripci\IeC {\'o}n de la soluci\IeC {\'o}n. (Diagrama de bloques alto nivel)}{39}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Dise\IeC {\~n}o de estructura mec\IeC {\'a}nica.}{39}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Obtenci\IeC {\'o}n de \IeC {\'a}ngulo en micro-controlador}{41}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{41}{subsection.3.2.4}
-\contentsline {subsubsection}{Desde el punto de vista del micro-controlador:}{43}{section*.60}
-\contentsline {subsubsection}{Desde el punto de vista de la FPGA:}{44}{section*.62}
-\contentsline {subsection}{\numberline {3.2.5}Integraci\IeC {\'o}n control PID en IceZum Alhambra}{46}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Controlador de motores en IceZum Alhambra mediante}{46}{subsection.3.2.6}
-\contentsline {subsubsection}{Control PWM}{46}{section*.66}
-\contentsline {subsection}{\numberline {3.2.7}Placa de circuito impreso PCB}{47}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Sistema de alimentaci\IeC {\'o}n.}{52}{subsection.3.2.8}
-\contentsline {subsubsection}{Alimentaci\IeC {\'o}n de los motores DC:}{52}{section*.76}
-\contentsline {subsubsection}{Alimentaci\IeC {\'o}n IceZum Alhambra II:}{52}{section*.78}
-\contentsline {subsection}{\numberline {3.2.9}Materiales y coste del prototipo}{53}{subsection.3.2.9}
-\contentsline {section}{\numberline {3.3}Implementaci\IeC {\'o}n del sistema}{53}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Fabricaci\IeC {\'o}n estructura mec\IeC {\'a}nica (F\IeC {\'\i }sica de un Balancing Robot)}{53}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Implementaci\IeC {\'o}n PCB}{53}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Implementaci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{58}{subsection.3.3.3}
-\contentsline {subsubsection}{Desde el punto de vista del micro-controlador}{59}{section*.84}
-\contentsline {subsubsection}{Desde el punto de vista de la FPGA}{60}{section*.86}
-\contentsline {subsection}{\numberline {3.3.4}Unidad de medida inercial MPU6050 en Arduino Nano}{64}{subsection.3.3.4}
-\contentsline {subsubsection}{Pin out}{64}{section*.89}
-\contentsline {subsubsection}{Valores del sensor. DMP. }{64}{section*.90}
-\contentsline {subsubsection}{Programa para Arduino nano}{64}{section*.91}
-\contentsline {subsection}{\numberline {3.3.5}Control PID}{64}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Driver motores DC}{64}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Controlador de motores}{64}{subsection.3.3.7}
-\contentsline {subsubsection}{Control PWM}{65}{section*.92}
-\contentsline {subsection}{\numberline {3.3.8}Sistema de alimentaci\IeC {\'o}n}{65}{subsection.3.3.8}
-\contentsline {section}{\numberline {3.4}Experimentos}{66}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}VGA Module}{66}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Protocolo I2C}{66}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Controlador motor burshless}{66}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{67}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{69}{chapter.5}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{chapter.5}
+\contentsline {subsection}{\numberline {3.2.1}Descripci\IeC {\'o}n de la soluci\IeC {\'o}n. (Diagrama de bloques alto nivel)}{40}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Dise\IeC {\~n}o de estructura mec\IeC {\'a}nica.}{41}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Obtenci\IeC {\'o}n de \IeC {\'a}ngulo en micro-controlador}{43}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Integraci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{43}{subsection.3.2.4}
+\contentsline {subsubsection}{Desde el punto de vista del micro-controlador:}{45}{section*.61}
+\contentsline {subsubsection}{Desde el punto de vista de la FPGA:}{46}{section*.63}
+\contentsline {subsection}{\numberline {3.2.5}Integraci\IeC {\'o}n control PID en IceZum Alhambra}{48}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Controlador de motores en IceZum Alhambra mediante}{51}{subsection.3.2.6}
+\contentsline {subsubsection}{Control PWM}{51}{section*.70}
+\contentsline {subsection}{\numberline {3.2.7}Placa de circuito impreso PCB}{51}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Sistema de alimentaci\IeC {\'o}n.}{57}{subsection.3.2.8}
+\contentsline {subsubsection}{Alimentaci\IeC {\'o}n de los motores DC:}{57}{section*.80}
+\contentsline {subsubsection}{Alimentaci\IeC {\'o}n IceZum Alhambra II:}{57}{section*.82}
+\contentsline {subsection}{\numberline {3.2.9}Materiales y coste del prototipo}{58}{subsection.3.2.9}
+\contentsline {section}{\numberline {3.3}Implementaci\IeC {\'o}n del sistema}{58}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Fabricaci\IeC {\'o}n estructura mec\IeC {\'a}nica (F\IeC {\'\i }sica de un Balancing Robot)}{58}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Implementaci\IeC {\'o}n PCB}{58}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Implementaci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{63}{subsection.3.3.3}
+\contentsline {subsubsection}{Desde el punto de vista del micro-controlador}{64}{section*.88}
+\contentsline {subsubsection}{Desde el punto de vista de la FPGA}{65}{section*.90}
+\contentsline {subsection}{\numberline {3.3.4}Unidad de medida inercial MPU6050 en Arduino Nano}{69}{subsection.3.3.4}
+\contentsline {subsubsection}{Pin out}{69}{section*.93}
+\contentsline {subsubsection}{Valores del sensor. DMP. }{69}{section*.94}
+\contentsline {subsubsection}{Programa para Arduino nano}{69}{section*.95}
+\contentsline {subsection}{\numberline {3.3.5}Control PID}{69}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Driver motores DC}{69}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}Controlador de motores}{69}{subsection.3.3.7}
+\contentsline {subsubsection}{Control PWM}{70}{section*.96}
+\contentsline {subsection}{\numberline {3.3.8}Sistema de alimentaci\IeC {\'o}n}{70}{subsection.3.3.8}
+\contentsline {section}{\numberline {3.4}Experimentos}{71}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}VGA Module}{71}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Protocolo I2C}{71}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Controlador motor burshless}{71}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{73}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{75}{chapter.5}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{77}{chapter.5}

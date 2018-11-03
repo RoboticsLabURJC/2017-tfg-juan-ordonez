@@ -28,35 +28,39 @@
 \contentsline {figure}{\numberline {2.22}{\ignorespaces Trigonom\IeC {\'e}trica en sensor aceler\IeC {\'o}metro 3D.\relax }}{27}{figure.caption.40}
 \contentsline {figure}{\numberline {2.23}{\ignorespaces Sensor CMOS para adquisici\IeC {\'o}n de im\IeC {\'a}genes.\relax }}{32}{figure.caption.45}
 \contentsline {figure}{\numberline {2.24}{\ignorespaces Unidad de Medida Inercial.\relax }}{32}{figure.caption.46}
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Potenci\IeC {\'o}metro.\relax }}{32}{figure.caption.47}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Potenci\IeC {\'o}metro.\relax }}{33}{figure.caption.47}
 \contentsline {figure}{\numberline {2.26}{\ignorespaces Motor DC.\relax }}{33}{figure.caption.48}
 \contentsline {figure}{\numberline {2.27}{\ignorespaces Diagrama de bloques controlador PID.\relax }}{35}{figure.caption.53}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces SegWay comercial.\relax }}{37}{figure.caption.54}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Representaci\IeC {\'o}n p\IeC {\'e}ndulo invertido.\relax }}{38}{figure.caption.55}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Vista frontal Balancing Robot.\relax }}{39}{figure.caption.56}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Vista lateral derecha Balancing Robot.\relax }}{40}{figure.caption.57}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Perspectiva Balancing Robot.\relax }}{41}{figure.caption.58}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{42}{figure.caption.59}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{43}{figure.caption.61}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{45}{figure.caption.64}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Soluci\IeC {\'o}n final en FPGA de la comunicaci\IeC {\'o}n entre Arduino y FPGA.\relax }}{46}{figure.caption.65}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Aspecto en IceStudio del generador de se\IeC {\~n}al PWM.\relax }}{47}{figure.caption.67}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{47}{figure.caption.68}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Conector GND y VCC.\relax }}{48}{figure.caption.69}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{48}{figure.caption.70}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{49}{figure.caption.71}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces \relax }}{50}{figure.caption.72}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces \relax }}{50}{figure.caption.73}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces \relax }}{51}{figure.caption.74}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces \relax }}{51}{figure.caption.75}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Bater\IeC {\'\i }a LIPO 11.1V y 2.2A. \relax }}{52}{figure.caption.77}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Bater\IeC {\'\i }a LIPO 3.7V y 4mAh.\relax }}{52}{figure.caption.79}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces \relax }}{54}{figure.caption.80}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces \relax }}{57}{figure.caption.82}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{58}{figure.caption.83}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{59}{figure.caption.85}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{62}{figure.caption.87}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{63}{figure.caption.88}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama de bloques final.\relax }}{40}{figure.caption.56}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Vista frontal Balancing Robot.\relax }}{41}{figure.caption.57}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vista lateral derecha Balancing Robot.\relax }}{42}{figure.caption.58}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Perspectiva Balancing Robot.\relax }}{43}{figure.caption.59}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{44}{figure.caption.60}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{45}{figure.caption.62}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{47}{figure.caption.65}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Soluci\IeC {\'o}n final en FPGA de la comunicaci\IeC {\'o}n entre Arduino y FPGA.\relax }}{48}{figure.caption.66}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control P.\relax }}{48}{figure.caption.67}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control D.\relax }}{49}{figure.caption.68}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Aspecto final en IceStudio del Balancing-Robot.\relax }}{50}{figure.caption.69}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Aspecto en IceStudio del generador de se\IeC {\~n}al PWM.\relax }}{51}{figure.caption.71}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{52}{figure.caption.72}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Conector GND y VCC.\relax }}{52}{figure.caption.73}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{53}{figure.caption.74}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{53}{figure.caption.75}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces \relax }}{54}{figure.caption.76}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces \relax }}{55}{figure.caption.77}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces \relax }}{56}{figure.caption.78}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces \relax }}{56}{figure.caption.79}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Bater\IeC {\'\i }a LIPO 11.1V y 2.2A. \relax }}{57}{figure.caption.81}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Bater\IeC {\'\i }a LIPO 3.7V y 4mAh.\relax }}{57}{figure.caption.83}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces \relax }}{59}{figure.caption.84}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces \relax }}{62}{figure.caption.86}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{63}{figure.caption.87}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{64}{figure.caption.89}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Ordenaci\IeC {\'o}n de la parte entera y decimal de un \IeC {\'a}ngulo.\relax }}{67}{figure.caption.91}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{68}{figure.caption.92}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
