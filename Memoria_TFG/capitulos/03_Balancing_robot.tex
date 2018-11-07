@@ -97,10 +97,10 @@ En la figura \ref{fig:center_mass} se representa el cálculo con SolidWorks de e
 
 Es necesario un conocimiento constante del ángulo del sistema para su posterior análisis y corrección, para ello se hace uso del MPU6050 conectado mediante una comunicación I2C a un Arduino Nano. \newline
 
-El MPU6050[] es una unidad de medida inercial (Inertial Measure Unit, IMU )con 6 grados de libertad (6DOF) fabricado por Invensense[]. Cuenta con un acelerómetro y giroscopio y permite una comunicación tanto por SPI como por bus I2C. Para corregir algunos de los problemas de captación de datos planteados en \ref{sec:IMU} incorpora un procesador interno (Digital Motion Processor, DMP) que ejecuta algoritmos de fusión de datos (Motion Fusion) para combinar las mediciones de los sensores internos evitando tener que realizar los filtros de forma exterior.\newline
+El MPU6050[] es una unidad de medida inercial (Inertial Measure Unit, IMU )con 6 grados de libertad (6DOF) fabricado por Invensense[]. Cuenta con un acelerómetro y giroscopio y permite una comunicación tanto por SPI como por bus I2C. Para corregir algunos de los problemas de captación de datos planteados en la sección \ref{sec:IMU} incorpora un procesador interno (Digital Motion Processor, DMP) que ejecuta algoritmos de fusión de datos (Motion Fusion) para combinar las mediciones de los sensores internos evitando tener que realizar los filtros de forma exterior.\newline
 
 Debido a su bajo precio y gran calidad es uno de los IMUs más utilizados en la actualidad.
-En la figura \ref{fig:IMU1} se muestra una imagen del MPU6050
+En la figura \ref{fig:IMU1} se muestra una imagen del MPU6050.
 
 \begin{figure}[H]
 	\center
@@ -122,23 +122,28 @@ En la figura \ref{fig:MPU6050_schematic} se muestra el diagrama esquemático de 
 Tiene una tensión de alimentacion de 3.3V. El pin de reloj para la conexión I2C (Serial Clock Line, SCL) y el pin de datos (Serial Data Line, SDA) representan la conexión para el bus con Arduino Nano. El pin AD0 permite al usuario final cambiar la dirección del MPU (slave) la cuál por defecto es 0x68h conectado a GND. Si se conecta a Vcc la dirección cambia a 0x69h. El pin INT produce una señal en alta cuando el dato en cuestión está disponible por parte del MPU para ser capturado, y avisará por medio de una interrupción al Arduino Nano con el fin de poder ser obtenido. \newline
 
 \subsubsection{Programa para Arduino nano}
-Para la implementación en Arduino Nano se utiliza la librería desarrollada por Jeff Rowberg []. La razón del uso de esta librería es debido a que incorpora la utilización del DMP cuyas ventajas en este caso se representan en la figura \ref{fig:coexistencia1}\newline
+Para la implementación en Arduino Nano se utiliza la librería desarrollada por Jeff Rowberg []. La razón del uso de esta librería es debido a que incorpora la utilización del DMP cuyas ventajas se representan en la figura \ref{fig:DMPExample}\newline
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 4cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/DMPexample.pdf}
 	\caption{Ventaja de uso en la utilización de DMP.}
-	\label{fig:coexistencia1}
+	\label{fig:DMPExample}
 \end{figure}
 
-\subsubsection{Valores del sensor. DMP. }
+Se exime al micro-procesador (Arduino Nano en este caso) de un complejo filtrado y cálculo con el fin de obtener los valores pitch, yaw y roll. 
 
-Los valores 
+\subsubsection{Valores del sensor. }
+
+Un ejemplo de los valores obtenidos por parte del sensor se muestran en la figura tal.
+
+\textbf{foto de un ejemplo de los ángulos}
+ 
 
 
 \subsection{Implementación PCB}
 
-Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, es conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
+Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, es conveniente y apropiado un circuito impreso que resuelva algunos problemas de ruido, cables excesivos, etc. \newline
 
 El circuito impreso alberga los siguientes componentes y
 comportamientos:
@@ -238,7 +243,7 @@ comportamientos:
 	\end{center}
 
 
-Para el desarrollo de una PCB con los requerimientos descritos en la sección \ref{sec:DisenoPCB} se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
+Para el desarrollo de una PCB con los requerimientos descritos se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
 
 \begin{itemize}
 	\item 1) En primera instancia se crea el proyecto en cuestión.
@@ -347,6 +352,42 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 
 
 \subsection{Implementación IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
+
+Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
+
+Hay varias opciones para hacer una integración Micro-Controlador--FPGA:
+
+\begin{itemize}
+	\item Emular el comportamiento de un micro-controlador en una FPGA.
+	\item Coexistencia física de una FPGA y micro-controlador creando una comunicación entre cada una de ellas.
+\end{itemize}
+En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
+
+Existen dos tipos de comunicación posibles para este propósito: 
+\begin{itemize}
+	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente y haciendo uso solo de un bus de datos.
+	\item Comunicación en paralelo: Todos los bits de cada símbolo se envían a la vez.
+\end{itemize} 
+
+Para hacer uso de la comunicación en paralelo se necesitan tantos canales como bits tenga la información a transmitir (si se quiere enviar un byte se debería hacer uso de un total de 8 canales, correspondientes a cada bit). En este caso habría que utilizar 8 pines de la FPGA para poder llevar a cabo este tipo de transmisión. Por ello, y a pesar de que la comunicación paralela es mas rápida que en serie, se elije la primera como opción más conveniente. \newline
+
+El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque sólo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2}.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia2.pdf}
+	\caption{Pines hardware de coexistencia micro-FPGA.}
+	\label{fig:coexistencia2}
+\end{figure}
+El sistema general cuenta con dos conexiones:
+\begin{itemize}
+	\item Una línea de datos para el envió de la información.
+	\item Una linea de reloj para que la FPGA pueda obtener en todo momento la velocidad de la información.
+\end{itemize}
+
+Un posible ejemplo de una comunicación en serie de un byte de datos podría ser el siguiente: 
+\textbf{Ejemplo com SPI}
+
 El ángulo tiene que ser conocido en la IceZum-Alhambra para la toma de decisiones tanto en dirección como velocidad de los motores. Es necesario por tanto una comunicación micro-controlador/FPGA y que además permita separar procesos secuenciales y paralelos (figura \ref{fig:coexistencia1}).
 
 \begin{figure}[H]
@@ -362,12 +403,38 @@ Se hace una separación por tanto de dos partes de la comunicación, desde el pu
 
 \subsubsection{Desde el punto de vista del micro-controlador:}
 
+Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido en el micro-controlador. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del micro-controlador, solo se analiza la parte sombreada.  
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Balancing_robot/coexistencia3.pdf}
+	\caption{Diagrama interno Arduino Nano.}
+	\label{fig:coexistencia3}
+\end{figure}
+
+El diagrama de flujo sobre el cuál se basa el código en C del micro-controlador se representa en la figura \ref{fig:extraccion_angulo}.
+
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.7]{imagenes/Balancing_robot/extraccion_angulo.pdf}
 	\caption{Envío de ángulo usando el puerto serie.}
 	\label{fig:extraccion_angulo}
 \end{figure}
+
+A continuación se pasa a explicar los aspectos mas relevantes: 
+
+\begin{itemize}
+	\item \textbf{1.-}Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
+	\item \textbf{2.-}Una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (figura en la que se ve como se hace esa corrección). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
+	\item \textbf{3.-}Se utiliza un solo pin del micro-controlador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
+	\item \textbf{4.-}Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
+	Si se intenta enviar todo el ángulo también se enviarán tanto el símbolo como el código ASCII de la coma y esto es un aspecto que no interesa tener en cuenta en lo que al procesamiento sobre la FPGA se refiere. Para corregirlo primero se hace el módulo del ángulo (no se necesita el signo porque ya hay un pin destinado para ello) y posteriormente de hace una separación entre la parte entera y la parte decimal para poder eliminar el carácter "comma". 
+	
+	\item \textbf{5.-}Se envía por el puerto serie el byte correspondiente a la parte entera. 
+	\item \textbf{6.-}Se envía por el puerto serie el byte correspondiente a la parte decimal. 
+	\item \textbf{7.-}Es un proceso cíclico que se irá reproduciendo cada X segundos, esto es, el ángulo podrá corregirse cada X segundos. 
+\end{itemize}
+Un ejemplo real del envío del un ángulo con su correspondiente signo es mostrado en la figura \ref{label}
 
 \subsubsection{Desde el punto de vista de la FPGA:}
 \begin{center}
@@ -412,71 +479,9 @@ El sistema final de comunicación entre Arduino y IceZum Alhambra desde el punto
 
 
 
-Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
-
-Hay varias opciones para hacer una integración Micro-Controlador--FPGA:
-
-\begin{itemize}
-	\item Emular el comportamiento de un micro-controlador en una FPGA.
-	\item Coexistencia física de una FPGA y micro-controlador creando una comunicación entre cada una de ellas.
-\end{itemize}
-En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
-
-Así se hace necesario una comunicación micro-controlador/FPGA. Existen dos tipos de comunicación posibles para este propósito: 
-\begin{itemize}
-	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente y haciendo uso solo de un bus de datos.
-	\item Comunicación en paralelo: Todos los bits de cada símbolo se envían a la vez.
-\end{itemize} 
-
-Para hacer uso de la comunicación en paralelo se necesitan tantos canales como bits tenga la información a transmitir (si se quiere enviar un byte se debería hacer uso de un total de 8 canales, correspondientes a cada bit). En este caso habría que utilizar 8 pines de la FPGA para poder llevar a cabo este tipo de transmisión. Por ello, y a pesar de que la comunicación paralela es mas rápida que en serie, se elije la primera como opción más conveniente. \newline
-
-El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque sólo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2}.
-
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia2.pdf}
-	\caption{Pines hardware de coexistencia micro-FPGA.}
-	\label{fig:coexistencia2}
-\end{figure}
-El sistema general cuenta con dos conexiones:
-\begin{itemize}
-	\item Una línea de datos para el envió de la información.
-	\item Una linea de reloj para que la FPGA pueda obtener en todo momento la velocidad de la información.
-\end{itemize}
-
-Un posible ejemplo de una comunicación en serie de un byte de datos podría ser el siguiente: 
-\textbf{Ejemplo com SPI}
 
 
-Se introduce a más bajo nivel las dos partes, la comunicación desde el punto de vista del micro-controlador y la comunicación desde el punto de vista de la FPGA. 
 
-\subsubsection{Desde el punto de vista del micro-controlador:}
-
-Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido en el micro-controlador. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del micro-controlador, solo se analiza la parte sombreada.  
-
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Balancing_robot/coexistencia3.pdf}
-	\caption{Diagrama interno Arduino Nano.}
-	\label{fig:coexistencia3}
-\end{figure}
-
-El diagrama de flujo sobre el cuál se basa el código en C del micro-controlador se representa en la figura \ref{fig:extraccion_angulo}
-
-A continuación se pasa a explicar los aspectos mas relevantes: 
-
-\begin{itemize}
-	\item \textbf{1.-}Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
-	\item \textbf{2.-}Una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (figura en la que se ve como se hace esa corrección). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
-	\item \textbf{3.-}Se utiliza un solo pin del micro-controlador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
-	\item \textbf{4.-}Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
-	Si se intenta enviar todo el ángulo también se enviarán tanto el símbolo como el código ASCII de la coma y esto es un aspecto que no interesa tener en cuenta en lo que al procesamiento sobre la FPGA se refiere. Para corregirlo primero se hace el módulo del ángulo (no se necesita el signo porque ya hay un pin destinado para ello) y posteriormente de hace una separación entre la parte entera y la parte decimal para poder eliminar el carácter "comma". 
-	
-	\item \textbf{5.-}Se envía por el puerto serie el byte correspondiente a la parte entera. 
-	\item \textbf{6.-}Se envía por el puerto serie el byte correspondiente a la parte decimal. 
-	\item \textbf{7.-}Es un proceso cíclico que se irá reproduciendo cada X segundos, esto es, el ángulo podrá corregirse cada X segundos. 
-\end{itemize}
-Un ejemplo real del envío del un ángulo con su correspondiente signo es mostrado en la figura \ref{label}
 
 \subsubsection{Desde el punto de vista de la FPGA:} \newline
 
@@ -611,14 +616,14 @@ Así, las características de una señal PWM son:
 \end{itemize}
 
 
-El driver del motor utilizado para el control de los motores DC (MC33926 []), necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades. Estas configuraciones se detallan en la sección \ref{sec:driver_motores}. El diagrama final de entradas y salidas así como las conexiones necesarias se detallan en el esquemático de la figura \ref{fig:extraccion_angulo}.
+El driver del motor utilizado para el control de los motores DC (MC33926 []), necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades. Estas configuraciones se detallan en la sección \ref{sec:driver_motores}. El diagrama final de entradas y salidas así como las conexiones necesarias se detallan en el esquemático de la figura \ref{fig:driver_motor}.
 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 3cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/driver_motor.pdf}
 	\caption{Envío de ángulo usando el puerto serie.}
-	\label{fig:extraccion_angulo}
+	\label{fig:driver_motor}
 \end{figure}
 
 

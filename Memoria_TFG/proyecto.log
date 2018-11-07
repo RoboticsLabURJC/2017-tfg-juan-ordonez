@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  7 NOV 2018 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  7 NOV 2018 21:12
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -1567,12 +1567,6 @@ LaTeX Warning: Label `sec:Diseno' multiply defined.
 
 LaTeX Warning: Label `fig:IMU1' multiply defined.
 
-
-LaTeX Warning: Label `fig:coexistencia1' multiply defined.
-
-
-LaTeX Warning: Label `fig:extraccion_angulo' multiply defined.
-
 )
 \openout1 = `proyecto.aux'.
 
@@ -2735,52 +2729,53 @@ Package pdftex.def Info: imagenes/Balancing_robot/DMPexample.pdf  used on input
 LaTeX Info: Redefining \. on input line 133.
 LaTeX Info: Redefining \% on input line 133.
 [43 <./imagenes/Balancing_robot/MPU6050_schematic.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
-<imagenes/Balancing_robot/pin_headers.PNG, id=1270, 566.86781pt x 472.76625pt>
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
+[44 <./imagenes/Balancing_robot/DMPexample.pdf>]
+<imagenes/Balancing_robot/pin_headers.PNG, id=1294, 566.86781pt x 472.76625pt>
 File: imagenes/Balancing_robot/pin_headers.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/pin_headers.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/pin_headers.PNG  used on inpu
-t line 151.
+t line 156.
 (pdftex.def)             Requested size: 283.43321pt x 236.38254pt.
-LaTeX Info: Redefining \. on input line 155.
-LaTeX Info: Redefining \% on input line 155.
-[44 <./imagenes/Balancing_robot/DMPexample.pdf>]
 <imagenes/Balancing_robot/SCREW.PNG, id=1296, 346.29375pt x 398.08725pt>
 File: imagenes/Balancing_robot/SCREW.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/SCREW.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/SCREW.PNG  used on input line
- 161.
+ 166.
 (pdftex.def)             Requested size: 173.14644pt x 199.04314pt.
 
 
-LaTeX Warning: Reference `sec:Bateria' on page 45 undefined on input line 167.
+LaTeX Warning: Reference `sec:Bateria' on page 45 undefined on input line 172.
 
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
+[45 <./imagenes/Balancing_robot/pin_headers.PNG> <./imagenes/Balancing_robot/SC
+REW.PNG>]
 Runaway argument?
 {fig:mpu6050_connector). 
 ! Paragraph ended before \T@ref was complete.
 <to be read again> 
                    \par 
-l.170 		
+l.175 		
         
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-<imagenes/Balancing_robot/mpu6050_connector.PNG, id=1297, 587.19376pt x 335.001
+<imagenes/Balancing_robot/mpu6050_connector.PNG, id=1303, 587.19376pt x 335.001
 56pt>
 File: imagenes/Balancing_robot/mpu6050_connector.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/mpu6050_connector.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/mpu6050_connector.PNG  used o
-n input line 173.
+n input line 178.
 (pdftex.def)             Requested size: 293.59616pt x 167.50037pt.
-LaTeX Info: Redefining \. on input line 177.
-LaTeX Info: Redefining \% on input line 177.
-[45 <./imagenes/Balancing_robot/pin_headers.PNG> <./imagenes/Balancing_robot/SC
-REW.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
@@ -2788,239 +2783,129 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--182
 File: imagenes/Balancing_robot/jumpers.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/jumpers.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/jumpers.PNG  used on input li
-ne 185.
+ne 190.
 (pdftex.def)             Requested size: 211.91618pt x 252.56798pt.
-LaTeX Info: Redefining \. on input line 195.
-LaTeX Info: Redefining \% on input line 195.
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
 [46 <./imagenes/Balancing_robot/mpu6050_connector.PNG> <./imagenes/Balancing_ro
 bot/jumpers.PNG>]
 <imagenes/Balancing_Robot/top_3D.PNG, id=1316, 546.24075pt x 463.7325pt>
 File: imagenes/Balancing_Robot/top_3D.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/top_3D.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/top_3D.PNG  used on input lin
-e 207.
+e 212.
 (pdftex.def)             Requested size: 327.74698pt x 278.24164pt.
 <imagenes/Balancing_Robot/bottom_3D.PNG, id=1317, 511.31026pt x 416.757pt>
 File: imagenes/Balancing_Robot/bottom_3D.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/bottom_3D.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/bottom_3D.PNG  used on input 
-line 216.
+line 221.
 (pdftex.def)             Requested size: 306.78851pt x 250.05612pt.
-LaTeX Info: Redefining \. on input line 220.
-LaTeX Info: Redefining \% on input line 220.
+LaTeX Info: Redefining \. on input line 225.
+LaTeX Info: Redefining \% on input line 225.
  [47 <./imagenes/Balancing_Robot/top_3D.PNG>]
 <imagenes/Balancing_Robot/Vista3D1.PNG, id=1324, 599.23875pt x 499.8675pt>
 File: imagenes/Balancing_Robot/Vista3D1.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/Vista3D1.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/Vista3D1.PNG  used on input l
-ine 225.
+ine 230.
 (pdftex.def)             Requested size: 479.39165pt x 399.89453pt.
 
-Overfull \hbox (24.14754pt too wide) in paragraph at lines 225--226
+Overfull \hbox (24.14754pt too wide) in paragraph at lines 230--231
  [] 
  []
 
-LaTeX Info: Redefining \. on input line 229.
-LaTeX Info: Redefining \% on input line 229.
+LaTeX Info: Redefining \. on input line 234.
+LaTeX Info: Redefining \% on input line 234.
 [48 <./imagenes/Balancing_Robot/bottom_3D.PNG>]
 <imagenes/Balancing_Robot/Vista3D2.PNG, id=1330, 532.99126pt x 293.29575pt>
 File: imagenes/Balancing_Robot/Vista3D2.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/Vista3D2.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/Vista3D2.PNG  used on input l
-ine 234.
+ine 239.
 (pdftex.def)             Requested size: 426.39359pt x 234.6369pt.
-
-
-LaTeX Warning: Reference `sec:DisenoPCB' on page 49 undefined on input line 241
-.
-
-LaTeX Info: Redefining \. on input line 242.
-LaTeX Info: Redefining \% on input line 242.
-[49 <./imagenes/Balancing_Robot/Vista3D1.PNG> <./imagenes/Balancing_Robot/Vista
-3D2.PNG>]
-LaTeX Info: Redefining \. on input line 251.
-LaTeX Info: Redefining \% on input line 251.
+LaTeX Info: Redefining \. on input line 247.
+LaTeX Info: Redefining \% on input line 247.
+ [49 <./imagenes/Balancing_Robot/Vista3D1.PNG> <./imagenes/Balancing_Robot/Vist
+a3D2.PNG>]
+LaTeX Info: Redefining \. on input line 256.
+LaTeX Info: Redefining \% on input line 256.
  [50]
 <imagenes/Balancing_Robot/pcb_dron_schematic.pdf, id=1342, 845.1575pt x 597.231
 25pt>
 File: imagenes/Balancing_Robot/pcb_dron_schematic.pdf Graphic file (type pdf)
 <use imagenes/Balancing_Robot/pcb_dron_schematic.pdf>
 Package pdftex.def Info: imagenes/Balancing_Robot/pcb_dron_schematic.pdf  used 
-on input line 256.
+on input line 261.
 (pdftex.def)             Requested size: 676.12692pt x 477.78564pt.
 
-Overfull \hbox (22.54153pt too wide) in paragraph at lines 256--257
+Overfull \hbox (22.54153pt too wide) in paragraph at lines 261--262
  [] 
  []
 
-LaTeX Info: Redefining \. on input line 261.
-LaTeX Info: Redefining \% on input line 261.
+LaTeX Info: Redefining \. on input line 266.
+LaTeX Info: Redefining \% on input line 266.
 [51 <./imagenes/Balancing_Robot/pcb_dron_schematic.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
-LaTeX Info: Redefining \. on input line 308.
-LaTeX Info: Redefining \% on input line 308.
+LaTeX Info: Redefining \. on input line 313.
+LaTeX Info: Redefining \% on input line 313.
 [52]
 <imagenes/Balancing_Robot/layers_altium.PNG, id=1373, 813.79031pt x 640.64343pt
 >
 File: imagenes/Balancing_Robot/layers_altium.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/layers_altium.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/layers_altium.PNG  used on in
-put line 342.
+put line 347.
 (pdftex.def)             Requested size: 651.03314pt x 512.51544pt.
 
-Overfull \hbox (57.27133pt too wide) in paragraph at lines 342--343
+Overfull \hbox (57.27133pt too wide) in paragraph at lines 347--348
  [] 
  []
 
-LaTeX Info: Redefining \. on input line 346.
-LaTeX Info: Redefining \% on input line 346.
-[53]
 LaTeX Info: Redefining \. on input line 351.
 LaTeX Info: Redefining \% on input line 351.
- [54 <./imagenes/Balancing_Robot/layers_altium.PNG>]
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
-pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia1.pdf
-): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia1.pdf, id=1385, 795.97375pt x 615.29875pt
->
-File: imagenes/Balancing_robot/coexistencia1.pdf Graphic file (type pdf)
-<use imagenes/Balancing_robot/coexistencia1.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/coexistencia1.pdf  used on in
-put line 354.
-(pdftex.def)             Requested size: 318.38387pt x 177.82974pt.
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
+[54 <./imagenes/Balancing_Robot/layers_altium.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 
-Package caption Warning: \label without proper reference on input line 378.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:arduino_interfacefluid' on page 55 undefined on i
-nput line 361.
-
-
-
-pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/extraccion_angulo
-.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
-d
-<imagenes/Balancing_robot/extraccion_angulo.pdf, id=1389, 795.97375pt x 615.298
-75pt>
-File: imagenes/Balancing_robot/extraccion_angulo.pdf Graphic file (type pdf)
-<use imagenes/Balancing_robot/extraccion_angulo.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/extraccion_angulo.pdf  used o
-n input line 367.
-(pdftex.def)             Requested size: 557.17784pt x 430.70618pt.
-
-Overfull \hbox (101.93373pt too wide) in paragraph at lines 367--368
- [] 
- []
-
-LaTeX Info: Redefining \. on input line 371.
-LaTeX Info: Redefining \% on input line 371.
-[55 <./imagenes/Balancing_robot/coexistencia1.pdf>]
-
-pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arduino_interface
-fluid.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
-llowed
-<imagenes/Balancing_robot/arduino_interfacefluid.pdf, id=1408, 794.97pt x 614.2
-95pt>
-File: imagenes/Balancing_robot/arduino_interfacefluid.pdf Graphic file (type pd
-f)
-<use imagenes/Balancing_robot/arduino_interfacefluid.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/arduino_interfacefluid.pdf  u
-sed on input line 376.
-(pdftex.def)             Requested size: 715.4664pt x 527.25316pt.
-
-Overfull \hbox (72.00905pt too wide) in paragraph at lines 376--379
- [] 
- []
-
-LaTeX Info: Redefining \. on input line 381.
-LaTeX Info: Redefining \% on input line 381.
-[56 <./imagenes/Balancing_robot/extraccion_angulo.pdf>]
-Overfull \vbox (58.48434pt too high) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 381.
-LaTeX Info: Redefining \% on input line 381.
-
-[57 <./imagenes/Balancing_robot/arduino_interfacefluid.pdf>]
-
-Package caption Warning: \label without proper reference on input line 378.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:arduino_interfacefluid' on page 58 undefined on i
-nput line 382.
-
-<imagenes/Balancing_robot/arduino_interface.PNG, id=1445, 439.6425pt x 283.6597
-4pt>
-File: imagenes/Balancing_robot/arduino_interface.PNG Graphic file (type png)
-<use imagenes/Balancing_robot/arduino_interface.PNG>
-Package pdftex.def Info: imagenes/Balancing_robot/arduino_interface.PNG  used o
-n input line 386.
-(pdftex.def)             Requested size: 263.78752pt x 170.19714pt.
-<imagenes/Balancing_robot/arrange_arduino.PNG, id=1447, 611.28375pt x 315.42844
-pt>
-File: imagenes/Balancing_robot/arrange_arduino.PNG Graphic file (type png)
-<use imagenes/Balancing_robot/arrange_arduino.PNG>
-Package pdftex.def Info: imagenes/Balancing_robot/arrange_arduino.PNG  used on 
-input line 395.
-(pdftex.def)             Requested size: 244.50917pt x 126.16913pt.
-<imagenes/Balancing_robot/arduino_arrange.PNG, id=1449, 673.76718pt x 645.91313
-pt>
-File: imagenes/Balancing_robot/arduino_arrange.PNG Graphic file (type png)
-<use imagenes/Balancing_robot/arduino_arrange.PNG>
-Package pdftex.def Info: imagenes/Balancing_robot/arduino_arrange.PNG  used on 
-input line 405.
-(pdftex.def)             Requested size: 404.26343pt x 387.55087pt.
-LaTeX Info: Redefining \. on input line 409.
-LaTeX Info: Redefining \% on input line 409.
-[58 <./imagenes/Balancing_robot/arduino_interface.PNG> <./imagenes/Balancing_ro
-bot/arrange_arduino.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
-
- []
-
-LaTeX Info: Redefining \. on input line 429.
-LaTeX Info: Redefining \% on input line 429.
-[59 <./imagenes/Balancing_robot/arduino_arrange.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 431--432
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
@@ -3028,28 +2913,136 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--432
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia2.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia2.pdf, id=1463, 793.96625pt x 614.295pt>
+<imagenes/Balancing_robot/coexistencia2.pdf, id=1385, 793.96625pt x 614.295pt>
 File: imagenes/Balancing_robot/coexistencia2.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia2.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/coexistencia2.pdf  used on in
-put line 437.
+put line 378.
 (pdftex.def)             Requested size: 317.58087pt x 177.42824pt.
+LaTeX Info: Redefining \. on input line 386.
+LaTeX Info: Redefining \% on input line 386.
+[55 <./imagenes/Balancing_robot/coexistencia2.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia1.pdf
+): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<imagenes/Balancing_robot/coexistencia1.pdf, id=1400, 795.97375pt x 615.29875pt
+>
+File: imagenes/Balancing_robot/coexistencia1.pdf Graphic file (type pdf)
+<use imagenes/Balancing_robot/coexistencia1.pdf>
+Package pdftex.def Info: imagenes/Balancing_robot/coexistencia1.pdf  used on in
+put line 395.
+(pdftex.def)             Requested size: 318.38387pt x 177.82974pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
+
+ []
+
+
+Package caption Warning: \label without proper reference on input line 445.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:arduino_interfacefluid' on page 56 undefined on i
+nput line 402.
+
 
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia3.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia3.pdf, id=1466, 798.985pt x 617.30624pt>
+<imagenes/Balancing_robot/coexistencia3.pdf, id=1405, 798.985pt x 617.30624pt>
 File: imagenes/Balancing_robot/coexistencia3.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia3.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/coexistencia3.pdf  used on in
-put line 459.
+put line 410.
 (pdftex.def)             Requested size: 239.69734pt x 185.1933pt.
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
-[60 <./imagenes/Balancing_robot/coexistencia2.pdf>]
+LaTeX Info: Redefining \. on input line 414.
+LaTeX Info: Redefining \% on input line 414.
+[56 <./imagenes/Balancing_robot/coexistencia1.pdf>]
 
-LaTeX Warning: Reference `label' on page 61 undefined on input line 479.
+pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/extraccion_angulo
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<imagenes/Balancing_robot/extraccion_angulo.pdf, id=1426, 795.97375pt x 615.298
+75pt>
+File: imagenes/Balancing_robot/extraccion_angulo.pdf Graphic file (type pdf)
+<use imagenes/Balancing_robot/extraccion_angulo.pdf>
+Package pdftex.def Info: imagenes/Balancing_robot/extraccion_angulo.pdf  used o
+n input line 419.
+(pdftex.def)             Requested size: 557.17784pt x 430.70618pt.
 
+Overfull \hbox (101.93373pt too wide) in paragraph at lines 419--420
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 423.
+LaTeX Info: Redefining \% on input line 423.
+[57 <./imagenes/Balancing_robot/coexistencia3.pdf>]
+LaTeX Info: Redefining \. on input line 432.
+LaTeX Info: Redefining \% on input line 432.
+ [58 <./imagenes/Balancing_robot/extraccion_angulo.pdf>]
+
+LaTeX Warning: Reference `label' on page 59 undefined on input line 437.
+
+
+
+pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arduino_interface
+fluid.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
+llowed
+<imagenes/Balancing_robot/arduino_interfacefluid.pdf, id=1450, 794.97pt x 614.2
+95pt>
+File: imagenes/Balancing_robot/arduino_interfacefluid.pdf Graphic file (type pd
+f)
+<use imagenes/Balancing_robot/arduino_interfacefluid.pdf>
+Package pdftex.def Info: imagenes/Balancing_robot/arduino_interfacefluid.pdf  u
+sed on input line 443.
+(pdftex.def)             Requested size: 715.4664pt x 527.25316pt.
+
+Overfull \hbox (72.00905pt too wide) in paragraph at lines 443--446
+ [] 
+ []
+
+LaTeX Info: Redefining \. on input line 448.
+LaTeX Info: Redefining \% on input line 448.
+[59]
+Overfull \vbox (58.48434pt too high) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 448.
+LaTeX Info: Redefining \% on input line 448.
+
+[60 <./imagenes/Balancing_robot/arduino_interfacefluid.pdf>]
+
+Package caption Warning: \label without proper reference on input line 445.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:arduino_interfacefluid' on page 61 undefined on i
+nput line 449.
+
+<imagenes/Balancing_robot/arduino_interface.PNG, id=1481, 439.6425pt x 283.6597
+4pt>
+File: imagenes/Balancing_robot/arduino_interface.PNG Graphic file (type png)
+<use imagenes/Balancing_robot/arduino_interface.PNG>
+Package pdftex.def Info: imagenes/Balancing_robot/arduino_interface.PNG  used o
+n input line 453.
+(pdftex.def)             Requested size: 263.78752pt x 170.19714pt.
+<imagenes/Balancing_robot/arrange_arduino.PNG, id=1483, 611.28375pt x 315.42844
+pt>
+File: imagenes/Balancing_robot/arrange_arduino.PNG Graphic file (type png)
+<use imagenes/Balancing_robot/arrange_arduino.PNG>
+Package pdftex.def Info: imagenes/Balancing_robot/arrange_arduino.PNG  used on 
+input line 462.
+(pdftex.def)             Requested size: 244.50917pt x 126.16913pt.
+<imagenes/Balancing_robot/arduino_arrange.PNG, id=1485, 673.76718pt x 645.91313
+pt>
+File: imagenes/Balancing_robot/arduino_arrange.PNG Graphic file (type png)
+<use imagenes/Balancing_robot/arduino_arrange.PNG>
+Package pdftex.def Info: imagenes/Balancing_robot/arduino_arrange.PNG  used on 
+input line 472.
+(pdftex.def)             Requested size: 404.26343pt x 387.55087pt.
+LaTeX Info: Redefining \. on input line 476.
+LaTeX Info: Redefining \% on input line 476.
+[61 <./imagenes/Balancing_robot/arduino_interface.PNG> <./imagenes/Balancing_ro
+bot/arrange_arduino.PNG>]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -3057,94 +3050,94 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.481 ...e el punto de vista de la FPGA:} \newline
+l.486 ...e el punto de vista de la FPGA:} \newline
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Info: Redefining \. on input line 486.
-LaTeX Info: Redefining \% on input line 486.
-[61 <./imagenes/Balancing_robot/coexistencia3.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
+LaTeX Info: Redefining \. on input line 504.
+LaTeX Info: Redefining \% on input line 504.
+[62 <./imagenes/Balancing_robot/arduino_arrange.PNG>]
 
-Package caption Warning: \label without proper reference on input line 378.
+Package caption Warning: \label without proper reference on input line 445.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:arduino_interfacefluid' on page 62 undefined on i
-nput line 503.
+LaTeX Warning: Reference `fig:arduino_interfacefluid' on page 63 undefined on i
+nput line 508.
 
 
-LaTeX Warning: Reference `label' on page 62 undefined on input line 509.
+LaTeX Warning: Reference `label' on page 63 undefined on input line 514.
 
-LaTeX Info: Redefining \. on input line 517.
-LaTeX Info: Redefining \% on input line 517.
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
-
+LaTeX Info: Redefining \. on input line 534.
+LaTeX Info: Redefining \% on input line 534.
+[63]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arrange_angle.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/arrange_angle.pdf, id=1503, 795.97375pt x 615.29875pt
+<imagenes/Balancing_robot/arrange_angle.pdf, id=1506, 795.97375pt x 615.29875pt
 >
 File: imagenes/Balancing_robot/arrange_angle.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/arrange_angle.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/arrange_angle.pdf  used on in
-put line 545.
+put line 550.
 (pdftex.def)             Requested size: 397.9859pt x 307.64862pt.
-LaTeX Info: Redefining \. on input line 549.
-LaTeX Info: Redefining \% on input line 549.
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
-
- []
-
-LaTeX Info: Redefining \. on input line 572.
-LaTeX Info: Redefining \% on input line 572.
+LaTeX Info: Redefining \. on input line 562.
+LaTeX Info: Redefining \% on input line 562.
 [64 <./imagenes/Balancing_robot/arrange_angle.pdf>]
-<imagenes/Balancing_robot/Pcontrol.png, id=1523, 314.97675pt x 343.88475pt>
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
+
+ []
+
+<imagenes/Balancing_robot/Pcontrol.png, id=1522, 314.97675pt x 343.88475pt>
 File: imagenes/Balancing_robot/Pcontrol.png Graphic file (type png)
 <use imagenes/Balancing_robot/Pcontrol.png>
 Package pdftex.def Info: imagenes/Balancing_robot/Pcontrol.png  used on input l
-ine 575.
+ine 580.
 (pdftex.def)             Requested size: 157.48798pt x 171.94196pt.
-<imagenes/Balancing_robot/Dcontrol.png, id=1524, 303.534pt x 311.9655pt>
+<imagenes/Balancing_robot/Dcontrol.png, id=1523, 303.534pt x 311.9655pt>
 File: imagenes/Balancing_robot/Dcontrol.png Graphic file (type png)
 <use imagenes/Balancing_robot/Dcontrol.png>
 Package pdftex.def Info: imagenes/Balancing_robot/Dcontrol.png  used on input l
-ine 582.
+ine 587.
 (pdftex.def)             Requested size: 151.76662pt x 155.98236pt.
-LaTeX Info: Redefining \. on input line 588.
-LaTeX Info: Redefining \% on input line 588.
- [65 <./imagenes/Balancing_robot/Pcontrol.png> <./imagenes/Balancing_robot/Dcon
-trol.png>]
-<imagenes/Balancing_robot/finalIceStudio.png, id=1535, 1143.0705pt x 458.31226p
+LaTeX Info: Redefining \. on input line 591.
+LaTeX Info: Redefining \% on input line 591.
+[65 <./imagenes/Balancing_robot/Pcontrol.png>]
+LaTeX Info: Redefining \. on input line 593.
+LaTeX Info: Redefining \% on input line 593.
+ [66 <./imagenes/Balancing_robot/Dcontrol.png>]
+<imagenes/Balancing_robot/finalIceStudio.png, id=1538, 1143.0705pt x 458.31226p
 t>
 File: imagenes/Balancing_robot/finalIceStudio.png Graphic file (type png)
 <use imagenes/Balancing_robot/finalIceStudio.png>
 Package pdftex.def Info: imagenes/Balancing_robot/finalIceStudio.png  used on i
-nput line 591.
+nput line 596.
 (pdftex.def)             Requested size: 685.8476pt x 274.98947pt.
 
 Overfull \vbox (6.6645pt too high) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 595.
-LaTeX Info: Redefining \% on input line 595.
+LaTeX Info: Redefining \. on input line 600.
+LaTeX Info: Redefining \% on input line 600.
 
-[66 <./imagenes/Balancing_robot/finalIceStudio.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 604--605
+[67 <./imagenes/Balancing_robot/finalIceStudio.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
  []
 
@@ -3152,107 +3145,107 @@ Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/driver_motor.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/driver_motor.pdf, id=1543, 794.97pt x 614.295pt>
+<imagenes/Balancing_robot/driver_motor.pdf, id=1546, 794.97pt x 614.295pt>
 File: imagenes/Balancing_robot/driver_motor.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/driver_motor.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.pdf  used on inp
-ut line 619.
+ut line 624.
 (pdftex.def)             Requested size: 476.98569pt x 283.22092pt.
 
-Overfull \hbox (21.74158pt too wide) in paragraph at lines 619--620
+Overfull \hbox (21.74158pt too wide) in paragraph at lines 624--625
  [] 
  []
 
-LaTeX Info: Redefining \. on input line 623.
-LaTeX Info: Redefining \% on input line 623.
-[67]
-<imagenes/Balancing_robot/PWM_module.PNG, id=1550, 348.70274pt x 213.79875pt>
+LaTeX Info: Redefining \. on input line 628.
+LaTeX Info: Redefining \% on input line 628.
+[68]
+<imagenes/Balancing_robot/PWM_module.PNG, id=1553, 348.70274pt x 213.79875pt>
 File: imagenes/Balancing_robot/PWM_module.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/PWM_module.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/PWM_module.PNG  used on input
- line 633.
+ line 638.
 (pdftex.def)             Requested size: 174.35094pt x 106.89911pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/pwm_control.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/pwm_control.pdf, id=1552, 849.1725pt x 600.2425pt>
+<imagenes/Balancing_robot/pwm_control.pdf, id=1555, 849.1725pt x 600.2425pt>
 File: imagenes/Balancing_robot/pwm_control.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/pwm_control.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/pwm_control.pdf  used on inpu
-t line 642.
+t line 647.
 (pdftex.def)             Requested size: 509.50743pt x 360.14827pt.
 
-Overfull \hbox (54.26332pt too wide) in paragraph at lines 642--643
+Overfull \hbox (54.26332pt too wide) in paragraph at lines 647--648
  [] 
  []
 
-LaTeX Info: Redefining \. on input line 646.
-LaTeX Info: Redefining \% on input line 646.
-[68 <./imagenes/Balancing_robot/driver_motor.pdf> <./imagenes/Balancing_robot/P
+LaTeX Info: Redefining \. on input line 651.
+LaTeX Info: Redefining \% on input line 651.
+[69 <./imagenes/Balancing_robot/driver_motor.pdf> <./imagenes/Balancing_robot/P
 WM_module.PNG>]
-<imagenes/Balancing_Robot/LIPO111.jpg, id=1574, 266.9975pt x 190.7125pt>
+<imagenes/Balancing_Robot/LIPO111.jpg, id=1577, 266.9975pt x 190.7125pt>
 File: imagenes/Balancing_Robot/LIPO111.jpg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/LIPO111.jpg>
 Package pdftex.def Info: imagenes/Balancing_Robot/LIPO111.jpg  used on input li
-ne 662.
+ne 667.
 (pdftex.def)             Requested size: 213.59827pt x 152.57019pt.
-LaTeX Info: Redefining \. on input line 666.
-LaTeX Info: Redefining \% on input line 666.
- [69 <./imagenes/Balancing_robot/pwm_control.pdf>]
-<imagenes/Balancing_Robot/LIPO37.jpg, id=1592, 344.78813pt x 344.78813pt>
+LaTeX Info: Redefining \. on input line 671.
+LaTeX Info: Redefining \% on input line 671.
+ [70 <./imagenes/Balancing_robot/pwm_control.pdf>]
+<imagenes/Balancing_Robot/LIPO37.jpg, id=1595, 344.78813pt x 344.78813pt>
 File: imagenes/Balancing_Robot/LIPO37.jpg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/LIPO37.jpg>
 Package pdftex.def Info: imagenes/Balancing_Robot/LIPO37.jpg  used on input lin
-e 674.
+e 679.
 (pdftex.def)             Requested size: 172.39363pt x 172.39363pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--684
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
-LaTeX Info: Redefining \. on input line 691.
-LaTeX Info: Redefining \% on input line 691.
-[70 <./imagenes/Balancing_Robot/LIPO111.jpg> <./imagenes/Balancing_Robot/LIPO37
+LaTeX Info: Redefining \. on input line 696.
+LaTeX Info: Redefining \% on input line 696.
+[71 <./imagenes/Balancing_Robot/LIPO111.jpg> <./imagenes/Balancing_Robot/LIPO37
 .jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 695--696
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
 
-Overfull \hbox (111.52554pt too wide) in paragraph at lines 708--715
+Overfull \hbox (111.52554pt too wide) in paragraph at lines 713--720
 [][] 
  []
 
 
-Overfull \hbox (41.68889pt too wide) in paragraph at lines 721--756
+Overfull \hbox (41.68889pt too wide) in paragraph at lines 726--761
 [][] 
  []
 
-LaTeX Info: Redefining \. on input line 759.
-LaTeX Info: Redefining \% on input line 759.
-[71]) (capitulos/04_Cuadricoptero.tex
+LaTeX Info: Redefining \. on input line 764.
+LaTeX Info: Redefining \% on input line 764.
+[72]) (capitulos/04_Cuadricoptero.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [72]
-Cap\'{\i }tulo 4.
-) (capitulos/05_Conclusiones.tex [73
+ [73] [74
 
-] [74
+]
+Cap\'{\i }tulo 4.
+) (capitulos/05_Conclusiones.tex [75] [76
 
 ]
 Cap\'{\i }tulo 5.
-[75]
+[77]
 
-LaTeX Warning: Citation `Asada_2004' on page 76 undefined on input line 52.
-
-
-LaTeX Warning: Citation `Gibbs_2005' on page 76 undefined on input line 52.
+LaTeX Warning: Citation `Asada_2004' on page 78 undefined on input line 52.
 
 
-LaTeX Warning: Citation `Han_2009' on page 76 undefined on input line 52.
+LaTeX Warning: Citation `Gibbs_2005' on page 78 undefined on input line 52.
 
-) [76]
+
+LaTeX Warning: Citation `Han_2009' on page 78 undefined on input line 52.
+
+) [78]
 No file proyecto.bbl.
 (glosario.tex
 \@gls@deffile=\write12
@@ -3265,7 +3258,7 @@ No file proyecto.acr.
 Package caption Warning: Unused \captionsetup[subfigure] on input line 116.
 See the caption package documentation for explanation.
 
-[77
+[79
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
@@ -3291,10 +3284,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 47500 strings out of 492972
- 1112816 string characters out of 3126622
- 1420614 words of memory out of 3000000
- 50240 multiletter control sequences out of 15000+200000
+ 47502 strings out of 492972
+ 1112837 string characters out of 3126622
+ 1420768 words of memory out of 3000000
+ 50241 multiletter control sequences out of 15000+200000
  16031 words of font info for 59 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,19n,106p,1998b,667s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3331,9 +3324,9 @@ c/amsfonts/cm/cmsl10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jordo/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jordo/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on proyecto.pdf (97 pages, 8411225 bytes).
+Output written on proyecto.pdf (99 pages, 8412834 bytes).
 PDF statistics:
- 1756 PDF objects out of 2073 (max. 8388607)
- 246 named destinations out of 1000 (max. 500000)
+ 1764 PDF objects out of 2073 (max. 8388607)
+ 247 named destinations out of 1000 (max. 500000)
  882 words of extra memory for PDF output out of 10000 (max. 10000000)
 

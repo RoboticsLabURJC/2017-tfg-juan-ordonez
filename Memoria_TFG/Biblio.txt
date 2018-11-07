@@ -18,3 +18,8 @@ $https://es.wikipedia.org/wiki/Sensor$
 Si nos referimos al concepto literal tal cuál se encuentra en WikiPedia: \newline
 
 http://www.ni.com/white-paper/3782/en/
+
+http://ewh.ieee.org/reg/9/etrans/ieee/issues/vol13/vol13issue05May2015/13TLA5_44LizarragaOrozco.pdf       Inverted Pendulum
+
+La biblio de los amigos de Jose Maria
+
