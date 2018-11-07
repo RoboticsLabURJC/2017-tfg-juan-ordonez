@@ -1,7 +1,10 @@
-\chapter{Balancing Robot}\label{sec: BalancingRobot}
-\section{Descripción del problema}
+\chapter{Robot Balancín}\label{sec: BalancingRobot}
 En el presente capítulo se pretende abordar el problema del péndulo invertido mediante la utilización de una FPGA en coexistencia con un micro-controlador. Para ello, en los respectivos capítulos se tratará la física de un Balancing robot, el cálculo de su estructura, los sensores y actuadores utilizados, el sistema de control y el diseño y fabricación de una PCB que resuelva de manera más adecuada algunos problemas de los anteriormente planteados. Se utilizará una comunicación entre FPGA/Micro-controlador y se dará una versión más global del sistema propuesto, con un diagrama de bloques general. \newline
-\newline Para entrar el contacto con el problema a resolver, se enunciará brevemente el problema del péndulo invertido, cuya solución ha dado lugar a muchas herramientas muy famosas en la actualidad, una de ellas, por ejemplo, el llamado \textit{SegWay} (\ref{fig:segway}).
+Se comienza con una descripción del problema a resolver (sección \label{sec:Descripcion_balancin}
+), a continuación se proporciona una solución básica con un alto nivel de abstracción (sección \label{sec:Diseno}), para terminar con una explicación mas detallada de los bloques anteriores (sección \ref{sec:Implementacion}).
+\section{Descripción del problema} \label{sec:Descripcion_balancin}
+
+Para comprender el trabajo a realizar, se enunciará brevemente el problema del péndulo invertido, cuya solución ha dado lugar a muchas herramientas muy famosas en la actualidad, una de ellas, el llamado \textit{SegWay} (figura \ref{fig:segway}).
 
 \begin{figure}[H]
 	\center
@@ -27,25 +30,33 @@ Consiste en un péndulo donde el centro de masas se encuentra situado por encima
 El fundamento de este proyecto consistirá por tanto en intentar corregir esta inestabilidad, y forma parte de uno de los problemas mas famosos en cuánto a teoría de control y dinámica de sistemas. 
 
 \newpage
-\section{Diseño del sistema}
-En esta sección se propone una solución al problema planteado proporcionando esta con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
-\subsection{Descripción de la solución. (Diagrama de bloques alto nivel)} \label{sec:descripcion_de_la_solucion}
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=90, scale = 0.8]{imagenes/Balancing_Robot/final.pdf}
-		\caption{Diagrama de bloques final.}
-		\label{fig:final}
-	\end{figure}
-\end{center}
-En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores. 
-\subsection{Diseño de estructura mecánica.}
-Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de las figuras \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab}, y a partir de la cuál se ensamblarán el resto de los componentes.
+\section{Diseño del sistema}\label{sec:Diseno}
+
+Mediante una comunicación i2c con un sensor IMU, el micro-controlador obtiene el ángulo actual de sistema. Obtenido el ángulo por el micro-controlador una comunicación de tipo serie lo envía a la FPGA, en un formato binario de 1 byte para la parte entera y 1 byte para la parte decimal. Una shield con un driver de motores DC conectada a la FPGA dota a esta de la posibilidad de variar la velocidad y el sentido de dos motores DC que permiten la estabilización del sistema. La velocidad de los motores para una correcta corrección del ángulo se calcula mediante un controlador PD básico implementado en la FPGA.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 1cm 0mm 2.7cm 0mm,clip, angle=0, scale = 0.6]{imagenes/Balancing_Robot/EnsanBalanceFront.PDF}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=0, scale = 0.6]{imagenes/Balancing_Robot/final.pdf}
+		\caption{Diagrama de bloques final.}
+		\label{fig:final}
+	\end{figure}
+\end{center}
+
+%En esta sección se propone una solución al problema planteado proporcionando esta con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
+
+En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores que forman la solución final (figura \ref{fig:final}). 
+
+
+\newpage
+\section{Implementación del sistema}\label{sec:Implementacion}
+\subsection{Fabricación estructura mecánica (Física de un Balancing Robot)}
+Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de las figuras \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab}, diseñadas con SolidWorks[] y a partir de la cuál se ensamblarán el resto de los componentes.
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 1cm 0mm 2.7cm 0mm,clip, angle=0, scale = 0.4]{imagenes/Balancing_Robot/EnsanBalanceFront.PDF}
 		\caption{Vista frontal Balancing Robot.}
 		\label{fig:EnsanBalanceFront}
 	\end{figure}
@@ -54,7 +65,7 @@ Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto 
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 5cm 0mm 10cm 0mm,clip, angle=0, scale = 1]{imagenes/Balancing_Robot/EnsanBalanceLateral.PDF}
+		\includegraphics[trim = 5cm 0mm 10cm 0mm,clip, angle=0, scale = 0.5]{imagenes/Balancing_Robot/EnsanBalanceLateral.PDF}
 		\caption{Vista lateral derecha Balancing Robot.}
 		\label{fig:EnsanBalanceLateral}
 	\end{figure}
@@ -63,142 +74,70 @@ Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto 
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 20mm 0mm 8cm 0mm,clip, angle=0, scale = 0.8]{imagenes/Balancing_Robot/EnsanBalanceCab.PDF}
+		\includegraphics[trim = 20mm 0mm 8cm 0mm,clip, angle=0, scale = 0.5]{imagenes/Balancing_Robot/EnsanBalanceCab.PDF}
 		\caption{Perspectiva Balancing Robot.}
 		\label{fig:EnsanBalanceCab}
 	\end{figure}
 \end{center}
-\subsection{Obtención de ángulo en micro-controlador}
-Como se caracteriza en la sección \ref{sec:descripcion_de_la_solucion}, es necesario un conocimiento constante del ángulo del sistema. Para ello se propone el siguiente diagrama de bloques, implementado en C en un Arduino-nano y cuyo código se encuentra en el apéndice. \newline
-Se hace uso de una comunicación i2c con la IMU MPU6050 y para liberar de trabajo al micro-controlador se implementa la librería tal que .\newline
-Un ejemplo de la obtención de ángulos se representa en la figura.
 
-\subsection{Integración IceZum Alhambra-Arduino Nano}
-El ángulo tiene que ser conocido en la IceZum-Alhambra para la toma de decisiones tanto en dirección como velocidad de los motores. Es necesario por tanto una comunicación micro-controlador/FPGA y que además permita separar procesos secuenciales y paralelos (figura \ref{fig:coexistencia1}).
+Se tienen en cuenta diferentes aspectos en el diseño de esta estructura que se relacionan directamente con la física de un Robot Balancín y con ello, del péndulo invertido. \newline
+Como se argumenta en la sección \ref{sec:Descripcion_balancin}, un sistema en reposo es estable cuando mas cercano esta del plano horizontal su centro de masas. Si se tiene en cuenta que la naturaleza del sistema planteado es inherentemente inestable, se hace necesario conocer el mejor punto donde debe estar el centro de masas para permitir una mejor estabilización. \newline
+
+Asumiendo la caracterización del modelado matemático en [][][], se asume por tanto que para conseguir una mayor facilidad en la estabilización, el centro de masas debe estar colocado por encima del punto medio del eje vertical de nuestro sistema. Por lo tanto, se ha de tener en cuenta el peso de todos los componentes para una colocación tal que permita lo anterior. \newline
+En la figura \ref{fig:center_mass} se representa el cálculo con SolidWorks de este centro de masas donde sólo se han tenido en cuenta los elementos más pesados del sistema final, esto es, motores DC, batería, estructura mecánica y ruedas. 
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia1.pdf}
-	\caption{Separación de procesos micro-FPGA.}
+	\includegraphics[scale=0.4]{imagenes/Balancing_robot/center_mass}
+	\caption{Centro de masas en sistema final.}
+	\label{fig:center_mass}
+\end{figure}
+
+\subsection{Unidad de medida inercial MPU6050 en Arduino Nano}\label{sec:MPU6050}
+
+Es necesario un conocimiento constante del ángulo del sistema para su posterior análisis y corrección, para ello se hace uso del MPU6050 conectado mediante una comunicación I2C a un Arduino Nano. \newline
+
+El MPU6050[] es una unidad de medida inercial (Inertial Measure Unit, IMU )con 6 grados de libertad (6DOF) fabricado por Invensense[]. Cuenta con un acelerómetro y giroscopio y permite una comunicación tanto por SPI como por bus I2C. Para corregir algunos de los problemas de captación de datos planteados en \ref{sec:IMU} incorpora un procesador interno (Digital Motion Processor, DMP) que ejecuta algoritmos de fusión de datos (Motion Fusion) para combinar las mediciones de los sensores internos evitando tener que realizar los filtros de forma exterior.\newline
+
+Debido a su bajo precio y gran calidad es uno de los IMUs más utilizados en la actualidad.
+En la figura \ref{fig:IMU1} se muestra una imagen del MPU6050
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU1}
+	\caption{MPU6050 IMU.}
+	\label{fig:IMU1}
+\end{figure}
+\subsubsection{Pin out}
+
+En la figura \ref{fig:MPU6050_schematic} se muestra el diagrama esquemático de conexiones del MPU6050.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.4]{imagenes/Balancing_robot/MPU6050_schematic}
+	\caption{MPU6050 IMU.}
+	\label{fig:MPU6050_schematic}
+\end{figure}
+
+Tiene una tensión de alimentacion de 3.3V. El pin de reloj para la conexión I2C (Serial Clock Line, SCL) y el pin de datos (Serial Data Line, SDA) representan la conexión para el bus con Arduino Nano. El pin AD0 permite al usuario final cambiar la dirección del MPU (slave) la cuál por defecto es 0x68h conectado a GND. Si se conecta a Vcc la dirección cambia a 0x69h. El pin INT produce una señal en alta cuando el dato en cuestión está disponible por parte del MPU para ser capturado, y avisará por medio de una interrupción al Arduino Nano con el fin de poder ser obtenido. \newline
+
+\subsubsection{Programa para Arduino nano}
+Para la implementación en Arduino Nano se utiliza la librería desarrollada por Jeff Rowberg []. La razón del uso de esta librería es debido a que incorpora la utilización del DMP cuyas ventajas en este caso se representan en la figura \ref{fig:coexistencia1}\newline
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 4cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/DMPexample.pdf}
+	\caption{Ventaja de uso en la utilización de DMP.}
 	\label{fig:coexistencia1}
 \end{figure}
 
-En este caso, la comunicación será solo uni-direccional, el micro-controlador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
+\subsubsection{Valores del sensor. DMP. }
 
-Se hace una separación por tanto de dos partes de la comunicación, desde el punto de vista del micro-controlador, y desde el punto de vista de la FPGA. Ambos serán explicados más específicamente en la implementación del sistema pero un diagrama de bloques de alto nivel se representan en las figuras \ref{fig:extraccion_angulo} y \ref{fig:arduino_interfacefluid} respectivamente. 
-
-\subsubsection{Desde el punto de vista del micro-controlador:}
-
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.7]{imagenes/Balancing_robot/extraccion_angulo.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
-	\label{fig:extraccion_angulo}
-\end{figure}
-
-\subsubsection{Desde el punto de vista de la FPGA:}
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[trim = 0mm 0mm 0mm 10mm, clip,scale=0.9, angle=90]{imagenes/Balancing_robot/arduino_interfacefluid.pdf}
-		%\caption{Diagrama de flujo de la interfaz para Arduino.}
-		\label{fig:arduino_interfacefluid}
-	\end{figure}
-\end{center}
-
-El aspecto en IceStudio del módulo anterior (\ref{fig:arduino_interfacefluid}) se muestra en la imagen \ref{fig:arduino_interface}. Si se aprecia, sus entradas y salidas tienen mucho que ver con las características requeridas para la lectura correcta de un byte.
-
-\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_interface.PNG}
-	\caption{Apariencia del módulo interfaz de Arduino Nano en IceStudio.}
-	\label{fig:arduino_interface}
-\end{figure}
-
-Se hace necesario un módulo adicional que ordene tanto la parte entera como la parte decimal del ángulo correspondiente y que no provoque errores en la obtención del ángulo (figura \ref{fig:arrange_arduino}). 
-
-\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.4]{imagenes/Balancing_robot/arrange_arduino.PNG}
-	\caption{Módulo para ordenar datos provenientes de Arduino.}
-	\label{fig:arrange_arduino}
-\end{figure}
+Los valores 
 
 
-El sistema final de comunicación entre Arduino y IceZum Alhambra desde el punto de vista de la FPGA se representa en la figura \ref{fig:arduino_arrange}.
+\subsection{Implementación PCB}
 
-\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_arrange.PNG}
-	\caption{Solución final en FPGA de la comunicación entre Arduino y IceZum Alhambra.}
-	\label{fig:arduino_arrange}
-\end{figure}
-
-
-
-
-\subsection{Integración control PID en IceZum Alhambra}
-Como ha sido explicado en la sección \ref{sec:PID}, un controlador PID puede ser utilizado de manera sencilla para controlar la estabilidad del sistema. \newline
-El aspecto en IceStudio de estos bloques de control se ilustra en las figuras \ref{fig:Pcontrol} y \ref{fig:Dcontrol}.
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Pcontrol}
-	\caption{Aspecto en IceStudio del módulo de control P.}
-	\label{fig:Pcontrol}
-\end{figure}
-
-\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Dcontrol}
-	\caption{Aspecto en IceStudio del módulo de control D.}
-	\label{fig:Dcontrol}
-\end{figure}
-
-Referido al sistema de realimentación por lazo cerrado analizado en la sección \ref{sec:PID}, es importante mostrar el resultado final del aspecto del presente proyecto en IceStudio, haciendo una comparativa directa entre éste (figura \ref{fig:finalIceStudio} ) y la figura \ref{fig:PID}.
- \newpage
-\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.6, angle=90]{imagenes/Balancing_robot/finalIceStudio}
-	\caption{Aspecto final en IceStudio del Balancing-Robot.}
-	\label{fig:finalIceStudio}
-\end{figure}
-
-
-\subsection{Controlador de motores DC en IceZum Alhambra.}
-El driver del motor utilizado para el control de los motores DC (MC33926 []), necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades. Estas configuraciones se detallan en la sección \ref{sec:driver_motores}. El diagrama final de entradas y salidas así como las conexiones necesarias se detallan en el esquemático de la figura \ref{fig:extraccion_angulo}.
-
-
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 3cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/driver_motor.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
-	\label{fig:extraccion_angulo}
-\end{figure}
-
-
-\subsubsection{Control PWM}
-
-Los velocidad de los motores se controlan mediante un generador de PWM el cuál tiene el aspecto de la figura \ref{fig:pwm_module} en IceStudio. 
-
-	\begin{figure}[H]
-	\center
-	\includegraphics[scale=0.5]{imagenes/Balancing_robot/PWM_module.PNG}
-	\caption{Aspecto en IceStudio del generador de señal PWM.}
-	\label{fig:pwm_module}
-\end{figure}
-
-El diagrama de bloques de su funcionamiento se expone en la figura \ref{fig:pwm_control} tal y se profundizará en su implementación:
-
-\begin{figure}[H]
-	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.6]{imagenes/Balancing_robot/pwm_control.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
-	\label{fig:pwm_control}
-\end{figure}
-
-
-\subsection{Placa de circuito impreso PCB}\label{sec:DisenoPCB} 
 Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, es conveniente y apropiado un circuito impreso que resolviese algunos problemas de ruido, cables excesivos, etc. \newline
 
 El circuito impreso alberga los siguientes componentes y
@@ -259,127 +198,45 @@ comportamientos:
 		
 		\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
 	\end{itemize}
+	
+	En las figuras \ref{fig:top_3D}, \ref{fig:bottom_3D}, \ref{fig:Vista3D1}, \ref{fig:Vista3D2} se incluye una representación en 3D del sistema final con todos los componentes añadidos.
+	
+	\begin{center}
+		\begin{figure}[H]
+			\center
+			\includegraphics[scale=0.6]{imagenes/Balancing_Robot/top_3D.PNG}
+			\caption{}
+			\label{fig:top_3D}
+		\end{figure}
+	\end{center}
+	
+	\begin{center}
+		\begin{figure}[H]
+			\center
+			\includegraphics[scale=0.6]{imagenes/Balancing_Robot/bottom_3D.PNG}
+			\caption{}
+			\label{fig:bottom_3D}
+		\end{figure}
+	\end{center}
+	
+	\begin{center}
+		\begin{figure}[H]
+			\center
+			\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D1.PNG}
+			\caption{}
+			\label{fig:Vista3D1}
+		\end{figure}
+	\end{center}
+	
+	\begin{center}
+		\begin{figure}[H]
+			\center
+			\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D2.PNG}
+			\caption{}
+			\label{fig:Vista3D2}
+		\end{figure}
+	\end{center}
 
-En las figuras \ref{fig:top_3D}, \ref{fig:bottom_3D}, \ref{fig:Vista3D1}, \ref{fig:Vista3D2} se incluye una representación en 3D del sistema final con todos los componentes añadidos.
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.6]{imagenes/Balancing_Robot/top_3D.PNG}
-		\caption{}
-		\label{fig:top_3D}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.6]{imagenes/Balancing_Robot/bottom_3D.PNG}
-		\caption{}
-		\label{fig:bottom_3D}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D1.PNG}
-		\caption{}
-		\label{fig:Vista3D1}
-	\end{figure}
-\end{center}
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/Vista3D2.PNG}
-		\caption{}
-		\label{fig:Vista3D2}
-	\end{figure}
-\end{center}
-
-\subsection{Sistema de alimentación.} \label{sec:Bateria}
-
-Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes.  \newline
-Se diferencia para ello dos subsistemas independientes en cuánto a la alimentación se refiere:
-\begin{itemize}
-	\item Alimentación para los motores DC.
-	\item Alimentación de la propia tarjeta IceZum Alhambra II.
-\end{itemize}
-
-\subsubsection{Alimentación de los motores DC:}
-Para la alimentación de los motores DC se hace uso de una batería LIPO de 11.1V y 2200maH como en la figura \ref{fig:lipo111}.
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/LIPO111}
-		\caption{Batería LIPO 11.1V y 2.2A. }
-		\label{fig:lipo111}
-	\end{figure}
-\end{center}
-
-\subsubsection{Alimentación IceZum Alhambra II:}
-
-Para la alimentación de la IceZum Alhambra II se hace uso de una batería LIPO de 3.7V y 4mAh como la de la figura \ref{fig:lipo37}. 
-
-
-\begin{center}
-	\begin{figure}[H]
-		\center
-		\includegraphics[scale=0.5]{imagenes/Balancing_Robot/LIPO37}
-		\caption{Batería LIPO 3.7V y 4mAh.}
-		\label{fig:lipo37}
-	\end{figure}
-\end{center}
-
-\subsection{Materiales y coste del prototipo}
-En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del sistema planteado.
-\renewcommand\tablename{Tabla}
-\begin{table}[H]
-	\begin{tabular}{|l|l|l|l|l}
-		\cline{1-4}
-		\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}\textbf{MATERIAL}} & \cellcolor[HTML]{FFCE93}\textbf{CANTIDAD} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ UNITARIO (€)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ TOTAL (€)\end{tabular}}} &  \\ \cline{1-4}
-		IceZum Alhambra II                                              & 1                                         & 60                                                                                                                  & 60                                                                                                               &  \\ \cline{1-4}
-		Arduino Nano                                                    & 1                                         & 8                                                                                                                   & 8                                                                                                                &  \\ \cline{1-4}
-		Separador Hexagonal Nylon 10 mm                                 & 4                                         & 0.20                                                                                                                & 0.80                                                                                                             &  \\ \cline{1-4}
-		Separador Metálico Hexagonal M3 25 mm                           & 8                                         & 0.25                                                                                                                & 2                                                                                                                &  \\ \cline{1-4}
-		Separador Metálico Hexagonal M3 50 mm                           & 4                                         & 0.41                                                                                                                & 1.64                                                                                                             &  \\ \cline{1-4}
-		Tornillo Nylon M3                                               & 16                                        & 0.09                                                                                                                & 1.44                                                                                                             &  \\ \cline{1-4}
-		Tuerca Nylon M3                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
-		Tornillo Nylon M1                                               & 4                                         & 0.09                                                                                                                & 0.39                                                                                                             &  \\ \cline{1-4}
-		Tuerca Nylon M1                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
-		Placa de Circuito Impreso 4 capas                               & 1                                         & 5                                                                                                                   & 5                                                                                                                &  \\ \cline{1-4}
-		Rueda 7 cm                                                      & 2                                         & 7.90                                                                                                                & 15.80                                                                                                            &  \\ \cline{1-4}
-		Motor DC                                                        & 2                                         & 24.95                                                                                                               & 49.9                                                                                                             &  \\ \cline{1-4}
-		Driver Motor DC Dual MC33926                                    & 1                                         & 30                                                                                                                  & 30                                                                                                               &  \\ \cline{1-4}
-		IMU MPU6050                                                     & 1                                         & 2.50                                                                                                                & 2.50                                                                                                             &  \\ \cline{1-4}
-		Estructura mecánica 3D                                          & 1                                         & 20                                                                                                                  & 20                                                                                                               &  \\ \cline{1-4}
-		Screw 3.5 mm                                                    & 5                                         & 0.80                                                                                                                & 4                                                                                                                &  \\ \cline{1-4}
-		Cable 5-pin                                                     & 1                                         & 0.82                                                                                                                & 0.82                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 4 contactos Macho                           & 1                                         & 0.08                                                                                                                & 0.08                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 8 contactos Shield                          & 2                                         & 0.54                                                                                                                & 1.08                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 6 contactos Shield                          & 2                                         & 0.58                                                                                                                & 1.16                                                                                                             &  \\ \cline{1-4}
-		Jumper 2.54 mm Puente de conexión                               & 2                                         & 0.08                                                                                                                & 0.16                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 10 contactos Hembra                         & 2                                         & 0.10                                                                                                                & 0.20                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 10 contactos Macho                          & 5                                         & 0.10                                                                                                                & 0.50                                                                                                             &  \\ \cline{1-4}
-		Resistencia 4K7 5\%                                             & 3                                         & 0.21                                                                                                                & 0.63                                                                                                             &  \\ \cline{1-4}
-		Estaño                                                          & 1                                         & 5.50                                                                                                                & 5.50                                                                                                             &  \\ \cline{1-4}
-		Metro de cinta Termoretráctil                                   & 2                                         & 1.50                                                                                                                & 3                                                                                                                &  \\ \cline{1-4}
-		Metro de cable 12 AWG                                           & 1                                         & 0.90                                                                                                                & 0.90                                                                                                             &  \\ \cline{1-4}
-		Batería Lipo 11.1 V 2200 mA                                     & 1                                         & 19.95                                                                                                               & 19.95                                                                                                            &  \\ \cline{1-4}
-		Batería Lipo 3.7 V 5 mA                                         & 1                                         & 4.20                                                                                                                & 4.20                                                                                                             &  \\ \cline{1-4}
-		\multicolumn{2}{|c|}{}                                                                                      & \multicolumn{2}{c|}{\cellcolor[HTML]{FD6864}}                                                                                                                                                                                          &  \\
-		\multicolumn{2}{|c|}{\multirow{-2}{*}{\textbf{COSTE TOTAL PROTOTIPO:}}}                                     & \multicolumn{2}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FD6864}\textbf{240.45}}}                                                                                                                                                         &  \\ \cline{1-4}
-	\end{tabular}
-	\caption{Coste total del prototipo Balancing-Robot.}
-	\label{tabla:coste}
-\end{table}
-
-\newpage
-\section{Implementación del sistema}\label{sec:Implementacion}
-\subsection{Fabricación estructura mecánica (Física de un Balancing Robot)}
-\subsection{Implementación PCB}
 
 Para el desarrollo de una PCB con los requerimientos descritos en la sección \ref{sec:DisenoPCB} se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
 
@@ -490,6 +347,71 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 
 
 \subsection{Implementación IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
+El ángulo tiene que ser conocido en la IceZum-Alhambra para la toma de decisiones tanto en dirección como velocidad de los motores. Es necesario por tanto una comunicación micro-controlador/FPGA y que además permita separar procesos secuenciales y paralelos (figura \ref{fig:coexistencia1}).
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia1.pdf}
+	\caption{Separación de procesos micro-FPGA.}
+	\label{fig:coexistencia1}
+\end{figure}
+
+En este caso, la comunicación será solo uni-direccional, el micro-controlador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
+
+Se hace una separación por tanto de dos partes de la comunicación, desde el punto de vista del micro-controlador, y desde el punto de vista de la FPGA. Ambos serán explicados más específicamente en la implementación del sistema pero un diagrama de bloques de alto nivel se representan en las figuras \ref{fig:extraccion_angulo} y \ref{fig:arduino_interfacefluid} respectivamente. 
+
+\subsubsection{Desde el punto de vista del micro-controlador:}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.7]{imagenes/Balancing_robot/extraccion_angulo.pdf}
+	\caption{Envío de ángulo usando el puerto serie.}
+	\label{fig:extraccion_angulo}
+\end{figure}
+
+\subsubsection{Desde el punto de vista de la FPGA:}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 10mm, clip,scale=0.9, angle=90]{imagenes/Balancing_robot/arduino_interfacefluid.pdf}
+		%\caption{Diagrama de flujo de la interfaz para Arduino.}
+		\label{fig:arduino_interfacefluid}
+	\end{figure}
+\end{center}
+
+El aspecto en IceStudio del módulo anterior (\ref{fig:arduino_interfacefluid}) se muestra en la imagen \ref{fig:arduino_interface}. Si se aprecia, sus entradas y salidas tienen mucho que ver con las características requeridas para la lectura correcta de un byte.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_interface.PNG}
+	\caption{Apariencia del módulo interfaz de Arduino Nano en IceStudio.}
+	\label{fig:arduino_interface}
+\end{figure}
+
+Se hace necesario un módulo adicional que ordene tanto la parte entera como la parte decimal del ángulo correspondiente y que no provoque errores en la obtención del ángulo (figura \ref{fig:arrange_arduino}). 
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.4]{imagenes/Balancing_robot/arrange_arduino.PNG}
+	\caption{Módulo para ordenar datos provenientes de Arduino.}
+	\label{fig:arrange_arduino}
+\end{figure}
+
+
+El sistema final de comunicación entre Arduino y IceZum Alhambra desde el punto de vista de la FPGA se representa en la figura \ref{fig:arduino_arrange}.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_arrange.PNG}
+	\caption{Solución final en FPGA de la comunicación entre Arduino y IceZum Alhambra.}
+	\label{fig:arduino_arrange}
+\end{figure}
+
+
+
+
+
+
 Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
 
 Hay varias opciones para hacer una integración Micro-Controlador--FPGA:
@@ -640,29 +562,37 @@ Así, el módulo tendrá como salidas el buffer de la parte entera, el buffer de
 
 Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las herramientas necesarias para que los sucesivos procesos y módulos puedan conocer el ángulo en cada momento representado por su parte entera (8 bits), parte decimal (8 bits) y un pin que indicará el valor del signo (positivo o negativo).
 
-\subsection{Unidad de medida inercial MPU6050 en Arduino Nano}\label{sec:MPU6050}
-
-El MPU6050 es un sensor y acelerometro para Arduino con 6 grados de libertad. 
-
-El MPU6050 necesita un voltaje de 3.3V. 
-
-\subsubsection{Pin out}
-
-EL MPU tiene una tension de alimentacion de 3.3V. El pin SCL (Serial Clock Line) y el pin CDA (Serial Data Line) representan la conexión para el bus de i2c con Arduino Nano. El pin AD0 permite al usuario final cambiar la dirección del MPU (slave) la cuál por defecto es 0x68h conectado a GND. Si se conecta a Vcc la dirección cambiaría a 0x69h. El pin INT produce una señal en alta cuando el dato en cuestion esta disponible por parte del MPU, y avisará por medio de una interrupcion al Arduino Nano con el fin de poder ser obtenido. \newline
-
-Una imagen de un MPU6050 puede encontrarse en la figura \ref{MPU6050image}
-
-\textbf{MPU6050image}
-
-\subsubsection{Valores del sensor. DMP. }
-
-Los valores 
-
-\subsubsection{Programa para Arduino nano}
 
 
 
 \subsection{Control PID}
+\subsection{Integración control PID en IceZum Alhambra}
+Como ha sido explicado en la sección \ref{sec:PID}, un controlador PID puede ser utilizado de manera sencilla para controlar la estabilidad del sistema. \newline
+El aspecto en IceStudio de estos bloques de control se ilustra en las figuras \ref{fig:Pcontrol} y \ref{fig:Dcontrol}.
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Pcontrol}
+	\caption{Aspecto en IceStudio del módulo de control P.}
+	\label{fig:Pcontrol}
+\end{figure}
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Dcontrol}
+	\caption{Aspecto en IceStudio del módulo de control D.}
+	\label{fig:Dcontrol}
+\end{figure}
+
+Referido al sistema de realimentación por lazo cerrado analizado en la sección \ref{sec:PID}, es importante mostrar el resultado final del aspecto del presente proyecto en IceStudio, haciendo una comparativa directa entre éste (figura \ref{fig:finalIceStudio} ) y la figura \ref{fig:PID}.
+\newpage
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.6, angle=90]{imagenes/Balancing_robot/finalIceStudio}
+	\caption{Aspecto final en IceStudio del Balancing-Robot.}
+	\label{fig:finalIceStudio}
+\end{figure}
+
 \subsection{Driver motores DC} \label{sec:driver_motores}
 
 \subsection{Controlador de motores}
@@ -680,8 +610,76 @@ Así, las características de una señal PWM son:
 	\item T = periodo de la función
 \end{itemize}
 
+
+El driver del motor utilizado para el control de los motores DC (MC33926 []), necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades. Estas configuraciones se detallan en la sección \ref{sec:driver_motores}. El diagrama final de entradas y salidas así como las conexiones necesarias se detallan en el esquemático de la figura \ref{fig:extraccion_angulo}.
+
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 3cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/driver_motor.pdf}
+	\caption{Envío de ángulo usando el puerto serie.}
+	\label{fig:extraccion_angulo}
+\end{figure}
+
+
+
+
 \subsubsection{Control PWM}
+
+Los velocidad de los motores se controlan mediante un generador de PWM el cuál tiene el aspecto de la figura \ref{fig:pwm_module} en IceStudio. 
+
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.5]{imagenes/Balancing_robot/PWM_module.PNG}
+	\caption{Aspecto en IceStudio del generador de señal PWM.}
+	\label{fig:pwm_module}
+\end{figure}
+
+El diagrama de bloques de su funcionamiento se expone en la figura \ref{fig:pwm_control} tal y se profundizará en su implementación:
+
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.6]{imagenes/Balancing_robot/pwm_control.pdf}
+	\caption{Envío de ángulo usando el puerto serie.}
+	\label{fig:pwm_control}
+\end{figure}
+
 \subsection{Sistema de alimentación}
+
+Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes.  \newline
+Se diferencia para ello dos subsistemas independientes en cuánto a la alimentación se refiere:
+\begin{itemize}
+	\item Alimentación para los motores DC.
+	\item Alimentación de la propia tarjeta IceZum Alhambra II.
+\end{itemize}
+
+\subsubsection{Alimentación de los motores DC:}
+Para la alimentación de los motores DC se hace uso de una batería LIPO de 11.1V y 2200maH como en la figura \ref{fig:lipo111}.
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/LIPO111}
+		\caption{Batería LIPO 11.1V y 2.2A. }
+		\label{fig:lipo111}
+	\end{figure}
+\end{center}
+
+\subsubsection{Alimentación IceZum Alhambra II:}
+
+Para la alimentación de la IceZum Alhambra II se hace uso de una batería LIPO de 3.7V y 4mAh como la de la figura \ref{fig:lipo37}. 
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_Robot/LIPO37}
+		\caption{Batería LIPO 3.7V y 4mAh.}
+		\label{fig:lipo37}
+	\end{figure}
+\end{center}
+
+
+
+
 y como tarea fundamental, un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
 
 A continuación se nombran los diferentes tipos de bleatería con los se cuenta actualmente en el mercado analizando sus ventajas e inconvenientes más importantes: 
@@ -716,6 +714,48 @@ El siguiente planteamiento sería por tanto elegir qué valores anteriores neces
 	\end{tabular}
 \end{table}
 
+\subsection{Materiales y coste del prototipo}
+En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del sistema planteado.
+\renewcommand\tablename{Tabla}
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l}
+		\cline{1-4}
+		\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}\textbf{MATERIAL}} & \cellcolor[HTML]{FFCE93}\textbf{CANTIDAD} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ UNITARIO (€)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ TOTAL (€)\end{tabular}}} &  \\ \cline{1-4}
+		IceZum Alhambra II                                              & 1                                         & 60                                                                                                                  & 60                                                                                                               &  \\ \cline{1-4}
+		Arduino Nano                                                    & 1                                         & 8                                                                                                                   & 8                                                                                                                &  \\ \cline{1-4}
+		Separador Hexagonal Nylon 10 mm                                 & 4                                         & 0.20                                                                                                                & 0.80                                                                                                             &  \\ \cline{1-4}
+		Separador Metálico Hexagonal M3 25 mm                           & 8                                         & 0.25                                                                                                                & 2                                                                                                                &  \\ \cline{1-4}
+		Separador Metálico Hexagonal M3 50 mm                           & 4                                         & 0.41                                                                                                                & 1.64                                                                                                             &  \\ \cline{1-4}
+		Tornillo Nylon M3                                               & 16                                        & 0.09                                                                                                                & 1.44                                                                                                             &  \\ \cline{1-4}
+		Tuerca Nylon M3                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
+		Tornillo Nylon M1                                               & 4                                         & 0.09                                                                                                                & 0.39                                                                                                             &  \\ \cline{1-4}
+		Tuerca Nylon M1                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
+		Placa de Circuito Impreso 4 capas                               & 1                                         & 5                                                                                                                   & 5                                                                                                                &  \\ \cline{1-4}
+		Rueda 7 cm                                                      & 2                                         & 7.90                                                                                                                & 15.80                                                                                                            &  \\ \cline{1-4}
+		Motor DC                                                        & 2                                         & 24.95                                                                                                               & 49.9                                                                                                             &  \\ \cline{1-4}
+		Driver Motor DC Dual MC33926                                    & 1                                         & 30                                                                                                                  & 30                                                                                                               &  \\ \cline{1-4}
+		IMU MPU6050                                                     & 1                                         & 2.50                                                                                                                & 2.50                                                                                                             &  \\ \cline{1-4}
+		Estructura mecánica 3D                                          & 1                                         & 20                                                                                                                  & 20                                                                                                               &  \\ \cline{1-4}
+		Screw 3.5 mm                                                    & 5                                         & 0.80                                                                                                                & 4                                                                                                                &  \\ \cline{1-4}
+		Cable 5-pin                                                     & 1                                         & 0.82                                                                                                                & 0.82                                                                                                             &  \\ \cline{1-4}
+		Regleta PIN 2,54 mm 4 contactos Macho                           & 1                                         & 0.08                                                                                                                & 0.08                                                                                                             &  \\ \cline{1-4}
+		Regleta PIN 2,54 mm 8 contactos Shield                          & 2                                         & 0.54                                                                                                                & 1.08                                                                                                             &  \\ \cline{1-4}
+		Regleta PIN 2,54 mm 6 contactos Shield                          & 2                                         & 0.58                                                                                                                & 1.16                                                                                                             &  \\ \cline{1-4}
+		Jumper 2.54 mm Puente de conexión                               & 2                                         & 0.08                                                                                                                & 0.16                                                                                                             &  \\ \cline{1-4}
+		Regleta PIN 2,54 mm 10 contactos Hembra                         & 2                                         & 0.10                                                                                                                & 0.20                                                                                                             &  \\ \cline{1-4}
+		Regleta PIN 2,54 mm 10 contactos Macho                          & 5                                         & 0.10                                                                                                                & 0.50                                                                                                             &  \\ \cline{1-4}
+		Resistencia 4K7 5\%                                             & 3                                         & 0.21                                                                                                                & 0.63                                                                                                             &  \\ \cline{1-4}
+		Estaño                                                          & 1                                         & 5.50                                                                                                                & 5.50                                                                                                             &  \\ \cline{1-4}
+		Metro de cinta Termoretráctil                                   & 2                                         & 1.50                                                                                                                & 3                                                                                                                &  \\ \cline{1-4}
+		Metro de cable 12 AWG                                           & 1                                         & 0.90                                                                                                                & 0.90                                                                                                             &  \\ \cline{1-4}
+		Batería Lipo 11.1 V 2200 mA                                     & 1                                         & 19.95                                                                                                               & 19.95                                                                                                            &  \\ \cline{1-4}
+		Batería Lipo 3.7 V 5 mA                                         & 1                                         & 4.20                                                                                                                & 4.20                                                                                                             &  \\ \cline{1-4}
+		\multicolumn{2}{|c|}{}                                                                                      & \multicolumn{2}{c|}{\cellcolor[HTML]{FD6864}}                                                                                                                                                                                          &  \\
+		\multicolumn{2}{|c|}{\multirow{-2}{*}{\textbf{COSTE TOTAL PROTOTIPO:}}}                                     & \multicolumn{2}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FD6864}\textbf{240.45}}}                                                                                                                                                         &  \\ \cline{1-4}
+	\end{tabular}
+	\caption{Coste total del prototipo Balancing-Robot.}
+	\label{tabla:coste}
+\end{table}
 
 \section{Experimentos}
 \subsection{VGA Module}
