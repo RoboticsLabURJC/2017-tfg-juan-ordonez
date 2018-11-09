@@ -53,20 +53,25 @@
 \contentsline {figure}{\numberline {3.19}{\ignorespaces \relax }}{51}{figure.caption.75}
 \contentsline {figure}{\numberline {3.20}{\ignorespaces \relax }}{54}{figure.caption.77}
 \contentsline {figure}{\numberline {3.21}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{55}{figure.caption.78}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{56}{figure.caption.79}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{57}{figure.caption.81}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{58}{figure.caption.82}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{61}{figure.caption.85}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces M\IeC {\'o}dulo para ordenar datos provenientes de Arduino.\relax }}{61}{figure.caption.86}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Soluci\IeC {\'o}n final en FPGA de la comunicaci\IeC {\'o}n entre Arduino y IceZum Alhambra.\relax }}{62}{figure.caption.87}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{64}{figure.caption.89}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control P.\relax }}{65}{figure.caption.90}
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control D.\relax }}{66}{figure.caption.91}
-\contentsline {figure}{\numberline {3.31}{\ignorespaces Aspecto final en IceStudio del Balancing-Robot.\relax }}{67}{figure.caption.92}
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{69}{figure.caption.93}
-\contentsline {figure}{\numberline {3.33}{\ignorespaces Aspecto en IceStudio del generador de se\IeC {\~n}al PWM.\relax }}{69}{figure.caption.95}
-\contentsline {figure}{\numberline {3.34}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{70}{figure.caption.96}
-\contentsline {figure}{\numberline {3.35}{\ignorespaces Bater\IeC {\'\i }a LIPO 11.1V y 2.2A. \relax }}{71}{figure.caption.98}
-\contentsline {figure}{\numberline {3.36}{\ignorespaces Bater\IeC {\'\i }a LIPO 3.7V y 4mAh.\relax }}{71}{figure.caption.100}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces \relax }}{56}{figure.caption.79}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{56}{figure.caption.80}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{57}{figure.caption.82}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{57}{figure.caption.83}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Correcci\IeC {\'o}n de la direcci\IeC {\'o}n en Balancing Robot.\relax }}{58}{figure.caption.84}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{59}{figure.caption.86}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Diagrama de flujo de la interfaz para Arduino.\relax }}{60}{figure.caption.87}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces M\IeC {\'o}dulo para ordenar datos provenientes de Arduino.\relax }}{62}{figure.caption.88}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{63}{figure.caption.89}
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Soluci\IeC {\'o}n final en FPGA de la comunicaci\IeC {\'o}n entre Arduino y IceZum Alhambra.\relax }}{64}{figure.caption.90}
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control P.\relax }}{65}{figure.caption.91}
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control D.\relax }}{65}{figure.caption.92}
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Aspecto final en IceStudio del Balancing-Robot.\relax }}{66}{figure.caption.93}
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Ejemplo de se\IeC {\~n}al PWM con dutty diferente.\relax }}{67}{figure.caption.94}
+\contentsline {figure}{\numberline {3.36}{\ignorespaces MC33926 para el control de los motores DC.\relax }}{68}{figure.caption.95}
+\contentsline {figure}{\numberline {3.37}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{68}{figure.caption.96}
+\contentsline {figure}{\numberline {3.38}{\ignorespaces Aspecto en IceStudio del generador de se\IeC {\~n}al PWM.\relax }}{69}{figure.caption.98}
+\contentsline {figure}{\numberline {3.39}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{69}{figure.caption.99}
+\contentsline {figure}{\numberline {3.40}{\ignorespaces Bater\IeC {\'\i }a LIPO 11.1V y 2.2A. \relax }}{71}{figure.caption.102}
+\contentsline {figure}{\numberline {3.41}{\ignorespaces Bater\IeC {\'\i }a LIPO 3.7V y 4mAh.\relax }}{72}{figure.caption.104}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -46,18 +46,15 @@
 \contentsline {subsubsection}{Valores del sensor. }{44}{section*.66}
 \contentsline {subsection}{\numberline {3.3.3}Implementaci\IeC {\'o}n PCB}{44}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Implementaci\IeC {\'o}n IceZum Alhambra-Arduino Nano}{55}{subsection.3.3.4}
-\contentsline {subsubsection}{Desde el punto de vista del micro-controlador:}{56}{section*.80}
-\contentsline {subsubsection}{Desde el punto de vista de la FPGA:}{60}{section*.83}
-\contentsline {subsubsection}{Desde el punto de vista de la FPGA:}{62}{section*.88}
-\contentsline {subsection}{\numberline {3.3.5}Control PID}{65}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Integraci\IeC {\'o}n control PID en IceZum Alhambra}{65}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Driver motores DC}{68}{subsection.3.3.7}
-\contentsline {subsection}{\numberline {3.3.8}Controlador de motores}{68}{subsection.3.3.8}
-\contentsline {subsubsection}{Control PWM}{69}{section*.94}
-\contentsline {subsection}{\numberline {3.3.9}Sistema de alimentaci\IeC {\'o}n}{70}{subsection.3.3.9}
-\contentsline {subsubsection}{Alimentaci\IeC {\'o}n de los motores DC:}{70}{section*.97}
-\contentsline {subsubsection}{Alimentaci\IeC {\'o}n IceZum Alhambra II:}{71}{section*.99}
-\contentsline {subsection}{\numberline {3.3.10}Materiales y coste del prototipo}{72}{subsection.3.3.10}
+\contentsline {subsubsection}{Desde el punto de vista del micro-controlador:}{56}{section*.81}
+\contentsline {subsubsection}{Desde el punto de vista de la FPGA:}{59}{section*.85}
+\contentsline {subsection}{\numberline {3.3.5}Control PID en IceZum Alhambra}{64}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Controlador de motores}{67}{subsection.3.3.6}
+\contentsline {subsubsection}{Control PWM}{68}{section*.97}
+\contentsline {subsection}{\numberline {3.3.7}Sistema de alimentaci\IeC {\'o}n}{70}{subsection.3.3.7}
+\contentsline {subsubsection}{Alimentaci\IeC {\'o}n de los motores DC y Arduino Nano:}{71}{section*.101}
+\contentsline {subsubsection}{Alimentaci\IeC {\'o}n IceZum Alhambra II y dem\IeC {\'a}s componentes:}{72}{section*.103}
+\contentsline {subsection}{\numberline {3.3.8}Materiales y coste del prototipo}{72}{subsection.3.3.8}
 \contentsline {section}{\numberline {3.4}Experimentos}{73}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}VGA Module}{73}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Protocolo I2C}{73}{subsection.3.4.2}
