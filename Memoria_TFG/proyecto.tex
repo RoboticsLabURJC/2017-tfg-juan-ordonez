@@ -138,7 +138,7 @@ pdfproducer = {pdflatex}
 \fancyhead[RO,LE]{\textbf{\thepage}}
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
-\renewcommand{\fullref}[1]{\ref{#1} de la página \pageref{#1}}
+
 
 \setlength{\headheight}{1.5\headheight}
 
@@ -256,7 +256,7 @@ pdfproducer = {pdflatex}
 
 \raggedbottom
 
-\bstctlcite{IEEEexample:BSTcontrol} %Modificar la opción de quitar autor repetido de la bibliografía
+%\bstctlcite{IEEEexample:BSTcontrol} %Modificar la opción de quitar autor repetido de la bibliografía
 
 \input{portada/portada}
 \input{prefacios/prefacio}
@@ -278,10 +278,14 @@ pdfproducer = {pdflatex}
 %
 \input{capitulos/05_Conclusiones}
 %
+\nocite{*}
+%\bibliography{bibliografia/bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{unsrt}
+\bibliography{bibliografia/biblio}
 %
 %
 %
-\glsaddall
+%\glsaddall
 %\cite{a}
 %\cite{q}
 %\acrshort{lvm}
@@ -299,13 +303,16 @@ pdfproducer = {pdflatex}
 \backmatter
  
 
-\nocite{*}
-\bibliographystyle{IEEEtran}
-\bibliography{bibliografia/biblio}\addcontentsline{toc}{chapter}{Bibliografía}
-%\bibliography{biblio}
+%\nocite{*}
+%\bibliographystyle{IEEEtran}
+%\bibliography{bibliografia/biblio}\addcontentsline{toc}{chapter}{Bibliografía}
+
+
+
 
 
 %\gls{latex}
+\chapter*{}
 \thispagestyle{empty}
 \input{glosario.tex}
 

@@ -578,7 +578,26 @@ El sistema final de comunicación entre Arduino y IceZum Alhambra desde el punto
 
 \subsection{Control PID en IceZum Alhambra}
 Como ha sido explicado en la sección \ref{sec:PID}, un controlador PID puede ser utilizado de manera sencilla para controlar la estabilidad del sistema. \newline
-El aspecto en IceStudio de estos bloques de control se ilustra en las figuras \ref{fig:Pcontrol} y \ref{fig:Dcontrol}.
+Una de las ventajas en el uso de este tipo de controladores recae en su fácil implementación.
+\subsubsection{Controlador P} \label{sec:ControladorP}
+El diagrama de flujo que caracteriza el comportamiento del controlador P se muestra en la \ref{fig:P_control}.
+	\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0cm 7cm 0mm 7cm, clip,scale=0.7]{imagenes/Balancing_robot/P.pdf}
+	\caption{Diagrama de flujo control P.}
+	\label{fig:P_control}
+\end{figure}
+
+Debido a su importancia, se explica su funcionamiento brevemente:
+
+\begin{itemize}
+	\item 1.-El proceso completo será actualizado cada vez que se tenga un nuevo dato, esto es, cada vez que cambie el ángulo del sistema en este caso.
+	\item 2.-Como entradas se tienen tanto la parte decimal del ángulo como la parte entera.
+	\item 3.-Tanto la parte decimal como la entera están representados como datos de 8 bits sin signo. Así, y para darle más importancia a la parte entera, existe la opción de dividir la parte decimal por 100 o multiplicar la parte entera por 100. Con la primera de las opciones no se obtiene un buen comportamiento debido al trato digital de la coma flotante, por lo que se opta por la segunda opción.
+	\item 4.- Para finalizar se suman las dos componentes entera y decimal y se multiplica por la constante Kp, definida como parámetro para poder ser cambiada dinámicamente.
+\end{itemize}
+
+Su representación en IceStudio tendrá el aspecto de la figura \ref{fig:Pcontrol}.
 
 \begin{figure}[H]
 	\center
@@ -587,12 +606,31 @@ El aspecto en IceStudio de estos bloques de control se ilustra en las figuras \r
 	\label{fig:Pcontrol}
 \end{figure}
 
+\subsubsection{Controlador D} \label{sec:ControladorD}
+
+En cuanto al controlador D, el diagrama de flujo de su implementación en Verilog se muestra en la \ref{fig:D_control}. 
+	\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0cm 0cm 0mm 0cm, clip,scale=0.4]{imagenes/Balancing_robot/D.pdf}
+	\caption{Diagrama de flujo control D.}
+	\label{fig:D_control}
+\end{figure}
+
+Su implementación está compuesta por una máquina de estados con dos estados, y los cuales cambiarán cada pulso en alta de la señal data_ready, esto es, cambiará siempre que un nuevo ángulo esté disponible.\newline
+
+Si se recuerda, el controlador D basa su funcionamiento en la predicción de los errores futuros. La acción de control derivativa genera una señal de control proporcional a la derivada de la señal del error. \newline
+Se va llevando a cabo por tanto una resta (derivada del error en el tiempo) entre el error actual y el error pasado. Su resultado se multiplica por la constante Kd. 
+
+Su representación en IceStudio se representa en la \ref{fig:Dcontrol}.
+
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Dcontrol}
 	\caption{Aspecto en IceStudio del módulo de control D.}
 	\label{fig:Dcontrol}
 \end{figure}
+
+\subsubsection{Controlador PD}
 
 Referido al sistema de realimentación por lazo cerrado analizado en la sección \ref{sec:PID}, es importante mostrar el resultado final del aspecto del presente proyecto en IceStudio, haciendo una comparativa directa entre éste (figura \ref{fig:finalIceStudio} ) y la figura \ref{fig:PID}.
 \newpage
@@ -708,17 +746,23 @@ Las baterías de tipo Li-Po tienen una nomenclatura diferente del resto, la cuá
 	\item Tasa de descarga "C". El número C corresponde con la tasa de descarga de la batería. Si una batería es de 1C significa que la máxima tasa de descarga a la que puede llegar es a la que se corresponde a su capacidad. Si el número C es distinto de 1 significa que multiplicamos la tasa de descarga por ese valor, reduciendo el tiempo de descarga proporcionalmente, esto es, una batería de 1000mAh 2C se descargaría a 2A en media hora.
 \end{itemize}
 
-El siguiente planteamiento sería por tanto elegir qué valores anteriores necesita nuestro sistema, para ello se desarrolla la siguiente tabla con los requerimientos de cada componente:
+El siguiente planteamiento sería por tanto elegir qué valores anteriores necesita nuestro sistema, para ello se desarrolla la siguiente tabla con los requerimientos de cada componente.
 
+\renewcommand\tablename{Tabla}
 \begin{table}[H]
-	\begin{tabular}{lllll}
+	\centering
+
+	\begin{tabular}{|l|l|l|}
 		\hline
-		\multicolumn{1}{|l|}{Componente}           & \multicolumn{1}{l|}{Voltaje} & \multicolumn{1}{l|}{Corriente} \\ \hline
-		
-		\multicolumn{1}{|l|}{MC33926 Motor Driver} & \multicolumn{1}{l|}{5V-28V} & \multicolumn{1}{l|}{2.5 A} \hline
-		&                                           &                                                    &                                       &                                 \\
-		&                                           &                                                    &                                       &                                
+		Componente         & Voltaje & Corriente \\ \hline
+		MC33926            &         &           \\ \hline
+		Motor DC           &         &           \\ \hline
+		MPU6050            &         &           \\ \hline
+		IceZum Alhambra II &         &           \\ \hline
+		Arduino Nano       &         &           \\ \hline
 	\end{tabular}
+		\caption{Tabla eléctrica de componentes.}
+		\label{fig:Tabla eléctrica de componentes.}
 \end{table}
 
 Se diferencian dos subsistemas independientes en cuánto a la alimentación se refiere:
