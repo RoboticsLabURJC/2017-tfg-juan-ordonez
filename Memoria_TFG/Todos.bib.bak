@@ -1,0 +1,111 @@
+% Encoding: UTF-8
+
+@MastersThesis{Wyer2017,
+  author  = {Austin Richard Wyer},
+  title   = {The Synthesis of Memristive Neuromorphic Circuits},
+  school  = {The University of Tennessee},
+  year    = {2017},
+  type    = {mathesis},
+  address = {Knoxville},
+  month   = dec,
+}
+
+@Article{Chua1971,
+  author  = {Leon O. Chua},
+  title   = {Memristor-The Missing Circuit Element},
+  journal = {Transactions on Circuit Theory},
+  year    = {1971},
+  volume  = {CT-18},
+  number  = {5},
+  pages   = {507-519},
+  month   = sep,
+}
+
+@Article{MassimilianoDiVentra2009,
+  author  = {Massimiliano Di Ventra, Yuriy V. Pershin y Leon O. Chua},
+  title   = {Circuit elements with memory: memristors, memcapacitors and meminductors},
+  journal = {IEEE},
+  year    = {2009},
+  month   = jan,
+}
+
+@Article{LionO.Chua1976,
+  author  = {Lion O. Chua, Sung Mo Kang},
+  title   = {Memristive devices and systems},
+  journal = {IEEE},
+  year    = {1976},
+  volume  = {64},
+  number  = {2},
+  pages   = {209-223},
+  month   = feb,
+}
+
+@Article{YuriyV.Pershin2008,
+  author  = {Yuriy V. Pershin, Steven La Fontaine y Massimiliano Di Ventra},
+  title   = {Memristive model of amoeba’s learning},
+  journal = {arXiv:0810.4179},
+  year    = {2008},
+  month   = oct,
+}
+
+@Article{Strukov2008,
+  author  = {Dmitri B. Strukov, Gregory S. Snider, Duncan R. Stewart y R. Stanley Williams},
+  title   = {The missing memristor found},
+  journal = {Nature},
+  year    = {2008},
+  volume  = {453},
+  pages   = {80-83},
+  month   = may,
+}
+
+@Article{Chen2014,
+  author  = {Mo Chen, Jingjing Yu, Qing Yu, Changdi Li y Bocheng Bao},
+  title   = {A Memristive Diode Bridge-Based Canonical Chua’s Circuit},
+  journal = {Entropy},
+  year    = {2014},
+  volume  = {16},
+  pages   = {6464-6476},
+  month   = dec,
+}
+
+@Article{Eshraghian2010,
+  author  = {Kamran Eshraghian, Kyoung-Rok Cho, Omid Kavehei, Soon-Ku Kang, Derek Abbott y Sung-Mo Steve Kang},
+  title   = {Memristor MOS Content Addressable Memory(MCAM): Hybrid Architecture for Future HighPerformance Search Engines},
+  journal = {IEEE Trans VLSI Syst},
+  year    = {2010},
+  volume  = {10},
+  number  = {10},
+  month   = may,
+}
+
+@article{bessonov2015layered,
+  title={Layered memristive and memcapacitive switches for printable electronics},
+  author={Bessonov, Alexander A and Kirikova, Marina N and Petukhov, Dmitrii I and Allen, Mark and Ryh{\"a}nen, Tapani and Bailey, Marc JA},
+  journal={Nature materials},
+  volume={14},
+  number={2},
+  pages={199},
+  year={2015},
+  publisher={Nature Publishing Group}
+}
+
+@article{kim2011functional,
+  title={A functional hybrid memristor crossbar-array/CMOS system for data storage and neuromorphic applications},
+  author={Kim, Kuk-Hwan and Gaba, Siddharth and Wheeler, Dana and Cruz-Albrecht, Jose M and Hussain, Tahir and Srinivasa, Narayan and Lu, Wei},
+  journal={Nano letters},
+  volume={12},
+  number={1},
+  pages={389--395},
+  year={2011},
+  publisher={ACS Publications}
+}
+
+@article{vittoz2006origins,
+  title={Origins of weak inversion (or sub-threshold) circuit design},
+  author={Vittoz, Eric A},
+  pages={7--9},
+  year={2006},
+  journal={Springer}
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

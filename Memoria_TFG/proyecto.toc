@@ -63,9 +63,8 @@
 \contentsline {subsection}{\numberline {3.4.2}Protocolo I2C}{77}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Controlador motor burshless}{77}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Cuadricoptero con vision artificial}{79}{chapter.4}
-\contentsline {section}{\numberline {4.1}Descripci\IeC {\'o}n del problema}{79}{section.4.1}
-\contentsline {section}{\numberline {4.2}Dise\IeC {\~n}o}{79}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementaci\IeC {\'o}n de la percepci\IeC {\'o}n}{79}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implementaci\IeC {\'o}n del control}{79}{section.4.4}
-\contentsline {section}{\numberline {4.5}Experimentos}{79}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{81}{chapter.5}
+\contentsline {section}{\numberline {4.1}Dise\IeC {\~n}o}{79}{section.4.1}
+\contentsline {section}{\numberline {4.2}Implementaci\IeC {\'o}n de la percepci\IeC {\'o}n}{79}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementaci\IeC {\'o}n del control}{81}{section.4.3}
+\contentsline {section}{\numberline {4.4}Experimentos}{81}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{83}{chapter.5}

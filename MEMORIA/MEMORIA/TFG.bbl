@@ -1,0 +1,124 @@
+\begin{thebibliography}{10}
+
+\bibitem{Chua1971}
+Leon~O. Chua.
+\newblock Memristor-the missing circuit element.
+\newblock {\em Transactions on Circuit Theory}, CT-18(5):507--519, September
+  1971.
+
+\bibitem{Strukov2008}
+Duncan R. Stewart y R. Stanley~Williams Dmitri B.~Strukov, Gregory S.~Snider.
+\newblock The missing memristor found.
+\newblock {\em Nature}, 453:80--83, May 2008.
+
+\bibitem{LionO.Chua1976}
+Sung Mo~Kang Lion O.~Chua.
+\newblock Memristive devices and systems.
+\newblock {\em IEEE}, 64(2):209--223, February 1976.
+
+\bibitem{MassimilianoDiVentra2009}
+Yuriy V. Pershin y Leon O.~Chua Massimiliano Di~Ventra.
+\newblock Circuit elements with memory: memristors, memcapacitors and
+  meminductors.
+\newblock {\em IEEE}, January 2009.
+
+\bibitem{YuriyV.Pershin2008}
+Steven La Fontaine y Massimiliano Di~Ventra Yuriy V.~Pershin.
+\newblock Memristive model of amoeba’s learning.
+\newblock {\em arXiv:0810.4179}, October 2008.
+
+\bibitem{Chen2014}
+Qing Yu Changdi Li y Bocheng~Bao Mo~Chen, Jingjing~Yu.
+\newblock A memristive diode bridge-based canonical chua’s circuit.
+\newblock {\em Entropy}, 16:6464--6476, December 2014.
+
+\bibitem{Eshraghian2010}
+Omid Kavehei Soon-Ku Kang Derek Abbott y Sung-Mo Steve~Kang Kamran~Eshraghian,
+  Kyoung-Rok~Cho.
+\newblock Memristor mos content addressable memory(mcam): Hybrid architecture
+  for future highperformance search engines.
+\newblock {\em IEEE Trans VLSI Syst}, 10(10), May 2010.
+
+\bibitem{bessonov2015layered}
+Alexander~A Bessonov, Marina~N Kirikova, Dmitrii~I Petukhov, Mark Allen, Tapani
+  Ryh{\"a}nen, and Marc~JA Bailey.
+\newblock Layered memristive and memcapacitive switches for printable
+  electronics.
+\newblock {\em Nature materials}, 14(2):199, 2015.
+
+\bibitem{kim2011functional}
+Kuk-Hwan Kim, Siddharth Gaba, Dana Wheeler, Jose~M Cruz-Albrecht, Tahir
+  Hussain, Narayan Srinivasa, and Wei Lu.
+\newblock A functional hybrid memristor crossbar-array/cmos system for data
+  storage and neuromorphic applications.
+\newblock {\em Nano letters}, 12(1):389--395, 2011.
+
+\bibitem{bartolozzi2006ultra}
+Chiara Bartolozzi, Srinjoy Mitra, and Giacomo Indiveri.
+\newblock An ultra low power current-mode filter for neuromorphic systems and
+  biomedical signal processing.
+\newblock In {\em Biomedical Circuits and Systems Conference, 2006. BioCAS
+  2006. IEEE}, pages 130--133. IEEE, 2006.
+
+\bibitem{hertz1991introduction}
+John Hertz, Anders Krogh, and Richard~G Palmer.
+\newblock {\em Introduction to the theory of neural computation.}
+\newblock Addison-Wesley/Addison Wesley Longman, 1991.
+
+\bibitem{borgstrom1990programmable}
+TH~Borgstrom, M~Ismail, and SB~Bibyk.
+\newblock Programmable current-mode neural network for implementation in
+  analogue mos vlsi.
+\newblock {\em IEE Proceedings G (Circuits, Devices and Systems)},
+  137(2):175--184, 1990.
+
+\bibitem{koch1998methods}
+Christof Koch and Idan Segev.
+\newblock {\em Methods in neuronal modeling: from ions to networks}.
+\newblock MIT press, 1998.
+
+\bibitem{mead2012analog}
+Carver Mead and Mohammed Ismail.
+\newblock {\em Analog VLSI implementation of neural systems}, volume~80.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{zaghloul2012silicon}
+Mona~E Zaghloul, Jack~L Meador, and Robert~W Newcomb.
+\newblock {\em Silicon implementation of pulse coded neural networks}, volume
+  266.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{boahen1998communicating}
+Kwabena~A Boahen.
+\newblock Communicating neuronal ensembles between neuromorphic chips.
+\newblock In {\em Neuromorphic systems engineering}, pages 229--259. Springer,
+  1998.
+
+\bibitem{merolla2004recurrent}
+Paul Merolla and Kwabena~A Boahen.
+\newblock A recurrent model of orientation maps with simple and complex cells.
+\newblock In {\em Advances in neural information processing systems}, pages
+  995--1002, 2004.
+
+\bibitem{vittoz2006origins}
+Eric~A. Vittoz.
+\newblock Origins of weak inversion (or sub-threshold) circuit design.
+\newblock {\em Springer}, pages 7--9, 2006.
+
+\bibitem{gilbert1996translinear}
+Barrie Gilbert.
+\newblock Translinear circuits: An historical overview.
+\newblock {\em Analog Integrated Circuits and Signal Processing}, 9(2):95--118,
+  1996.
+
+\bibitem{rasche2001silicon}
+Christoph Rasche and Richard~HR Hahnloser.
+\newblock Silicon synaptic depression.
+\newblock {\em Biological Cybernetics}, 84(1):57--62, 2001.
+
+\bibitem{Wyer2017}
+Austin~Richard Wyer.
+\newblock The synthesis of memristive neuromorphic circuits.
+\newblock mathesis, The University of Tennessee, Knoxville, December 2017.
+
+\end{thebibliography}

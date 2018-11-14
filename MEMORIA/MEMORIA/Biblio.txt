@@ -1,0 +1,25 @@
+http://posgrado.itlp.edu.mx/uploads/archivos/55e4e3b1ea4e4.pdf
+
+https://es.wikipedia.org/wiki/Lenguaje_de_descripci%C3%B3n_de_hardware
+
+http://fpgayxilinx.blogspot.com/2016/08/cuando-se-aborda-el-diseno-de-un.html
+
+(https://carteleras.webcindario.com/fpga_jchl.pdf})
+
+https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_Verilog/M%C3%B3dulos#Caracter%C3%ADsticas
+
+$http://www.micronica.es/files/pdfs/SIHD/SIHD_Sens_Actu_EC.pdf$
+$https://es.wikipedia.org/wiki/Sensor$
+
+
+(https://academica-e.unavarra.es/bitstream/handle/2454/11723/TFGBasarteBozalLuisFernando.pdf?sequence=1)
+
+(https://es.wikipedia.org/wiki/P%C3%A9ndulo)
+Si nos referimos al concepto literal tal cuál se encuentra en WikiPedia: \newline
+
+http://www.ni.com/white-paper/3782/en/
+
+http://ewh.ieee.org/reg/9/etrans/ieee/issues/vol13/vol13issue05May2015/13TLA5_44LizarragaOrozco.pdf       Inverted Pendulum
+
+La biblio de los amigos de Jose Maria
+
