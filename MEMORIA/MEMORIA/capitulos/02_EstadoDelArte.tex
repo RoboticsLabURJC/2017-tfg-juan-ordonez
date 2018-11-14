@@ -292,7 +292,7 @@ Se podría decir entonces que se ha bajado un nivel más de abstracción, pudien
 En la anterior caso práctico se ha podido ver una de las ventajas de IceStudio. La modularidad permite configurar el nivel de abstracción.
 Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán desarrollados a lo largo de este trabajo, otros de ellos, están siendo desarrollados, y pueden encontrarse en el siguiente enlace: 
 
-\href{https://groups.google.com/forum/#!topic/fpga-wars-explorando-el-lado-libre/I3ZnqKlfh5M}{Foro de Google con discusión sobre temas y módulos para IceStudio.}
+\href{https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre}{https://groups.google.com/forum/forum/fpga-wars-explorando-el-lado-libre}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -313,7 +313,15 @@ Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la
 Para comprobar de forma resumida como implementan de manera diferente esa función de transferencia, se explicará brevemente la forma de trabajar con un procesador. \newline
 Un procesador contiene una serie de instrucciones que realizan operaciones sobre un conjunto de bits (sumar, incrementar, leer y escribir de la memoria). Dependiendo del tipo de procesador y de su arquitectura tenemos más o menos instrucciones asociadas, siendo este aspecto uno de los mas importantes que determinan su rendimiento.
 
-\textbf{Arquitectura procesador}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.3]{imagenes/EstadoArte/processor.png}
+		\caption{Arquitectura básica procesador}
+		\label{fig:arquitectura_procesador}
+	\end{figure} 
+\end{center}
+
 
 Se dispone de una serie de registros, una memoria para almacenar la información y una pila de instrucciones, que contiene el programa que va a ejecutarse en código máquina, además de un reloj.\newline
 
@@ -323,7 +331,7 @@ En la figura \ref{fig:puertas_logicas} se representa un ejemplo real de como est
 \begin{center}
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.4]{imagenes/EstadoArte/puertas_logicas.pdf}
+	\includegraphics[[trim = 0mm 4cm 0mm 0cm,clip, angle=0,scale=0.4]{imagenes/EstadoArte/puertas_logicas.pdf}
 	\caption{Puertas lógicas después de una implementación hardware.}
 	\label{fig:puertas_logicas}
 \end{figure}
@@ -351,8 +359,8 @@ En la figura \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípe
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.5]{imagenes/EstadoArte/bipedo.pdf}
-		\caption{Sistema bipedo coexistencia Micro-FPGA.}
+		\includegraphics[scale=0.4]{imagenes/EstadoArte/bipedo.pdf}
+		\caption{Sistema bipedo coexistencia microcontrolador-FPGA.}
 		\label{fig:bipedo}
 	\end{figure}
 \end{center}
@@ -361,7 +369,7 @@ En la figura \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípe
 El componente central del sistema propuesto esta definido como IMU o unidad de medida inercial. Está compuesto por una serie de sensores los cuales serán utilizados para conocer de manera exacta aspectos de localización del sistema a bordo tales como velocidad, orientación, fuerzas gravitacionales etc. \newline
 Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newline
 
-En el caso del presente proyecto, será utilizado para obtener los ángulos de navegación o ángulos de Tait-Brain, en los que la orientación se presenta con tres rotaciones ortogonales en torno al eje X, Y y Z. Un ejemplo de este tipo de representación se encuentra en la figura \ref{fig:orientacion}\newline
+En el caso del presente proyecto, será utilizado para obtener los ángulos de navegación o ángulos de Tait-Brain, en los que la orientación se presenta con tres rotaciones ortogonales en torno al eje X, Y y Z. Un ejemplo de este tipo de representación se encuentra en la figura \ref{fig:orientacion}.\newline
 
 
 \begin{figure}[H]
@@ -392,7 +400,7 @@ En las figuras \ref{fig:IMU12}, \ref{fig:IMU2}, \ref{fig:IMU2} se presentan algu
 
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU3}
+	\includegraphics[scale=0.25]{imagenes/Balancing_robot/IMU3}
 	\caption{Unidad de Medida Inercial.}
 	\label{fig:IMU3}
 \end{figure}
@@ -448,7 +456,7 @@ Al igual que en el acelerometro del apartado anterior, los giroscopios suelen em
 
 Es importante tener en cuenta que este tipo de giroscopios basados en el efecto Coriolis no detectan el ángulo girado sino la velocidad angular, aspecto importante para su depuración. \newline
 
-Si se recuerda el concepto de velocidad angular (ecuación \ref{equation:velangular});
+Si se recuerda el concepto de velocidad angular (ecuación \ref{equation:velangular}):
 
 \begin{equation} \label{equation:velangular}
 \omega = \frac{\delta \omega}{\delta t}
@@ -675,7 +683,7 @@ Un diagramas de bloques del sistema completo de un controlador PID puede verse e
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 4cm 0mm 4cm,clip, angle=0, scale = 0.5]{imagenes/EstadoArte/PID}
+		\includegraphics[trim = 0mm 4cm 0mm 4cm,clip, angle=0, scale = 0.4]{imagenes/EstadoArte/PID}
 		\caption{Diagrama de bloques controlador PID.}
 		\label{fig:PID}
 	\end{figure}

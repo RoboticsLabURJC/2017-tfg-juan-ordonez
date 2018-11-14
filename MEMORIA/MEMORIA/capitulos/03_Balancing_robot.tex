@@ -37,7 +37,7 @@ Mediante una comunicación i2c con un sensor IMU, el micro-controlador obtiene e
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=0, scale = 0.6]{imagenes/Balancing_Robot/final.pdf}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=0, scale = 0.4]{imagenes/Balancing_Robot/final.pdf}
 		\caption{Diagrama de bloques final.}
 		\label{fig:final}
 	\end{figure}
@@ -88,7 +88,7 @@ En la figura \ref{fig:center_mass} se representa el cálculo con SolidWorks de e
 
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.4]{imagenes/Balancing_robot/center_mass}
+	\includegraphics[scale=0.3]{imagenes/Balancing_robot/center_mass}
 	\caption{Centro de masas en sistema final.}
 	\label{fig:center_mass}
 \end{figure}
@@ -153,7 +153,7 @@ comportamientos:
 	
 	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.5]{imagenes/Balancing_robot/pin_headers.PNG}
+		\includegraphics[scale=0.4]{imagenes/Balancing_robot/pin_headers.PNG}
 		\caption{Pin headers para IceZum Alhambra II.}
 		\label{fig:pin_headers}
 	\end{figure}
@@ -163,7 +163,7 @@ comportamientos:
 	
 	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.5]{imagenes/Balancing_robot/SCREW.PNG}
+		\includegraphics[scale=0.4]{imagenes/Balancing_robot/SCREW.PNG}
 		\caption{Conector GND y VCC.}
 		\label{fig:screw}
 	\end{figure}
@@ -175,7 +175,7 @@ comportamientos:
 		
 		\begin{figure}[H]
 			\center
-			\includegraphics[scale=0.5]{imagenes/Balancing_robot/mpu6050_connector.PNG}
+			\includegraphics[scale=0.4]{imagenes/Balancing_robot/mpu6050_connector.PNG}
 			\caption{Módulo MPU6050.}
 			\label{fig:mpu6050_connector}
 		\end{figure}
@@ -337,7 +337,7 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.5, angle=90]{imagenes/Balancing_Robot/layers_altium.PNG}
+		\includegraphics[scale=0.4, angle=90]{imagenes/Balancing_Robot/layers_altium.PNG}
 		\caption{Vista de la composición de capas en Altium.}
 		\label{fig:layers_altium}
 	\end{figure}
@@ -383,7 +383,7 @@ Un posible ejemplo de una comunicación en serie de un byte de datos podría ser
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[scale=0.8, angle=0]{imagenes/Balancing_Robot/serial_comunicattion.png}
+		\includegraphics[scale=0.75, angle=0]{imagenes/Balancing_Robot/serial_comunicattion.png}
 		\caption{Ejemplo de comunicación serie.}
 		\label{fig:serial_comunicattion}
 	\end{figure}
@@ -417,7 +417,7 @@ El diagrama de flujo sobre el cuál se basa el código en C del micro-controlado
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/extraccion_angulo.pdf}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.5]{imagenes/Balancing_robot/extraccion_angulo.pdf}
 	\caption{Envío de ángulo usando el puerto serie.}
 	\label{fig:extraccion_angulo}
 \end{figure}
@@ -537,7 +537,7 @@ Como se ha profundizado anteriormente, el diagrama de flujo del código en Veril
 
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.5]{imagenes/Balancing_robot/arrange_angle.pdf}
+	\includegraphics[[trim = 0mm 4cm 0mm 0cm,clip, angle=0,scale=0.4]{imagenes/Balancing_robot/arrange_angle.pdf}
 	\caption{Diagrama de flujo modulo ordenación de bytes.}
 	\label{fig:arrange_angle}
 \end{figure}
@@ -561,8 +561,8 @@ El sistema final de comunicación entre Arduino y IceZum Alhambra desde el punto
 
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_arrange.PNG}
-	\caption{Solución final en FPGA de la comunicación entre Arduino y IceZum Alhambra.}
+	\includegraphics[scale=0.4]{imagenes/Balancing_robot/arduino_arrange.PNG}
+	\caption{Comunicación entre Arduino y IceZum Alhambra en IceStudio.}
 	\label{fig:arduino_arrange}
 \end{figure}
 
@@ -576,7 +576,7 @@ Una de las ventajas en el uso de este tipo de controladores recae en su fácil i
 El diagrama de flujo que caracteriza el comportamiento del controlador P se muestra en la \ref{fig:P_control}.
 	\begin{figure}[H]
 	\center
-	\includegraphics[trim = 0cm 7cm 0mm 7cm, clip,scale=0.7]{imagenes/Balancing_robot/P.pdf}
+	\includegraphics[trim = 0cm 7cm 0mm 7cm, clip,scale=0.5]{imagenes/Balancing_robot/P.pdf}
 	\caption{Diagrama de flujo control P.}
 	\label{fig:P_control}
 \end{figure}
@@ -629,7 +629,7 @@ Referido al sistema de realimentación por lazo cerrado analizado en la sección
 \newpage
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.6, angle=90]{imagenes/Balancing_robot/finalIceStudio}
+	\includegraphics[scale=0.5, angle=90]{imagenes/Balancing_robot/finalIceStudio}
 	\caption{Aspecto final en IceStudio del Balancing-Robot.}
 	\label{fig:finalIceStudio}
 \end{figure}
@@ -669,8 +669,8 @@ El driver del motor utilizado para el control de los motores DC (MC33926 [] figu
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 3cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/driver_motor.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
+	\includegraphics[trim = 0mm 3cm 0mm 2cm, clip,scale=0.4]{imagenes/Balancing_robot/driver_motor.pdf}
+	\caption{Esquemático de conexiones MC33926.}
 	\label{fig:driver_motor}
 \end{figure}
 
@@ -692,7 +692,7 @@ El diagrama de bloques de su funcionamiento se expone en la figura \ref{fig:pwm_
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.6]{imagenes/Balancing_robot/pwm_control.pdf}
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/pwm_control.pdf}
 	\caption{Envío de ángulo usando el puerto serie.}
 	\label{fig:pwm_control}
 \end{figure}
@@ -764,7 +764,7 @@ Se diferencian dos subsistemas independientes en cuánto a la alimentación se r
 \end{itemize}
 
 \subsubsection{Alimentación de los motores DC y Arduino Nano:}
-Para la alimentación de \cite{Wyer2017} los motores DC y el Arduino Nano se hace uso de una batería LIPO de 11.1V y 2200maH como en la figura \ref{fig:lipo111}. Como se representa en el esquemático final de la shield desarrollada (figura \ref{fig:schematics_tfg}), la batería se conectará a dicha shield, encargada esta de alimentar tanto a los motores DC como al Arduino Nano.
+Para la alimentación de los motores DC y el Arduino Nano se hace uso de una batería LIPO de 11.1V y 2200maH como en la figura \ref{fig:lipo111}. Como se representa en el esquemático final de la shield desarrollada (figura \ref{fig:schematics_tfg}), la batería se conectará a dicha shield, encargada esta de alimentar tanto a los motores DC como al Arduino Nano.
 
 \begin{center}
 	\begin{figure}[H]
@@ -795,6 +795,8 @@ Para la alimentación de la IceZum Alhambra II y el resto de componentes que for
 En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del sistema planteado a lo largo del capítulo \ref{sec: BalancingRobot}.
 \renewcommand\tablename{Tabla}
 \begin{table}[H]
+	\scalebox{0.9}{
+	\begin{turn}{90}
 	\begin{tabular}{|l|l|l|l|l}
 		\cline{1-4}
 		\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}\textbf{MATERIAL}} & \cellcolor[HTML]{FFCE93}\textbf{CANTIDAD} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ UNITARIO (\euro)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ TOTAL (\euro)\end{tabular}}} &  \\ \cline{1-4}
@@ -828,8 +830,9 @@ En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del siste
 		Batería Lipo 11.1 V 2200 mA                                     & 1                                         & 19.95                                                                                                               & 19.95                                                                                                            &  \\ \cline{1-4}
 		Batería Lipo 3.7 V 5 mA                                         & 1                                         & 4.20                                                                                                                & 4.20                                                                                                             &  \\ \cline{1-4}
 		\multicolumn{2}{|c|}{}                                                                                      & \multicolumn{2}{c|}{\cellcolor[HTML]{FD6864}}                                                                                                                                                                                          &  \\
-		\multicolumn{2}{|c|}{\multirow{-2}{*}{\textbf{COSTE TOTAL PROTOTIPO:}}}                                     & \multicolumn{2}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FD6864}\textbf{240.45}}}                                                                                                                                                         &  \\ \cline{1-4}
+		\multicolumn{2}{|c|}{\multirow{-2}{*}{\textbf{COSTE TOTAL PROTOTIPO:}}}                                     & \multicolumn{2}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FD6864}\textbf{240.45 \euro}}}                                                                                                                                                         &  \\ \cline{1-4}
 	\end{tabular}
+	\end{turn}}
 	\caption{Coste total del prototipo Balancing-Robot.}
 	\label{tabla:coste}
 \end{table}
