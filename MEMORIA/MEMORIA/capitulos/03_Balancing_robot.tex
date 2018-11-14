@@ -338,7 +338,7 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.5, angle=90]{imagenes/Balancing_Robot/layers_altium.PNG}
-		\caption{}
+		\caption{Vista de la composición de capas en Altium.}
 		\label{fig:layers_altium}
 	\end{figure}
 \end{center}
@@ -384,7 +384,7 @@ Un posible ejemplo de una comunicación en serie de un byte de datos podría ser
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.8, angle=0]{imagenes/Balancing_Robot/serial_comunicattion.png}
-		\caption{}
+		\caption{Ejemplo de comunicación serie.}
 		\label{fig:serial_comunicattion}
 	\end{figure}
 \end{center}
@@ -422,24 +422,24 @@ El diagrama de flujo sobre el cuál se basa el código en C del micro-controlado
 	\label{fig:extraccion_angulo}
 \end{figure}
 
-A continuación se pasa a explicar los aspectos mas relevantes: 
+A continuación se explican los aspectos mas relevantes: 
 
 \begin{itemize}
 	\item \textbf{1.-}Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
 	\item \textbf{2.-}Una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (\ref{fig:angle_correction}). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
+\end{itemize}
 	
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0cm 4cm 0mm 4cm, clip,scale=0.7]{imagenes/Balancing_robot/angle_correction.pdf}
+		\includegraphics[trim = 0cm 4cm 0mm 4cm, clip,scale=0.5]{imagenes/Balancing_robot/angle_correction.pdf}
 		\caption{Corrección de la dirección en Balancing Robot.}
 		\label{fig:angle_correction}
 	\end{figure}
 	
-	
+\begin{itemize}	
 	\item \textbf{3.-}Se utiliza un solo pin del micro-controlador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
 	\item \textbf{4.-}Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
 	Si se intenta enviar todo el ángulo también se enviarán tanto el símbolo como el código ASCII de la coma y esto es un aspecto que no interesa tener en cuenta en lo que al procesamiento sobre la FPGA se refiere. Para corregirlo primero se hace el módulo del ángulo (no se necesita el signo porque ya hay un pin destinado para ello) y posteriormente de hace una separación entre la parte entera y la parte decimal para poder eliminar el carácter "comma". 
-	
 	\item \textbf{5.-}Se envía por el puerto serie el byte correspondiente a la parte entera. 
 	\item \textbf{6.-}Se envía por el puerto serie el byte correspondiente a la parte decimal. 
 	\item \textbf{7.-}Es un proceso cíclico que se irá reproduciendo cada X segundos (por contabilizar), esto es, el ángulo podrá corregirse cada X segundos. 

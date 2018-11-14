@@ -1,7 +1,8 @@
+
 \chapter{Estado del arte}\label{sec:Estado_arte}
 En la presente sección se desarrollarán los aspectos teóricos a tener en cuenta para un correcto entendimiento del trabajo realizado. Además se presentará la evolución de algunos sistemas, así como sus ventajas e inconvenientes.
 \section{Concepto FPGAs}
-Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}
+Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}.
 
 \begin{center}
 	\begin{figure}[H]
@@ -14,8 +15,9 @@ Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que
  Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD, las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware (Hardware Description Languaje, HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
 \newline
 Si bien no es el más usado actualmente, a lo largo de la sección \ref{sec:Verilog} se realizará una breve introducción a Verilog, comentando y analizando sus principales características.
-\newpage
 \subsection{Evolución y escenario}
+
+
 
 Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. Las FPGAs conforman la máxima evolución de los PLDs (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. Algunos de sus usos en la actualidad son: 
 \begin{itemize}
@@ -28,7 +30,7 @@ Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vondersch
 
 El revolucionario éxito de estos dispositivos programables puede ser atribuido a la flexibilidad en la implementación del diseño. Así, la capacidad de re-programar al instante la FPGA con varios circuitos sin costo adicional, promueve la re-utilización del dispositivo, permite una rápida verificación del diseño y por ello, reduce el gasto en la etapa de desarrollo. Si bien actualmente no representan todo el sistema de un producto final, sus ventajas en las propiedades del diseño hacen que estén empezando a formar parte de una pieza importante en el desarrollo de un producto electrónico. \newline
 
-Para intentar entender el porqué de la importancia de dispositivos de implementación hardware sería adecuado introducir la Ley de Moore. La ley de Moore expresa que aproximadamente cada dos años se duplica el número de transistores en un microprocesador. Como se puede ver en la figura \ref{fig:Ley_de_Moore}, esta ley que formuló el cofundador de Intel E. Moore el 19 de Abril de 1965 no se aleja de la realidad: 
+Para intentar entender el porqué de la importancia de dispositivos de implementación hardware sería adecuado introducir la Ley de Moore. La ley de Moore expresa que aproximadamente cada dos años se duplica el número de transistores en un microprocesador. Como se puede ver en la figura \ref{fig:Ley_de_Moore}, esta ley que formuló el cofundador de Intel E. Moore el 19 de Abril de 1965 no se aleja de la realidad.
 \newline
 \begin{figure}[H]
 	\center
@@ -47,7 +49,7 @@ En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posi
 \begin{center}
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 10mm 35mm 10mm 35mm, clip,scale=0.6]{imagenes/EstadoArte/pld_fpga.pdf}
+	\includegraphics[trim = 10mm 35mm 10mm 35mm, clip,scale=0.4]{imagenes/EstadoArte/pld_fpga.pdf}
 	\caption{PLD vs FPGA}
 	\label{fig:pld_fpga}
 \end{figure}
@@ -170,7 +172,7 @@ Sólo las FPGAs de Lattice iCE40 (modelos HX1K-TQ144 y HX8K-CT256) son hasta el 
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.5]{imagenes/EstadoArte/lattice.png}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/lattice.png}
 		\caption{Lattice iCE40HX1K}
 		\label{fig:lattice}
 	\end{figure}
@@ -180,7 +182,7 @@ Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figur
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.2]{imagenes/EstadoArte/tinyFPGABX.jpg}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.15]{imagenes/EstadoArte/tinyFPGABX.jpg}
 		\caption{Tiny FPGA BX}
 		\label{fig:tiny_fpga}
 	\end{figure}
@@ -188,7 +190,7 @@ Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figur
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.2]{imagenes/EstadoArte/BlackIce.jpg}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.1]{imagenes/EstadoArte/BlackIce.jpg}
 		\caption{BlackIce II}
 		\label{fig:blackIceII}
 	\end{figure}
@@ -196,7 +198,7 @@ Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figur
 \begin{center}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/ico_board.jpg}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/EstadoArte/ico_board.jpg}
 		\caption{ico Board}
 		\label{fig:icoBoard}
 	\end{figure}
@@ -230,7 +232,7 @@ Es conocido que existen placas con mejores carácterísticas, pero el hecho de q
 \end{figure} 
 \end{center}
 Un punto a tener en cuenta para el desarrollo hardware con esta FPGA es su memoria de 1K lo que ha supuesto una limitación importante en el desarrollo. Para el presente proyecto se ha hecho uso también de la nueva versión de la IceZum Alhambra, IceZum Alhambra II, la cuál aún no estaba en el mercado al inicio del proyecto y que conlleva algunas mejoras, como la ampliación de 8K en su memoria, la mejora del bus de datos i2c, la posibilidad de alimentación mediante batería LIPO, etc. \newline
-La IceZum Alhambra se representa en la figura \ref{fig: IceZumAlhambraII}
+La tarjeta IceZum Alhambra II se representa en la figura \ref{fig: IceZumAlhambraII}
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -257,7 +259,7 @@ Para acercar al lector al conocimiento y funcionamiento de IceStudio se irán in
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 20mm 0mm 0mm, clip,scale=0.6]{imagenes/EstadoArte/Main_IceStudio.pdf}
+	\includegraphics[trim = 0mm 20mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Main_IceStudio.pdf}
 	\caption{Ventana principal IceStudio.}
 	\label{fig:Main_IceStudio}
 \end{figure}
@@ -269,7 +271,7 @@ El módulo que se presenta en la figura \ref{fig:Write_i2c_module} es una escrit
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 25mm 0mm 0mm, clip,scale=0.6]{imagenes/EstadoArte/Write_i2c_module.pdf}
+	\includegraphics[trim = 0mm 25mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module.pdf}
 	\caption{Escritura I2C IceStudio alto nivel.}
 	\label{fig:Write_i2c_module}
 \end{figure}
@@ -280,7 +282,7 @@ Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en 
 
 \begin{figure}[H]
 	\center
-	\includegraphics[trim = 0mm 20mm 0mm 0mm, clip,scale=0.6]{imagenes/EstadoArte/Write_i2c_module2.pdf}
+	\includegraphics[trim = 0mm 1.5cm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module2.pdf}
 	\caption{Escritura I2C IceStudio bajo nivel.}
 	\label{fig:Write_i2c_module2}
 \end{figure}
