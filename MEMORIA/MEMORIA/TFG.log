@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  15 NOV 2018 22:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  15 NOV 2018 22:14
 entering extended mode
 **./TFG.tex
 (TFG.tex
@@ -1417,6 +1417,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 634--636
  []
 
 
+Overfull \hbox (4.27855pt too wide) in paragraph at lines 638--639
+\OT1/cmr/m/n/10 Proportional, In-te-gral and Derivative[[]] (Proportional-Integ
+ral-Derivative, PID)
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
@@ -1992,23 +1998,41 @@ Overfull \hbox (14.39755pt too wide) in paragraph at lines 806--807
 
 [94 <./imagenes/Balancing_Robot/LIPO37.jpg>]
 
-LaTeX Warning: Reference `fig:test3' on page 95 undefined on input line 816.
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.813 \newline
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `fig:test4' on page 95 undefined on input line 816.
+Underfull \hbox (badness 10000) in paragraph at lines 814--815
+
+ []
+
+
+LaTeX Warning: Reference `fig:test3' on page 95 undefined on input line 818.
+
+
+LaTeX Warning: Reference `fig:test4' on page 95 undefined on input line 818.
 
 <imagenes/Balancing_Robot/test1.jpeg, id=2205, 1204.5pt x 1606.0pt>
 File: imagenes/Balancing_Robot/test1.jpeg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/test1.jpeg>
 Package pdftex.def Info: imagenes/Balancing_Robot/test1.jpeg  used on input lin
-e 821.
+e 823.
 (pdftex.def)             Requested size: 240.89574pt x 321.19432pt.
 [95]
 <imagenes/Balancing_Robot/test2.jpeg, id=2215, 1606.0pt x 1204.5pt>
 File: imagenes/Balancing_Robot/test2.jpeg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/test2.jpeg>
 Package pdftex.def Info: imagenes/Balancing_Robot/test2.jpeg  used on input lin
-e 830.
+e 832.
 (pdftex.def)             Requested size: 321.19432pt x 240.89574pt.
  [96 <./imagenes/Balancing_Robot/test1.jpeg> <./imagenes/Balancing_Robot/test2.
 jpeg>]
@@ -2016,7 +2040,7 @@ jpeg>]
 File: imagenes/Balancing_Robot/vga.jpeg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/vga.jpeg>
 Package pdftex.def Info: imagenes/Balancing_Robot/vga.jpeg  used on input line 
-843.
+845.
 (pdftex.def)             Requested size: 321.19432pt x 259.7659pt.
 ) (capitulos/04_Cuadricoptero.tex [97 <./imagenes/Balancing_Robot/vga.jpeg>] [9
 8
@@ -2316,7 +2340,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
 Here is how much of TeX's memory you used:
  12070 strings out of 492972
  193731 string characters out of 3126622
- 308868 words of memory out of 3000000
+ 308875 words of memory out of 3000000
  15272 multiletter control sequences out of 15000+200000
  11042 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2348,7 +2372,7 @@ public/amsfonts/cm/cmsy7.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jordo/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/jordo/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/feybr10.pfb>
-Output written on TFG.pdf (121 pages, 11496971 bytes).
+Output written on TFG.pdf (121 pages, 11496941 bytes).
 PDF statistics:
  2649 PDF objects out of 2984 (max. 8388607)
  353 named destinations out of 1000 (max. 500000)
