@@ -1,5 +1,5 @@
 \chapter{Robot Balancín}\label{sec: BalancingRobot}
-En el presente capítulo se pretende abordar el problema del péndulo invertido mediante la utilización de una FPGA en coexistencia con un micro-controlador. Para ello, en los respectivos capítulos se tratará la física de un Balancing robot, el cálculo de su estructura, los sensores y actuadores utilizados, el sistema de control y el diseño y fabricación de una PCB que resuelva de manera más adecuada algunos problemas de los anteriormente planteados. Se utilizará una comunicación entre FPGA/Micro-controlador y se dará una versión más global del sistema propuesto, con un diagrama de bloques general. \newline
+En el presente capítulo se pretende abordar el problema del péndulo invertido mediante la utilización de una FPGA en coexistencia con un microcontrolador. Para ello, en los respectivos capítulos se tratará la física de un Balancing robot, el cálculo de su estructura, los sensores y actuadores utilizados, el sistema de control y el diseño y fabricación de una PCB que resuelva de manera más adecuada algunos de los problemas anteriormente planteados. Se utilizará una comunicación entre FPGA/microcontrolador y se dará una versión más global del sistema propuesto, con un diagrama de bloques general. \newline
 Se comienza con una descripción del problema a resolver (sección \ref{sec:Descripcion_balancin}
 ), a continuación se proporciona una solución básica con un alto nivel de abstracción (sección \ref{sec:Diseno}), para terminar con una explicación mas detallada de los bloques anteriores (sección \ref{sec:Implementacion}).
 \section{Descripción del problema} \label{sec:Descripcion_balancin}
@@ -14,9 +14,9 @@ Para comprender el trabajo a realizar, se enunciará brevemente el problema del 
 \end{figure}
 
 
-\begin{definicion}Péndulo: Es un sistema físico que puede oscilar bajo la acción gravitatoria u otra característica física (elasticidad, por ejemplo) y que está configurado por una masa suspendida de un punto o de un eje horizontal fijos mediante un hilo, una varilla, u otro dispositivo que sirve para medir el tiempo. \newline
+\begin{definicion}Péndulo: Es un sistema físico que puede oscilar bajo la acción gravitatoria u otra característica física (elasticidad, por ejemplo) y que está configurado por una masa suspendida de un punto o de un eje horizontal fijo mediante un hilo, una varilla, u otro dispositivo que sirve para medir el tiempo. \newline
 \end{definicion}
-Así, y como el lector podrá imaginar, un péndulo invertido tendrá el aspecto de la figura \ref{fig:pendulo}. 
+Así, y como se podrá imaginar, un péndulo invertido tendrá el aspecto de la figura \ref{fig:pendulo}. 
 
 \begin{figure}[H]
 	\center
@@ -25,14 +25,14 @@ Así, y como el lector podrá imaginar, un péndulo invertido tendrá el aspecto
 	\label{fig:pendulo}
 \end{figure}
 
-Consiste en un péndulo donde el centro de masas se encuentra situado por encima del punto o eje de balanceo. Como cabe esperar, esta disposición dota al sistema de una inestabilidad estática. Recordamos que un sistema es estable cuánto mas cercano esta del plano horizontal de apoyo su centro de gravedad. \newline
+Consiste en un péndulo donde el centro de masas se encuentra situado por encima del punto o eje de balanceo. Como cabe esperar, esta disposición dota al sistema de una inestabilidad estática. Recordamos que un sistema es estable cuánto más cercano esta su centro de gravedad del plano horizontal de apoyo. \newline
 
 El fundamento de este proyecto consistirá por tanto en intentar corregir esta inestabilidad, y forma parte de uno de los problemas mas famosos en cuánto a teoría de control y dinámica de sistemas. 
 
 \newpage
 \section{Diseño del sistema}\label{sec:Diseno}
 
-Mediante una comunicación i2c con un sensor IMU, el micro-controlador obtiene el ángulo actual de sistema. Obtenido el ángulo por el micro-controlador una comunicación de tipo serie lo envía a la FPGA, en un formato binario de 1 byte para la parte entera y 1 byte para la parte decimal. Una shield con un driver de motores DC conectada a la FPGA dota a esta de la posibilidad de variar la velocidad y el sentido de dos motores DC que permiten la estabilización del sistema. La velocidad de los motores para una correcta corrección del ángulo se calcula mediante un controlador PD básico implementado en la FPGA.
+El microcontrolador obtiene el ángulo actual del sistema mediante una comunicación i2c con un sensor IMU. Este ángulo se envía a la FPGA a través de una comunicación tipo serie, en un formato binario de 1 byte para la parte entera y 1 byte para la parte decimal. Una shield con un driver de motores DC conectada a la FPGA dota a esta de la posibilidad de variar la velocidad y el sentido de dos motores DC que permiten la estabilización del sistema. La velocidad de los motores para una correcta corrección del ángulo se calcula mediante un controlador PD básico implementado en la FPGA.
 
 \begin{center}
 	\begin{figure}[H]
@@ -50,7 +50,7 @@ En los sucesivos capítulos se irá profundizando en cada uno de los bloques ant
 
 \newpage
 \section{Implementación del sistema}\label{sec:Implementacion}
-\subsection{Fabricación estructura mecánica (Física de un Balancing Robot)}
+\subsection{Fabricación de la estructura mecánica}
 Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de las figuras \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab}, diseñadas con SolidWorks[] y a partir de la cuál se ensamblarán el resto de los componentes.
 
 \begin{center}
@@ -81,9 +81,9 @@ Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto 
 \end{center}
 
 Se tienen en cuenta diferentes aspectos en el diseño de esta estructura que se relacionan directamente con la física de un Robot Balancín y con ello, del péndulo invertido. \newline
-Como se argumenta en la sección \ref{sec:Descripcion_balancin}, un sistema en reposo es estable cuando mas cercano esta del plano horizontal su centro de masas. Si se tiene en cuenta que la naturaleza del sistema planteado es inherentemente inestable, se hace necesario conocer el mejor punto donde debe estar el centro de masas para permitir una mejor estabilización. \newline
+Como se argumenta en la sección \ref{sec:Descripcion_balancin}, un sistema en reposo es estable cuando su centro de masas esta cercano al centro de gravedad. Si se tiene en cuenta que la naturaleza del sistema planteado es inherentemente inestable, se hace necesario conocer el mejor punto donde debe estar el centro de masas para permitir una mejor estabilización. \newline
 
-Asumiendo la caracterización del modelado matemático en [][][], se asume por tanto que para conseguir una mayor facilidad en la estabilización, el centro de masas debe estar colocado por encima del punto medio del eje vertical de nuestro sistema. Por lo tanto, se ha de tener en cuenta el peso de todos los componentes para una colocación tal que permita lo anterior. \newline
+Asumiendo la caracterización del modelado matemático en [], se asume por tanto que para conseguir una mayor facilidad en la estabilización, el centro de masas debe estar colocado por encima del punto medio del eje vertical de nuestro sistema. Por lo tanto, se ha de tener en cuenta el peso de todos los componentes para una colocación tal que permita lo anterior. \newline
 En la figura \ref{fig:center_mass} se representa el cálculo con SolidWorks de este centro de masas donde sólo se han tenido en cuenta los elementos más pesados del sistema final, esto es, motores DC, batería, estructura mecánica y ruedas. 
 
 \begin{figure}[H]
@@ -95,9 +95,9 @@ En la figura \ref{fig:center_mass} se representa el cálculo con SolidWorks de e
 
 \subsection{Unidad de medida inercial MPU6050 en Arduino Nano}\label{sec:MPU6050}
 
-Es necesario un conocimiento constante del ángulo del sistema para su posterior análisis y corrección, para ello se hace uso del MPU6050 conectado mediante una comunicación I2C a un Arduino Nano. \newline
+Es necesario un conocimiento constante del ángulo del sistema para su posterior análisis y corrección, para ello se hace uso del sensor MPU6050 conectado mediante una comunicación I2C a un Arduino Nano. \newline
 
-El MPU6050[] es una unidad de medida inercial (Inertial Measure Unit, IMU )con 6 grados de libertad (6DOF) fabricado por Invensense[]. Cuenta con un acelerómetro y giroscopio y permite una comunicación tanto por SPI como por bus I2C. Para corregir algunos de los problemas de captación de datos planteados en la sección \ref{sec:IMU} incorpora un procesador interno (Digital Motion Processor, DMP) que ejecuta algoritmos de fusión de datos (Motion Fusion) para combinar las mediciones de los sensores internos evitando tener que realizar los filtros de forma exterior.\newline
+El MPU6050[] es una unidad de medida inercial con 6 grados de libertad (6DOF) fabricado por Invensense[]. Cuenta con un acelerómetro y giroscopio y permite una comunicación tanto por SPI como por bus I2C. Para corregir algunos de los problemas de captación de datos planteados en la sección \ref{sec:IMU} incorpora un procesador interno (Digital Motion Processor, DMP) que ejecuta algoritmos de fusión de datos (Motion Fusion) para combinar las mediciones de los sensores internos evitando tener que realizar los filtros de forma exterior.\newline
 
 Debido a su bajo precio y gran calidad es uno de los IMUs más utilizados en la actualidad.
 En la figura \ref{fig:IMU1} se muestra una imagen del MPU6050.
@@ -122,18 +122,14 @@ En la figura \ref{fig:MPU6050_schematic} se muestra el diagrama esquemático de 
 Tiene una tensión de alimentacion de 3.3V. El pin de reloj para la conexión I2C (Serial Clock Line, SCL) y el pin de datos (Serial Data Line, SDA) representan la conexión para el bus con Arduino Nano. El pin AD0 permite al usuario final cambiar la dirección del MPU (slave) la cuál por defecto es 0x68h conectado a GND. Si se conecta a Vcc la dirección cambia a 0x69h. El pin INT produce una señal en alta cuando el dato en cuestión está disponible por parte del MPU para ser capturado, y avisará por medio de una interrupción al Arduino Nano con el fin de poder ser obtenido. \newline
 
 \subsubsection{Programa para Arduino nano}
-Para la implementación en Arduino Nano se utiliza la librería desarrollada por Jeff Rowberg []. La razón del uso de esta librería es debido a que incorpora la utilización del DMP cuyas ventajas se representan en la figura \ref{fig:DMPExample}\newline
+Para la implementación en Arduino Nano se utiliza la librería desarrollada por Jeff Rowberg []. La razón del uso de esta librería es debido a que incorpora la utilización del DMP. Con su uso, se exime al microprocesador (Arduino Nano en este caso) de un complejo filtrado y cálculo con el fin de obtener los valores pitch, yaw y roll.Estas cuyas ventajas se representan gráficamente en la figura \ref{fig:DMPExample}.\newline
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 4cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/DMPexample.pdf}
 	\caption{Ventaja de uso en la utilización de DMP.}
 	\label{fig:DMPExample}
-\end{figure}
-
-Se exime al micro-procesador (Arduino Nano en este caso) de un complejo filtrado y cálculo con el fin de obtener los valores pitch, yaw y roll. 
-
-\subsubsection{Valores del sensor. }
+\end{figure} 
 
 Un ejemplo de los valores obtenidos por parte del sensor se muestran en la figura tal.
 
@@ -143,7 +139,7 @@ Un ejemplo de los valores obtenidos por parte del sensor se muestran en la figur
 
 \subsection{Implementación PCB}
 
-Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el micro-controlador y FPGA sino también para el módulo de cámara OV7670 y el driver del motor, es conveniente y apropiado un circuito impreso que resuelva algunos problemas de ruido, cables excesivos, etc. \newline
+Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el microcontrolador y FPGA sino también para el módulo de cámara (utilizado en la sección \ref{sec: Cuadricoptero}) y el driver del motor, es conveniente y apropiado un circuito impreso que resuelva algunos problemas de ruido, cables excesivos, etc. \newline
 
 El circuito impreso alberga los siguientes componentes y
 comportamientos:
@@ -159,7 +155,7 @@ comportamientos:
 	\end{figure}
 	
 	
-	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante: 
+	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante. 
 	
 	\begin{figure}[H]
 		\center
@@ -169,7 +165,7 @@ comportamientos:
 	\end{figure}
 	
 	
-	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Este conector irá directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. El hecho de elegir esta batería viene dado al voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el Balancing-robot. Un análisis mas detallado de la batería puede encontrarse en subsección \ref{sec:Bateria}
+	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Este conector irá directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. La elección de esta batería viene dada por el voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el robot balancín. Un análisis mas detallado de la batería puede encontrarse en subsección \ref{sec:Bateria}
 	
 	\item Módulo de pines "header" para la conexión del MPU6050 anteriormente descrito (figura \ref{fig:mpu6050_connector).
 		
@@ -181,7 +177,7 @@ comportamientos:
 		\end{figure}
 		
 		\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
-		\item Se dispone para el usuario final la posibilidad de unos "jumpers" (figura \ref{fig:jumpers}) para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
+		\item Se dispone de la posibilidad de unos "jumpers" (figura \ref{fig:jumpers}) para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
 		
 		\begin{figure}[H]
 			\center
@@ -190,9 +186,9 @@ comportamientos:
 			\label{fig:jumpers}
 		\end{figure}	
 	
-		Al albergar una línea de datos no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
-		\item Gran parte de los micro-controladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el micro-controlador.	
-		\item Un módulo que pueda albergar la cámara OV7670 formado por pin "headers" de tipo macho y cada uno de los cuales estará unido a uno de los pines in-out de la FPGA, como se verá mas adelante en el esquemático general. 
+		Al albergar una línea de datos como son SCL y SDA no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
+		\item Gran parte de los microcontroladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el microcontrolador.	
+		\item Un módulo que pueda albergar la cámara OV7670 (utilizada en seeción \ref{sec: Cuadricoptero}) formado por pin "headers" de tipo macho y cada uno de los cuales estará unido a uno de los pines in-out de la FPGA, como se verá mas adelante en el esquemático general. 
 		\item Un módulo que pueda albergar el driver del motor DC utilizado en este caso y que permita la conexión directa con los pines de la IceZum Alhambra II, pues por ejemplo la señal pwm que definirá la velocidad de los motores será una salida por uno de los pines de la FPGA, y deberá ser una entrada al driver del motor.
 		
 		\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
@@ -236,13 +232,13 @@ comportamientos:
 	\end{center}
 
 
-Para el desarrollo de una PCB con los requerimientos descritos se ha utilizado Altium Designer. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
+Para el desarrollo de una PCB con los requerimientos descritos se ha utilizado Altium Designer[]. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
 
 \begin{itemize}
-	\item 1) En primera instancia se crea el proyecto en cuestión.
-	\item 2) Para cada componente utilizado se crea una nueva librería formada por el esquemático (Schematic) y por el layout en la pcb (footprint).
-	\item 3) Una vez todas las librerías creadas se diseña el esquemático de la placa final, teniendo especial cuidado en que las conexiones sean las adecuadas.
-	\item 4) Con el esquemático ya creado, se puede implementar la pcb, definiendo sus bordes, las pistas, los pads, etc.
+	\item En primera instancia se crea el proyecto en cuestión.
+	\item Para cada componente utilizado se crea una nueva librería formada por el esquemático (Schematic) y por el layout en la pcb (footprint).
+	\item Una vez que se han creado todas las librerías se diseña el esquemático de la placa final, teniendo especial cuidado en que las conexiones sean las adecuadas.
+	\item Con el esquemático ya creado, se puede implementar la PCB, definiendo sus bordes, las pistas, los pads, etc.
 \end{itemize}
 
 El esquemático es representado en la figura \ref{fig:schematics_tfg}: 
@@ -258,14 +254,14 @@ El esquemático es representado en la figura \ref{fig:schematics_tfg}:
 \end{center}
 \newpage
 
-\textbf{Tamaño de pista: } \newline
-A la hora del diseño de la PCB hay que tener en cuenta el tamaño de las pistas de cobre, sobre todo si por estas la corriente puede ser muy elevada. De no ser así, la PCB podría sufrir daños o llegar incluso a quemarse. \newline
+\textbf{Tamaño de pista } \newline
+A la hora del diseño de la PCB hay que tener en cuenta el tamaño de las pistas de cobre, sobre todo si la corriente que circula por ellas puede ser muy elevada. De no ser así, la PCB podría sufrir daños o llegar incluso a quemarse. \newline
 
-Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el cálculo de pistas) puede consumir un máximo de 20 amperios. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
+Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el cálculo de pistas) puede consumir un máximo de 20A. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
 
-La fórmula utilizada para la obtención del ancho de pista ha sido extraída del IPC-2221B, el cual establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. \newline
+La fórmula utilizada para la obtención del ancho de pista ha sido extraída del estándar IPC-2221B[], el cuál establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. \newline
 
-Así, la formula se define como en la ecuación \ref{eqn:eqn31}: 
+Así, la fórmula se define como en la ecuación \ref{eqn:eqn31}: 
 
 \begin{equation}
 I = K * dT^{0.44}*(W*H)^{0.725}
@@ -295,16 +291,13 @@ W_{internas} =  48.6876 mm
 H_{internas} = 	0.035 mm
 \end{equation*}
 
-El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web para el pedido de las PCBs: \url{https://www.jlcpcb.com//}. \newline 
+El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web en [] para el pedido de las PCBs. \newline 
 El grosor de pista es medido comúnmente en "oz" y en este caso, la empresa fabricante permite una PCB con 1oz de grosor de pista, que equivale a un grosor de 0.035mm.\newline
-
 Si se analizan los resultados obtenidos de la ecuación 3.1 se aprecia claramente la diferencia entre una pista en una capa interna y una pista en una externa. \newline
-
 Una placa de circuito impreso esta dividida en capas, cada una de las capas tiene su función y organizarlas de manera adecuada es una buena práctica para evitar malos comportamientos. Así, una vez analizados los requerimientos, eran necesarias dos capas para la conexión de pines de datos, además siempre es recomendable un plano de tierra en el que todos los pines conectados a GND tengan una capa común. Esto evita ruidos e interferencias además de asegurar una buena referencia de tierra. \newline
+En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores "brushless" debe ser de 1.8716cm, se llegó a la determinación de la utilización de una de las capas como plano común para las pistas de alimentación de dichos motores. La distribución de las capas será por tanto lo representado en la tabla \ref{tabla:layers_altium}.
 
-En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores "brushless" debe ser de 1.8716cm, se llego a la determinación de la utilización de una de las capas como plano común para las pistas de alimentación de dichos motores. La distribución de las capas será por tanto lo representado en la tabla \ref{tabla:layers_altium}: 
-
-Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1,46 Amperios, más que necesario para esta aplicación
+Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1.46A, más que necesario para esta aplicación.
 
 
 \renewcommand\tablename{Tabla}
@@ -346,13 +339,13 @@ Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bo
 
 \subsection{Implementación IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
 
-Una integración entre un micro-controlador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al micro-controlador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
+Una integración entre un microcontrolador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al microcontrolador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
 
-Hay varias opciones para hacer una integración Micro-Controlador/FPGA:
+Hay varias opciones para hacer una integración microcontrolador/FPGA:
 
 \begin{itemize}
-	\item Emular el comportamiento de un micro-controlador en una FPGA.
-	\item Coexistencia física de una FPGA y micro-controlador creando una comunicación entre cada una de ellas.
+	\item Emular el comportamiento de un microcontrolador en una FPGA.
+	\item Coexistencia física de una FPGA y microcontrolador creando una comunicación entre cada una de ellas.
 \end{itemize}
 En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
 
@@ -398,13 +391,13 @@ El ángulo tiene que ser conocido en la IceZum-Alhambra para la toma de decision
 	\label{fig:coexistencia1}
 \end{figure}
 
-La comunicación será solo uni-direccional, el micro-controlador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
+La comunicación será solo uni-direccional, el microcontrolador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
 
-Se hace una separación por tanto de dos partes de la comunicación, desde el punto de vista del micro-controlador, y desde el punto de vista de la FPGA. Ambos serán explicados más específicamente en la subsección \ref{sec:vista_controlador} y \ref{sec:vista_controlador}
+Se hace una separación por tanto de dos partes de la comunicación, desde el punto de vista del microcontrolador, y desde el punto de vista de la FPGA. Ambos serán explicados más específicamente en las subsecciónes \ref{sec:vista_controlador} y \ref{sec:vista_controlador}
 
-\subsubsection{Desde el punto de vista del micro-controlador:}  \label{sec:vista_controlador}
+\subsubsection{Desde el punto de vista del micro-controlador}  \label{sec:vista_controlador}
 
-Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido en el micro-controlador. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del micro-controlador, solo se analiza la parte sombreada.  
+Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido en el microcontrolador. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del microcontrolador, solo se analiza la parte sombreada.  
 
 \begin{figure}[H]
 	\center
@@ -425,8 +418,8 @@ El diagrama de flujo sobre el cuál se basa el código en C del micro-controlado
 A continuación se explican los aspectos mas relevantes: 
 
 \begin{itemize}
-	\item \textbf{1.-}Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
-	\item \textbf{2.-}Una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (\ref{fig:angle_correction}). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
+	\item Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
+	\item Como ya se ha comentado anteriormente en la sección 3.3.2, una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (\ref{fig:angle_correction}). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
 \end{itemize}
 	
 	\begin{figure}[H]
@@ -437,18 +430,18 @@ A continuación se explican los aspectos mas relevantes:
 	\end{figure}
 	
 \begin{itemize}	
-	\item \textbf{3.-}Se utiliza un solo pin del micro-controlador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
-	\item \textbf{4.-}Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
+	\item Se utiliza un solo pin del microcontrolador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
+	\item Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
 	Si se intenta enviar todo el ángulo también se enviarán tanto el símbolo como el código ASCII de la coma y esto es un aspecto que no interesa tener en cuenta en lo que al procesamiento sobre la FPGA se refiere. Para corregirlo primero se hace el módulo del ángulo (no se necesita el signo porque ya hay un pin destinado para ello) y posteriormente de hace una separación entre la parte entera y la parte decimal para poder eliminar el carácter "comma". 
-	\item \textbf{5.-}Se envía por el puerto serie el byte correspondiente a la parte entera. 
-	\item \textbf{6.-}Se envía por el puerto serie el byte correspondiente a la parte decimal. 
-	\item \textbf{7.-}Es un proceso cíclico que se irá reproduciendo cada X segundos (por contabilizar), esto es, el ángulo podrá corregirse cada X segundos. 
+	\item Se envía por el puerto serie el byte correspondiente a la parte entera. 
+	\item Se envía por el puerto serie el byte correspondiente a la parte decimal. 
+	\item Es un proceso cíclico que se irá reproduciendo cada X segundos (por contabilizar), esto es, el ángulo podrá corregirse cada X segundos. 
 \end{itemize}
 Un ejemplo real del envío del un ángulo con su correspondiente signo es mostrado en la figura \ref{label}
 
 \textbf{captura del envio del angulo}
 
-\subsubsection{Desde el punto de vista de la FPGA:} \label{sec:vista_fpga}
+\subsubsection{Desde el punto de vista de la FPGA} \label{sec:vista_fpga}
 
 Por un PIN de entrada a la FPGA le estarán continuamente entrando datos provenientes del pin de transmisión y para que se puede hacer una lectura correcta del byte es necesario conocer: 
 
@@ -456,10 +449,10 @@ Por un PIN de entrada a la FPGA le estarán continuamente entrando datos proveni
 	\item Cuando comienza una transmisión de un byte.
 	\item Cuando termina una transmisión de un byte.
 	\item Cuando un bit puede ser capturado. 
-	\item Se vayan almacenando en un buffer los bits necesarios hasta que el byte este completo.
+	\item Se vayan almacenando en un buffer los bits necesarios hasta que el byte esté completo.
 \end{itemize}
 
-Para poder implementar en la FPGA un módulo intermedio con las anteriores carácteristicas (aspecto en IceStudio \ref{fig:arduino_interface})es necesario conocer de antemano la velocidad de la transmisión por parte del micro-controlador, la cuál se ha fijado en 16200 baudios. \newline
+Para poder implementar en la FPGA un módulo intermedio con las anteriores carácteristicas (aspecto en IceStudio \ref{fig:arduino_interface}) es necesario conocer de antemano la velocidad de la transmisión por parte del microcontrolador, la cuál se ha fijado en 16200 baudios. \newline
 
 
 \begin{figure}[H]
@@ -472,10 +465,10 @@ Para poder implementar en la FPGA un módulo intermedio con las anteriores cará
 Se detallan las diferentes entradas y salidas del módulo anterior: 
 
 \begin{itemize}
-	\item data[7:0]: Consiste en un buffer en el cuál se van almacenando los bits cuando es necesario hasta tener el byte. Es importante que el módulo siguiente conozca cuando el byte esta preparado para su captura.
+	\item data[7:0]: Consiste en un buffer en el cuál se van almacenando los bits hasta tener el byte completo. Es importante que el módulo siguiente conozca cuando el byte esta preparado para su captura.
 	\item clock\_data\_debug: La utilización de esta salida es sólo para depuración.
 	\item byte\_ready: Un flag de reloj cambiará su valor cuando un byte este listo para ser capturado. Como se ha visto en anteriores desarrollos, este byte será o bien la parte entera o bien la parte decimal.
-	\item bit\_ready: La utilización de esta salida de solo para depuracion.
+	\item bit\_ready: La utilización de esta salida es únicamente para depuracion y puede encontrarse en muchos módulos a lo largo del proyecto.
 \end{itemize} 
 
 La implementación en IceStudio del comportamiento anterior está implementada mediante dos máquinas estados con sus correspondientes listas de sensibilidad, y el diagrama de flujo se representa en la figura \ref{fig:arduino_interfacefluid}.
@@ -490,16 +483,16 @@ La implementación en IceStudio del comportamiento anterior está implementada m
 \end{center}
 
  Se hace uso de dos procesos bien diferenciados.\newline
-\textbf{Proceso 1:} Este proceso solo dota al sistema siguiente del momento exacto en el cual puede capturar un bit y guardarlo en el buffer, para ello, debe conocer la velocidad de la transmisión comentada anteriormente. Los estados serán los siguientes: 
+\textbf{Proceso 1:} Este proceso solo informa al sistema siguiente del momento exacto en el cuál puede capturar un bit y guardarlo en el buffer, para ello, debe conocer la velocidad de la transmisión comentada anteriormente. Los estados serán los siguientes: 
 
 \begin{itemize}
 	\item IDLE: El proceso se mantiene en este estado hasta que se inicie la transmisión, que pasará al siguiente estado (START).
-	\item START: Como se ha desarrollado en la seccion \ref{label} el protocolo de transmision serie comienza con una condicion de start, este estado permitirá reconocer cuando acaba esta condicion para poder empezar a guardar bits en el buffer. 
-	\item DATAS: Como ya se conoce la velocidad de transmision y se ha reconocido la condicion de START en el estado anterior, en este estado un flag cambiará su valor cuando el bit este preparado para ser guardado en el buffer, de lo cuál se encargará el proceso 2.
+	\item START: El protocolo de transmisión serie comienza con una condición de start, este estado permitirá reconocer cuando acaba esta condición para poder empezar a guardar bits en el buffer. 
+	\item DATAS: Como ya se conoce la velocidad de transmisión y se ha reconocido la condición de START en el estado anterior, en este estado un flag cambiará su valor cuando el bit este preparado para ser guardado en el buffer, de lo cuál se encargará el proceso 2.
 	\item STOP: Además de una condición de START, el protocolo de transmisión en serie usado en Arduino tiene un condición de STOP. Este estado permite reconocer el tiempo que tarda Arduino en llevar a cabo esta ultima condicion, después, volverá al primer estado hasta que empiece una nueva transacción.
 \end{itemize}
 
-\textbf{Proceso 2:} El proceso 2 está activado por el proceso 1. Cuando el proceso 1 determine que un bit está disponible en el bus para ser capturado, pondrá en alta un flag de reloj, iniciando el proceso 1 mediante una lista de sensibilidad. El diagrama de flujo podría ser:
+\textbf{Proceso 2:} El proceso 2 está activado por el proceso 1. Cuando el proceso 1 determine que un bit está disponible en el bus para ser capturado, pondrá en alto valor de voltaje un flag de reloj, iniciando el proceso 1 mediante una lista de sensibilidad. El diagrama de flujo podría ser:
 
 \begin{itemize}
 	\item Esperar hasta que se active al lista de sensibilidad, eso indicará que un bit podrá ser capturado.
@@ -507,7 +500,7 @@ La implementación en IceStudio del comportamiento anterior está implementada m
 	\item Cuando el byte este preparado para ser capturado por los consecutivos módulos un canal se pondrá en alta, estando disponibles como salidas tanto el buffer con 8 los bits y este canal de "byte\_ready".
 \end{itemize}
 
-En este punto la FPGA es capaz de diferenciar cuando puede capturar un byte (BYTE\_READY) y de donde tiene que capturar el bus de datos (DATA\_BUFFER). No obstante un aspecto que no forma parte de la comunicación en sí es importante de analizar si se quiere conseguir un correcto funcionamiento. Esto es, si se ha dicho anteriormente que el micro-controlador envía continuamente la parte entera y decimal del ángulo, si no se hace una buena interpretación de estos datos, es posible que un ángulo sobre la FPGA este formado por una parte decimal de un angulo n y la parte entera del ángulo n+1. \newline
+En este punto la FPGA es capaz de diferenciar cuando puede capturar un byte (BYTE\_READY) y de dónde tiene que capturar el bus de datos (DATA\_BUFFER). No obstante un aspecto que no forma parte de la comunicación en sí es importante de analizar si se quiere conseguir un correcto funcionamiento. Esto es, si se ha dicho anteriormente que el microcontrolador envía continuamente la parte entera y decimal del ángulo, si no se hace una buena interpretación de estos datos, es posible que un ángulo sobre la FPGA este formado por una parte decimal de un angulo \textit{n} y la parte entera del ángulo \textit{n+1}. \newline
 
 Para ello se crea un módulo en IceStudio que sea capaz de ordenar estos valores. El aspecto de este módulo en IceStudio se muestra en la figura \ref{fig:arrange_arduino}.
 
@@ -525,12 +518,12 @@ Como entradas:
 	\item byte\_ready : Flag de reloj que se activa cuando el byte este disponible para ser capturado.
 \end{itemize}
 
-Es importante tener en cuenta que el dato estará disponible siempre y cuando este disponible tanto la parte entera como la parte decimal del ángulo en cuestión. Así, como salidas se encuentran:
+Es importante tener en cuenta que el dato estará disponible siempre y cuando esté disponible tanto la parte entera como la parte decimal del ángulo en cuestión. Así, como salidas se encuentran:
 
 \begin{itemize}
 	\item integer\_part[7:0] : byte que representa la parte entera del ángulo.
 	\item decimal\_part[7:0] : byte que representa la parte decimal del ángulo.
-	\item data\_ready : flag de reloj que se activa cuando el dato (parte decimal y parte entera) este preparado para ser capturado.	
+	\item data\_ready : flag de reloj que se activa cuando el dato (parte decimal y parte entera) esté preparado para ser capturado.	
 \end{itemize}
 
 Como se ha profundizado anteriormente, el diagrama de flujo del código en Verilog que implementa el anterior comportamiento se representa en la figura \ref{fig:arrange_angle}.
@@ -550,10 +543,10 @@ Cada vez que se active el flag que indica que un byte está listo para ser captu
 
 \begin{itemize}
 	\item DATA1: Es el primer dato a ser capturado y corresponde con la parte entera del primer ángulo. La segunda vez que se active el flag de "byte\_ready" corresponderá a la parte decimal del primer ángulo, y por lo tanto pasará al siguiente estado DATA2.
-	\item DATA2: En ese estado no sólo se captura la parte decimal del ángulo en cuestión sino que además se activa un nuevo flag el cuál indica que el dato completo (ángulo) esta listo para ser capturado. 
+	\item DATA2: En ese estado no sólo se captura la parte decimal del ángulo en cuestión sino que además se activa un nuevo flag el cuál indica que el dato completo (ángulo) está listo para ser capturado. 
 \end{itemize}
 
-Así, el módulo tendrá como salidas, el buffer de la parte entera, el buffer de la parte decimal, y un bus que avisará a los sucesivos módulos de cuándo el dato completo está preparado para ser capturado. De esta forma se ha evitado el problema explicado anteriormente de la no ordenación en los datos llegados del micro-controlador.  \newline
+Así, el módulo tendrá como salidas, el buffer de la parte entera, el buffer de la parte decimal, y un bus que avisará a los sucesivos módulos de cuándo el dato completo está preparado para ser capturado. De esta forma se ha evitado el problema explicado anteriormente de la no ordenación en los datos llegados del microcontrolador.  \newline
 
 Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las herramientas necesarias para que los sucesivos procesos y módulos puedan conocer el ángulo en cada momento representado por su parte entera (8 bits), parte decimal (8 bits) y un pin que indicará el valor del signo (positivo o negativo).
 
@@ -635,7 +628,7 @@ Referido al sistema de realimentación por lazo cerrado analizado en la sección
 \end{figure}
 
 \subsection{Controlador de motores} \label{sec:driver_motores}
-Tener un modulo con la capacidad para generar PWM soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que si bien es cierto, depende del motor en cuestión. \newline
+Tener un módulo con la capacidad para generar PWM[] soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que depende del motor en cuestión. \newline
 La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura \ref{fig:pwm_example}.
 
 \begin{figure}[H]
@@ -646,7 +639,7 @@ La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnic
 \end{figure}
 
 
-Aplicando esta señal, por ejemplo, a un motor DC clásico se varia la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le esta llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
+Aplicando esta señal, por ejemplo, a un motor DC clásico se varía la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le está llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
 
 Las características de una señal PWM son: 
 \begin{itemize}
@@ -717,7 +710,7 @@ Como salidas:
 
 Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes.  \newline
 
-un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión usb a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
+Un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión USB a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
 
 A continuación se nombran los diferentes tipos de bleatería con los se cuenta actualmente en el mercado analizando sus ventajas e inconvenientes más importantes: 
 
@@ -729,7 +722,7 @@ A continuación se nombran los diferentes tipos de bleatería con los se cuenta 
 	\item Baterías de polímero de litio (Li-Po). Son una variación de las baterías de Li-on que mejoran sus características de peso y volumen así como su tasa de descarga. Quedan prácticamente inutilizadas si se descargan en exceso.
 \end{itemize}
 
-Teniendo en cuenta cuál tiene que el sistema final y más restrictivo es un vehículo aéreo remotamente pilotado y que el balancing-robot necesita de un peso no muy elevado, es importante que las características de peso, volumen, y descarga sean las adecuadas. Por ello se elije para la alimentación de los sistemas en este proyecto las baterías de tipo Li-po, las cuáles pueden almacenar gran cantidad de energía y ofrecen una tasa de descarga muy alta. \newline
+Teniendo en cuenta el sistema final, es importante que las características de peso, volumen, y descarga sean las adecuadas. Por ello se elige para la alimentación de los sistemas en este proyecto las baterías de tipo Li-po, las cuáles pueden almacenar gran cantidad de energía y ofrecen una tasa de descarga muy alta. \newline
 
 Las baterías de tipo Li-Po tienen una nomenclatura diferente del resto, la cuál es necesario analizar:
 
@@ -792,7 +785,7 @@ Para la alimentación de la IceZum Alhambra II y el resto de componentes que for
 
 
 \subsection{Materiales y coste del prototipo}
-En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del sistema planteado a lo largo del capítulo \ref{sec: BalancingRobot}.
+En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del sistema planteado a lo largo del capítulo \ref{sec: BalancingRobot}. Se diferencian cuatro columnas correspondientes al nombre del material, el número de unidades, el coste unitario y el coste total en euros.
 \renewcommand\tablename{Tabla}
 \begin{table}[H]
 	\scalebox{0.9}{
@@ -839,5 +832,10 @@ En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del siste
 
 \section{Experimentos}
 \subsection{VGA Module}
-\subsection{Protocolo I2C}
+Para un conocimiento más adecuado del lenguaje de implementación hardware Verilog, previo a la realización de este proyecto, y como idea inicial de utilizarlo en futuros proyectos, se lleva acabo una shield para la conexión con una pantalla, teniendo para ello que conocer este protocolo de comunicación. 
+Un vídeo de demostración se encuentra en [].
+La shield fabricada se representa en la \fig
 \subsection{Controlador motor burshless}
+Con la idea fundamental de utilizar la PCB para un sistema cuadricóptero totalmente independiente y como una primera aproximación al control de motores brushless, se desarrolla el módulo de la figura tal que permite un control sobre este tipo de actuadores. 
+
+Un vídeo demostrativo puede encontrarse en [2]

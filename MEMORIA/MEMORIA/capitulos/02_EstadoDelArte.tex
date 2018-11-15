@@ -1,8 +1,7 @@
-
 \chapter{Estado del arte}\label{sec:Estado_arte}
 En la presente sección se desarrollarán los aspectos teóricos a tener en cuenta para un correcto entendimiento del trabajo realizado. Además se presentará la evolución de algunos sistemas, así como sus ventajas e inconvenientes.
 \section{Concepto FPGAs}
-Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}.
+Una FPGA[] o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}.
 
 \begin{center}
 	\begin{figure}[H]
@@ -12,14 +11,13 @@ Una FPGA o (Field programmable Gate Arrays) es un dispositivo reconfigurable que
 		\label{fig:estructura_FPGA}
 	\end{figure}
 \end{center}
- Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD, las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware (Hardware Description Languaje, HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
+
+ Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD[], las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware[] (Hardware Description Languaje, HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
 \newline
-Si bien no es el más usado actualmente, a lo largo de la sección \ref{sec:Verilog} se realizará una breve introducción a Verilog, comentando y analizando sus principales características.
+Si bien no es el más usado actualmente, a lo largo de la sección \ref{sec:Verilog} se realizará una breve introducción a Verilog[], comentando y analizando sus principales características.
 \subsection{Evolución y escenario}
 
-
-
-Las FPGAs fueron inventadas en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. Las FPGAs conforman la máxima evolución de los PLDs (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. Algunos de sus usos en la actualidad son: 
+El concepto de FPGA fue inventado en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. Las FPGAs conforman la máxima evolución de los PLDs[] (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. Algunos de sus usos en la actualidad son: 
 \begin{itemize}
 	\item Sistemas de visión artificial.
 	\item Sistemas de imágenes médicas.
@@ -56,7 +54,7 @@ En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posi
 
 \end{center}
 
-A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. El número de bloques lógicos determinan la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
+A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. Este número determina la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
 
 A continuación se introducirán los conceptos de granularidad fina y granularidad gruesa, que dará lugar al correcto entendimiento de la arquitectura en una FPGA. 
 
@@ -78,7 +76,7 @@ El diseñador propone la función lógica a realizar a través de métodos de de
 
 \subsection{Lenguajes de descripción hardware}\label{sec:DescripcionHardware}
 
-Un lenguaje de descripción hardware (Hardware Description Languaje, HDL) es un lenguaje usado para modelar el funcionamiento de un bloque hardware en una forma textual. Al igual que podemos encontrar diferencias entre los diferentes tipos de lenguajes de programación en cuanto a su sintaxis de codificación y sus métodos de simulación y síntesis, se observan ciertas diferencias entre HDL's. \newline
+Un lenguaje de descripción hardware[] (Hardware Description Languaje, HDL) es un lenguaje usado para modelar el funcionamiento de un bloque hardware en una forma textual. Al igual que podemos encontrar diferencias entre los diferentes tipos de lenguajes de programación en cuanto a su sintaxis de codificación y sus métodos de simulación y síntesis, se observan ciertas diferencias entre HDL's. \newline
 Se tienen dos tipos diferentes de lenguajes de descripción hardware:
 \begin{itemize}
 	\item Bajo modelado. No permiten la jerarquezación de módulos y son capaces de realizar solo descripciones simples.
@@ -124,7 +122,6 @@ Una de las características mas importantes que diferencia a Verilog del resto d
 	
 \end{center}
 Toda implementación de Verilog se declara dentro de un proceso que puede ser de dos tipos:
-
 \begin{itemize}
 		\item Initial: Este tipo de procesos se ejecutan sólo una vez comenzando su ejecución al inicio, y por tanto no existen retardos. Este proceso no es sintetizable, es decir, no puede ser utilizado en una descripción RTL.
 		

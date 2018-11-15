@@ -44,44 +44,44 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces MPU6050 IMU.\relax }}{61}{figure.caption.62}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces MPU6050 IMU.\relax }}{62}{figure.caption.64}
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Ventaja de uso en la utilizaci\IeC {\'o}n de DMP.\relax }}{63}{figure.caption.66}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{64}{figure.caption.68}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Conector GND y VCC.\relax }}{65}{figure.caption.69}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{65}{figure.caption.70}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{66}{figure.caption.71}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{67}{figure.caption.72}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{67}{figure.caption.73}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{68}{figure.caption.74}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{68}{figure.caption.75}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Esquem\IeC {\'a}tico Shield IceZum Alhambra II\relax }}{70}{figure.caption.76}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Vista de la composici\IeC {\'o}n de capas en Altium.\relax }}{73}{figure.caption.78}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{74}{figure.caption.79}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ejemplo de comunicaci\IeC {\'o}n serie.\relax }}{74}{figure.caption.80}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{75}{figure.caption.81}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{76}{figure.caption.83}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{76}{figure.caption.84}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Correcci\IeC {\'o}n de la direcci\IeC {\'o}n en Balancing Robot.\relax }}{77}{figure.caption.85}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{78}{figure.caption.87}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Diagrama de flujo de la interfaz para Arduino.\relax }}{80}{figure.caption.88}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces M\IeC {\'o}dulo para ordenar datos provenientes de Arduino.\relax }}{82}{figure.caption.89}
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{83}{figure.caption.90}
-\contentsline {figure}{\numberline {3.31}{\ignorespaces Comunicaci\IeC {\'o}n entre Arduino y IceZum Alhambra en IceStudio.\relax }}{84}{figure.caption.91}
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Diagrama de flujo control P.\relax }}{85}{figure.caption.93}
-\contentsline {figure}{\numberline {3.33}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control P.\relax }}{86}{figure.caption.94}
-\contentsline {figure}{\numberline {3.34}{\ignorespaces Diagrama de flujo control D.\relax }}{87}{figure.caption.96}
-\contentsline {figure}{\numberline {3.35}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control D.\relax }}{88}{figure.caption.97}
-\contentsline {figure}{\numberline {3.36}{\ignorespaces Aspecto final en IceStudio del Balancing-Robot.\relax }}{89}{figure.caption.99}
-\contentsline {figure}{\numberline {3.37}{\ignorespaces Ejemplo de se\IeC {\~n}al PWM con dutty diferente.\relax }}{90}{figure.caption.100}
-\contentsline {figure}{\numberline {3.38}{\ignorespaces MC33926 para el control de los motores DC.\relax }}{91}{figure.caption.101}
-\contentsline {figure}{\numberline {3.39}{\ignorespaces Esquem\IeC {\'a}tico de conexiones MC33926.\relax }}{91}{figure.caption.102}
-\contentsline {figure}{\numberline {3.40}{\ignorespaces Aspecto en IceStudio del generador de se\IeC {\~n}al PWM.\relax }}{92}{figure.caption.104}
-\contentsline {figure}{\numberline {3.41}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{92}{figure.caption.105}
-\contentsline {figure}{\numberline {3.42}{\ignorespaces Bater\IeC {\'\i }a LIPO 11.1V y 2.2A. \relax }}{95}{figure.caption.108}
-\contentsline {figure}{\numberline {3.43}{\ignorespaces Bater\IeC {\'\i }a LIPO 3.7V y 4mAh.\relax }}{95}{figure.caption.110}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Pin headers para IceZum Alhambra II.\relax }}{64}{figure.caption.67}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Conector GND y VCC.\relax }}{64}{figure.caption.68}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces M\IeC {\'o}dulo MPU6050.\relax }}{65}{figure.caption.69}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Jumpers para configuraci\IeC {\'o}n i2c MPU6050.\relax }}{65}{figure.caption.70}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{66}{figure.caption.71}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{67}{figure.caption.72}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{67}{figure.caption.73}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Vista en 3D de Shield para IceZum Alhambra II.\relax }}{68}{figure.caption.74}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Esquem\IeC {\'a}tico Shield IceZum Alhambra II\relax }}{69}{figure.caption.75}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Vista de la composici\IeC {\'o}n de capas en Altium.\relax }}{72}{figure.caption.77}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Pines hardware de coexistencia micro-FPGA.\relax }}{73}{figure.caption.78}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Ejemplo de comunicaci\IeC {\'o}n serie.\relax }}{73}{figure.caption.79}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Separaci\IeC {\'o}n de procesos micro-FPGA.\relax }}{74}{figure.caption.80}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Diagrama interno Arduino Nano.\relax }}{75}{figure.caption.82}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{75}{figure.caption.83}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Correcci\IeC {\'o}n de la direcci\IeC {\'o}n en Balancing Robot.\relax }}{76}{figure.caption.84}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Apariencia del m\IeC {\'o}dulo interfaz de Arduino Nano en IceStudio.\relax }}{78}{figure.caption.86}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Diagrama de flujo de la interfaz para Arduino.\relax }}{79}{figure.caption.87}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces M\IeC {\'o}dulo para ordenar datos provenientes de Arduino.\relax }}{81}{figure.caption.88}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Diagrama de flujo modulo ordenaci\IeC {\'o}n de bytes.\relax }}{82}{figure.caption.89}
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Comunicaci\IeC {\'o}n entre Arduino y IceZum Alhambra en IceStudio.\relax }}{83}{figure.caption.90}
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Diagrama de flujo control P.\relax }}{84}{figure.caption.92}
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control P.\relax }}{85}{figure.caption.93}
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Diagrama de flujo control D.\relax }}{86}{figure.caption.95}
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de control D.\relax }}{87}{figure.caption.96}
+\contentsline {figure}{\numberline {3.36}{\ignorespaces Aspecto final en IceStudio del Balancing-Robot.\relax }}{88}{figure.caption.98}
+\contentsline {figure}{\numberline {3.37}{\ignorespaces Ejemplo de se\IeC {\~n}al PWM con dutty diferente.\relax }}{89}{figure.caption.99}
+\contentsline {figure}{\numberline {3.38}{\ignorespaces MC33926 para el control de los motores DC.\relax }}{90}{figure.caption.100}
+\contentsline {figure}{\numberline {3.39}{\ignorespaces Esquem\IeC {\'a}tico de conexiones MC33926.\relax }}{90}{figure.caption.101}
+\contentsline {figure}{\numberline {3.40}{\ignorespaces Aspecto en IceStudio del generador de se\IeC {\~n}al PWM.\relax }}{91}{figure.caption.103}
+\contentsline {figure}{\numberline {3.41}{\ignorespaces Env\IeC {\'\i }o de \IeC {\'a}ngulo usando el puerto serie.\relax }}{91}{figure.caption.104}
+\contentsline {figure}{\numberline {3.42}{\ignorespaces Bater\IeC {\'\i }a LIPO 11.1V y 2.2A. \relax }}{94}{figure.caption.107}
+\contentsline {figure}{\numberline {3.43}{\ignorespaces Bater\IeC {\'\i }a LIPO 3.7V y 4mAh.\relax }}{94}{figure.caption.109}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Dise\IeC {\~n}o a alto nivel del cuadric\IeC {\'o}ptero con visi\IeC {\'o}n.\relax }}{97}{figure.caption.112}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces C\IeC {\'a}mara OV7670.\relax }}{99}{figure.caption.113}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Formaci\IeC {\'o}n de p\IeC {\'\i }xel en OV7670.\relax }}{99}{figure.caption.114}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de escritura I2C.\relax }}{99}{figure.caption.115}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Dise\IeC {\~n}o a alto nivel del cuadric\IeC {\'o}ptero con visi\IeC {\'o}n.\relax }}{97}{figure.caption.111}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces C\IeC {\'a}mara OV7670.\relax }}{99}{figure.caption.112}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Formaci\IeC {\'o}n de p\IeC {\'\i }xel en OV7670.\relax }}{99}{figure.caption.113}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Aspecto en IceStudio del m\IeC {\'o}dulo de escritura I2C.\relax }}{100}{figure.caption.115}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de flujo de la escritura I2C.\relax }}{101}{figure.caption.116}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Esquem\IeC {\'a}tico para c\IeC {\'a}mara OV7670.\relax }}{102}{figure.caption.117}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Buffer triestado para bus I2C.\relax }}{103}{figure.caption.118}

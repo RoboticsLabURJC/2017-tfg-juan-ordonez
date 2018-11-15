@@ -57,6 +57,8 @@ La configuración de la cámara se realiza a través de una interfaz SCCB [], mu
 	
 \end{itemize}
 
+\subsubsection{I2C Protocolo}
+
 Para conseguir esa configuración es necesario una comunicación I2C con el módulo OV7670 que permite escribir en determinados registros.
 
 El aspecto en IceStudio de esta escritura en I2C tiene el aspecto de la figura \ref{fig:I2C_write}.
@@ -111,7 +113,68 @@ Un ejemplo de la escritura en I2C en el módulo OV7670 se representa en la figur
 	\label{fig:i2c_example}
 \end{figure}
 
+\subsubsection{Almacenamiento de píxeles. }
+
+Uno de los problemas mas importantes con los que hay que libiar cuando se trabaja con el módulo OV7670 y con la intención del reconocimiento de objetos en tiempo real y sin retraso, es la necesidad de una memoria FIFO que almacene los píxeles que van llegando, ya que para obtener una imagen completa de 640x480 es necesario almacenar en memoria 307200 píxeles. En este caso, y teniendo en cuenta que cada píxel esta formado por dos bytes, el tamaño total de un fotograma sería el expuesto en la ecuación \ref{eq:pixeles}.
+
+\begin{equation}\label{eq:pixeles}
+	(640*480)*(16) = 4915200  \ \ \textup{bits por fotograma} 
+\end{equation}
+
+El dispositivo que controle la cámara deberá poder almacenar esa cantidad de datos para luego poder analizarla. \newline
+
+En caso de usar un microcontrolador, se suele incorporar al sistema una memoria FIFO con la capacidad de almacenar esa cantidad de datos. En este proyecto se usa para el análisis de imagen la tarjeta FPGA IceZum Alhambra y el modo de operar cambia considerablemente con el anterior.\newline
+
+Después del análisis de diferentes alternativas, la más adecuada y con la que se obtiene un mayor rendimiento se basa en la no necesidad de almacenar una imagen completa, para entender este concepto, se explicará brevemente la parte relacionada con la posición y volumen de un objeto.
+
+\subsubsection{Reconocimiento pelota roja}
+
+El reconocimiento del volumen y posicionamiento del objeto se calculará píxel a píxel en lugar de una vez obtenida la imagen completa, así el algoritmo quedaría de la siguiente manera:
+
+\begin{itemize}
+	\item En primera instancia se define el filtro de color, el cuál permitirá reconocer el rango de color del píxel en este caso, de la pelota roja. Se definen por tanto un rango de color para cada componente roja, verde y azul.
+	\item Los píxeles llegarán de manera secuencial, dos bytes por píxeles. El módulo OV7670 tiene como salidas los pines D7,D6,D5,D4,D3,D2,D1,D0 correspondientes a los bits de cada componente del píxel como se muestra en la figura \ref{fig:OV7670_schematic}.
+	\item Un contador interno será el encargado de llevar la cuenta del número de píxeles totales que han pasado el filtro. Cuando se haya terminado el frame completo se puede obetener por tanto el volumen del objeto, y con ello, la distancia a este, como se muestra en la ecuación \ref{equation:filtro}.
+	\begin{equation} \label{equation:filtro}
+		Volumen = Num_{\textup{pixeles filtrados}}/Num_{\textup{píxeles totales}}
+	\end{equation}
+	\item Se tiene una cuenta de la posición dentro del frame donde se encuentran los píxeles que han pasado el filtro, la posicion en filas y en columnas y a partir de lo cuál se puede obtener una estimación de la posición del objeto dentro del aérea de visión como se expone en las ecuaciones \ref{equation:acumx} y \ref{equation:acumy}.
+	
+	\begin{equation}\label{equation:acumx}
+		Acum_{X} = sum(\textup{columna de los pixeles que pasan el filtro})
+	\end{equation}
+	
+	\begin{equation}\label{equation:acumy}
+		Acum_{Y} = sum(\textup{fila de los pixeles que pasan el filtro})
+ 	\end{equation}
+	
+	
+	\end{itemize}
+
+	Para lograr el comportamiento anterior es necesario por tanto conocer en cada preciso instante cual es el valor de la fila y la columna del píxel en cuestión. 
+	
+	Se desarrolla dos módulos independientes, cuyas salidas proporcionan estas requeridas posiciones.
+	
+	\textbf{Modulo filas}
+	
+	\textbf{Modulo columnas}
+	
+	Debido a la importancia de estos módulos, se explica el desarolloo de uno de ellos mediante su diagrama de flujo expuesto en la figura tal
+	
+	\textbf{diagrama de flujo}
+	
+	Como es conocido, el módulo OV7670 proporciona una señal de reloj denominada PXCLK la cuál proporcionará la sincronía de este módulo. Por otra parte, es importante el conocimiento de las señales de sincronía con las que cuenta toda señal VGA y que se representa en la figura
+	
+	\textbf{señales de sincronia}
+	
+	Se cuenta con una señal de sincronía horizontal que avisará del cambio de fila en el frame y una señal de sincronía vertical para el cambio de frame.
+	
+	En primer lugar en el proceso de conocimiento de una fila es preciso detectar cuando empieza y cuando acaba. Se ha propuesto por tanto una maquina de estados en la que cada estado supone un cambio en el bus de la señal de sincronía horizontal. 
+
 \section{Implementación del control}
+
+
+
 \section{Experimentos}
 
 
