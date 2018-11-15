@@ -3,19 +3,19 @@
 \bibitem{DigialElectronics}
 WikiPedia.
 \newblock Digital electonics.
-\newblock https://en.wikipedia.org/wiki/Digital_electronics, 2018.
-\newblock Accesses 20-03-2018.
+\newblock \url{{https://en.wikipedia.org/wiki/Digital_electronics}}, 2018.
+\newblock Accessed 20-03-2018.
 
 \bibitem{FPGAWhat}
 What is a fpga?
 \newblock
   \url{http://fpgayxilinx.blogspot.com/2016/08/cuando-se-aborda-el-diseno-de-un.html},
   2018.
-\newblock Accedido 23-05-2018.
+\newblock Accessed 23-05-2018.
 
 \bibitem{HDL}
 Wikipedia.
-\newblock Lengiaje de descripción hardware.
+\newblock Descripción hardware languaje.
 \newblock
   \url{https://es.wikipedia.org/wiki/Lenguaje_de_descripci%C3%B3n_de_hardware},
   2018.
@@ -90,6 +90,25 @@ Rajesh Nema, Rajeev Thakur, and Ruchi Gupta.
 \newblock Design \& implementation of pid controller based on fpga with pwm
   modulator.
 
+\bibitem{Pendulum}
+Wikipedia.
+\newblock Inverted pendulum.
+\newblock \url{https://en.wikipedia.org/wiki/Inverted_pendulum}, 2018.
+\newblock Accessed 01-10-2018.
+
+\bibitem{6845943}
+L.~H. Yu and F.~Jian.
+\newblock An inverted pendulum fuzzy controller design and simulation.
+\newblock In {\em 2014 International Symposium on Computer, Consumer and
+  Control}, pages 557--559, June 2014.
+
+\bibitem{7112017}
+L.~M.~Lizarraga Orozco, G.~Ronquillo Lomeli, J.~G.~Rios Moreno, and M.~Trejo
+  Perea.
+\newblock Identification inverted pendulum system using multilayer and
+  polynomial neural networks.
+\newblock {\em IEEE Latin America Transactions}, 13(5):1569--1576, May 2015.
+
 \bibitem{self2}
 Juan Ordoñez.
 \newblock Demostrative video self-balancing robot.
@@ -136,13 +155,6 @@ NXP.
 Driver para motor mc33926.
 \newblock \url{https://www.pololu.com/product/1213}.
 
-\bibitem{7112017}
-L.~M.~Lizarraga Orozco, G.~Ronquillo Lomeli, J.~G.~Rios Moreno, and M.~Trejo
-  Perea.
-\newblock Identification inverted pendulum system using multilayer and
-  polynomial neural networks.
-\newblock {\em IEEE Latin America Transactions}, 13(5):1569--1576, May 2015.
-
 \bibitem{fpgabiorobots}
 Julián Caro, Antonio Barrientos, and Enric Mayas.
 \newblock Hybrid bio-inspired architecture for walking robots through central
@@ -165,22 +177,10 @@ K.~Pathak, J.~Franch, and S.~K. Agrawal.
 Github.
 \newblock \url{https://github.com/}.
 
-\bibitem{6845943}
-L.~H. Yu and F.~Jian.
-\newblock An inverted pendulum fuzzy controller design and simulation.
-\newblock In {\em 2014 International Symposium on Computer, Consumer and
-  Control}, pages 557--559, June 2014.
-
-\bibitem{Pendulum}
-Wikipedia.
-\newblock Inverted pendulum.
-\newblock \url{https://en.wikipedia.org/wiki/Inverted_pendulum}, 2018.
-\newblock Accessed 01-10-2018.
-
 \bibitem{Sensor}
 Wikipedia.
 \newblock Sensor.
 \newblock \url{https://es.wikipedia.org/wiki/Sensor}, 2018.
-\newblock Accedido 01-10-201.
+\newblock Accessed 01-10-201.
 
 \end{thebibliography}

@@ -500,7 +500,7 @@ capture a bit and save it in the buffer, for this, you must know the speed of th
 	\item When the byte is prepared to be captured by two consecutive modules, a channel will be on, being available both the outputs and the buffer with the 8 bits and the channel "byte\_ready".
 \end{itemize}
 
-At this point the FPGA is able to differentiate when it can capture a byte (BYTE\_READY) and from where it has to capture the data bus (DATA\_BUFFER).However, an aspect that is not part of the communication itself, it is important to analyze if you want to get a correct operation. That is, if it has been previously said that the microcontroller continuously sends the integer and decimal part of the angle, if a good interpretation of this data is not made, it is possible that an angle on the FPGA is formed by a decimal part of an angle \textit{n} and the integer part of the angle \textit{n + 1}.  \newline
+At this point the FPGA is able to differentiate when it can capture a byte (BYTE\_READY) and from where it has to capture the data bus (DATA\_BUFFER). However, an aspect that is not part of the communication itself, it is important to analyze if you want to get a correct operation. That is, if it has been previously said that the microcontroller continuously sends the integer and decimal part of the angle, if a good interpretation of this data is not made, it is possible that an angle on the FPGA is formed by a decimal part of an angle \textit{n} and the integer part of the angle \textit{n + 1}.  \newline
 
 To do this, a module is created in IceStudio that is capable of ordering these values. The aspect of this module in IceStudio is shown in Figure 3.29. \ref{fig:arrange_arduino}.
 
@@ -560,7 +560,7 @@ The final communication system between Arduino and IceZum Alhambra from a POV of
 \end{figure}
 
 
-
+\newpage
 
 \subsection{PID Control in IceZum Alhambra}
 As it has been explained in section \ref{sec:PID}, a PID controller can be used in a simple way to control the stability of the system. \newline
@@ -591,7 +591,7 @@ Its representation in IceStudio has the aspect as shown in Figure \ref{fig:Pcont
 	\caption{Appearance of P control in IceStudio}
 	\label{fig:Pcontrol}
 \end{figure}
-
+\newpage
 \subsubsection{D Controller} \label{sec:ControladorD}
 
 Referring to the D controller, the flow diagram implemented in Verilog is shown in Figure \ref{fig:D_control}. 
@@ -625,7 +625,7 @@ Referring to the closed loop feedback system analyzed in section \ref{sec:PID}, 
 	\label{fig:finalIceStudio}
 \end{figure}
 
-\subsection{Controlador de motores} \label{sec:driver_motores}
+\subsection{Motor controller} \label{sec:driver_motores}
 Having a module with the ability to generate PWM solves many subsequent problems while improving the visibility of the code in the final system. As can be seen in the motor features, most of them are commanded by a PWM signal that, although it is true, depends on the motor in issue. \newline
 Pulse Width Modulation (PWM) is a technique that modifies the work cycle of a periodic signal (squared in our case) that is used to transmit information through a communication channel or to control the amount of energy that is sent to a load. An example of a PWM squared signal is shown in figure \ref{fig:pwm_example}.
 
@@ -761,7 +761,7 @@ For the IceZum Alhambra II power supply and the rest of the components, a 3.7V a
 		\label{fig:lipo37}
 	\end{figure}
 \end{center}
-
+\newpage
 \subsection{Materials and Prototype Cost}
 In the table \ref{tabla:coste} the total cost of the prototype along chapter \ref{sec: BalancingRobot} is pulled apart.
 It is differenciated by four columns called material, number of units, unit cost and total cost in euros.
@@ -807,7 +807,7 @@ It is differenciated by four columns called material, number of units, unit cost
 	\caption{Total cost of Self-Balancing Robot.}
 	\label{tabla:coste}
 \end{table}
-
+\newpage
 \section{Experiments and final results}
 \subsection{Self-Balancing Robot}
 \newline 

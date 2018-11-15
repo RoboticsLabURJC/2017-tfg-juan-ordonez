@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Importance}{41}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Inertial Measurement Unit}{44}{section.2.4}
 \contentsline {subsubsection}{Accelerometer}{45}{section*.41}
-\contentsline {subsubsection}{Gyroscope}{46}{section*.44}
+\contentsline {subsubsection}{Gyroscope}{47}{section*.44}
 \contentsline {subsubsection}{Drift Problem}{47}{section*.45}
 \contentsline {subsubsection}{Possible solutions}{48}{section*.46}
 \contentsline {section}{\numberline {2.5}Educational Robotics \IeC {\textendash } Motivations}{48}{section.2.5}
@@ -46,20 +46,20 @@
 \contentsline {subsection}{\numberline {3.3.4}IceZum Alhambra-Arduino Nano Implementation}{72}{subsection.3.3.4}
 \contentsline {subsubsection}{Microcontroller POV}{74}{section*.82}
 \contentsline {subsubsection}{FPGA POV}{77}{section*.86}
-\contentsline {subsection}{\numberline {3.3.5}PID Control in IceZum Alhambra}{83}{subsection.3.3.5}
-\contentsline {subsubsection}{Controlador P}{83}{section*.92}
-\contentsline {subsubsection}{D Controller}{85}{section*.95}
+\contentsline {subsection}{\numberline {3.3.5}PID Control in IceZum Alhambra}{84}{subsection.3.3.5}
+\contentsline {subsubsection}{Controlador P}{84}{section*.92}
+\contentsline {subsubsection}{D Controller}{86}{section*.95}
 \contentsline {subsubsection}{Controlador PD}{87}{section*.98}
-\contentsline {subsection}{\numberline {3.3.6}Controlador de motores}{89}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.6}Motor controller}{89}{subsection.3.3.6}
 \contentsline {subsubsection}{PWM Control}{90}{section*.103}
 \contentsline {subsection}{\numberline {3.3.7}Power Supply System}{92}{subsection.3.3.7}
 \contentsline {subsubsection}{DC Motors and Arduino Nano Power Supply}{93}{section*.106}
 \contentsline {subsubsection}{Alhambra IceZum II and other components Power Supply}{94}{section*.108}
-\contentsline {subsection}{\numberline {3.3.8}Materials and Prototype Cost}{94}{subsection.3.3.8}
-\contentsline {section}{\numberline {3.4}Experiments and final results}{95}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Self-Balancing Robot}{95}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.3.8}Materials and Prototype Cost}{95}{subsection.3.3.8}
+\contentsline {section}{\numberline {3.4}Experiments and final results}{96}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Self-Balancing Robot}{96}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}VGA Module}{97}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Motor brushless Controller}{97}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Motor brushless Controller}{98}{subsection.3.4.3}
 \contentsline {chapter}{\numberline {4}Quadcopter with artificial vision}{99}{chapter.4}
 \contentsline {section}{\numberline {4.1}Design}{99}{section.4.1}
 \contentsline {section}{\numberline {4.2}Perception Implementation}{100}{section.4.2}
