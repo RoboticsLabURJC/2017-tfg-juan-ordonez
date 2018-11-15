@@ -1,7 +1,7 @@
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{19}{chapter.1}
 \contentsline {subsection}{\numberline {1.0.1}Motivation and Objectives}{19}{subsection.1.0.1}
-\contentsline {subsection}{\numberline {1.0.2}Planification (Gantt Diagram)}{21}{subsection.1.0.2}
+\contentsline {subsection}{\numberline {1.0.2}Planning (Gantt Diagram)}{21}{subsection.1.0.2}
 \contentsline {subsection}{\numberline {1.0.3}Work Methodology}{22}{subsection.1.0.3}
 \contentsline {subsection}{\numberline {1.0.4}Memory Structure}{24}{subsection.1.0.4}
 \contentsline {chapter}{\numberline {2}State of the art}{25}{chapter.2}
@@ -22,12 +22,12 @@
 \contentsline {section}{\numberline {2.3}Microcontroller-FPGA coexistence}{39}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Microcontroller-FPGA differences}{39}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Importance}{41}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Inertial Measurement Unit}{43}{section.2.4}
+\contentsline {section}{\numberline {2.4}Inertial Measurement Unit}{44}{section.2.4}
 \contentsline {subsubsection}{Accelerometer}{45}{section*.41}
 \contentsline {subsubsection}{Gyroscope}{46}{section*.44}
 \contentsline {subsubsection}{Drift Problem}{47}{section*.45}
-\contentsline {subsubsection}{Possible solutions}{47}{section*.46}
-\contentsline {section}{\numberline {2.5}Educational Robotics \IeC {\textendash } Motivations and necessity}{48}{section.2.5}
+\contentsline {subsubsection}{Possible solutions}{48}{section*.46}
+\contentsline {section}{\numberline {2.5}Educational Robotics \IeC {\textendash } Motivations}{48}{section.2.5}
 \contentsline {section}{\numberline {2.6}Sensors, actuators and control system}{49}{section.2.6}
 \contentsline {section}{\numberline {2.7}Classic PID controller}{52}{section.2.7}
 \contentsline {subsubsection}{Closed loop system}{53}{section*.51}
@@ -65,6 +65,6 @@
 \contentsline {section}{\numberline {4.2}Perception Implementation}{100}{section.4.2}
 \contentsline {subsubsection}{I2C Protocol}{101}{section*.117}
 \contentsline {subsubsection}{Pixels Storage}{105}{section*.123}
-\contentsline {subsubsection}{Volume and position recognize}{105}{section*.124}
+\contentsline {subsubsection}{Volume and position recognize}{106}{section*.124}
 \contentsline {section}{\numberline {4.3}Control Implementation}{110}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusions and future work}{113}{chapter.5}

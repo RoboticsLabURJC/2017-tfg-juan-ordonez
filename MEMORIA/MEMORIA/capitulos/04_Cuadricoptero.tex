@@ -14,7 +14,7 @@ In the following figure, a high abstraction level scheme is presented in which a
 The design of this project has two parts, the part of stabilization control and the part of perception. As for the perception part, a low-cost camera will connect to the FPGA, which should implement the entire object recognition algorithm. Prior to this, and through the i2c protocol, the camera will be configured in such a way to make this recognition simpler. Subsequently and as an output of this recognition algorithm, the FPGA generates 4 PWM channels corresponding to the yaw, pitch, roll and altitude. It makes use of a PPM encoder, which transforms these 8 PWM signals into a PPM channel, input of the stabilization system of the quad-copter "Pixhawk".
 
 \section{Perception Implementation}
-Module OV7670\cite{OV7670} has a CMOS VGA image sensor OV7670, which allows to work at a maximum of 30 frames per second and a resolution of 640x480 pixels. It is a System on Chip (SoC) that is capable of processing images, such as: exposure control, gamma, white balance, color saturation, tone control. These parameters can be configured through the SCCB interface (Serial Control Bus Camera).
+Module OV7670\cite{OV7670} has a CMOS VGA image sensor OV7670, which allows to work at a maximum of 30 frames per second and a resolution of 640x480 pixels. It is a System on Chip (SoC) that is capable of processing images, such as: exposure control, gamma, white balance, color saturation, tone control. These parameters can be configured through the SCCB interface\cite{SCCB} (Serial Control Bus Camera).
 Some of the most important features are presented below, and which could be obtained from its datasheet\cite{OV7670}.
 
 \begin{itemize}
@@ -30,13 +30,13 @@ Some of the most important features are presented below, and which could be obta
 	\item High sensibility in low light environments. 
 	\item Low voltage, according to portable applications
 \end{itemize}
-
-An image from OV7670 module is presents in Figure \ref{fig:OV7670}.
+\newpage
+An image from OV7670 module is pressent in Figure \ref{fig:OV7670}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.4, angle=0]{imagenes/Cuadricoptero_vision/OV7670}
-	\caption{Cámara OV7670.}
+	\caption{OV7670 camera.}
 	\label{fig:OV7670}
 \end{figure}
 
@@ -94,7 +94,7 @@ One of the most important problem is this module’s development, which falls in
 It is required at first instance that the master imposes the SDA bus at a high voltage level. Then, the master must be waiting for an answer coming from the slave, which is a non-controlled device and extern to our system. When the slave tries to write in the bus, it will find an imposed voltage level by the master which will not be able to be changed.
 \end{ejemplo}
 
-PTo correct the problem exposed in example \ref{ejemplo:i2c} the device waiting for a response much impose its high electric impedance state respect to the bus. This is why a tri-state bus is used which is represented in figure \ref{fig:buffer_triestado} and that allows this behavior in a controlled way.
+In order to correct the problem exposed in example \ref{ejemplo:i2c} the device waiting for a response much impose its high electric impedance state respect to the bus. This is why a tri-state bus is used which is represented in figure \ref{fig:buffer_triestado} and that allows this behavior in a controlled way.
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.6, angle=0]{imagenes/Cuadricoptero_vision/triestado}
@@ -124,7 +124,7 @@ The device that controls the camera must be able to store that quantity of infor
 In case of using a microcontroller, a FIFO memory could be incorporated to the system with the capacity to store that quantity of information. In this project it is used to the image analysis the FPGA IceZum Alhambra board and the shield exposed in \ref{sec:PCB}. The operating mode changes considerably compared to the previous one. \newline
 
 After analyzing different alternatives, the most adequate and which a better performance could be reached, it is based in the no necessity to store a complete image, to understand this concept, it will be briefly explained in the section related to the position and volume of an object.
-
+\newpage
 \subsubsection{Volume and position recognize}\label{sec:volumen}
 
 The recognition of the volume and positioning of the object will be calculated pixel by pixel instead of when obtained the complete image, thus the algorithm would be as follows:
@@ -182,16 +182,16 @@ There are two independent modules developed; whose outputs provide these require
 	\end{figure}
 	
 
-	Due to the importance of these modules, the development of one of them is explained through its flow diagram exposed in figure \ref{row_counterow_counter}.
+	Due to the importance of these modules, the development of one of them is explained through its flow diagram exposed in figure \ref{fig:row_counter}.
 	
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 0mm 8cm 0mm 8cm, clip,scale=0.5]{imagenes/Cuadricoptero_vision/row_counter.pdf}
 		\caption{Flow diagram to the row counter.}
-		\label{row_counter}
+		\label{fig:row_counter}
 	\end{figure}
 	
-	As is known, the OV7670 module provides a clock signal called PXCLK which will provide the synchronization of this module. On the other hand, it is important to know the synchrony signals with which every VGA signal count and which is represented in the figures \ref{fig:sincronismo}, \ref{fig:sincronismo1} y \ref{fig:sincronismo2}.
+	As is known, the OV7670 module provides a clock signal called PXCLK which will provide the synchronization of this module. On the other hand, it is important to know the synchrony signals with which every VGA signal count and which is represented in the figures \ref{fig:sincronismo}, \ref{fig:sincronismo1} y \ref{fig:sincronismo3}.
 	
 		\begin{figure}[H]
 		\center
@@ -263,7 +263,7 @@ There is a horizontal sync signal that will notify the change of the row in the 
 
 En cuánto a la implementación del control a bordo del cuadricóptero se presenta sólo la base teórica que ha podido ser aprendida a lo largo del presente trabajo y se dan las herramientas necesarias para una futura implementación. \newline
 
-Respect to the control implementation on quadcopter board, it is presented only the theorical basis in order to improves it in the following works. 
+Respect to the control implementation on quadcopter board, it is presented only the theorical basis in order to improves it in following works. 
 
 To understand this behaviour, the figure  \ref{fig:control_implemtation} is represented.
 
@@ -278,6 +278,8 @@ To understand this behaviour, the figure  \ref{fig:control_implemtation} is repr
 The stabilization control will take part of the inter processes from PixHawk board. This has a PPM signal connected corresponding to the reception of the signal coming from a frequency transmitter, which sends the PWM signal from the Yaw, Pitch and Roll. \newline
 
 The objetive is to modify this signal wich provoke the quadcopter movement in relation with the output recognition object protocol. The FPGA will be in the middle between signal receptor (FrSky) and PixHawk in order to allow the both behaviour. 
+
+Both behaviour can be:
 
 \begin{itemize}
 	\item Automatic mode: The quad-copter will move in relation to the object, having as a principal objective it is positioned at the center of the vision area. To maximize this tracing a PID control an be used which is developed in this project. Quadcopter will move in relation to the position of the object being detected.

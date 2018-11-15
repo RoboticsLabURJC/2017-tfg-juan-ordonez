@@ -15,7 +15,7 @@ To understand the work to be done, the problem of inverted pendulum will be brie
 \end{figure}
 
 
-\begin{definicion}Pendulum \cite{Pendulum}: It’s a physical system that can oscillate under the gravitational action or other physical characteristic (elasticity, for example) and that is configured by a mass suspended from a point or a horizontal axis by a wire, a rod, or other device that is used to measure time. \newline
+\begin{definicion}Pendulum \cite{Pendulum}: It is a physical system that can oscillate under the gravitational action or other physical characteristic (elasticity, for example) and that is configured by a mass suspended from a point or a horizontal axis by a wire, a rod, or other device that is used to measure time. \newline
 \end{definicion}
 As can be imagined, an inverted pendulum has the aspect shown in Figure \ref{fig:pendulo}. 
 
@@ -185,7 +185,7 @@ The printed circuit contains the following components and behaviors:
 		\end{figure}	
 	
 		When hosting a bus line, it is not necessary to consider the thermal characteristics of the connector in issue, and when working at a relatively small frequency, the noise that the jumpers can introduce into the I2C communication may be accepted.
-		\item A great part of actual microcontrollers works at 3.3-5V but the input voltage supported can go high to 12V, because of that it’s taken advantage of the LIPO battery power and a new connector with two header pin is implemented that goes to VCC and GND which will power the microcontroller.	
+		\item A great part of actual microcontrollers works at 3.3-5V but the input voltage supported can go high to 12V, because of that it is taken advantage of the LIPO battery power and a new connector with two header pin is implemented that goes to VCC and GND which will power the microcontroller.	
 		\item A module that can host the OV7670 camera (section \ref{sec: Cuadricoptero})formed by male headers pin and each of which will be attached to one of the FPGA's in-out pins, as will be seen later in the general schematic.
 		\item A module that can host the driver of the DC motor used in this case and that allows direct connection with IceZum Alhambra II pins, for example, the pwm signal that will define the speed of the engines will be an output on one of the FPGA pins, and it should be an input to the motor driver.
 		
@@ -463,7 +463,7 @@ In order to implement an intermediate module in the FPGA with the previous featu
 The inputs and outputs from the previous module are detailed:
 
 \begin{itemize}
-	\item data[7:0]:Consists in a buffer in which bits are being stored when it’s necessary until we have the byte. It’s important that the following module knows when the byte is prepared for its capture.
+	\item data[7:0]:Consists in a buffer in which bits are being stored when it is necessary until we have the byte. It is important that the following module knows when the byte is prepared for its capture.
 	\item clock\_data\_debug: The usage of this output is for depuration only.
 	\item byte\_ready: A clock flag will change its state when a byte is ready to be captured. As there has been seen in previous developments, this byte will be both integer or decimal part.
 	\item bit\_ready:The usage of this output is for depuration only.
@@ -637,7 +637,7 @@ Pulse Width Modulation (PWM) is a technique that modifies the work cycle of a pe
 \end{figure}
 
 
-Applying this signal, for example, to a classic DC motor the amount of energy that is applied to the load is varied, the motor in this case. It simply works as a switch in which a high logical level is open and a low level closed. If it’s managed to vary the time the motor is being charged and the time in where there’s no current, you can control its speed. \newline
+Applying this signal, for example, to a classic DC motor the amount of energy that is applied to the load is varied, the motor in this case. It simply works as a switch in which a high logical level is open and a low level closed. If it is managed to vary the time the motor is being charged and the time in where there’s no current, you can control its speed. \newline
 
 The features of a PWM signal are: 
 \begin{itemize}

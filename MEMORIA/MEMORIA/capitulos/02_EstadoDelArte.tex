@@ -1,7 +1,7 @@
 \chapter{State of the art}\label{sec:Estado_arte}
 In the following section, theoretical aspects will be considered for a correct understanding of the work done. In addition, the evolution of some systems will be presented, as well as its advantages and disadvantages.
 \section{FPGA concept}
-An FPGA\cite{FPGAWhat} (Field Programmable Gate Arrays) is a reconfigurable device that can be electrically programmed to implement a high variety of logic circuits. It consists in a uniform logic programmable structures “array” which are interconnected by configurable routing network. A routing network example is shown in \ref{fig:estructura_FPGA}.
+An FPGA\cite{FPGAWhat} (Field Programmable Gate Arrays) is a reconfigurable device that can be electrically programmed to implement a high variety of logic circuits. It consists in a uniform logic programmable structures array which are interconnected by configurable routing network. A routing network example is shown in \ref{fig:estructura_FPGA}.
 
 \begin{center}
 	\begin{figure}[H]
@@ -12,7 +12,7 @@ An FPGA\cite{FPGAWhat} (Field Programmable Gate Arrays) is a reconfigurable devi
 	\end{figure}
 \end{center}
 
-The logic and structures interconnection can be configured thanks to the powerful CAD tools, which allow that the final user could define this physical logic blocks interconnection through Hardware Description Language (HDL). Some of the best known are the VHDL or ABEL. Although it’s not the most used nowadays, along the \ref{sec:Verilog} section a brief introduction to Verilog will be done, discussing and analyzing its main features.
+The logic and structures interconnection can be configured thanks to the powerful CAD tools, which allow that the final user could define this physical logic blocks interconnection through Hardware Description Language (HDL). Some of the best known are the VHDL or ABEL. Although it is not the most used nowadays, along the \ref{sec:Verilog} section a brief introduction to Verilog will be done, discussing and analyzing its main features.
 \subsection{Evolution and scenario}
 
 FPGAs were invented in 1984 by Ross Freeman and Bernard Vonderschmitt, co-founders of Xilinx\cite{Xilinkx}. They were mainly designed to work as prototypes or demonstrations of digital electronic circuits. FPGAs conform the maximum evolution of PLDs (Programmable Logic Device), defined as integrated circuits which can be programmed Boolean Logic equations. Some usage examples nowadays are:
@@ -24,10 +24,10 @@ FPGAs were invented in 1984 by Ross Freeman and Bernard Vonderschmitt, co-founde
 	\item Aeronautics and Defense
 \end{itemize}
 
-Revolutionary success from this programmable device can be attributed to the flexibility in design implementation. This way, the capacity to instantly reprogram the FPGA with several circuits without additional cost, promotes the reuse of the device and allows a fast design verification y because of that, reduces the cost in the developing stage. Even though they don’t actually represent the whole system from a final product, its advantages in the properties of the design are making them to become much more important in the electronic products developing. \newline
+Revolutionary success from this programmable device can be attributed to the flexibility in design implementation. This way, the capacity to instantly reprogram the FPGA with several circuits without additional cost, promotes the reuse of the device and allows a fast design verification y because of that, reduces the cost in the developing stage. Even though they do not actually represent the whole system from a final product, its advantages in the properties of the design are making them to become much more important in the electronic products developing. \newline
 
 In order to try to understand the importance of hardware implementation devices, it would be adequate to introduce the Moore’s Law. Moore’s Law expresses that approximately every 22 years, the number of transistors is duplicated in a
-microprocessor. As it’s shown in \ref{fig:Ley_de_Moore}, this law formulated by the Intel cofounder, E. Moore, in April the 19th of 1965, is not so far from reality.
+microprocessor. As it is shown in \ref{fig:Ley_de_Moore}, this law formulated by the Intel cofounder, E. Moore, in April the 19th of 1965, is not so far from reality.
 \newline
 \begin{figure}[H]
 	\center
@@ -41,7 +41,7 @@ However, as it has been announced form the main microprocessors enterprises like
 \newpage
 \subsection{FPGA Architecture}\label{sec:ArquitecturaFPGA}
 
-In a PLD, interconnections between elements is already prefixed and it’s only possible to enable or disable this connection. Otherwise, FPGAs connections are no prefixed, making possible to the final user to decide the logic blocks interconnections. (figura \ref{fig:pld_fpga}).
+In a PLD, interconnections between elements is already prefixed and it is only possible to enable or disable this connection. Otherwise, FPGAs connections are no prefixed, making possible to the final user to decide the logic blocks interconnections. (figura \ref{fig:pld_fpga}).
 \newline
 \begin{center}
 \begin{figure}[H]
@@ -53,11 +53,11 @@ In a PLD, interconnections between elements is already prefixed and it’s only 
 
 \end{center}
 
-When choosing a FPGA for a specific project, it’s important to keep in mind one of its most important property: The number of logic blocks. This number determines the device capability and is part of one the most limited features from nowadays FPGAs/ Logic blocks are independent between them and are able to interconnect in order to build a more complex module. \newline
+When choosing a FPGA for a specific project, it is important to keep in mind one of its most important property: The number of logic blocks. This number determines the device capability and is part of one the most limited features from nowadays FPGAs/ Logic blocks are independent between them and are able to interconnect in order to build a more complex module. \newline
 
 Now fine-grained and coarse-grained meanings will be introduced, which will lead to the correct understanding to the FPGA architecture. 
 
-This complex module performs the basic operation which together represent the function that will operate in a FPGA. It’s said that FPGAs are Advanced Architecture devices because of the density of its components and because of the different interconnection paths between modules. According to the module types that conform it, we have two structural configurations:
+This complex module performs the basic operation which together represent the function that will operate in a FPGA. It is said that FPGAs are Advanced Architecture devices because of the density of its components and because of the different interconnection paths between modules. According to the module types that conform it, we have two structural configurations:
 \begin{itemize}
 	\item Fine-grained
 	\item Coarse-grained
@@ -107,7 +107,7 @@ The main features of the digital implementation by modules are:
 This implementation by Verilog modules allows the configuration of the abstraction level desired by the end user. The development of specific functionality modules can have their advantages and disadvantages depending on their final use. If they want to be reused for other workflows (example: 8-bits adder), it is good to have very defined modules according to their functionality (example: 2-bit adder). However, polarization does not have to be essential, although advised.
 
 \subsubsection{Process Parallelism}
-One of the most important features that differentiates Verilog from the rest of the procedural languages \footnote{Procedural Languages: The application execution starts in the code’s first line and follows a predefined root through the application, calling procedures as it’s necessary.} is the possibility of executing several processes in parallel, a fundamental aspect in the language which provides a great part of the advantages of using hardware implementation.
+One of the most important features that differentiates Verilog from the rest of the procedural languages \footnote{Procedural Languages: The application execution starts in the code’s first line and follows a predefined root through the application, calling procedures as it is necessary.} is the possibility of executing several processes in parallel, a fundamental aspect in the language which provides a great part of the advantages of using hardware implementation.
 
 \begin{center}
 	\begin{figure}[H]
@@ -214,7 +214,7 @@ This is a free FPGA compatible with IceStudio (to be analyzed in section \ref{se
 	\item 4 analogic inputs available through i2c.
 \end{itemize}
 
-It is known that there’re better features board, but the fact that it is Open Hardware and that can be implemented with IceStudio, has led to the final choice of this board for the development of this project.\newline
+It is known that there are better features board, but the fact that it is Open Hardware and that can be implemented with IceStudio, has led to the final choice of this board for the development of this project.\newline
 \begin{center}
 \begin{figure}[H]
 	\center
@@ -223,7 +223,7 @@ It is known that there’re better features board, but the fact that it is Open 
 	\label{fig:IceZumAlhambraI}
 \end{figure} 
 \end{center}
-One point to keep in mind for the hardware development with this FPGA is its 1K memory, which has been a significant limitation in the development. For the present project, the new version of the IceZum Alhambra, IceZum Alhambra II, was also used, which was not in the market at the beginning of the project and which takes some improvements, such as the expansion of 8K in its memory, the improvement of the data bus i2c, the possibility of powering through LIPO. battery, etc. IceZum is presented in figure \ref{fig: IceZumAlhambraII}
+One point to keep in mind for the hardware development with this FPGA is its 1K memory, which has been a significant limitation in the development. For the present project, the new version of the IceZum Alhambra, IceZum Alhambra II, was also used, which was not in the market at the beginning of the project and which takes some improvements, such as the expansion of 8K in its memory, the improvement of the data bus i2c, the possibility of powering through LIPO. battery, etc. IceZum is presented in figure \ref{fig: IceZumAlhambraII}.
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -244,7 +244,7 @@ IceStudio is an Open Source project developed by Jesús Arroyo Torrens, on which
 
 IceStudio is a graphic IDE for free FPGAs and is built on the IceStorm project. The objective of the IceStorm project is the reverse engineering and the bitstream format of the FPGA Lattice iCE40 (although a few more were emerging) documentation. It provides simple tools to analyze and create bitstream files, that is, the lowest level of implementation for an FPGA.\newline
 
-To get the reader closer to the knowledge and operation of IceStudio, a series of representative screenshots will be incorporated throughout the document so that the vision of what is being done is not lost. For example, the main window of IceStudio and on which everything else will be developed, is the same as shown in figure \ref{fig:Main_IceStudio}: \newline
+To get the reader closer to the knowledge and operation of IceStudio, a series of representative screenshots will be incorporated throughout the document so that the vision of what is being done is not lost. For example, the main window of IceStudio and on which everything else will be developed, is the same as shown in figure \ref{fig:Main_IceStudio}. \newline
 
 \begin{figure}[H]
 	\center
@@ -324,7 +324,7 @@ Figure \ref{fig:puertas_logicas} shows a real example of how the physical connec
 
 The following practical case is proposed:\newline
 
-\textsl{It’s required to monitor with accuracy 4 different sensors coming from the outside, in an exact way, all four at the same time and at a specific speed by an external clock, being necessary in addition an actuation of the system (valve opening, closes gates, etc).}\newline
+\textsl{It is required to monitor with accuracy 4 different sensors coming from the outside, in an exact way, all four at the same time and at a specific speed by an external clock, being necessary in addition an actuation of the system (valve opening, closes gates, etc).}\newline
 
 The workflow block diagram in a processor that implements the above, might look like figure \ref{fig:processor_sensor}
 
@@ -340,7 +340,7 @@ The workflow block diagram in a processor that implements the above, might look 
 
 Thus, the end user of this system should be able to check in a cyclic way, each sensor and its following performance, thus failing to meet the specifications (the four sensors will not be monitored at the same time).
 If the work was done with interruptions, the different external interruptions would be configured or cyclic executives would be used in order to approach those final requirements. However, any of these solutions, they are still an approximation.\newline
-In contrast, with the use of an FPGA, the block diagram of the workflow would look like figure \ref{fig:fpga_sensor}:
+In contrast, with the use of an FPGA, the block diagram of the workflow would look like figure \ref{fig:fpga_sensor}.
 
 \begin{center}
 	\begin{figure}[H]
@@ -355,7 +355,7 @@ In contrast, with the use of an FPGA, the block diagram of the workflow would lo
 Different transfer functions will be implemented for each one of the blocks to be developed, which can be executed in parallel.
 However, it is not always necessary to have parallel execution, and not only may it not be necessary, but it could be harmful. When a system must be sequential, why to use a parallel nature implementation? \newline
 
-It is very common to have systems where it is convenient to be able to implement both types of operation, for that reason an \newline
+It is very common to have systems where it is convenient to be able to implement both types of operation, for that reason an FPGA/Microcontroller coexistence could be enough to adapt to the requirements. \newline
 
 In figure \ref{fig:bipedo} a real example of a bipedal system can be seen, which would be more detailed explained in the following chapters.
 
@@ -368,6 +368,7 @@ In figure \ref{fig:bipedo} a real example of a bipedal system can be seen, which
 	\end{figure}
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Inertial Measurement Unit}\label{sec:IMU}
 The central component of the proposed system is defined as IMU or inertial measurement unit. It is composed of a series of sensors which will be used to know exactly many on-board location system aspects such as speed, orientation, gravitational forces, etc. \newline
 This information can be used for control or simple knowledge of the system at a specific time. \newline
@@ -385,7 +386,7 @@ In the case of the present project, it will be used to obtain the navigation ang
 
 An IMU is defined by its number of degrees of freedom (DOF) which would depend on the number of sensors on board (accelerometer, gyroscope) and the number of axis on which are applied. Thus, an IMU with six DOF (for example a 3-axis accelerometer and a 3-axis gyroscope) would be said to be 6DOF. \newline
 
-Figures \ref{fig:IMU12}, \ref{fig:IMU2}, \ref{fig:IMU2} present some IMUs examples
+Figures \ref{fig:IMU12}, \ref{fig:IMU2}, \ref{fig:IMU2} present some IMUs examples.
 
 \begin{figure}[H]
 	\center
@@ -429,7 +430,7 @@ The important case in this project is to be able to determine the sensor orienta
 \theta = atan\frac{A_{x}}{A_{z}}
 \end{equation}
 
-If it’s applied in a 3D representation as shown on Figure \ref{fig:acelerometro2}
+If it is applied in a 3D representation as shown on Figure \ref{fig:acelerometro2}
 
 \begin{figure}[H]
 	\center
@@ -457,7 +458,7 @@ In a gyroscope, relative angles are always measured to an arbitrary reference (u
 
 As in the accelerometer in the previous section, gyroscopes usually employ three axes, that is, they are able to independently register the rotation in the X, Y and Z axis, so the module and direction of the rotation vector are obtained.\newline
 
-It’s important to keep in mind that this kind of Gyroscopes based in Coriolis effect are not able to detect the rotated angle, but the angular speed, an important aspect to its depuration. \newline
+It is important to keep in mind that this kind of Gyroscopes based in Coriolis effect are not able to detect the rotated angle, but the angular speed, an important aspect to its depuration. \newline
 
 Reminding the angular speed concept (\ref{equation:velangular}):
 
@@ -465,7 +466,7 @@ Reminding the angular speed concept (\ref{equation:velangular}):
 \omega = \frac{\delta \omega}{\delta t}
 \end{equation}
 
-In order to obtain the angle, it’s necessary to perform the integration with respect to time (ecquation \ref{equation:integracion}):
+In order to obtain the angle, it is necessary to perform the integration with respect to time (ecquation \ref{equation:integracion}):
 
 \begin{equation}\label{equation:integracion}
 \theta_{gyro} = \omega_{gyro}*\Delta t
@@ -483,7 +484,7 @@ The drift in an electronic sensor is a variation over time of the output of the 
 
 In both accelerometer and gyroscope, we find drift associated errors: 
 \begin{itemize}
-	\item Accelerometers don’t have medium or long-term drift; however, they are influenced by the movements of the sensor and the noise, reason why they are not reliable to medium or short term.
+	\item Accelerometers do not have medium or long-term drift; however, they are influenced by the movements of the sensor and the noise, reason why they are not reliable to medium or short term.
 	\item As for gyroscopes, they work very well in sudden and short movements but when making an integration with respect to time the drift problem appears in the medium or long term.
 \end{itemize} 
 
@@ -504,7 +505,7 @@ To solve some of the above problems, it can be very useful to apply some of the 
 
 One explained the basic features of commercial IMUs, in section \ref{sec:MPU6050} will be developed the IMU chosen for this system and its own features.
 
-\section{Educational Robotics – Motivations and necessity}
+\section{Educational Robotics – Motivations}
 
 Robotics\cite{6826237} can be considered as one of the technological areas with more boom nowadays and based on the study of robots, which are systems composed of mechanisms that allow to make movements and perform specific tasks, programmable and intelligent. \newline
 
@@ -529,7 +530,7 @@ However, so that the integration in the classroom of educational robotics could 
 	\item High technological integration level not recommended
 	\item Robots must be sociable and fun
 	\item Programming environments should not be complex, and even its functionality is kind of limited, it has to draw the attention of the student and make them feel comfortable.
-	\item It’s important that the robot has a series of sensors and actuators, inputs and outputs so that results must be visuals.
+	\item It is important that the robot has a series of sensors and actuators, inputs and outputs so that results must be visuals.
 \end{itemize}
 
 After analyzing the advantages of digital electronics, it is convenient to be able to bring these two knowledge fields closer together; educational digital-robotics electronics.\newline
@@ -559,7 +560,7 @@ These outputs are called actuators, which are devices that, following the parame
 A sensor indicates to the control system the luminous intensity of a room. The control system recognized that the luminous level is not adequate for reading and activates an actuator, in this case, a light to balance that level.
 \end{ejemplo}
 
-When choosing a specific sensor, it’s important to know its operation module, in order to configure or maintain incorporated systems. There are different type of sensors according to:
+When choosing a specific sensor, it is important to know its operation module, in order to configure or maintain incorporated systems. There are different type of sensors according to:
 
 \begin{itemize}
 	\item Ouput: \begin{itemize}
@@ -640,12 +641,12 @@ As its name indicates, the algorithm consists in three basic operators: Proporti
 
 The basic idea of a PID controller is to reed a sensor and calculate a proportional response, integral and derivative with the objective of calculating the best output from an actuator. \newline
 
-To know very well how a PID controller actuates and to know the meaning of each one of its components, it’s necessary to know what a closed loop system is. 
+To know very well how a PID controller actuates and to know the meaning of each one of its components, it is necessary to know what a closed loop system is. 
 
 \subsubsection{Closed loop system}
 A closed loop control system is s systems in which the action of the control is in function of the output signal. Closed loop systems use feedback from a final result to adjust the control action accordingly. The set point is the value that the system wants to reach. \newline
 
-Now it’s digged a little deeper about is what’s the meaning of each of the components by which the PID control is formed.\newline
+Now it is digged a little deeper about is what’s the meaning of each of the components by which the PID control is formed.\newline
 \subsubsection{Proportional Response}
 
 The proportional component depends only on the difference between the current value and the setpoint. This difference is known as the “Error”. Thus, the proportional gain $K_{p}$ determines the relationship between the output response and the error signal. If the error has a magnitude of 10, a proportional gain of 5 will produce a proportional response of 50. The gain indicates the correction speed of that error, but if it is too fast, the system will oscillate. 

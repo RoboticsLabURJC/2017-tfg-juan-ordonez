@@ -25,12 +25,12 @@
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Flow diagram in a FPGA.\relax }}{42}{figure.caption.35}
 \contentsline {figure}{\numberline {2.19}{\ignorespaces Bipedal System coexistence between microcontroller and FPGA.\relax }}{43}{figure.caption.36}
 \contentsline {figure}{\numberline {2.20}{\ignorespaces Tait-Brain angles.\relax }}{44}{figure.caption.37}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces IMU.\relax }}{44}{figure.caption.38}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces IMU.\relax }}{44}{figure.caption.39}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces IMU.\relax }}{45}{figure.caption.38}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces IMU.\relax }}{45}{figure.caption.39}
 \contentsline {figure}{\numberline {2.23}{\ignorespaces IMU.\relax }}{45}{figure.caption.40}
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Trigonometry in accelerometer system 2D.\relax }}{45}{figure.caption.42}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Trigonometry in accelerometer system 2D.\relax }}{46}{figure.caption.42}
 \contentsline {figure}{\numberline {2.25}{\ignorespaces Trigonometry in accelerometer system 3D.\relax }}{46}{figure.caption.43}
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Sensor CMOS to image adquisition.\relax }}{50}{figure.caption.47}
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Sensor CMOS to image adquisition.\relax }}{51}{figure.caption.47}
 \contentsline {figure}{\numberline {2.27}{\ignorespaces IMU.\relax }}{51}{figure.caption.48}
 \contentsline {figure}{\numberline {2.28}{\ignorespaces Potenciometter.\relax }}{51}{figure.caption.49}
 \contentsline {figure}{\numberline {2.29}{\ignorespaces DC Motor.\relax }}{52}{figure.caption.50}
@@ -84,17 +84,17 @@
 \contentsline {figure}{\numberline {3.46}{\ignorespaces \relax }}{97}{figure.caption.113}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Vision quad-copter high level design.\relax }}{99}{figure.caption.114}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces C\IeC {\'a}mara OV7670.\relax }}{101}{figure.caption.115}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces OV7670 camera.\relax }}{101}{figure.caption.115}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces OV7670 Pixel Formation\relax }}{101}{figure.caption.116}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces I2C writing module in IceStudio aspect.\relax }}{102}{figure.caption.118}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Flow diagram of I2C writing.\relax }}{103}{figure.caption.119}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces OV7670 camera schematics.\relax }}{104}{figure.caption.120}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Tri-state buffer for I2C bus.\relax }}{105}{figure.caption.121}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces I2C on OV7670 writing example.\relax }}{105}{figure.caption.122}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Row module in IceStudio.\relax }}{106}{figure.caption.125}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Row module in IceStudio.\relax }}{107}{figure.caption.125}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Column module in IceStudio.\relax }}{107}{figure.caption.126}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Flow diagram to the row counter.\relax }}{107}{figure.caption.127}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Synchronize signal OV7670.\relax }}{107}{figure.caption.128}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Synchronize signal OV7670.\relax }}{108}{figure.caption.128}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Synchronize signal OV7670.\relax }}{108}{figure.caption.129}
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Synchronize signal OV7670.\relax }}{108}{figure.caption.130}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Bits assigments.\relax }}{109}{figure.caption.131}
