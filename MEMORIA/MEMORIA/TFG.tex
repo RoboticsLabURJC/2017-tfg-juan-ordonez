@@ -2,7 +2,8 @@
 %\documentclass[a4paper,twoside,11pt,titlepage]{book}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[english]{babel}
+\renewcommand{\tablename}{Table} 
 \usepackage{enumerate} % enumerados
 \usepackage{float}
 \usepackage{multirow}
@@ -14,19 +15,9 @@
 
 
 
-
-
-
 % \usepackage[style=list, number=none]{glossary} %
 %\usepackage{titlesec}
 %\usepackage{pailatino}
-
-\decimalpoint
-\usepackage{dcolumn}
-\newcolumntype{.}{D{.}{\esperiod}{-1}}
-\makeatletter
-\addto\shorthandsspanish{\let\esperiod\es@period@code}
-\makeatother
 
 
 %\usepackage[chapter]{algorithm}
@@ -44,7 +35,7 @@
 % ********************************************************************
 \newcommand{\myTitle}{Título del proyecto\xspace}
 \newcommand{\myDegree}{Grado en Ingeniería de Tecnologías de Telecomunicación\xspace}
-\newcommand{\myName}{Alberto Medina Rull\xspace}
+\newcommand{\myName}{Juan Ordóñez Cerezo\xspace}
 \newcommand{\myProf}{Nombre Apllido1 Apellido2 (tutor1)\xspace}
 \newcommand{\myOtherProf}{Nombre Apllido1 Apellido2 (tutor2)\xspace}
 %\newcommand{\mySupervisor}{Put name here\xspace}
@@ -102,9 +93,9 @@ pdfproducer = {pdflatex}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 %Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
 %simplemente poniendo \begin{teorema} \end{teorema} ...
-\newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{ejemplo}{Ejemplo}[chapter]
-\newtheorem{definicion}{Definición}[chapter]
+\newtheorem{teorema}{Theorem}[chapter]
+\newtheorem{ejemplo}{Example}[chapter]
+\newtheorem{definicion}{Definition}[chapter]
 
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray75}{gray}{.75}

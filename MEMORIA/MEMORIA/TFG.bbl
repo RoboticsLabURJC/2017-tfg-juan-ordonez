@@ -1,16 +1,10 @@
 \begin{thebibliography}{10}
 
-\bibitem{HDL}
-Wikipedia.
-\newblock Lengiaje de descripción hardware.
-\newblock
-  \url{https://es.wikipedia.org/wiki/Lenguaje_de_descripci%C3%B3n_de_hardware},
-  2018.
-\newblock Accedido 01-10-201.
-
-\bibitem{Altium}
-Altium designer.
-\newblock \url{https://www.altium.com/altium-designer/}.
+\bibitem{DigialElectronics}
+WikiPedia.
+\newblock Digital electonics.
+\newblock https://en.wikipedia.org/wiki/Digital_electronics, 2018.
+\newblock Accesses 20-03-2018.
 
 \bibitem{FPGAWhat}
 What is a fpga?
@@ -18,6 +12,125 @@ What is a fpga?
   \url{http://fpgayxilinx.blogspot.com/2016/08/cuando-se-aborda-el-diseno-de-un.html},
   2018.
 \newblock Accedido 23-05-2018.
+
+\bibitem{HDL}
+Wikipedia.
+\newblock Lengiaje de descripción hardware.
+\newblock
+  \url{https://es.wikipedia.org/wiki/Lenguaje_de_descripci%C3%B3n_de_hardware},
+  2018.
+\newblock Accessed 01-10-2018.
+
+\bibitem{6826237}
+N.~Eteokleous and D.~Ktoridou.
+\newblock Educational robotics as learning tools within the teaching and
+  learning practice.
+\newblock In {\em 2014 IEEE Global Engineering Education Conference (EDUCON)},
+  pages 1055--1058, April 2014.
+
+\bibitem{Altium}
+Altium designer.
+\newblock \url{https://www.altium.com/altium-designer/}.
+
+\bibitem{SolidWorks}
+Solidworks.
+\newblock \url{https://www.solidworks.com/es}.
+
+\bibitem{Git}
+Github.
+\newblock \url{https://github.com/}.
+
+\bibitem{Repo_GitHub}
+Juan Ordoñez.
+\newblock Repositorio github.
+\newblock \url{https://github.com/RoboticsURJC-students/2017-tfg-juan-ordonez}.
+
+\bibitem{Appear}
+Appear.
+\newblock \url{https://appear.in/}.
+
+\bibitem{Xilinkx}
+Xilinx.
+\newblock \url{https://www.xilinx.com/}, 2018.
+\newblock Accessed 01-10-2018.
+
+\bibitem{496013}
+C.~Dawson, S.~K. Pattanam, and D.~Roberts.
+\newblock The verilog procedural interface for the verilog hardware description
+  language.
+\newblock In {\em Proceedings. IEEE International Verilog HDL Conference},
+  pages 17--23, Feb 1996.
+
+\bibitem{Lattice}
+Lattice Semiconductor.
+\newblock Fpga lattice.
+\newblock \url{https://www.latticesemi.com/}, 2018.
+
+\bibitem{7910719}
+A.~Romanov, M.~Romanov, and A.~Kharchenko.
+\newblock Fpga-based control system reconfiguration using open source software.
+\newblock In {\em 2017 IEEE Conference of Russian Young Researchers in
+  Electrical and Electronic Engineering (EIConRus)}, pages 976--981, Feb 2017.
+
+\bibitem{Alhambra}
+Tarjeta icezum alhambra ii.
+\newblock \url{https://alhambrabits.com/alhambra/}.
+
+\bibitem{IceStudio}
+Icestudio.
+\newblock \url{https://icestudio.readthedocs.io/en/latest/}.
+
+\bibitem{GoogleGroups}
+Google groups fpga wars.
+\newblock
+  \url{https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre}.
+
+\bibitem{nemadesign}
+Rajesh Nema, Rajeev Thakur, and Ruchi Gupta.
+\newblock Design \& implementation of pid controller based on fpga with pwm
+  modulator.
+
+\bibitem{self2}
+Juan Ordoñez.
+\newblock Demostrative video self-balancing robot.
+\newblock \url{https://youtu.be/d_1bnjbpQks}, 2018.
+
+\bibitem{self1}
+Juan Ordoñez.
+\newblock Demostrative video self-balancing robot.
+\newblock \url{https://youtu.be/dQg8NQP7CfQ}, 2018.
+
+\bibitem{self3}
+Juan Ordoñez.
+\newblock Demostrative video self-balancing robot.
+\newblock \url{https://youtu.be/mLyxewOVGug}, 2018.
+
+\bibitem{print1}
+Juan Ordoñez.
+\newblock Demostrative video of printing 3d structure.
+\newblock \url{https://youtu.be/rKoIdgaJU2k}, 2018.
+
+\bibitem{vga}
+Juan Ordoñez.
+\newblock Demostrative video vga module.
+\newblock \url{https://www.youtube.com/watch?v=b3I2MBhlZ9g}, 2018.
+
+\bibitem{brushless1}
+Juan Ordoñez.
+\newblock Demostrative video brushless motor.
+\newblock \url{https://youtu.be/OFD7vlm7f3A}, 2018.
+
+\bibitem{OV7670}
+Omnivision.
+\newblock Ov7670 vga module.
+\newblock \url{https://www.voti.nl/docs/OV7670.pdf}, 2018.
+
+\bibitem{SCCB}
+NXP.
+\newblock Sccb interface information.
+\newblock
+  \url{https://www.nxp.com/docs/en/supporting-information/flexibleCameraInterfaceSolution_1.pdf},
+  2018.
 
 \bibitem{MC33926}
 Driver para motor mc33926.
@@ -42,22 +155,6 @@ Freescale Semiconductor.
 \newblock Technical data mc33926.
 \newblock \url{https://www.pololu.com/product/1213}, 2014.
 
-\bibitem{Repo_GitHub}
-Juan Ordoñez.
-\newblock Repositorio github.
-\newblock \url{https://github.com/RoboticsURJC-students/2017-tfg-juan-ordonez}.
-
-\bibitem{SolidWorks}
-Solidworks.
-\newblock \url{https://www.solidworks.com/es}.
-
-\bibitem{496013}
-C.~Dawson, S.~K. Pattanam, and D.~Roberts.
-\newblock The verilog procedural interface for the verilog hardware description
-  language.
-\newblock In {\em Proceedings. IEEE International Verilog HDL Conference},
-  pages 17--23, Feb 1996.
-
 \bibitem{1435497}
 K.~Pathak, J.~Franch, and S.~K. Agrawal.
 \newblock Velocity and position control of a wheeled inverted pendulum by
@@ -68,31 +165,17 @@ K.~Pathak, J.~Franch, and S.~K. Agrawal.
 Github.
 \newblock \url{https://github.com/}.
 
-\bibitem{Appear}
-Appear.
-\newblock \url{https://appear.in/}.
-
-\bibitem{Alhambra}
-Tarjeta icezum alhambra ii.
-\newblock \url{https://alhambrabits.com/alhambra/}.
-
 \bibitem{6845943}
 L.~H. Yu and F.~Jian.
 \newblock An inverted pendulum fuzzy controller design and simulation.
 \newblock In {\em 2014 International Symposium on Computer, Consumer and
   Control}, pages 557--559, June 2014.
 
-\bibitem{Pendulo}
+\bibitem{Pendulum}
 Wikipedia.
-\newblock Pendulo.
-\newblock \url{https://es.wikipedia.org/wiki/P%C3%A9ndulo}, 2018.
-\newblock Accedido 01-10-201.
-
-\bibitem{PID}
-National Instruments.
-\newblock Pid control.
-\newblock \url{http://www.ni.com/white-paper/3782/en/}, 2018.
-\newblock Accedido 01-10-201.
+\newblock Inverted pendulum.
+\newblock \url{https://en.wikipedia.org/wiki/Inverted_pendulum}, 2018.
+\newblock Accessed 01-10-2018.
 
 \bibitem{Sensor}
 Wikipedia.

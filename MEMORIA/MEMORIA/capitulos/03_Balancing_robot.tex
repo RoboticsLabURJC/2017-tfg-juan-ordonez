@@ -1,63 +1,64 @@
-\chapter{Robot Balancín}\label{sec: BalancingRobot}
-En el presente capítulo se pretende abordar el problema del péndulo invertido mediante la utilización de una FPGA en coexistencia con un microcontrolador. Para ello, en los respectivos capítulos se tratará la física de un Balancing robot, el cálculo de su estructura, los sensores y actuadores utilizados, el sistema de control y el diseño y fabricación de una PCB que resuelva de manera más adecuada algunos de los problemas anteriormente planteados. Se utilizará una comunicación entre FPGA/microcontrolador y se dará una versión más global del sistema propuesto, con un diagrama de bloques general. \newline
-Se comienza con una descripción del problema a resolver (sección \ref{sec:Descripcion_balancin}
-), a continuación se proporciona una solución básica con un alto nivel de abstracción (sección \ref{sec:Diseno}), para terminar con una explicación mas detallada de los bloques anteriores (sección \ref{sec:Implementacion}).
-\section{Descripción del problema} \label{sec:Descripcion_balancin}
+\chapter{Self-Balancing Robot}\label{sec: BalancingRobot}
+In this chapter, the objective is to address the inverted pendulum problem through the usage of an FPGA in coexistence with a microcontroller. For this, in the respective chapters, physics of a self-balancing robot, the calculation of its structure, the sensors and actuators used, the control system and the design and manufacture of a PCB that solves in a more adequate way some problems of those previously raised, will be treated.A communication between FPGA/Microcontroller will be used and a more global version of the proposed system will be given, with a general block diagram. \newline
 
-Para comprender el trabajo a realizar, se enunciará brevemente el problema del péndulo invertido, cuya solución ha dado lugar a muchas herramientas muy famosas en la actualidad, una de ellas, el llamado \textit{SegWay} (figura \ref{fig:segway}).
+It starts with a problem description (section \ref{sec:Descripcion_balancin}) to continue with a brief high level solution (section \ref{sec:Diseno}). To finish, an explanation of each blocks will be described (section \ref{sec:Implementacion}).
+
+\section{Problem Description} \label{sec:Descripcion_balancin}
+
+To understand the work to be done, the problem of inverted pendulum will be briefly enunciated, whose solution has given rise to many very famous tools nowadays, one of them, called \textit{SegWay} (Figure \ref{fig:segway}).
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/segway}
-	\caption{SegWay comercial.}
+	\caption{Commercial Segway.}
 	\label{fig:segway}
 \end{figure}
 
 
-\begin{definicion}Péndulo: Es un sistema físico que puede oscilar bajo la acción gravitatoria u otra característica física (elasticidad, por ejemplo) y que está configurado por una masa suspendida de un punto o de un eje horizontal fijo mediante un hilo, una varilla, u otro dispositivo que sirve para medir el tiempo. \newline
+\begin{definicion}Pendulum \cite{Pendulum}: It’s a physical system that can oscillate under the gravitational action or other physical characteristic (elasticity, for example) and that is configured by a mass suspended from a point or a horizontal axis by a wire, a rod, or other device that is used to measure time. \newline
 \end{definicion}
-Así, y como se podrá imaginar, un péndulo invertido tendrá el aspecto de la figura \ref{fig:pendulo}. 
+As can be imagined, an inverted pendulum has the aspect shown in Figure \ref{fig:pendulo}. 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=1.6]{imagenes/Balancing_robot/pendulo}
-	\caption{Representación péndulo invertido.}
+	\caption{Inverted pendulum representation.}
 	\label{fig:pendulo}
 \end{figure}
 
-Consiste en un péndulo donde el centro de masas se encuentra situado por encima del punto o eje de balanceo. Como cabe esperar, esta disposición dota al sistema de una inestabilidad estática. Recordamos que un sistema es estable cuánto más cercano esta su centro de gravedad del plano horizontal de apoyo. \newline
+Consists of a pendulum where the mass center is located above the point or balancing axis. As expected, this layout gives the system static instability. We recall that a system is stable when its gravity center is closer to the support horizontal plane. \newline
 
-El fundamento de este proyecto consistirá por tanto en intentar corregir esta inestabilidad, y forma parte de uno de los problemas mas famosos en cuánto a teoría de control y dinámica de sistemas. 
+The base of this project will therefore be to correct this instability and is part of one of the most famous problems in terms of control theory and systems dynamics. 
 
 \newpage
-\section{Diseño del sistema}\label{sec:Diseno}
+\section{System Design}\label{sec:Diseno}
 
-El microcontrolador obtiene el ángulo actual del sistema mediante una comunicación i2c con un sensor IMU. Este ángulo se envía a la FPGA a través de una comunicación tipo serie, en un formato binario de 1 byte para la parte entera y 1 byte para la parte decimal. Una shield con un driver de motores DC conectada a la FPGA dota a esta de la posibilidad de variar la velocidad y el sentido de dos motores DC que permiten la estabilización del sistema. La velocidad de los motores para una correcta corrección del ángulo se calcula mediante un controlador PD básico implementado en la FPGA.
+By i2c communication with an IMU sensor, the microcontroller obtains the current angle of the system. Obtained the angle by the microcontroller a communication of serial type sends it to the FPGA in a binary format of 1 byte for the integral part and 1 byte for the decimal part. A shield with a driver of DC motors connected to the FPGA brings the possibility of varying the speed and direction of two DC motors that allow the stabilization of the system. The speed of the motors for a correct correction of the angle is calculated by a basic PD controller implemented in the FPGA.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 0mm 0mm 0mm 0mm,clip, angle=0, scale = 0.4]{imagenes/Balancing_Robot/final.pdf}
-		\caption{Diagrama de bloques final.}
+		\caption{Final block diagram.}
 		\label{fig:final}
 	\end{figure}
 \end{center}
 
 %En esta sección se propone una solución al problema planteado proporcionando esta con un alto nivel de abstracción. En la sección \ref{sec:Implementacion} se profundizará aún más en los detalles de los diferentes sub-sistemas que aquí se exponen.
 
-En los sucesivos capítulos se irá profundizando en cada uno de los bloques anteriores que forman la solución final (figura \ref{fig:final}). 
+The following chapters will go deeper into each of the previous blocks that form the final solution (Figure \ref{fig:final}). 
 
 
 \newpage
-\section{Implementación del sistema}\label{sec:Implementacion}
-\subsection{Fabricación de la estructura mecánica}
-Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto de solucionar el problema clásico del péndulo invertido, se propone la estructura mecánica de las figuras \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab}, diseñadas con SolidWorks[] y a partir de la cuál se ensamblarán el resto de los componentes.
+\section{System Implementation}\label{sec:Implementacion}
+\subsection{Mechanical Structure Manufacturing}
+Knowing the physics of a self-balancing robot \cite{6845943} \cite{7112017} and with the aim, therefore, of solving the classic problem of the inverted pendulum, the mechanical structure of the Figures \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab},designed with SolidWorks[] is proposed and from which the rest of the components will be assembled.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 1cm 0mm 2.7cm 0mm,clip, angle=0, scale = 0.4]{imagenes/Balancing_Robot/EnsanBalanceFront.PDF}
-		\caption{Vista frontal Balancing Robot.}
+		\caption{Frontal view Balancing Robot.}
 		\label{fig:EnsanBalanceFront}
 	\end{figure}
 \end{center}
@@ -66,7 +67,7 @@ Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto 
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 5cm 0mm 10cm 0mm,clip, angle=0, scale = 0.5]{imagenes/Balancing_Robot/EnsanBalanceLateral.PDF}
-		\caption{Vista lateral derecha Balancing Robot.}
+		\caption{Lateral view derecha Balancing Robot.}
 		\label{fig:EnsanBalanceLateral}
 	\end{figure}
 \end{center}
@@ -75,32 +76,31 @@ Teniendo en cuenta la física de un balancing robot y con el objetivo por tanto 
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 20mm 0mm 8cm 0mm,clip, angle=0, scale = 0.5]{imagenes/Balancing_Robot/EnsanBalanceCab.PDF}
-		\caption{Perspectiva Balancing Robot.}
+		\caption{Balancing Robot perspective.}
 		\label{fig:EnsanBalanceCab}
 	\end{figure}
 \end{center}
 
-Se tienen en cuenta diferentes aspectos en el diseño de esta estructura que se relacionan directamente con la física de un Robot Balancín y con ello, del péndulo invertido. \newline
-Como se argumenta en la sección \ref{sec:Descripcion_balancin}, un sistema en reposo es estable cuando su centro de masas esta cercano al centro de gravedad. Si se tiene en cuenta que la naturaleza del sistema planteado es inherentemente inestable, se hace necesario conocer el mejor punto donde debe estar el centro de masas para permitir una mejor estabilización. \newline
+Different aspects of the design of this structure are considered, which are directly related to the physics of a self-balance Robot, and with it, of the inverted pendulum. \newline
+As argued in section \ref{sec:Descripcion_balancin}, a system at rest is stable when its mass center is closer to the horizontal plane. If we consider that the nature of the proposed system is inherently unstable, it is necessary to know the best point where the mass center must be in order to allow a better stability. \newline
 
-Asumiendo la caracterización del modelado matemático en [], se asume por tanto que para conseguir una mayor facilidad en la estabilización, el centro de masas debe estar colocado por encima del punto medio del eje vertical de nuestro sistema. Por lo tanto, se ha de tener en cuenta el peso de todos los componentes para una colocación tal que permita lo anterior. \newline
-En la figura \ref{fig:center_mass} se representa el cálculo con SolidWorks de este centro de masas donde sólo se han tenido en cuenta los elementos más pesados del sistema final, esto es, motores DC, batería, estructura mecánica y ruedas. 
+Assuming the of mathematical modeling characterization[][], it is therefore assumed that to achieve greater ease in stabilization, the center of mass should be placed above the midpoint of the vertical axis of our system. Therefore, we must consider the weight of all components for a placement that allows the above. \newline
+In Figure \ref{fig:center_mass}, a SolidWorks calculation is represented from this mass center where there have only been considered the heavier components of the final system, which includes, DC motors, batteries, mechanical structures and wheels.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.3]{imagenes/Balancing_robot/center_mass}
-	\caption{Centro de masas en sistema final.}
+	\caption{Center of mass final system.}
 	\label{fig:center_mass}
 \end{figure}
 
-\subsection{Unidad de medida inercial MPU6050 en Arduino Nano}\label{sec:MPU6050}
+\subsection{Inertial Measurement Unit MPU6050 in Arduino Nano}\label{sec:MPU6050}
 
-Es necesario un conocimiento constante del ángulo del sistema para su posterior análisis y corrección, para ello se hace uso del sensor MPU6050 conectado mediante una comunicación I2C a un Arduino Nano. \newline
+A constant knowledge of the angle of the system is necessary for its analysis and correction, for this purpose the MPU6050 sensor has been used, connected by an i2c communication to an Arduino Nano. \newline
 
-El MPU6050[] es una unidad de medida inercial con 6 grados de libertad (6DOF) fabricado por Invensense[]. Cuenta con un acelerómetro y giroscopio y permite una comunicación tanto por SPI como por bus I2C. Para corregir algunos de los problemas de captación de datos planteados en la sección \ref{sec:IMU} incorpora un procesador interno (Digital Motion Processor, DMP) que ejecuta algoritmos de fusión de datos (Motion Fusion) para combinar las mediciones de los sensores internos evitando tener que realizar los filtros de forma exterior.\newline
+The MPU6050[] is an Inertial Measure Unit (IMU) with 6 degrees of freedom (6DOF) manufactured by Invensense[]. It has an accelerometer and gyroscope and allows communication by both SPI and i2c bus. To correct some of the data collection problems, mentioned in section \ref{sec:IMU} it incorporates an internal processor (Digital Motion Processor, DMP) that executes data fusion algorithms (Motion Fusion) to combine the measurements of the internal sensors, avoiding having to perform the filters externally.\newline
 
-Debido a su bajo precio y gran calidad es uno de los IMUs más utilizados en la actualidad.
-En la figura \ref{fig:IMU1} se muestra una imagen del MPU6050.
+Due to its low cost and big quality, this is one of the most used IMUs nowadays. In Figure \ref{fig:IMU1} a MPU6050 image is shown.
 
 \begin{figure}[H]
 	\center
@@ -108,9 +108,9 @@ En la figura \ref{fig:IMU1} se muestra una imagen del MPU6050.
 	\caption{MPU6050 IMU.}
 	\label{fig:IMU1}
 \end{figure}
-\subsubsection{Pin out}
+\subsubsection{Pin-out}
 
-En la figura \ref{fig:MPU6050_schematic} se muestra el diagrama esquemático de conexiones del MPU6050.
+Figure \ref{fig:MPU6050_schematic} shows the schematic connections diagram of the MPU6050.
 
 \begin{figure}[H]
 	\center
@@ -119,87 +119,85 @@ En la figura \ref{fig:MPU6050_schematic} se muestra el diagrama esquemático de 
 	\label{fig:MPU6050_schematic}
 \end{figure}
 
-Tiene una tensión de alimentacion de 3.3V. El pin de reloj para la conexión I2C (Serial Clock Line, SCL) y el pin de datos (Serial Data Line, SDA) representan la conexión para el bus con Arduino Nano. El pin AD0 permite al usuario final cambiar la dirección del MPU (slave) la cuál por defecto es 0x68h conectado a GND. Si se conecta a Vcc la dirección cambia a 0x69h. El pin INT produce una señal en alta cuando el dato en cuestión está disponible por parte del MPU para ser capturado, y avisará por medio de una interrupción al Arduino Nano con el fin de poder ser obtenido. \newline
+It has a 3.3V power supply voltage. The clock pin for the I2C connection (Serial Clock Line, SCL) and the data pin (Serial Data Line, SDA) represent the connection for the bus with Arduino Nano. AD0 pin allows the user to change the address of the MPU (slave), which by default is 0x68h connected to GND. If it is connected to Vcc, the address changes to 0x69h. INT pin produces a signal on high when the data in issue is available from the MPU to be captured and will warn by an interruption to the Arduino Nano with the purpose to be obtained.\newline
 
-\subsubsection{Programa para Arduino nano}
-Para la implementación en Arduino Nano se utiliza la librería desarrollada por Jeff Rowberg []. La razón del uso de esta librería es debido a que incorpora la utilización del DMP. Con su uso, se exime al microprocesador (Arduino Nano en este caso) de un complejo filtrado y cálculo con el fin de obtener los valores pitch, yaw y roll.Estas cuyas ventajas se representan gráficamente en la figura \ref{fig:DMPExample}.\newline
-
+\subsubsection{Arduino Nano Program}
+For the Arduino Nano implementation it is used a library developed by Jeff Rowberg[]. The reason of the use of this library is because it incorporates the usage of the DMP. This use  exempts the microprocessor (Arduino Nano in this case) from a complex filtered and calculation with the purpose to obtain the values pitch, yaw and roll. A representation of this advantages are represented in Figure \ref{fig:DMPExample}.\newline
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 4cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/DMPexample.pdf}
-	\caption{Ventaja de uso en la utilización de DMP.}
+	\caption{Advantaje to use DMP.}
 	\label{fig:DMPExample}
 \end{figure} 
 
-Un ejemplo de los valores obtenidos por parte del sensor se muestran en la figura tal.
 
-\textbf{foto de un ejemplo de los ángulos}
- 
+%An example of the obtained values by the sensor are shown in the figure.
 
+%\textbf{foto de un ejemplo de los ángulos}
 
-\subsection{Implementación PCB}
+\subsection{Implementación PCB}\label{sec:PCB}
 
-Después de caracterizar todo el sistema, y teniendo en cuenta el diagrama de conexiones necesario no solo entre el microcontrolador y FPGA sino también para el módulo de cámara (utilizado en la sección \ref{sec: Cuadricoptero}) y el driver del motor, es conveniente y apropiado un circuito impreso que resuelva algunos problemas de ruido, cables excesivos, etc. \newline
+After featuring the entire system and considering the necessary connection diagram not only between the microcontroller and FPGA but also for the OV7670 (it uses in section \ref{sec: Cuadricoptero}) and the motor driver, it is convenient and appropriate a printed circuit that solves some noise problems, excessive cables, etc. \newline
 
-El circuito impreso alberga los siguientes componentes y
-comportamientos:
+The printed circuit contains the following components and behaviors:
 
 \begin{itemize}
-	\item Un total de 28 pines en la parte exterior de la PCB y dispuestos en la posición correcta para un encaje en la placa IceZum Alhambra II (figura \ref{fig:pin_headers}), lo cuál permite poder usar como entradas o salidas los pines de la FPGA. Para conocer la posición exacta de los pines en la placa se hizo uso del proyecto en Altium el cuál está disponible en GitHub.
+	\item UA total of 28 pins on the outside of the PCB and arranged in the correct position for a fit in the IceZum Alhambra II board (Figure \ref{fig:pin_headers}), which allows to use as inputs or outputs the pins of the FPGA. In order to know the exact position of the pins on the plate, the Altium project was used, which is available on GitHub.
 	
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4]{imagenes/Balancing_robot/pin_headers.PNG}
-		\caption{Pin headers para IceZum Alhambra II.}
+		\caption{Pin headers for IceZum Alhambra II.}
 		\label{fig:pin_headers}
 	\end{figure}
 	
 	
-	\item 4 conexiones VCC y GND de 12 Voltios para alimentar los ESC de los motores brushless del vehículo aéreo. Para ello se ha elegido el componente de la figura \ref{fig:screw}, por cumplir con las características adecuadas de temperatura máxima a la que puede estar sometido y las cuales serán analizadas más adelante. 
+	\item 4 VDC and 12 Volt GND connections to power the ESCs of the brushless motors of the aerial vehicle. For this, the component of figure \ref{fig:screw}, has been chosen, because it has adequate features of maximum temperature to which it may be subjected and which would be analyzed further on.
 	
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4]{imagenes/Balancing_robot/SCREW.PNG}
-		\caption{Conector GND y VCC.}
+		\caption{Connector GND and VCC.}
 		\label{fig:screw}
 	\end{figure}
 	
 	
-	\item Una conexión VCC y GND para alimentar las anteriores conexiones. Este conector irá directo a una batería LIPO de 11.1V (3 celdas) y 2200mAh. La elección de esta batería viene dada por el voltaje mínimo por el que se alimentan los ESCs de los motores brushless así como los motores y el driver del motor utilizado para el robot balancín. Un análisis mas detallado de la batería puede encontrarse en subsección \ref{sec:Bateria}
+	\item A VCC and GND connection to feed the previous connections. This connector would go directly to a LIPO battery of 11.1V (3 cells) and 2200mAh. The fact of choosing this battery is due to the minimum voltage by which the ESCs of the brushless motors are fed, as well like the motors and the motor driver used for the self-balancing Robot. A more detailed analysis of the battery can be found in subsection \ref{sec:Bateria}
 	
-	\item Módulo de pines "header" para la conexión del MPU6050 anteriormente descrito (figura \ref{fig:mpu6050_connector).
+	\item Header pin modules for the MPU6050 connection previously described. (Figure \ref{fig:mpu6050_connector}).
 		
 		\begin{figure}[H]
 			\center
 			\includegraphics[scale=0.4]{imagenes/Balancing_robot/mpu6050_connector.PNG}
-			\caption{Módulo MPU6050.}
+			\caption{Module MPU6050.}
 			\label{fig:mpu6050_connector}
 		\end{figure}
 		
-		\item Se hace una extensión de los pines mas importantes del MPU6050 para que puedan ser utilizados por el micro-controlador en caso de que el análisis del ángulo, como en este proyecto, forme parte de un proceso gobernado por dicho micro-controlador.
-		\item Se dispone de la posibilidad de unos "jumpers" (figura \ref{fig:jumpers}) para dar la opción al usuario sobe quién gobernará la comunicación I2C, la FPGA o el micro-controlador, para el cuál se podrán usar los conectores del apartado anterior.\newline
+		\item An extension of the most important pins of the MPU6050 is made so that they can be used by the microcontroller in the case of angle analysis, as in this project, is part of a process governed by the microcontroller.
+		
+		\item Two jumpers connection (Figure \ref{fig:jumpers}) in I2C bus allow the user to decide who governs the SDA and SCL line, microcontroller or FPGA. 
 		
 		\begin{figure}[H]
 			\center
 			\includegraphics[scale=0.3]{imagenes/Balancing_robot/jumpers.PNG}
-			\caption{Jumpers para configuración i2c MPU6050.}
+			\caption{Jumpers to configurate i2c MPU6050.}
 			\label{fig:jumpers}
 		\end{figure}	
 	
-		Al albergar una línea de datos como son SCL y SDA no se hace necesario tener en cuenta las características térmicas del conector en cuestión, y al trabajar a una frecuencia relativamente pequeña, puede aceptarse el ruido que los "jumpers" pudiesen introducir en la comunicación I2C.
-		\item Gran parte de los microcontroladores actuales trabajan a 3.3-5v pero la tensión de entrada que soportan puede llegar hasta 12V, por lo que se aprovecha la alimentación de la batería LIPO y se implementa un nuevo conector con dos pin "header" a VCC y GND que alimentarán el microcontrolador.	
-		\item Un módulo que pueda albergar la cámara OV7670 (utilizada en seeción \ref{sec: Cuadricoptero}) formado por pin "headers" de tipo macho y cada uno de los cuales estará unido a uno de los pines in-out de la FPGA, como se verá mas adelante en el esquemático general. 
-		\item Un módulo que pueda albergar el driver del motor DC utilizado en este caso y que permita la conexión directa con los pines de la IceZum Alhambra II, pues por ejemplo la señal pwm que definirá la velocidad de los motores será una salida por uno de los pines de la FPGA, y deberá ser una entrada al driver del motor.
+		When hosting a bus line, it is not necessary to consider the thermal characteristics of the connector in issue, and when working at a relatively small frequency, the noise that the jumpers can introduce into the I2C communication may be accepted.
+		\item A great part of actual microcontrollers works at 3.3-5V but the input voltage supported can go high to 12V, because of that it’s taken advantage of the LIPO battery power and a new connector with two header pin is implemented that goes to VCC and GND which will power the microcontroller.	
+		\item A module that can host the OV7670 camera (section \ref{sec: Cuadricoptero})formed by male headers pin and each of which will be attached to one of the FPGA's in-out pins, as will be seen later in the general schematic.
+		\item A module that can host the driver of the DC motor used in this case and that allows direct connection with IceZum Alhambra II pins, for example, the pwm signal that will define the speed of the engines will be an output on one of the FPGA pins, and it should be an input to the motor driver.
 		
-		\item Para que no haya errores en la transmisión I2C se dispone en cada línea una resistencia de pull-up de 4,7K$\Omega$.
+		\item So that there are no errors in the I2C transmission, there’s a 4,7K$\Omega$ resistor in each of the lines.
 	\end{itemize}	
-	En las figuras \ref{fig:top_3D}, \ref{fig:bottom_3D}, \ref{fig:Vista3D1}, \ref{fig:Vista3D2} se incluye una representación en 3D del sistema final con todos los componentes añadidos.
+	In Figures \ref{fig:top_3D}, \ref{fig:bottom_3D}, \ref{fig:Vista3D1}, \ref{fig:Vista3D2} is included a 3D representation of the final system with all its added component
 	
 	\begin{center}
 		\begin{figure}[H]
 			\center
 			\includegraphics[scale=0.6]{imagenes/Balancing_Robot/top_3D.PNG}
-			\caption{Vista en 3D de Shield para IceZum Alhambra II.}
+			\caption{3D View of Shield for IceZum Alhambra II.}
 			\label{fig:top_3D}
 		\end{figure}
 	\end{center}
@@ -208,7 +206,7 @@ comportamientos:
 		\begin{figure}[H]
 			\center
 			\includegraphics[scale=0.6]{imagenes/Balancing_Robot/bottom_3D.PNG}
-			\caption{Vista en 3D de Shield para IceZum Alhambra II.}
+			\caption{3D View of Shield for IceZum Alhambra II.}
 			\label{fig:bottom_3D}
 		\end{figure}
 	\end{center}
@@ -217,7 +215,7 @@ comportamientos:
 		\begin{figure}[H]
 			\center
 			\includegraphics[scale=0.5]{imagenes/Balancing_Robot/Vista3D1.PNG}
-			\caption{Vista en 3D de Shield para IceZum Alhambra II.}
+			\caption{3D of shield for IceZum Alhambra II.}
 			\label{fig:Vista3D1}
 		\end{figure}
 	\end{center}
@@ -226,42 +224,42 @@ comportamientos:
 		\begin{figure}[H]
 			\center
 			\includegraphics[scale=0.6]{imagenes/Balancing_Robot/Vista3D2.PNG}
-			\caption{Vista en 3D de Shield para IceZum Alhambra II.}
+			\caption{3D of shield for IceZum Alhambra II.}
 			\label{fig:Vista3D2}
 		\end{figure}
 	\end{center}
 
 
-Para el desarrollo de una PCB con los requerimientos descritos se ha utilizado Altium Designer[]. El proceso de la elaboración de una PCB en Altium puede ser diferente dependiendo del usuario final, pero en este proyecto se ha seguido la siguiente hoja de ruta:
+For a PCB development with the described requirements it has been used Altium Designer[]. The elaboration process of a PCB in Altium can be different depending on the final user, but in this project the following root has been followed:
 
 \begin{itemize}
-	\item En primera instancia se crea el proyecto en cuestión.
-	\item Para cada componente utilizado se crea una nueva librería formada por el esquemático (Schematic) y por el layout en la pcb (footprint).
-	\item Una vez que se han creado todas las librerías se diseña el esquemático de la placa final, teniendo especial cuidado en que las conexiones sean las adecuadas.
-	\item Con el esquemático ya creado, se puede implementar la PCB, definiendo sus bordes, las pistas, los pads, etc.
+	\item At first the project in issue is created.
+	\item For each of the components used a new library is created, formed by the schematic and the layout in the PCB.
+	\item Once all the libraries are created, the schematic of the plate is designed, taking special care that the connections are adequate.
+	\item With the schematic already created, the PCB can be implemented defining its edges, tracks, pads, etc.
 \end{itemize}
 
-El esquemático es representado en la figura \ref{fig:schematics_tfg}: 
+The scheme is represented in \ref{fig:schematics_tfg}.
 \newpage
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.6, angle=90]{imagenes/Balancing_Robot/pcb_dron_schematic.pdf}
-		\caption{Esquemático Shield IceZum Alhambra II}
+		\caption{Schematic Shield IceZum Alhambra II}
 		\label{fig:schematics_tfg}
 	\end{figure}
 \end{center}
 \newpage
 
-\textbf{Tamaño de pista } \newline
-A la hora del diseño de la PCB hay que tener en cuenta el tamaño de las pistas de cobre, sobre todo si la corriente que circula por ellas puede ser muy elevada. De no ser así, la PCB podría sufrir daños o llegar incluso a quemarse. \newline
+\textbf{Trace size} \newline
+When designing the PCB, the size of the copper trace should be considered, especially if the current could be very high. Otherwise, the PCB could suffer damage or even burn out. \newline
 
-Para calcular un ancho de pista es necesario primero conocer la máxima intensidad que podría circular por ella. Se parte del conocimiento de que uno de los motores del vehículo aéreo no tripulado (este es el peor caso y para el cual es necesario el cálculo de pistas) puede consumir un máximo de 20A. Esta cantidad ha sido extraída del datasheet y suele ser común para este tipo de motores. \newline
+To calculate the trace width, it is necessary first to know the maximum intensity that could circulate through it. It is based on the knowledge that one of the engines of the unmanned aerial vehicle (this is the worst case and for which the calculation of tracks is necessary) can consume a maximum of 20 amps. This amount has been extracted from the datasheet and is usually common for this type of motors. \newline
 
-La fórmula utilizada para la obtención del ancho de pista ha sido extraída del estándar IPC-2221B[], el cuál establece los requisitos genéricos para el diseño de tarjetas de circuitos impresos. \newline
+The formula used to obtain the trace width has been extracted from the standar IPC-2221B[], which establishes the generic requirements for the design of PCB.\newline
 
-Así, la fórmula se define como en la ecuación \ref{eqn:eqn31}: 
+The formula is defined as in equation \ref{eqn:eqn31}: 
 
 \begin{equation}
 I = K * dT^{0.44}*(W*H)^{0.725}
@@ -270,13 +268,13 @@ I = K * dT^{0.44}*(W*H)^{0.725}
 
 Donde: 
 \begin{itemize}
-	\item I = intensidad máxima en amperios
-	\item dT = aumento de temperatura sobre ambiente en ºC
-	\item W,H = ancho y grosor en mils
-	\item K = 0.024 para pistas internas y 0.048 para externas
+	\item I = Max. Intensity (A).
+	\item dT =Temperature rise over ambient (Cº)
+	\item W,H = With and Height (mils)
+	\item K = 0.024 for internal traces and 0.048 for external traces.
 \end{itemize}
 
-Se obtienen los siguientes resultados tanto para pistas internas como externas: 
+The following results were obtained either for inner and outer traces:
 
 \begin{equation*}
 W_{externas} = 18.716 mm 
@@ -291,16 +289,16 @@ W_{internas} =  48.6876 mm
 H_{internas} = 	0.035 mm
 \end{equation*}
 
-El grosor de la capa es un dato proporcionado por el fabricante. En el presente proyecto se ha utilizado la siguiente web en [] para el pedido de las PCBs. \newline 
-El grosor de pista es medido comúnmente en "oz" y en este caso, la empresa fabricante permite una PCB con 1oz de grosor de pista, que equivale a un grosor de 0.035mm.\newline
-Si se analizan los resultados obtenidos de la ecuación 3.1 se aprecia claramente la diferencia entre una pista en una capa interna y una pista en una externa. \newline
-Una placa de circuito impreso esta dividida en capas, cada una de las capas tiene su función y organizarlas de manera adecuada es una buena práctica para evitar malos comportamientos. Así, una vez analizados los requerimientos, eran necesarias dos capas para la conexión de pines de datos, además siempre es recomendable un plano de tierra en el que todos los pines conectados a GND tengan una capa común. Esto evita ruidos e interferencias además de asegurar una buena referencia de tierra. \newline
-En el proveedor de PCBs uttilizado, no hay diferencia de precio entre una PCB de tres capas y una PCB de cuatro capas, así, y considerando que en el mejor de los casos el ancho de pista para los motores "brushless" debe ser de 1.8716cm, se llegó a la determinación de la utilización de una de las capas como plano común para las pistas de alimentación de dichos motores. La distribución de las capas será por tanto lo representado en la tabla \ref{tabla:layers_altium}.
+The thickness of the layer is provided by the manufacturer. In this project, this web has been used for ordering the PCBs []. \newline 
+Trace thickness is commonly measured in "oz" and in this case, the manufacturing company allows a 1oz trace thickness in a PCB with, which is equal to a 0.035mm thickness.\newline
+If the results obtained from equation 3.1 are analyzed, the difference between a track in an inner layer and a track in an outer layer is clearly seen.\newline
+A PCB is divided into layers, each of the layers has its function and organizing them properly is a good practice to avoid bad behavior. Thus, once the requirements were analyzed, two layers were necessary for the connection of data pins, in addition a ground plane is always recommended in which all the pins connected to GND have a common layer. This avoids noise and interference besides ensuring a good ground reference. \newline
+In the used PCB provider, there is no price difference between a three-layer PCB and a four-layer PCB and considering that in the best case the trace width for the brushless motors should be of 1.8716cm, it was reached the determination of the usage of one of the layers as a common plane for the powering traces of the motors. The distribution of the layers would therefore be represented in Table \ref{tabla:layers_altium}.
 
-Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una corriente de 1.46A, más que necesario para esta aplicación.
+For the rest of data traces, it is assumed a width of 20 mm, which allows a 1.46 A current, enough for this application.
 
 
-\renewcommand\tablename{Tabla}
+\renewcommand\tablename{Table}
 \begin{table}[H]
 	\centering
 	
@@ -318,344 +316,344 @@ Para el resto de pistas de datos, se asume un ancho de 20mil, que permite una co
 		Bottom Solder         & Solder Mask/Coverlay \\ \hline
 		Bottom Overlay        & Overlay              \\ \hline
 	\end{tabular}
-	\caption{Composición de capas en PCB.}
+	\caption{Layers composition in PCB.}
 	\label{tabla:layers_altium}
 \end{table}
 
 
 
-Una imagen en 2D de las capas Top Layer, VCC, GND, Bottom Layer,Top Overlay y Bottom Overlay se representan en la figura \ref{fig:layers_altium}.
+A 2D image of the Top Layer, VCC, GND, Bottom Layer, Top Overlay and Bottom Overlay layers are shown in Figure \ref{fig:layers_altium}.
 
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4, angle=90]{imagenes/Balancing_Robot/layers_altium.PNG}
-		\caption{Vista de la composición de capas en Altium.}
+		\caption{Composition layers in Altium.}
 		\label{fig:layers_altium}
 	\end{figure}
 \end{center}
 
 
-\subsection{Implementación IceZum Alhambra-Arduino Nano}\label{sec:Integracion}
+\subsection{IceZum Alhambra-Arduino Nano Implementation}\label{sec:Integracion}
 
-Una integración entre un microcontrolador y FPGA permite diferenciar tareas secuenciales y paralelas, asignando cada proceso o bien al microcontrolador si necesariamente tiene que ser secuencial o bien a la FPGA si el proceso puede se paralelizado y obtener con ello algunas ventajas. \newline
+An integration between a microcontroller and FPGA allows to distinguish sequential and parallel tasks, assigning each process to the microcontroller if it necessarily has to be sequential, or to the FPGA if the process can be parallelized and obtain with it some advantages\newline
 
-Hay varias opciones para hacer una integración microcontrolador/FPGA:
+There are some options to make a Microcontroller/FPGA integration:
 
 \begin{itemize}
-	\item Emular el comportamiento de un microcontrolador en una FPGA.
-	\item Coexistencia física de una FPGA y microcontrolador creando una comunicación entre cada una de ellas.
+	\item Emulate the behavior of a microcontroller in an FPGA.
+	\item Physical coexistence of an FPGA and microcontroller creating a communication between each one of them.
 \end{itemize}
-En este proyecto se ha elegido la segunda como opción por no contar con los recursos suficientes para llevar a cabo la primera, a pesar de que esta sería la mas adecuada en cuanto ahorro de recursos y facilidad de uso. \newline
+In this project the second one has been chosen as an option because there are not enough resources to carry out the first one, although this would be the most adequate in terms of saving resources and ease of use. \newline
 
-Existen dos tipos de comunicación posibles para este propósito: 
+There are two possible communication types to this purpose:
 \begin{itemize}
-	\item Comunicación serie: Es una comunicación secuencial, se envían los bits uno a uno, secuencialmente y haciendo uso solo de un bus de datos.
-	\item Comunicación en paralelo: Todos los bits de cada símbolo se envían a la vez.
+	\item Serial communication: It is a sequential communication. The bits are sent one by one, sequentially and using only one data bus.
+	\item Parallel communication: All bits of each symbol are sent at the same time.
 \end{itemize} 
 
-Para hacer uso de la comunicación en paralelo se necesitan tantos canales como bits tenga la información a transmitir (si se quiere enviar un byte se debería hacer uso de un total de 8 canales, correspondientes a cada bit). En este caso habría que utilizar 8 pines de la FPGA para poder llevar a cabo este tipo de transmisión. Por ello, y a pesar de que la comunicación paralela es mas rápida que en serie, se elije la primera como opción más conveniente. \newline
+To make usage of the communication in parallel you need as many channels as bits to have the information to be transmitted (if you want to send a byte you should use a total of 8 channels, corresponding to each bit). In this case there will be used 8 pins of the FPGA to be able to carry out this type of transmission. Therefore, and despite the fact that parallel communication is quicker than serial communication, the first one is chosen as the most convenient option. \newline
 
-El tipo de comunicación serie desarrollada podría asemejarse a un protocolo SPI, aunque sólo tiene capacidad para datos en una dirección. El esquemático de esta comunicación desarrollada es el expuesto en la figura \ref{fig:coexistencia2}.
+The type of serial communication developed could be alike an SPI protocol, although it only has data capacity in one direction. The schematic of this developed communication is shown in Figure \ref{fig:coexistencia2}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia2.pdf}
-	\caption{Pines hardware de coexistencia micro-FPGA.}
+	\caption{Hardware coexistence microcontroller-FPGA.}
 	\label{fig:coexistencia2}
 \end{figure}
-El sistema general cuenta con dos conexiones:
+The general system has two connections:
 \begin{itemize}
-	\item Una línea de datos para el envió de la información.
-	\item Una linea de reloj para que la FPGA pueda obtener en todo momento la velocidad de la información.
+	\item A data line to send the information.
+	\item A clock line so that the FPGA could obtain at every time the information speed.
 \end{itemize}
 
-Un posible ejemplo de una comunicación en serie de un byte de datos podría ser el mostrado en la \ref{fig:serial_comunicattion}. 
+A possible example of a serial communication of a data byte could be shown in Figure \ref{fig:serial_comunicattion}. 
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.75, angle=0]{imagenes/Balancing_Robot/serial_comunicattion.png}
-		\caption{Ejemplo de comunicación serie.}
+		\caption{Serial communication example.}
 		\label{fig:serial_comunicattion}
 	\end{figure}
 \end{center}
 
-El ángulo tiene que ser conocido en la IceZum-Alhambra para la toma de decisiones tanto en dirección como velocidad de los motores. Es necesario por tanto una comunicación micro-controlador/FPGA (figura \ref{fig:coexistencia1}).
+The angle has to be known in the IceZum-Alhambra in order to make decision both in direction as in the speed of the engines. It is therefore necessary a microcontroller/FPGA communication (Figure \ref{fig:coexistencia1}).
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia1.pdf}
-	\caption{Separación de procesos micro-FPGA.}
+	\caption{Separation microcontroller-FPGA.}
 	\label{fig:coexistencia1}
 \end{figure}
 
-La comunicación será solo uni-direccional, el microcontrolador enviará información a la FPGA sobre el ángulo actual del objeto en cuestión con el objetivo de que la FPGA analice y actué a partir de ese ángulo.\newline
+The communication would be only unidirectional, the microcontroller will send information to the FPGA about the current angle of the object in issue with the purpose that the FPGA analyzes and actuates starting from that angle.\newline
 
-Se hace una separación por tanto de dos partes de la comunicación, desde el punto de vista del microcontrolador, y desde el punto de vista de la FPGA. Ambos serán explicados más específicamente en las subsecciónes \ref{sec:vista_controlador} y \ref{sec:vista_controlador}
+Therefore, there’s a two-part separation: from the point of view of the microcontroller and from the point of view of the FPGA. Both will be explained specifically in subsection \ref{sec:vista_controlador} y \ref{sec:vista_controlador}
 
-\subsubsection{Desde el punto de vista del micro-controlador}  \label{sec:vista_controlador}
+\subsubsection{Microcontroller POV}  \label{sec:vista_controlador}
 
-Para el desarrollo de este sub-capítulo se parte de la base de que el ángulo actual ya ha sido obtenido en el microcontrolador. Así, y para la claridad del lector, un esquemático interno del arduino nano es mostrado en la figura \ref{fig:coexistencia3}. En este apartado y con respecto a la parte del microcontrolador, solo se analiza la parte sombreada.  
+For the development of this sub-chapter, it is assumed that the current angle has already been obtained in the microcontroller. Thus, and for the clarity of the reader, an internal schematic of the Arduino Nano is shown in figure \ref{fig:coexistencia3}. In this section and according to the part of the microcontroller, only the shadowed part is analyzed. 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Balancing_robot/coexistencia3.pdf}
-	\caption{Diagrama interno Arduino Nano.}
+	\caption{Inner diagram Arduino Nano.}
 	\label{fig:coexistencia3}
 \end{figure}
 
-El diagrama de flujo sobre el cuál se basa el código en C del micro-controlador se representa en la figura \ref{fig:extraccion_angulo}.
+The flow diagram in which the C code of the microcontroller is based on, is shown in Figure \ref{fig:extraccion_angulo}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.5]{imagenes/Balancing_robot/extraccion_angulo.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
+	\caption{Flow diagram to send angle.}
 	\label{fig:extraccion_angulo}
 \end{figure}
 
-A continuación se explican los aspectos mas relevantes: 
+The most relevant features will be explained: 
 
 \begin{itemize}
-	\item Se parte de la base de que el ángulo ya ha sido obtenido y es correcto. En la sección \ref{sec:MPU6050} se puede encontrar más información sobre ello.
-	\item Como ya se ha comentado anteriormente en la sección 3.3.2, una de las partes más importantes para corregir el control del balancín es conocer la inclinación en cada momento para poder corregir esta desviación (\ref{fig:angle_correction}). Para ello, la FPGA debe conocer si el ángulo es positivo o negativo. Este aspecto no formará parte del propio protocolo de comunicación como se verá a continuación.
+	\item It is based on the assumption that the angle has already been obtained and is correct. In section \ref{sec:MPU6050} you can find more information about it.
+	\item As it has been said before 3.3.2, one of the most important parts to correct the control of the self-balance robot, is to know the inclination at every moment to correct this desviation (\ref{fig:angle_correction}). To do this, the FPGA must know if the angle is positive or negative. This aspect would not form part of the communication protocol itself, as will be seen below. 
 \end{itemize}
 	
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 0cm 4cm 0mm 4cm, clip,scale=0.5]{imagenes/Balancing_robot/angle_correction.pdf}
-		\caption{Corrección de la dirección en Balancing Robot.}
+		\caption{Correction angle in Self-Balance Robot.}
 		\label{fig:angle_correction}
 	\end{figure}
 	
 \begin{itemize}	
-	\item Se utiliza un solo pin del microcontrolador el cuál cambiará su valor a 1 o 0 dependiendo del signo del ángulo en cada momento. Así, la FPGA sólo tendrá que leer esta información cuando le sea necesario.
-	\item Para un correcto entendimiento por parte de la FPGA es necesario enviar el ángulo representado en bytes y no en código ASCII. Es por ello que para ese envío de utilizará el comando "Serial.print(ángulo)". Esta función de arduino envía por el puerto serie la representación en bytes del ángulo en cuestión.\newline
-	Si se intenta enviar todo el ángulo también se enviarán tanto el símbolo como el código ASCII de la coma y esto es un aspecto que no interesa tener en cuenta en lo que al procesamiento sobre la FPGA se refiere. Para corregirlo primero se hace el módulo del ángulo (no se necesita el signo porque ya hay un pin destinado para ello) y posteriormente de hace una separación entre la parte entera y la parte decimal para poder eliminar el carácter "comma". 
-	\item Se envía por el puerto serie el byte correspondiente a la parte entera. 
-	\item Se envía por el puerto serie el byte correspondiente a la parte decimal. 
-	\item Es un proceso cíclico que se irá reproduciendo cada X segundos (por contabilizar), esto es, el ángulo podrá corregirse cada X segundos. 
+	\item A single pin of the microcontroller is used, which will change its value to 1 or 0 depending on the sign of the angle at each moment. This way the FPGA will only have to read this information when it is necessary.
+	
+	\item For a correct understanding by the FPGA it is necessary to send the represented Angle in bytes and not in ASCII code. This is why for that sending the "Serial.print(Angle)" command will be used. This Arduino function sends by the serial port the representation in bytes of the angle in issue.\newline
+	If the whole angle is intended to be sent, both the symbol and the ASCII code of the comma will be sent, and this is an aspect that does not matter to be considered when processing the FPGA is referred. To correct it, first the module of the angle is made (the sign is not needed because there is already a pin designated for it) and later it makes a separation between the integer and the decimal part in order to eliminate the "comma" character.
+	\item The integer part corresponding byte is sent by the serial port.
+	\item The decimal part corresponding byte is sent by parallel port.
+	\item This is a loop that will be reproducing each “x” seconds, this is, the angle that could be corrected each “x” seconds. 
 \end{itemize}
-Un ejemplo real del envío del un ángulo con su correspondiente signo es mostrado en la figura \ref{label}
+A real example of the angle being sent with its corresponding sign is shown in the following Figure: \ref{label}
 
 \textbf{captura del envio del angulo}
 
-\subsubsection{Desde el punto de vista de la FPGA} \label{sec:vista_fpga}
+\subsubsection{FPGA POV} \label{sec:vista_fpga}
 
-Por un PIN de entrada a la FPGA le estarán continuamente entrando datos provenientes del pin de transmisión y para que se puede hacer una lectura correcta del byte es necesario conocer: 
+For an input PIN to the FPGA it will be continuously entering data from the transmission pin and so that it can make a correct reading of the byte it is necessary to know: 
 
 \begin{itemize}
-	\item Cuando comienza una transmisión de un byte.
-	\item Cuando termina una transmisión de un byte.
-	\item Cuando un bit puede ser capturado. 
-	\item Se vayan almacenando en un buffer los bits necesarios hasta que el byte esté completo.
+	\item When a byte transmission starts.
+	\item When a byte transmission ends.
+	\item When a bit can be captured. 
+	\item When the necessary bits are saved in a buffed until the byte is complete.
 \end{itemize}
 
-Para poder implementar en la FPGA un módulo intermedio con las anteriores carácteristicas (aspecto en IceStudio \ref{fig:arduino_interface}) es necesario conocer de antemano la velocidad de la transmisión por parte del microcontrolador, la cuál se ha fijado en 16200 baudios. \newline
+In order to implement an intermediate module in the FPGA with the previous features (aspect in IceStudio Figure \ref{fig:arduino_interface}) it is necessary previously know the speed of the transmission by the microcontroller, which has been 16200 baud. \newline
 
 
 \begin{figure}[H]
-	\center
-	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_interface.PNG}
-	\caption{Apariencia del módulo interfaz de Arduino Nano en IceStudio.}
+	\center	\includegraphics[scale=0.6]{imagenes/Balancing_robot/arduino_interface.PNG}
+	\caption{Appearance of 	Arduino Nano module in IceStudio.}
 	\label{fig:arduino_interface}
 \end{figure}
 
-Se detallan las diferentes entradas y salidas del módulo anterior: 
+The inputs and outputs from the previous module are detailed:
 
 \begin{itemize}
-	\item data[7:0]: Consiste en un buffer en el cuál se van almacenando los bits hasta tener el byte completo. Es importante que el módulo siguiente conozca cuando el byte esta preparado para su captura.
-	\item clock\_data\_debug: La utilización de esta salida es sólo para depuración.
-	\item byte\_ready: Un flag de reloj cambiará su valor cuando un byte este listo para ser capturado. Como se ha visto en anteriores desarrollos, este byte será o bien la parte entera o bien la parte decimal.
-	\item bit\_ready: La utilización de esta salida es únicamente para depuracion y puede encontrarse en muchos módulos a lo largo del proyecto.
+	\item data[7:0]:Consists in a buffer in which bits are being stored when it’s necessary until we have the byte. It’s important that the following module knows when the byte is prepared for its capture.
+	\item clock\_data\_debug: The usage of this output is for depuration only.
+	\item byte\_ready: A clock flag will change its state when a byte is ready to be captured. As there has been seen in previous developments, this byte will be both integer or decimal part.
+	\item bit\_ready:The usage of this output is for depuration only.
 \end{itemize} 
 
-La implementación en IceStudio del comportamiento anterior está implementada mediante dos máquinas estados con sus correspondientes listas de sensibilidad, y el diagrama de flujo se representa en la figura \ref{fig:arduino_interfacefluid}.
+The implementation in IceStudio of the previous behavior is implemented by two machine states with their corresponding sensitivity lists and the flow diagram is represented in Figure \ref{fig:arduino_interfacefluid}.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 0mm 0mm 0mm 10mm, clip,scale=0.7, angle=90]{imagenes/Balancing_robot/arduino_interfacefluid.pdf}
-		\caption{Diagrama de flujo de la interfaz para Arduino.}
+		\caption{Flow diagram for Arduino interface.}
 		\label{fig:arduino_interfacefluid}
 	\end{figure}
 \end{center}
 
- Se hace uso de dos procesos bien diferenciados.\newline
-\textbf{Proceso 1:} Este proceso solo informa al sistema siguiente del momento exacto en el cuál puede capturar un bit y guardarlo en el buffer, para ello, debe conocer la velocidad de la transmisión comentada anteriormente. Los estados serán los siguientes: 
+ Two well differenced processes are used:\newline
+\textbf{Process 1:} This process only gives the next system the exact moment at which it can
+capture a bit and save it in the buffer, for this, you must know the speed of the transmission discussed above. The states would be the following:
 
 \begin{itemize}
-	\item IDLE: El proceso se mantiene en este estado hasta que se inicie la transmisión, que pasará al siguiente estado (START).
-	\item START: El protocolo de transmisión serie comienza con una condición de start, este estado permitirá reconocer cuando acaba esta condición para poder empezar a guardar bits en el buffer. 
-	\item DATAS: Como ya se conoce la velocidad de transmisión y se ha reconocido la condición de START en el estado anterior, en este estado un flag cambiará su valor cuando el bit este preparado para ser guardado en el buffer, de lo cuál se encargará el proceso 2.
-	\item STOP: Además de una condición de START, el protocolo de transmisión en serie usado en Arduino tiene un condición de STOP. Este estado permite reconocer el tiempo que tarda Arduino en llevar a cabo esta ultima condicion, después, volverá al primer estado hasta que empiece una nueva transacción.
+	\item IDLE: The process remains in this state until the transmission starts, which will go to the next state (START).
+	\item START: How was it developed in the section … The serial transmission protocol begins with a start condition, this state will allow to recognize when this condition ends to start saving bits in the buffer. 
+	\item DATA: Since the transmission speed is already known and the condition of START in the previous state has been recognized, in this state a flag will change its value
+	when the bit is ready to be stored in the buffer, of which process 2 will be in charge of.
+	\item STOP: In addition to a START condition, the serial transmission protocol used in Arduino has a STOP condition. This state allows to recognize the time it takes Arduino to carry out this last condition, then, it will return to the first state until a new transaction begins.
 \end{itemize}
 
-\textbf{Proceso 2:} El proceso 2 está activado por el proceso 1. Cuando el proceso 1 determine que un bit está disponible en el bus para ser capturado, pondrá en alto valor de voltaje un flag de reloj, iniciando el proceso 1 mediante una lista de sensibilidad. El diagrama de flujo podría ser:
+\textbf{Process 2:} This process activated by process 1. When process 1 determines that a bit is available on the bus to be captured, it will set a clock flag on, initiating process 1 through a sensitivity list. The flow diagram could be:
 
 \begin{itemize}
-	\item Esperar hasta que se active al lista de sensibilidad, eso indicará que un bit podrá ser capturado.
-	\item Los bits se irán guardando en un buffer que formará un byte, el cuál representa la parte entera o decimal del ángulo en ese momento.
-	\item Cuando el byte este preparado para ser capturado por los consecutivos módulos un canal se pondrá en alta, estando disponibles como salidas tanto el buffer con 8 los bits y este canal de "byte\_ready".
+	\item Wait until the sensibility list is activates, this will indicate that a bit could be captured.
+	\item Bits will be storing in a buffer that will form a byte, which will represent the integer or decimal part of the angle at that moment.
+	\item When the byte is prepared to be captured by two consecutive modules, a channel will be on, being available both the outputs and the buffer with the 8 bits and the channel "byte\_ready".
 \end{itemize}
 
-En este punto la FPGA es capaz de diferenciar cuando puede capturar un byte (BYTE\_READY) y de dónde tiene que capturar el bus de datos (DATA\_BUFFER). No obstante un aspecto que no forma parte de la comunicación en sí es importante de analizar si se quiere conseguir un correcto funcionamiento. Esto es, si se ha dicho anteriormente que el microcontrolador envía continuamente la parte entera y decimal del ángulo, si no se hace una buena interpretación de estos datos, es posible que un ángulo sobre la FPGA este formado por una parte decimal de un angulo \textit{n} y la parte entera del ángulo \textit{n+1}. \newline
+At this point the FPGA is able to differentiate when it can capture a byte (BYTE\_READY) and from where it has to capture the data bus (DATA\_BUFFER).However, an aspect that is not part of the communication itself, it is important to analyze if you want to get a correct operation. That is, if it has been previously said that the microcontroller continuously sends the integer and decimal part of the angle, if a good interpretation of this data is not made, it is possible that an angle on the FPGA is formed by a decimal part of an angle \textit{n} and the integer part of the angle \textit{n + 1}.  \newline
 
-Para ello se crea un módulo en IceStudio que sea capaz de ordenar estos valores. El aspecto de este módulo en IceStudio se muestra en la figura \ref{fig:arrange_arduino}.
+To do this, a module is created in IceStudio that is capable of ordering these values. The aspect of this module in IceStudio is shown in Figure 3.29. \ref{fig:arrange_arduino}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.4]{imagenes/Balancing_robot/arrange_arduino.PNG}
-	\caption{Módulo para ordenar datos provenientes de Arduino.}
+	\caption{Module to arrange data from Arduino.}
 	\label{fig:arrange_arduino}
 \end{figure}
 
-Como entradas:
+As Inputs there are:
 
 \begin{itemize}
-	\item data[7:0] : Es el buffer de salida del modulo anterior donde se van acumulando los bits capturados hasta conseguir el byte.
-	\item byte\_ready : Flag de reloj que se activa cuando el byte este disponible para ser capturado.
+	\item Data [7:0]: This is the output buffer of the previous module where all captured bits are being stored until the byte is completed.
+	\item byte\_ready : Clock flag which activates when the byte is available to be captured.
 \end{itemize}
 
-Es importante tener en cuenta que el dato estará disponible siempre y cuando esté disponible tanto la parte entera como la parte decimal del ángulo en cuestión. Así, como salidas se encuentran:
+It is important to consider that the data will be available as long as the entire part as well as the decimal part of the angle in issue is available. Thus, as outputs are:
 
 \begin{itemize}
-	\item integer\_part[7:0] : byte que representa la parte entera del ángulo.
-	\item decimal\_part[7:0] : byte que representa la parte decimal del ángulo.
-	\item data\_ready : flag de reloj que se activa cuando el dato (parte decimal y parte entera) esté preparado para ser capturado.	
+	\item integer\_part[7:0] :Byte that represents the integer part of the angle.
+	\item decimal\_part[7:0] : Byte that represents the decimal part of the angle.
+	\item data\_ready : Clock flag that activates when the data (decimal and integer part) is waiting to be captured.
 \end{itemize}
 
-Como se ha profundizado anteriormente, el diagrama de flujo del código en Verilog que implementa el anterior comportamiento se representa en la figura \ref{fig:arrange_angle}.
+As has been previously discussed, the flow diagram of the code in Verilog that implements the previous behavior is shown in Figure \ref{fig:arrange_angle}.
 
 \begin{figure}[H]
 	\center
-	\includegraphics[[trim = 0mm 4cm 0mm 0cm,clip, angle=0,scale=0.4]{imagenes/Balancing_robot/arrange_angle.pdf}
-	\caption{Diagrama de flujo modulo ordenación de bytes.}
+	\includegraphics[[trim = 0mm 4cm 0mm 4cm,clip, angle=0,scale=0.4]{imagenes/Balancing_robot/arrange_angle.pdf}
+	\caption{Flow diagram to arrange bytes.}
 	\label{fig:arrange_angle}
 \end{figure}
 
 
 
-En este caso es un proceso con una lista de sensibilidad que cuenta como señal sensible el bus de "byte\_ready", y que es salida del modulo anterior. \newline
+In this case is a process with a sensibility list that counts as a sensible signal the "byte\_ready", bus and which is the output from the previous module. \newline
 
-Cada vez que se active el flag que indica que un byte está listo para ser capturado comienza una máquina de estados cíclica que cuenta con los dos siguientes estados:
+Each time the flag is activated that indicates that a byte Is ready to be captured, a cyclic state machine starts that counts with the following states:
 
 \begin{itemize}
-	\item DATA1: Es el primer dato a ser capturado y corresponde con la parte entera del primer ángulo. La segunda vez que se active el flag de "byte\_ready" corresponderá a la parte decimal del primer ángulo, y por lo tanto pasará al siguiente estado DATA2.
-	\item DATA2: En ese estado no sólo se captura la parte decimal del ángulo en cuestión sino que además se activa un nuevo flag el cuál indica que el dato completo (ángulo) está listo para ser capturado. 
+	\item DATA1: It is the first data to be captured and corresponds to the whole part of the first angle. The second time the "byte ready" flag is activated, it corresponds to the decimal part of the first angle and therefore it will pass to the next DATA2 state.
+	\item DATA2: In this state not only is the decimal part of the angle in issue captured, but also a new flag is activated, which indicates that the complete data (Angle) is ready to be captured.
 \end{itemize}
 
-Así, el módulo tendrá como salidas, el buffer de la parte entera, el buffer de la parte decimal, y un bus que avisará a los sucesivos módulos de cuándo el dato completo está preparado para ser capturado. De esta forma se ha evitado el problema explicado anteriormente de la no ordenación en los datos llegados del microcontrolador.  \newline
+Thus, the module will have as outputs, the buffer of the integer part, the buffer of the decimal part and a bus that will notify the successive modules of the complete data is ready to be captured. In this way, the problem explained above of the non-ordering in the data arrived from the microcontroller has been avoided. \newline
 
-Se da por finalizado el protocolo de comunicación Arduino-FPGA y se brindan las herramientas necesarias para que los sucesivos procesos y módulos puedan conocer el ángulo en cada momento representado por su parte entera (8 bits), parte decimal (8 bits) y un pin que indicará el valor del signo (positivo o negativo).
+The Arduino-FPGA communication protocol is terminated and the necessary tools are provided so that the successive processes and modules can know the angle at each moment represented by its integer part (8 bits), decimal part (8 bits) and a pin that indicates the value of the sign (positive or negative).
 
-El sistema final de comunicación entre Arduino y IceZum Alhambra desde el punto de vista de la FPGA se representa en la figura \ref{fig:arduino_arrange}.
+The final communication system between Arduino and IceZum Alhambra from a POV of the FPGA is represented in Figure \ref{fig:arduino_arrange}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.4]{imagenes/Balancing_robot/arduino_arrange.PNG}
-	\caption{Comunicación entre Arduino y IceZum Alhambra en IceStudio.}
+	\caption{Communication between Arduino and IceZum Alhambra.}
 	\label{fig:arduino_arrange}
 \end{figure}
 
 
 
 
-\subsection{Control PID en IceZum Alhambra}
-Como ha sido explicado en la sección \ref{sec:PID}, un controlador PID puede ser utilizado de manera sencilla para controlar la estabilidad del sistema. \newline
-Una de las ventajas en el uso de este tipo de controladores recae en su fácil implementación.
+\subsection{PID Control in IceZum Alhambra}
+As it has been explained in section \ref{sec:PID}, a PID controller can be used in a simple way to control the stability of the system. \newline
+One of the facilities in the use of this kinds of controllers is because its ease of implementation.
 \subsubsection{Controlador P} \label{sec:ControladorP}
-El diagrama de flujo que caracteriza el comportamiento del controlador P se muestra en la \ref{fig:P_control}.
+The flow diagram that features the behavior of the P controller is shown in Figure \ref{fig:P_control}.
 	\begin{figure}[H]
 	\center
 	\includegraphics[trim = 0cm 7cm 0mm 7cm, clip,scale=0.5]{imagenes/Balancing_robot/P.pdf}
-	\caption{Diagrama de flujo control P.}
+	\caption{Flow diagram P control.}
 	\label{fig:P_control}
 \end{figure}
 
-Debido a su importancia, se explica su funcionamiento brevemente:
+Due to its importance, the functionality is briefly explained ahead:
 
 \begin{itemize}
-	\item 1.-El proceso completo será actualizado cada vez que se tenga un nuevo dato, esto es, cada vez que cambie el ángulo del sistema en este caso.
-	\item 2.-Como entradas se tienen tanto la parte decimal del ángulo como la parte entera.
-	\item 3.-Tanto la parte decimal como la entera están representados como datos de 8 bits sin signo. Así, y para darle más importancia a la parte entera, existe la opción de dividir la parte decimal por 100 o multiplicar la parte entera por 100. Con la primera de las opciones no se obtiene un buen comportamiento debido al trato digital de la coma flotante, por lo que se opta por la segunda opción.
-	\item 4.- Para finalizar se suman las dos componentes entera y decimal y se multiplica por la constante Kp, definida como parámetro para poder ser cambiada dinámicamente.
+	\item 1.-The complete process will be refreshed every time there is a new datum, this is in this case, every time the angle system is changing.
+	\item 2.-As inputs there are both the integer part as the decimal part from the angle.
+	\item 3.-Both the integer part and the decimal part are represented as 8 bits data without sign. So, in order to give more importance to the integer part, there is the option to divide the decimal part by 100 or to multiply the integer part by 100. In the first option there is not a good behavior obtained due to the digital treat of the floating comma, which is why the second option is better.
+	\item 4.- At the end, the two integer and decimal components are added and then it is multiplied by a Kp constant, defined as a parameter which can be didactically changed.
 \end{itemize}
 
-Su representación en IceStudio tendrá el aspecto de la figura \ref{fig:Pcontrol}.
+Its representation in IceStudio has the aspect as shown in Figure \ref{fig:Pcontrol}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Pcontrol}
-	\caption{Aspecto en IceStudio del módulo de control P.}
+	\caption{Appearance of P control in IceStudio}
 	\label{fig:Pcontrol}
 \end{figure}
 
-\subsubsection{Controlador D} \label{sec:ControladorD}
+\subsubsection{D Controller} \label{sec:ControladorD}
 
-En cuanto al controlador D, el diagrama de flujo de su implementación en Verilog se muestra en la \ref{fig:D_control}. 
+Referring to the D controller, the flow diagram implemented in Verilog is shown in Figure \ref{fig:D_control}. 
 	\begin{figure}[H]
 	\center
 	\includegraphics[trim = 0cm 0cm 0mm 0cm, clip,scale=0.4]{imagenes/Balancing_robot/D.pdf}
-	\caption{Diagrama de flujo control D.}
+	\caption{Flow diagram D control.}
 	\label{fig:D_control}
 \end{figure}
 
-Su implementación está compuesta por una máquina de estados con dos estados, y los cuales cambiarán cada pulso en alta de la señal $data_ready$, esto es, cambiará siempre que un nuevo ángulo esté disponible.\newline
+Its implementation is composed by a state machine with two states, which will change at each pulse on the $data_ready$, which means, will change whenever a new angle is available.\newline
 
-Si se recuerda, el controlador D basa su funcionamiento en la predicción de los errores futuros. La acción de control derivativa genera una señal de control proporcional a la derivada de la señal del error. \newline
-Se va llevando a cabo por tanto una resta (derivada del error en el tiempo) entre el error actual y el error pasado. Su resultado se multiplica por la constante Kd. 
-
-Su representación en IceStudio se representa en la \ref{fig:Dcontrol}.
+If remembered, D controller is based in its operation on the prediction of future errors. The derivative control action generates a control signal proportional to the derivative of the error signal. \newline
+A subtraction (derived from the error in time) is therefore carried out between the current error and the last error. Its result is multiplied by the constant Kd. Its representation in IceStudio is represented in \ref{fig:Dcontrol}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5]{imagenes/Balancing_robot/Dcontrol}
-	\caption{Aspecto en IceStudio del módulo de control D.}
+	\caption{Appearance of D control module in IceStudio.}
 	\label{fig:Dcontrol}
 \end{figure}
 
 \subsubsection{Controlador PD}
 
-Referido al sistema de realimentación por lazo cerrado analizado en la sección \ref{sec:PID}, es importante mostrar el resultado final del aspecto del presente proyecto en IceStudio, haciendo una comparativa directa entre éste (figura \ref{fig:finalIceStudio} ) y la figura \ref{fig:PID}.
+Referring to the closed loop feedback system analyzed in section \ref{sec:PID}, it is important to show the final result of the aspect of the present project in IceStudio, making a direct comparison between this (figure \ref{fig:finalIceStudio} ) and figure \ref{fig:PID}.
 \newpage
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5, angle=90]{imagenes/Balancing_robot/finalIceStudio}
-	\caption{Aspecto final en IceStudio del Balancing-Robot.}
+	\caption{Final appearance of Self-Balancin in IceStudio.}
 	\label{fig:finalIceStudio}
 \end{figure}
 
 \subsection{Controlador de motores} \label{sec:driver_motores}
-Tener un módulo con la capacidad para generar PWM[] soluciona muchos problemas posteriores a la vez que mejora la visibilidad del código en el sistema final. Como se observa en las características de los motores, gran parte de ellos están comandados por una señal PWM que depende del motor en cuestión. \newline
-La modulación por ancho de pulsos o PWM (Pulse Width Modulation) es una técnica en la que se modifica el ciclo de trabajo de una señal periódica (en nuestro caso cuadrada) que se usa para transmitir información a traves de un canal de comunicación o para controlar la cantidad de energía que se envía a una carga. Un ejemplo de una señal PWM cuadrada es la mostrada en la figura \ref{fig:pwm_example}.
+Having a module with the ability to generate PWM solves many subsequent problems while improving the visibility of the code in the final system. As can be seen in the motor features, most of them are commanded by a PWM signal that, although it is true, depends on the motor in issue. \newline
+Pulse Width Modulation (PWM) is a technique that modifies the work cycle of a periodic signal (squared in our case) that is used to transmit information through a communication channel or to control the amount of energy that is sent to a load. An example of a PWM squared signal is shown in figure \ref{fig:pwm_example}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0cm 0mm 0cm, clip,scale=0.4]{imagenes/Balancing_robot/pwm_example.png}
-	\caption{Ejemplo de señal PWM con dutty diferente.}
+	\caption{PWM signal example with different dutty.}
 	\label{fig:pwm_example}
 \end{figure}
 
 
-Aplicando esta señal, por ejemplo, a un motor DC clásico se varía la cantidad de energía que se aplica a la carga, el motor en este caso. Sencillamente funciona como un interruptor en el cuál un nivel lógico alto es abierto y un nivel bajo cerrado. Si se consigue variar el tiempo el cuál al motor le está llegando carga y el tiempo en el cuál no le llega corriente, se puede controlar su velocidad. \newline
+Applying this signal, for example, to a classic DC motor the amount of energy that is applied to the load is varied, the motor in this case. It simply works as a switch in which a high logical level is open and a low level closed. If it’s managed to vary the time the motor is being charged and the time in where there’s no current, you can control its speed. \newline
 
-Las características de una señal PWM son: 
+The features of a PWM signal are: 
 \begin{itemize}
-	\item D = ciclo de trabajo.
-	\item $\tau$ = tiempo en que la función es positiva (ancho de pulso).
-	\item T = periodo de la función.
+	\item D = Work cycle.
+	\item $\tau$ = Time-lapse while the function is positive.
+	\item T = Function period.
 \end{itemize}
 
 
-El driver del motor utilizado para el control de los motores DC (MC33926 [] figura \ref{fig:driver_motor_fisico}), necesita una serie de configuraciones para poder trabajar acorde a nuestras necesidades y las cuáles pueden ser obtenidas de su datasheet[]. El diagrama final de entradas y salidas así como las conexiones necesarias se detallan en el esquemático de la figura \ref{fig:driver_motor}.
+The motor driver used to control DC motors (MC33926 [] figure \ref{fig:driver_motor_fisico}),needs a series of configurations to work according to the needs which could be obtained from its datasheet[]. The final inputs and outputs diagram and also the necessary connections are detailed in the scheme of the \ref{fig:driver_motor} figure.
 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0cm 0mm 0cm, clip,scale=0.4]{imagenes/Balancing_robot/driver_motor.jpg}
-	\caption{MC33926 para el control de los motores DC.}
+	\caption{MC33926 to control DC motors.}
 	\label{fig:driver_motor_fisico}
 \end{figure}
 
@@ -663,179 +661,190 @@ El driver del motor utilizado para el control de los motores DC (MC33926 [] figu
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 3cm 0mm 2cm, clip,scale=0.4]{imagenes/Balancing_robot/driver_motor.pdf}
-	\caption{Esquemático de conexiones MC33926.}
+	\caption{Schematic MC33926.}
 	\label{fig:driver_motor}
 \end{figure}
 
 
 
 
-\subsubsection{Control PWM}
+\subsubsection{PWM Control}
 
-Los velocidad de los motores DC se controlan mediante un generador de PWM conectado a su patilla 15 o M2D2 de la figura \ref{fig:driver_motor} para uno de los motores y otro generador de PWM conectado a la patilla 6 o M1D1 del driver para motores DC. Este módulo generador tiene el aspecto de la figura \ref{fig:pwm_module} en IceStudio. 
+The speed of the motors is controlled by a PWM which is connected to pin 15 or M2D2, from figure \ref{fig:driver_motor} for each one of the motors and another PWM generator connected to pin 6 or M1D1 from the DC motor driver. This generator module has the aspect shown in figure \ref{fig:pwm_module} in IceStudio. 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5]{imagenes/Balancing_robot/PWM_module.PNG}
-	\caption{Aspecto en IceStudio del generador de señal PWM.}
+	\caption{Appearance PWM module in IceStudio.}
 	\label{fig:pwm_module}
 \end{figure}
 
-El diagrama de bloques de su funcionamiento se expone en la figura \ref{fig:pwm_control}.
+The block diagram of its performance is exposed in figure \ref{fig:pwm_control}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/pwm_control.pdf}
-	\caption{Envío de ángulo usando el puerto serie.}
+	\caption{Flow diagram PWM generator in Verilog.}
 	\label{fig:pwm_control}
 \end{figure}
 
-Basa su funcionamiento en un contador de pulsos de entrada del reloj de la FPGA. Un registro de velocidad impondrá cuantos pulsos tienen que ser contados antes de poner en alta una señal de salida, el PWM buscado. \newline
-Como entradas se encuentran: 
+Its performance is based in an input clock pulse counter from the FPGA. A speed log will dictate how many pulses have to be counted before an output signal is settled on (desired PWM). As inputs are: \newline 
 \begin{itemize}
-	\item FPGA CLOCK: Es el reloj de la FPGA de 12Mhz y sobre el cuál se realizará el conteo de pulsos.
-	\item START: Simplemente es una señal común a todo el sistema, funcionando como switch para dar un inicio general.
-	\item VELOCITY: Registro que marca cuántos pulsos de reloj tienen que ser contados antes de activas la señal de salida PWM.
+	\item FPGA Clock: Is the 12Mhz FPGA clock which is in charge of the pulse counter.
+	\item Start: It is a common signal to the whole system, performing as a switch to give a general start.
+	\item Velocity: Is a record that marks how many clock pulses need to be counted before activating the output signal PWM.
 \end{itemize}
 
-Como salidas:
+As outputs are:
 \begin{itemize}
-	\item PWM: Señal de tipo PWM con un dutty proporcional a la velocidad impuesta.
+	\item As outputs are:
 \end{itemize}
 
 
 
-\subsection{Sistema de alimentación}
+\subsection{Power Supply System}
 
 
-Como todo sistema electrónico, es necesario una fuente de alimentación que permita el correcto funcionamiento de todos los componentes.  \newline
+As with any electronic system, a power source is necessary to allow the correct operation of all the components. \newline
 
-Un análisis de requerimientos de dichos componentes que forman el sistema completo es prioritario para poder elegir una alimentación adecuada. Además se tiene en cuenta que la finalidad es tener un sistema móvil y que en la medida de lo posible se evita una conexión directa a la red eléctrica o una conexión USB a un ordenador. Así, solo queda elegir que tipo de batería es adecuada. \newline
+As a fundamental task, an analysis of the requirements of these components that make up the complete system is a priority in order to choose an adequate power supply. In addition, it is considered that the purpose is to have a mobile system and that, as far as possible, a direct connection to the electrical network or a USB connection to a computer is avoided. So, it only remains to choose what type of battery is suitable.\newline
 
-A continuación se nombran los diferentes tipos de bleatería con los se cuenta actualmente en el mercado analizando sus ventajas e inconvenientes más importantes: 
-
-\begin{itemize}
-	\item Baterías de plomo ácido. Son económicas y fáciles de fabricar pero no admiten sobrecargas ni descargas profundas, además, son de un peso y volumen muy elevados para la poca energía que son capaces de almacenar.
-	\item Baterías de niquel-cadmio (Ni-Cd). Funcionan bien en un rango amplio de temperaturas, y se pueden sobrecargar sin sufrir daños. Admiten descargas profundas y proporcionan un buen número de ciclos. Como en la anterior, tienen un peso y volumen muy elevado.
-	\item Baterías de niquel-hidruro metálico (Ni-MH). Mejora las características de las anteriores, sin embargo, proporciona un número menos de ciclos.
-	\item Baterías de iones de litio (Li-ion). En comparación con las anteriores estas son de un desarrollo mas reciente y han facilitado la existencia de tecnologías portátiles. Tienen una capacidad elevada en relación a su peso y volumen, tienen un factor de auto-descarga muy elevado. Casi no se ven afectadas por el efecto memoria y pueden cargarse sin haber sido descargadas previamente. En contrapartida, no soportan bien los cambios de temperatura. 
-	\item Baterías de polímero de litio (Li-Po). Son una variación de las baterías de Li-on que mejoran sus características de peso y volumen así como su tasa de descarga. Quedan prácticamente inutilizadas si se descargan en exceso.
-\end{itemize}
-
-Teniendo en cuenta el sistema final, es importante que las características de peso, volumen, y descarga sean las adecuadas. Por ello se elige para la alimentación de los sistemas en este proyecto las baterías de tipo Li-po, las cuáles pueden almacenar gran cantidad de energía y ofrecen una tasa de descarga muy alta. \newline
-
-Las baterías de tipo Li-Po tienen una nomenclatura diferente del resto, la cuál es necesario analizar:
+Next, the different types of battery currently in the market are named, analyzing their most important advantages and disadvantages: 
 
 \begin{itemize}
-	\item Clasificación por número de celdas "S". El número S corresponde con el número de celdas, las cuáles son de 3,7 voltios pero pueden llegar a 4,2 si están totalmente cargadas. Una batería de 3 celdas (3S) está compuesta por tanto de 3 sub-baterías puestas en serie, es decir, un total de 11,1 voltios.
-	\item Capacidad indicada en "mAh". A mayor de número de miliamperios hora más capacidad de carga. Un error común es pensar que a mayor capacidad mas posibilidad de alargar el tiempo del sistema en cuestión. A mayor capacidad, el peso y volumen de la batería aumenta, por lo que hay que encontrar la mejor configuración para nuestro sistema. 
-	\item Tasa de descarga "C". El número C corresponde con la tasa de descarga de la batería. Si una batería es de 1C significa que la máxima tasa de descarga a la que puede llegar es a la que se corresponde a su capacidad. Si el número C es distinto de 1 significa que multiplicamos la tasa de descarga por ese valor, reduciendo el tiempo de descarga proporcionalmente, esto es, una batería de 1000mAh 2C se descargaría a 2A en media hora.
+	\item Lead-acid Batteries: They are inexpensive and easy to manufacture but do not admit overloads or deep discharges, besides, they are heavy and have a big volume compared with the small amount of energy they are capable of storing.
+	\item Nickel-cadmium Batteries (Ni-Cd): They work well over a wide range of temperatures and can be overloaded without damage. They allow deep discharges and provide a good number of cycles. As in the previous one, they have a very high weight and volume.
+	\item Nickel-metal Hydride Batteries (Ni-MH): Features compared to the previous batteries are improved, however, it provides a fewer number of cycles.
+	\item Lithium Ion Batteries (Li-ion): In comparison with the previous ones, these are from a recent development and have facilitated the existence of portable technologies. They have a high capacity in relation to their weight and volume, they have a very high self-discharge factor. They are almost unaffected by the
+	memory effect and can be charged without having been previously discharged. On the other hand, they do not support temperature changes too good.
+	\item Lithium Polymer Batteries (Li-Po): They are a variation of the Li-ion batteries that improve their weight and volume features as its discharge rate. They remain practically unused if they are discharged in excess.
 \end{itemize}
 
-El siguiente planteamiento sería por tanto elegir qué valores anteriores necesita nuestro sistema, para ello se desarrolla la siguiente tabla con los requerimientos de cada componente.
+Considering that the final and most restrictive system is a remotely piloted aerial vehicle, and that the self-balance robot needs a not very high weight, it is important that the weight features, volume, and discharge are adequate. For this reason, Li-po type batteries are chosen for the power supply of the systems in this project, which can store a large amount of energy and offer a very high discharge rate. \newline
 
-\renewcommand\tablename{Tabla}
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|l|}
-		\hline
-		Componente         & Voltaje & Corriente \\ \hline
-		MC33926            &         &           \\ \hline
-		Motor DC           &         &           \\ \hline
-		MPU6050            &         &           \\ \hline
-		IceZum Alhambra II &         &           \\ \hline
-		Arduino Nano       &         &           \\ \hline
-	\end{tabular}
-	\caption{Tabla eléctrica de componentes.}
-	\label{tabla:Tabla}
-\end{table}
+The Li-Po type batteries have a different nomenclature from the rest, which is necessary to analyze:
 
-Se diferencian dos subsistemas independientes en cuánto a la alimentación se refiere:
 \begin{itemize}
-	\item Alimentación para los motores DC y Arduino Nano.
-	\item Alimentación de la propia tarjeta IceZum Alhambra II y demás componentes.
+	\item Sort by number of cells "S": The number S corresponds to the number of cells, which are 3.7 volts but can reach 4.2 if they are fully charged. A 3-cell (3S) battery is composed of 3 sub-batteries placed in series, which is, a total of 11.1 volts.
+	\item Capacity indicated in "mAh”: The higher the number of mAh, the higher the load capacity. A common mistake is to think that the greater the capacity, the greater the possibility of lengthening the time of the system in issue. At higher capacity, weight and volume of the battery increase, so the best configuration for this system must be found.
+	\item TDownload rate "C": The number from C corresponds to the battery discharge rate. If a battery is 1C, it means that the maximum discharge rate it can reach is the one corresponding to its capacity. If the number C is different from 1 means that we multiply the discharge rate by that value, reducing the discharge time proportionally, that is, a battery of 1000mAh 2C will be discharged to 2A in half an hour.
 \end{itemize}
 
-\subsubsection{Alimentación de los motores DC y Arduino Nano:}
-Para la alimentación de los motores DC y el Arduino Nano se hace uso de una batería LIPO de 11.1V y 2200maH como en la figura \ref{fig:lipo111}. Como se representa en el esquemático final de la shield desarrollada (figura \ref{fig:schematics_tfg}), la batería se conectará a dicha shield, encargada esta de alimentar tanto a los motores DC como al Arduino Nano.
+The following approach will be to choose which of the previous values is the most adequate for the system. For this and after analyzig the differents components separately, two independent subsystems are distinguished in terms of the power supply:
+
+\begin{itemize}
+	\item DC Motors and Arduino Nano Power Supply.
+	\item IceZum Alhambra II and other components Power Supply.
+\end{itemize}
+
+\subsubsection{DC Motors and Arduino Nano Power Supply}
+For the DC motors and Arduino Nano power supply, a 11.1V and 2200mAh LIPO battery of is used as in figure \ref{fig:lipo111}. As it is presented in the final schematic from the controller
+shield (Figure \ref{fig:schematics_tfg}), the battery is connected to the shield, which is in charge to supply both the motors and Arduino Nano.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.8]{imagenes/Balancing_Robot/LIPO111}
-		\caption{Batería LIPO 11.1V y 2.2A. }
+		\caption{LIPO Battery 11.1V y 2.2A. }
 		\label{fig:lipo111}
 	\end{figure}
 \end{center}
 
-\subsubsection{Alimentación IceZum Alhambra II y demás componentes:}
+\subsubsection{Alhambra IceZum II and other components Power Supply}
 
-Para la alimentación de la IceZum Alhambra II y el resto de componentes que forman el sistema final, se hace uso de una batería LIPO de 3.7V y 4mAh como la de la figura \ref{fig:lipo37}. 
+For the IceZum Alhambra II power supply and the rest of the components, a 3.7V and 4mAh LIPO battery has been used, as shown in Figure \ref{fig:lipo37}. 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.5]{imagenes/Balancing_Robot/LIPO37}
-		\caption{Batería LIPO 3.7V y 4mAh.}
+		\caption{LIPO Battery 3.7V y 4mAh.}
 		\label{fig:lipo37}
 	\end{figure}
 \end{center}
 
-
-
-
-
-\subsection{Materiales y coste del prototipo}
-En la tabla \ref{tabla:coste} se desglosa el coste total del prototipo del sistema planteado a lo largo del capítulo \ref{sec: BalancingRobot}. Se diferencian cuatro columnas correspondientes al nombre del material, el número de unidades, el coste unitario y el coste total en euros.
-\renewcommand\tablename{Tabla}
+\subsection{Materials and Prototype Cost}
+In the table \ref{tabla:coste} the total cost of the prototype along chapter \ref{sec: BalancingRobot} is pulled apart.
+It is differenciated by four columns called material, number of units, unit cost and total cost in euros.
 \begin{table}[H]
 	\scalebox{0.9}{
 	\begin{turn}{90}
 	\begin{tabular}{|l|l|l|l|l}
 		\cline{1-4}
-		\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}\textbf{MATERIAL}} & \cellcolor[HTML]{FFCE93}\textbf{CANTIDAD} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ UNITARIO (\euro)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}COSTE \\ TOTAL (\euro)\end{tabular}}} &  \\ \cline{1-4}
+		\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}\textbf{MATERIAL}} & \cellcolor[HTML]{FFCE93}\textbf{QUANTITY} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}UNIT \\ COST (\euro)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{\begin{tabular}[c]{@{}c@{}}TOTAL \\ COST (\euro)\end{tabular}}} &  \\ \cline{1-4}
 		IceZum Alhambra II                                               & 1                                         & 60                                                                                                                  & 60                                                                                                               &  \\ \cline{1-4}
 		Arduino Nano                                                    & 1                                         & 8                                                                                                                   & 8                                                                                                                &  \\ \cline{1-4}
-		Separador Hexagonal Nylon 10 mm                                 & 4                                         & 0.20                                                                                                                & 0.80                                                                                                             &  \\ \cline{1-4}
-		Separador Metálico Hexagonal M3 25 mm                           & 8                                         & 0.25                                                                                                                & 2                                                                                                                &  \\ \cline{1-4}
-		Separador Metálico Hexagonal M3 50 mm                           & 4                                         & 0.41                                                                                                                & 1.64                                                                                                             &  \\ \cline{1-4}
-		Tornillo Nylon M3                                               & 16                                        & 0.09                                                                                                                & 1.44                                                                                                             &  \\ \cline{1-4}
-		Tuerca Nylon M3                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
-		Tornillo Nylon M1                                               & 4                                         & 0.09                                                                                                                & 0.39                                                                                                             &  \\ \cline{1-4}
-		Tuerca Nylon M1                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
-		Placa de Circuito Impreso 4 capas                               & 1                                         & 5                                                                                                                   & 5                                                                                                                &  \\ \cline{1-4}
-		Rueda 7 cm                                                      & 2                                         & 7.90                                                                                                                & 15.80                                                                                                            &  \\ \cline{1-4}
+		Hexagonal Nylon 10 mm Separator                                 & 4                                         & 0.20                                                                                                                & 0.80                                                                                                             &  \\ \cline{1-4}
+		Metálico Hexagonal M3 25 mm Separator                           & 8                                         & 0.25                                                                                                                & 2                                                                                                                &  \\ \cline{1-4}
+		Metálico Hexagonal M3 50 mm Separator                           & 4                                         & 0.41                                                                                                                & 1.64                                                                                                             &  \\ \cline{1-4}
+		Nylon M3 Screw                                               & 16                                        & 0.09                                                                                                                & 1.44                                                                                                             &  \\ \cline{1-4}
+		Nylon M3 Nut                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
+		Nylon M1 Screw                                               & 4                                         & 0.09                                                                                                                & 0.39                                                                                                             &  \\ \cline{1-4}
+		Nylon M1 Nut                                                 & 8                                         & 0.05                                                                                                                & 0.40                                                                                                             &  \\ \cline{1-4}
+		PCB 4 layers                               & 1                                         & 5                                                                                                                   & 5                                                                                                                &  \\ \cline{1-4}
+		Wheel 7 cm                                                      & 2                                         & 7.90                                                                                                                & 15.80                                                                                                            &  \\ \cline{1-4}
 		Motor DC                                                        & 2                                         & 24.95                                                                                                               & 49.9                                                                                                             &  \\ \cline{1-4}
 		Driver Motor DC Dual MC33926                                    & 1                                         & 30                                                                                                                  & 30                                                                                                               &  \\ \cline{1-4}
 		IMU MPU6050                                                     & 1                                         & 2.50                                                                                                                & 2.50                                                                                                             &  \\ \cline{1-4}
-		Estructura mecánica 3D                                          & 1                                         & 20                                                                                                                  & 20                                                                                                               &  \\ \cline{1-4}
+		Mechanical 3D Structure                                         & 1                                         & 20                                                                                                                  & 20                                                                                                               &  \\ \cline{1-4}
 		Screw 3.5 mm                                                    & 5                                         & 0.80                                                                                                                & 4                                                                                                                &  \\ \cline{1-4}
 		Cable 5-pin                                                     & 1                                         & 0.82                                                                                                                & 0.82                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 4 contactos Macho                           & 1                                         & 0.08                                                                                                                & 0.08                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 8 contactos Shield                          & 2                                         & 0.54                                                                                                                & 1.08                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 6 contactos Shield                          & 2                                         & 0.58                                                                                                                & 1.16                                                                                                             &  \\ \cline{1-4}
-		Jumper 2.54 mm Puente de conexión                               & 2                                         & 0.08                                                                                                                & 0.16                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 10 contactos Hembra                         & 2                                         & 0.10                                                                                                                & 0.20                                                                                                             &  \\ \cline{1-4}
-		Regleta PIN 2,54 mm 10 contactos Macho                          & 5                                         & 0.10                                                                                                                & 0.50                                                                                                             &  \\ \cline{1-4}
-		Resistencia 4K7 5\%                                             & 3                                         & 0.21                                                                                                                & 0.63                                                                                                             &  \\ \cline{1-4}
-		Estaño                                                          & 1                                         & 5.50                                                                                                                & 5.50                                                                                                             &  \\ \cline{1-4}
-		Metro de cinta Termoretráctil                                   & 2                                         & 1.50                                                                                                                & 3                                                                                                                &  \\ \cline{1-4}
-		Metro de cable 12 AWG                                           & 1                                         & 0.90                                                                                                                & 0.90                                                                                                             &  \\ \cline{1-4}
-		Batería Lipo 11.1 V 2200 mA                                     & 1                                         & 19.95                                                                                                               & 19.95                                                                                                            &  \\ \cline{1-4}
-		Batería Lipo 3.7 V 5 mA                                         & 1                                         & 4.20                                                                                                                & 4.20                                                                                                             &  \\ \cline{1-4}
+		PIN 2,54 mm 4 contacts Macho                           & 1                                         & 0.08                                                                                                                & 0.08                                                                                                             &  \\ \cline{1-4}
+		PIN 2,54 mm 8 contacts Shield                          & 2                                         & 0.54                                                                                                                & 1.08                                                                                                             &  \\ \cline{1-4}
+		PIN 2,54 mm 6 contacts Shield                          & 2                                         & 0.58                                                                                                                & 1.16                                                                                                             &  \\ \cline{1-4}
+		Jumper 2.54 mm                               & 2                                         & 0.08                                                                                                                & 0.16                                                                                                             &  \\ \cline{1-4}
+		PIN 2,54 mm 10 contacts Female                         & 2                                         & 0.10                                                                                                                & 0.20                                                                                                             &  \\ \cline{1-4}
+		PIN 2,54 mm 10 contacts Male                          & 5                                         & 0.10                                                                                                                & 0.50                                                                                                             &  \\ \cline{1-4}
+		Resistance 4K7 5\%                                             & 3                                         & 0.21                                                                                                                & 0.63                                                                                                             &  \\ \cline{1-4}
+		Tin                                                          & 1                                         & 5.50                                                                                                                & 5.50                                                                                                             &  \\ \cline{1-4}
+		Retractable therman Tape                                    & 2                                         & 1.50                                                                                                                & 3                                                                                                                &  \\ \cline{1-4}
+		Cable 12 AWG                                           & 1                                         & 0.90                                                                                                                & 0.90                                                                                                             &  \\ \cline{1-4}
+		Battery Lipo 11.1 V 2200 mA                                     & 1                                         & 19.95                                                                                                               & 19.95                                                                                                            &  \\ \cline{1-4}
+		Battery Lipo 3.7 V 5 mA                                         & 1                                         & 4.20                                                                                                                & 4.20                                                                                                             &  \\ \cline{1-4}
 		\multicolumn{2}{|c|}{}                                                                                      & \multicolumn{2}{c|}{\cellcolor[HTML]{FD6864}}                                                                                                                                                                                          &  \\
-		\multicolumn{2}{|c|}{\multirow{-2}{*}{\textbf{COSTE TOTAL PROTOTIPO:}}}                                     & \multicolumn{2}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FD6864}\textbf{240.45 \euro}}}                                                                                                                                                         &  \\ \cline{1-4}
+		\multicolumn{2}{|c|}{\multirow{-2}{*}{\textbf{PROTOTYPE TOTAL COST:}}}                                     & \multicolumn{2}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FD6864}\textbf{240.45 \euro}}}                                                                                                                                                         &  \\ \cline{1-4}
 	\end{tabular}
 	\end{turn}}
-	\caption{Coste total del prototipo Balancing-Robot.}
+	\caption{Total cost of Self-Balancing Robot.}
 	\label{tabla:coste}
 \end{table}
 
-\section{Experimentos}
-\subsection{VGA Module}
-Para un conocimiento más adecuado del lenguaje de implementación hardware Verilog, previo a la realización de este proyecto, y como idea inicial de utilizarlo en futuros proyectos, se lleva acabo una shield para la conexión con una pantalla, teniendo para ello que conocer este protocolo de comunicación. 
-Un vídeo de demostración se encuentra en [].
-La shield fabricada se representa en la \fig
-\subsection{Controlador motor burshless}
-Con la idea fundamental de utilizar la PCB para un sistema cuadricóptero totalmente independiente y como una primera aproximación al control de motores brushless, se desarrolla el módulo de la figura tal que permite un control sobre este tipo de actuadores. 
+\section{Experiments and final results}
+\subsection{Self-Balancing Robot}
+Se muestran un conjunto de vídeos demostrativos en \cite{self2} del correcto funcionamiento del self-balancing robot, así como de su proceso hasta el resultado final en \cite{self1} \cite{self3}. \newline 
+Para el desarrollo de la estructur mecánica, se muestra en \cite{print1} un vídeo representativo de su impresión.
 
-Un vídeo demostrativo puede encontrarse en [2]
+A set of images wich form the final system are showed in \ref{fig:test1}, \ref{fig:test2}, \ref{fig:test3}, \ref{fig:test4},
+
+\begin{center}
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2, angle=270]{imagenes/Balancing_Robot/test1}
+	\caption{}
+	\label{fig:test1}
+\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.2, angle=180]{imagenes/Balancing_Robot/test2}
+		\caption{}
+		\label{fig:test2}
+	\end{figure}
+\end{center}
+
+\subsection{VGA Module}
+For a more adequate knowledge of the hardware implementation language Verilog, prior to the realization of this project and as an initial idea to use it in future projects, a shield is carried out for the connection with a screen, having to know for it this communication protocol. A video demonstration is found in \cite{vga}. \newline
+The manufactured shield is represented in the figure \ref{fig:vga}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.2]{imagenes/Balancing_Robot/vga}
+		\caption{}
+		\label{fig:vga}
+	\end{figure}
+\end{center}
+\subsection{Motor brushless Controller}
+With the fundamental idea of using the PCB for a totally independent quad-copter system and as a first approximation to the control of brushless motors, the model of the figure is developed such that it allows a control over this type of actuators.
+A demonstration video can be found in \cite{brushless1}.

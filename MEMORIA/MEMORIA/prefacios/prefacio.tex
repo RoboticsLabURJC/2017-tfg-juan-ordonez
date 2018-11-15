@@ -12,51 +12,28 @@
 \thispagestyle{empty}
 
 \begin{center}
-{\large\bfseries  Sistema de
-	control autónomo para robots en FPGAs de
-	software libre}\\
+{\large\bfseries  Control system in open FPGAs for autonomous robots.}\\
 \end{center}
 \begin{center}
 Juan Ordóñez Cerezo\\
 \end{center}
 
 %\vspace{0.7cm}
-\noindent{\textbf{Palabras clave}: FPGA, IceStudio, IceZumAlhambra, microcontrolador.}\\
-
-\vspace{0.7cm}
-\noindent{\textbf{Resumen}}\\
-
-Resumen...
-\cleardoublepage
-
-
-\thispagestyle{empty}
-
-
-\begin{center}
-{\large\bfseries Design and manufacturing of sinaptic circuits: Sinaptic Circuits and Memristors}\\
-\end{center}
-\begin{center}
-Alberto Medina Rull\\
-\end{center}
-
-%\vspace{0.7cm}
-\noindent{\textbf{Keywords}: }\\
+\noindent{\textbf{Key words}: FPGA, IceStudio, IceZumAlhambra, microcontroller, Self-Balancing, quadcopter, OpenSource.}\\
 
 \vspace{0.7cm}
 \noindent{\textbf{Abstract}}\\
 
-Abstract.
+This paper proposes a new use of FPGAs in educational robotics field. For that, different robotic behaviors are being developed creating a module library that is useful and giving their user the possibility to work at a high abstraction level. As an example, a self-balance robot is proposed and which explanation consists about this project. Without loosing sight of the initial finality, tools used for that will be in the open source community, as can be IceStudio and IceZum Alhambra.
+\cleardoublepage
 
 \chapter*{}
 \thispagestyle{empty}
 
 \noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
 
-Yo, \textbf{Juan Ordóñez Cerezo}, alumno de la titulación de Ingeniería de Tecnologías de Telecomunicación de la \textbf{Escuela Técnica Superior
-de Ingenierías Informática y de Telecomunicación de la Universidad de Granada}, con DNI 77143207-B, autorizo la
-ubicación de la siguiente copia de mi Trabajo Fin de Grado en la biblioteca del centro para que pueda ser
-consultada por las personas que lo deseen.
+Me, \textbf{Juan Ordóñez Cerezo}, student of the degree in Telecommunications Technologies Engineering from \textbf{Escuela Técnica Superior
+de Ingenierías Informática y de Telecomunicación de la Universidad de Granada}, with DNI 77143207-B, authorize the location of my Final Degree Thesis in the library of the center so that it can be consulted by people who need it.
 
 \vspace{6cm}
 
@@ -65,7 +42,7 @@ consultada por las personas que lo deseen.
 \vspace{2cm}
 
 \begin{flushright}
-Granada a 5 de mes septiembre de 2018.
+Granada on November 19, 2018.
 \end{flushright}
 
 
@@ -74,49 +51,47 @@ Granada a 5 de mes septiembre de 2018.
 
 \noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
 
-D. \textbf{Encarnación del Castillo Morales}, Profesora del Área de Electrónica del Departamento Electónica y Tecnología de Computadores de la Universidad de Granada.
+D. \textbf{Encarnación del Castillo Morales}, Teacher from Electronic Area of the Electronic Department and Computer Technology from Granada University.
 
 \vspace{0.5cm}
 
-D. \textbf{Jose María Cañas Plaza}, Profesor del departamento de Teoría de la Señal y las Comunicaciones y Sistemas Telemáticos y Computación de la Universidad Rey Juan Carlos de Madrid.
+D. \textbf{Jose María Cañas Plaza}, Teacher from Theory of Signal and Communications and Telematic Systems and Computing department from Universidad Rey Juan Carlos, Madrid.
 
 
 \vspace{0.5cm}
 
-\textbf{Informan:}
+\textbf{Inform:}
 
 \vspace{0.5cm}
 
-Que el presente trabajo, titulado \textit{\textbf{Sistema de control autónomo para robots en FPGAs de software libre}},
-ha sido realizado bajo su supervisión por \textbf{Juan Ordóñez Cerezo}, y autorizamos la defensa de dicho trabajo ante el tribunal
-que corresponda.
+That the present project, titled \textit{\textbf{Autonomous control system for Robots in FPGA}},
+has been developed under supervision by \textbf{Juan Ordóñez Cerezo}, and we authorize the defense from this project in front of the corresponding tribunal.
 
 \vspace{0.5cm}
 
-Y para que conste, expiden y firman el presente informe en Granada a 5 de mes septiembre de 2018.
+And for the record, the report has been issued and signed in Granada on November 19, 2018.
 
 \vspace{1cm}
 
-\textbf{Los directores:}
+\textbf{The directors:}
 
 \vspace{5cm}
 
 \noindent \textbf{Encarnación del Castillo Morales\ \ \ \ \ Jose María Cañas Plaza}
 
-\chapter*{Agradecimientos}
+\chapter*{Acknowledgements}
 \thispagestyle{empty}
 
        \vspace{1cm}
 
-En primer lugar, y si por ello más importante, quiero dar las gracias {\bf a mi familia, Juan, Paqui y María}, los cuáles han sufrido y disfrutado tanto como yo este proyecto, por su credibilidad, paciencia, por los momentos de debilidad suplidos con alegría y sobretodo por creer en la capacidad de alguien que nunca dio motivos para ello.  \newline
-Por supuesto, a mis tutores Jose María Cañas Plaza y Encarnación del Castillo Morales que creyeron y me hicieron creer desde el principio en este proyecto y que me han llevado en volandas hasta lo que es hoy. \newline
-A mis compañeros y amigos de Munich, de Eesy Innovation e Infineon Technologies, que convirtieron un verano cualquiera en el mejor verano del mundo y que me ayudaron sin preguntar porqué, porque si algo tiene que salir bien, saldrá bien. \newline 
-A mis amigos de Granada a los que tantas veces he tenido que decir que no por dedicar tiempo, porque nunca me canso de estar con ellos y porque dan ánimos en forma de risas y chistes.\newline
-Por último, recuerdo parte del discurso de dos profesores en mi graduación, dos profesores, que no por ser profesores se olvidaron de tratarnos como personas y que nos vieron llorar, reír y sobretodo crecer. Y es que, si me tengo que llevar algo de aquí, no son sólo los conocimientos aprendidos, son los amigos y esa gente que te ayuda a escalar cuando no te quedan fuerzas para seguir subiendo, personas que creen en ti aún cuando has caído unas cuántas veces.
-
-{\bf Por todo ello, Gracias.}
+In first place, and for that reason the most important, I want to thank my family, {\bf Juan, Paqui and María}, who have suffered and enjoyed this project as much as I have, for their credibility, patience, for the moments of weakness supplied with joy and above all for believing in the capacity of someone who never gave reasons for it.\newline
+Of course, to my tutors Jose María Cañas Plaza and Encarnación del Castillo Morales who believed and made me believe since the beginning in this project and who have taken me to what I am now. \newline
+To my colleagues and friends from Munich, from Eesy Innovation and Infineon Technologies, who turned last summer into the best summer in the world and who helped me without asking why, because if something has to go right, it would come out all right.\newline
+To my friends from Granada whom I have had to say so many times not because of spending time, but because I never get tired of being with them and because they cheered me up with laughter and jokes.\newline
+Finally, I remember part of the speech of two professors in my graduation, two professors, who not just for being teachers forget to treat us as people and who saw us cry, laugh and above all, to grow up. And, if I have to take something from here, it's not only the knowledge learned, it's the friends and those people who help you climb when you do not have the strength to keep climbing, people who believe in you even when you've fallen a few times. \newline
+{\bf For all of that, thanks.}
 
 \vspace{1cm}
 
-{\bf En Granada, a X de Noviembre de 2018.}
+{\bf Granada on November 19, 2018.}
 

@@ -1,7 +1,7 @@
-\chapter{Estado del arte}\label{sec:Estado_arte}
-En la presente sección se desarrollarán los aspectos teóricos a tener en cuenta para un correcto entendimiento del trabajo realizado. Además se presentará la evolución de algunos sistemas, así como sus ventajas e inconvenientes.
-\section{Concepto FPGAs}
-Una FPGA[] o (Field programmable Gate Arrays) es un dispositivo reconfigurable que puede ser eléctricamente programado para implementar una alta variedad de circuitos lógicos. Consiste en un "array" uniforme de estructuras lógicas programables que son interconectadas por una configurable red de enrutamiento. Un ejemplo de una red de enrutamiento puede verse en la figura \ref{fig:estructura_FPGA}.
+\chapter{State of the art}\label{sec:Estado_arte}
+In the following section, theoretical aspects will be considered for a correct understanding of the work done. In addition, the evolution of some systems will be presented, as well as its advantages and disadvantages.
+\section{FPGA concept}
+An FPGA\cite{FPGAWhat} (Field Programmable Gate Arrays) is a reconfigurable device that can be electrically programmed to implement a high variety of logic circuits. It consists in a uniform logic programmable structures “array” which are interconnected by configurable routing network. A routing network example is shown in \ref{fig:estructura_FPGA}.
 
 \begin{center}
 	\begin{figure}[H]
@@ -12,37 +12,36 @@ Una FPGA[] o (Field programmable Gate Arrays) es un dispositivo reconfigurable q
 	\end{figure}
 \end{center}
 
- Lo lógica y las estructuras de interconexión pueden ser configuradas gracias a potentes herramientas CAD[], las cuáles permiten que el usuario final pueda definir esta interconexión física de bloques lógicos mediante lenguajes de descripción hardware[] (Hardware Description Languaje, HDL). Algunos de los más conocidos son VHDL, Verilog o ABEL. 
-\newline
-Si bien no es el más usado actualmente, a lo largo de la sección \ref{sec:Verilog} se realizará una breve introducción a Verilog[], comentando y analizando sus principales características.
-\subsection{Evolución y escenario}
+The logic and structures interconnection can be configured thanks to the powerful CAD tools, which allow that the final user could define this physical logic blocks interconnection through Hardware Description Language (HDL). Some of the best known are the VHDL or ABEL. Although it’s not the most used nowadays, along the \ref{sec:Verilog} section a brief introduction to Verilog will be done, discussing and analyzing its main features.
+\subsection{Evolution and scenario}
 
-El concepto de FPGA fue inventado en el año 1984 por Ross Freeman y Bernard Vonderschmitt, co-fundadores de Xilinx. Originalmente fueron diseñadas para servir como prototipos o demostraciones de la funcionalidad de circuitos digitales. Las FPGAs conforman la máxima evolución de los PLDs[] (Programmable Logic Device), definidos estos como circuitos integrados en los que se pueden programar ecuaciones lógicas booleanas. Algunos de sus usos en la actualidad son: 
+FPGAs were invented in 1984 by Ross Freeman and Bernard Vonderschmitt, co-founders of Xilinx\cite{Xilinkx}. They were mainly designed to work as prototypes or demonstrations of digital electronic circuits. FPGAs conform the maximum evolution of PLDs (Programmable Logic Device), defined as integrated circuits which can be programmed Boolean Logic equations. Some usage examples nowadays are:
 \begin{itemize}
-	\item Sistemas de visión artificial.
-	\item Sistemas de imágenes médicas.
-	\item Codificación y encriptación.
-	\item Reconocimiento de voz.
-	\item Aeronáutica y defensa.
+	\item Artificial Vision Systems
+	\item Medical Image Systems
+	\item Coding and Encryption
+	\item Voice Recognition
+	\item Aeronautics and Defense
 \end{itemize}
 
-El revolucionario éxito de estos dispositivos programables puede ser atribuido a la flexibilidad en la implementación del diseño. Así, la capacidad de re-programar al instante la FPGA con varios circuitos sin costo adicional, promueve la re-utilización del dispositivo, permite una rápida verificación del diseño y por ello, reduce el gasto en la etapa de desarrollo. Si bien actualmente no representan todo el sistema de un producto final, sus ventajas en las propiedades del diseño hacen que estén empezando a formar parte de una pieza importante en el desarrollo de un producto electrónico. \newline
+Revolutionary success from this programmable device can be attributed to the flexibility in design implementation. This way, the capacity to instantly reprogram the FPGA with several circuits without additional cost, promotes the reuse of the device and allows a fast design verification y because of that, reduces the cost in the developing stage. Even though they don’t actually represent the whole system from a final product, its advantages in the properties of the design are making them to become much more important in the electronic products developing. \newline
 
-Para intentar entender el porqué de la importancia de dispositivos de implementación hardware sería adecuado introducir la Ley de Moore. La ley de Moore expresa que aproximadamente cada dos años se duplica el número de transistores en un microprocesador. Como se puede ver en la figura \ref{fig:Ley_de_Moore}, esta ley que formuló el cofundador de Intel E. Moore el 19 de Abril de 1965 no se aleja de la realidad.
+In order to try to understand the importance of hardware implementation devices, it would be adequate to introduce the Moore’s Law. Moore’s Law expresses that approximately every 22 years, the number of transistors is duplicated in a
+microprocessor. As it’s shown in \ref{fig:Ley_de_Moore}, this law formulated by the Intel cofounder, E. Moore, in April the 19th of 1965, is not so far from reality.
 \newline
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.7]{imagenes/EstadoArte/ley_moore-eps-converted-to.pdf}
-	\caption{Ley de Moore}
+	\includegraphics[scale=0.7]{imagenes/EstadoArte/MooresLaw.png}
+	\caption{Moore's Law}
 	\label{fig:Ley_de_Moore}
 \end{figure}
  
 
-No obstante, tal y como ya han anunciado las principales empresas de microprocesadores actuales como son Intel y AMD en su hoja de ruta tecnológica para semiconductores, la ley de Moore llegará a su fin en 2021. Después de esa fecha, no resultará económicamente eficiente reducir más el tamaño de los transistores de silicio. La predicción de la industria no es que simplemente su tasa de reducción será cada vez más lenta, sino que se va a detener definitivamente. Es aquí donde la electrónica digital comenzará a tener un papel importante en los microprocesadores. Tanto es así que multinacionales dedicadas a la fabricación de procesadores como pueden ser Intel o AMD ya están trabajando en implementar esos comportamientos en FPGAs. Sus ventajas e inconvenientes serán presentadas en el las secciones \ref{sec:ArquitecturaFPGA} y \ref{sec:DescripcionHardware}.
+However, as it has been announced form the main microprocessors enterprises like Intel and AMD, in their technological roadmap for semiconductors, the Moore’s Law will get to its end in 2021. After this date, it won’t be economically efficient to keep reducing the silicon transistor’s size. The industry prediction is not only that its reduction rate will become slower and slower, but that will definitely stop. At that point, digital electronics will start to have an important role with microprocessors. This is forcing Multinational Enterprises dedicated to Microprocessors manufacturing like Intel or AMD, to implement those behaviors in FPGAs. Its advantages and disadvantages will be presented in \ref{sec:ArquitecturaFPGA} and \ref{sec:DescripcionHardware}.
+\newpage
+\subsection{FPGA Architecture}\label{sec:ArquitecturaFPGA}
 
-\subsection{Arquitectura FPGA}\label{sec:ArquitecturaFPGA}
-
-En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posible habilitar o deshabilitar esta conexión. Por el contrario, sobre FPGA estas interconexiones no están prefijadas, siendo el usuario final el que decide las interconexiones entre bloques lógicos (figura \ref{fig:pld_fpga}).
+In a PLD, interconnections between elements is already prefixed and it’s only possible to enable or disable this connection. Otherwise, FPGAs connections are no prefixed, making possible to the final user to decide the logic blocks interconnections. (figura \ref{fig:pld_fpga}).
 \newline
 \begin{center}
 \begin{figure}[H]
@@ -54,87 +53,85 @@ En un PLD, las interconexiones entre elementos ya esta prefijada, y solo es posi
 
 \end{center}
 
-A la hora de elegir una FPGA para un proyecto determinado es importante tener en cuenta una de sus propiedades más importantes, el número de bloques lógicos. Este número determina la capacidad del dispositivo y forma parte de una de las características mas limitantes de las FPGAS en la actualidad. Los bloques lógicos son independientes entre sí y pueden interconectarse para formar un módulo más complejos. \newline
+When choosing a FPGA for a specific project, it’s important to keep in mind one of its most important property: The number of logic blocks. This number determines the device capability and is part of one the most limited features from nowadays FPGAs/ Logic blocks are independent between them and are able to interconnect in order to build a more complex module. \newline
 
-A continuación se introducirán los conceptos de granularidad fina y granularidad gruesa, que dará lugar al correcto entendimiento de la arquitectura en una FPGA. 
+Now fine-grained and coarse-grained meanings will be introduced, which will lead to the correct understanding to the FPGA architecture. 
 
-Estos módulos más complejos realizan las operaciones básicas que en conjunto representan la función que operará en una FPGA. Se dice que las FPGAs son dispositivos con una arquitectura avanzada por la densidad de sus componentes y por los diferentes caminos de interconexión entre módulos. Así, de acuerdo al tipo de módulos lógicos que la conforman, encontramos dos derivaciones estructurales: 
+This complex module performs the basic operation which together represent the function that will operate in a FPGA. It’s said that FPGAs are Advanced Architecture devices because of the density of its components and because of the different interconnection paths between modules. According to the module types that conform it, we have two structural configurations:
 \begin{itemize}
-	\item Granularidad Gruesa.
-	\item Granularidad Fina.
+	\item Fine-grained
+	\item Coarse-grained
 \end{itemize}
 
-Los módulos lógicos en una arquitectura de granularidad gruesa son módulos grandes generalmente consistentes de una o más tablas de consulta y dos o más flip-flops. La tabla de consulta, también conocida como LookUp Table (LUT), actúa como una memoria donde se encuentra almacenada la tabla de verdad que representa la función lógica del circuito, así, en una LUT se puede implementar cualquier función deseable. Dependiendo el tamaño de la LookUp Table, se pueden implementar funciones de más o menos variables. \newline
+Logic modules in a coarse-grained architecture are big modules generally consistent which have one or more query tables and two or more Flip-Flops. The query table is also known as the Look Up Table (LUT). It performs like a memory where the truth table, which represents the circuit logic function is located, this way, any desired function could be implemented in a LUT. Depending of the LUT size, more or less variable functions can be implemented.\newline
 
-Por otra parte, una arquitectura de granularidad fina, está estructurada por una gran cantidad de módulos lógicos pequeños que realizan funciones relativamente simples. Cada módulo está compuesto de un circuito de dos entradas que realiza una función lógica determinada, o en algunos otros casos por un multiplexor. También suele contener algún flip-flop.  \newline
+On the other hand, a fine-grained architecture is structured by a huge quantity of small logic modules which perform relatively simple tasks. Each module has a two-input circuit that performs a determined logic function, or in some other cases by a multiplexor. It may also contain any Flip-Flop. \newline
 
-La FPGAs mas utilizadas actualmente suelen contar con tecnología de granularidad gruesa, que permite elevar el nivel de abstracción con respecto a las FPGA de granularidad fina. \newline
+The most used FPGAs nowadays have the coarse-grained technology, which allows to increase the abstraction level with respect to fine-grained FPGAs. \newline
 
-El primer caso permite implementaciones menos detalladas ya que desde un nivel muy básico se tienen módulos más complejos y el hecho de utilizar LUT deja entrever que se pueden realizar diseños más grandes. A lo largo de este proyecto se trabajará con el primer caso, ejemplo de ello es la FPGA utilizada, IceZum Alhambra II. \newline
+The first case allows less detailed implementations since from a very low level there are much more complex modules and the fact of using LUT suggests that larger designs can be created. Along this project the first case will be considered, as an example of that is the FPGAs used, IceZum Alhambra II.\newline
 
-El diseñador propone la función lógica a realizar a través de métodos de descripción hardware y define los parámetros de su diseño. Esto se hace por medio de código programable, que puede ser un lenguaje de descripción hardware, el cuál es introducido en la sección \ref{sec:DescripcionHardware}. 
+The designer proposes the logic function to be performed throughout the description hardware methods and define the parameter to its design. This is done through programmable code, that can be a description hardware language, which is introduced in section \ref{sec:DescripcionHardware}. 
 
-\subsection{Lenguajes de descripción hardware}\label{sec:DescripcionHardware}
+\subsection{Hardware Description Languages}\label{sec:DescripcionHardware}
 
-Un lenguaje de descripción hardware[] (Hardware Description Languaje, HDL) es un lenguaje usado para modelar el funcionamiento de un bloque hardware en una forma textual. Al igual que podemos encontrar diferencias entre los diferentes tipos de lenguajes de programación en cuanto a su sintaxis de codificación y sus métodos de simulación y síntesis, se observan ciertas diferencias entre HDL's. \newline
-Se tienen dos tipos diferentes de lenguajes de descripción hardware:
+A Hardware Description Language\cite{HDL} (HDL) is a language used to model the hardware block functionality in a textual way. As we can find differences between the different type of programming languages according to their coding syntax and their simulation methods and synthesis, we can find several differences between HDLs. There are two different hardware description languages types:
 \begin{itemize}
-	\item Bajo modelado. No permiten la jerarquezación de módulos y son capaces de realizar solo descripciones simples.
-	\item Alto modelado. Son los mas utilizados actualmente, permiten diseñar sistemas más complejos. Ejemplos de alto modelado son Verilog (Verify Logic) y VHDL (VHSIC Hardware Description Language).
+	\item Low level: They do not allow the hierarchy of modules and they are able to perform only simple descriptions.
+	\item High level: They are the most used currently, they allow to design more complex systems. Examples of high modeling are Verilog (Verify Logic) and VHDL (VHSIC Hardware Description Language).
 \end{itemize}	
-Este trabajo se basará en Verilog por permitir un nivel más alto de implementación que VHDL, como será analizado en la sección \ref{sec:Verilog} . \newline
+This work would be based on Verilog for allowing a higher level of implementation than VHDL, as would be discussed in section \ref{sec:Verilog}. \newline
 
-Ambos lenguajes comparten algunas características comunes, como el soporte para cualquier nivel de modelado y abstracción, y que cada elemento de diseño tiene una interfaz bien definida, para permitir la conexión rápida con otros elementos lógicos.
+Both languages share some common characteristics, such as support for any level of modeling and abstraction, and that each design element has well defined interphase to allow fast connection with other logical elements.
 
 \subsection{Verilog}\label{sec:Verilog}
-Debido a su utilización a lo largo de este proyecto, se analizarán algunas características importantes cuyo conocimiento será básico para entender el código.
+Due to its use throughout this project, some important characteristics, whose knowledge would be basic to understand the code, will be analyzed.
 
-\subsubsection{Tipos de datos}
+\subsubsection{Type of data}
 
-Existen dos tipos de datos en Verilog los cuáles tienen que ser entendidos para poder alcanzar la funcionalidad buscada:
+There are two types of data in Verilog which must be understood in order to reach the desired functionality:
 \begin{itemize}
-	\item reg: Representan variables con capacidad para almacenar información.
-	\item wire: Representan conexiones entre componentes, no tienen capacidad de almacenamiento.
+	\item reg: Represent variables with information storage capacity.
+	\item wire: They represent connections between components, they do not have storage capacity.
 \end{itemize}
 
-\subsubsection{Implementación en módulos}
-En la mayoría de los casos y para no perder el nivel de abstracción, un proyecto en Verilog suele estar compuesto por un conjunto de módulos los cuáles forman una funcionalidad completa, y cada uno de ellos, una especifica. \newline
+\subsubsection{Modules Implementation}
+In most cases and in order not to lose the abstraction level, a project in Verilog\cite{496013} is usually composed of a set of modules which form a complete functionality, and each of them, a specific one. \newline
 
-Las características principales de la implementación digital por módulos son:
+The main features of the digital implementation by modules are:
 \begin{itemize}
-	\item Cada módulo dispone de una serie de entradas y salidas cuya función principal es interconectar otros módulos, aunque puede no tener entradas y salidas.
-	\item No existen variables globales.
-	\item Cada módulo puede describirse de forma arquitectural o de comportamiento.
+	\item Each module has a series of inputs and outputs whose main function is to interconnect other modules, although it may not have inputs and outputs.
+	\item Each module can be described architecturally or behavioral.
 \end{itemize}
 
-Esta implementación por módulos Verilog permite la configuración del nivel de abstracción deseado por el usuario final. El desarrollo de módulos de funcionalidad específica puede tener sus ventajas e inconvenientes dependiendo de su uso final. Si se quieren reutilizar para otros flujos de trabajo (ejemplo: sumador 8 bits), es bueno tener módulos muy definidos según su funcionalidad (ejemplo: sumador de 2 bits). Sin embargo, la polarización no tiene porque ser imprescindible, si bien aconsejada.
+This implementation by Verilog modules allows the configuration of the abstraction level desired by the end user. The development of specific functionality modules can have their advantages and disadvantages depending on their final use. If they want to be reused for other workflows (example: 8-bits adder), it is good to have very defined modules according to their functionality (example: 2-bit adder). However, polarization does not have to be essential, although advised.
 
-\subsubsection{Paralelización de Procesos}
-Una de las características mas importantes que diferencia a Verilog del resto de lenguajes procedurales \footnote{lenguajes procedurales: ejecución de la aplicación se inicia con la primera línea de código, y sigue una ruta predefinida a través de la aplicación, llamando procedimientos según sea necesario.} es la posibilidad de ejecutar varios procesos en paralelo, aspecto fundamental en el lenguaje, y el cuál le brinda gran parte de las ventajas de usar implementación hardware.
+\subsubsection{Process Parallelism}
+One of the most important features that differentiates Verilog from the rest of the procedural languages \footnote{Procedural Languages: The application execution starts in the code’s first line and follows a predefined root through the application, calling procedures as it’s necessary.} is the possibility of executing several processes in parallel, a fundamental aspect in the language which provides a great part of the advantages of using hardware implementation.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/EstadoArte/procesos_paralelo.pdf}
-		\caption{Paralelización de Procesos}
+		\caption{Process Parallelism}
 		\label{fig:procesos_paralelo}
 	\end{figure}
 	
 \end{center}
-Toda implementación de Verilog se declara dentro de un proceso que puede ser de dos tipos:
+The whole implementation of Verilog is declared inside a process that can be of two types:
 \begin{itemize}
-		\item Initial: Este tipo de procesos se ejecutan sólo una vez comenzando su ejecución al inicio, y por tanto no existen retardos. Este proceso no es sintetizable, es decir, no puede ser utilizado en una descripción RTL.
+		\item Initial: This type of process is executed only once starting its execution at the beginning, therefore, there are no delays. This process is not synthesizable, which means it cannot be used in an RTL description.
 		
-		\item Always: Este tipo de procesos se ejecuta continuamente a modo de bucle, y como su propio nombre indica, está continuamente ejecutándose. Este proceso si que es sintetizable y es controlado por la temporización o por eventos. Si dicho bloque se ejecuta por más de un evento, dicho conjunto se denomina lista sensible.
+		\item Always: This type of process is continuously executed as a loop, as its own name indicates, is continually running. This is a synthesizable process and is controlled by timing or events. If this block is executed by more than one event, its set is called sensitive list.
 \end{itemize}
 
-\subsubsection{Estructuras de control}
+\subsubsection{Control Structures}
 
-Al igual que los leguajes de tipo procedural, Verilog dispone de una serie de estructuras de control:
+Just like other procedure languages, Verilog has a series of control structures:
 
 \begin{itemize}
 	\item if - else
-	\item Case. Es una de las estructuras de control mas utilizadas a lo largo de este proyecto, permite la generación de máquinas de estados
+	\item Case. This is one of the most used along this project. It allows the state machines generation.
 	\item For
 	\item While
 	\item Forever
@@ -142,30 +139,28 @@ Al igual que los leguajes de tipo procedural, Verilog dispone de una serie de es
 	
 \end{itemize}
 
-\subsubsection{Asignación continua}
+\subsubsection{Continuous Assignment}
 
-Mediante la asignación continua se puede modelar lógica combinacional, es decir, no se necesita una lista de sensibilidad para realizar la asignación. Sólo puede ser declarada fuera de cualquier proceso.
+Through continuous assignment a logic combinational can be modeled, that means, there’s no need a sensibility list to complete the task. It can only be declared outside of any process.
 
-\subsubsection{Asignación procedural}
+\subsubsection{Procedural Assigment}
 
-A las variables se le asigna un valor dentro de un proceso always o initial, el tipo de variable a la que se le asigna el valor puede ser de cualquier tipo.
-
+Variables have a value assigned inside an always or initial process, the type of variable to which the value is assigned can be of any type.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Open FPGAs evolution}
+Many hardware implementation languages as well as its FPGA architecture used, are linked to important companies such as Xilinx, Intel (formerly Altera), etc, and being able to work with them requires a large budget. \newline
+This leads us to the fact that not many companies or individuals can benefit from the advantages of using FPGAs, and at the same time, that technological progress is at a slower rate. One of the keys of success of companies like Arduino is not more than the community of people that stands behind creating new libraries, components, etc. This is all thanks to the low price of its products and the possibility of finding all the hardware and software on the web. \newline
 
-\section{FPGAs libres}
-\subsection{Evolución}
-Muchos lenguajes de implementación hardware así como su arquitectura de FPGA utilizada están ligados a importantes empresas tales como Xilinx, Intel (anteriormente Altera), etc, y poder trabajar con ellos requiere un elevado presupuesto. \newline
-Lo anterior por lo tanto, lleva a que no muchas empresas ni particulares puedan beneficiarse de las ventajas de la utilización de FPGAs y a su vez, que el avance tecnológico sea aún más lento. Una de las claves del éxito de empresas como Arduino no es más que la comunidad de gente que existe detrás creando nuevas librerías, componentes, etc. Todo ello a su vez gracias al bajo precio de sus productos, y a la posibilidad de encontrar todo el hardware y software en la web. \newline
+To understand the formation of free FPGAs it is important to know what the bytestream is. \newline
+A bytestream is a sequence of bytes that is used in telecommunications and IT. The term bytestream is used to describe the configuration with which a specific design will be implemented in an FPGA. This detailed bitstream format for a particular FPGA is typically owned by the FPGA provider. \newline
 
-Para entender el nacimiento de las FPGAs libres es importante conocer qué es el bytestream. \newline
-Un bytestream es una secuencia de bytes que se utiliza en telecomunicaciones y computación. El término bystream se utiliza para describir la configuración con la que se implementará un determinado diseño en una FPGA. Este formato detallado de flujo de bits para una FPGA particular es típicamente propietario del proveedor de FPGA. \newline
+This is why Clifford Wolf decided to interpret the bytestream of the Lattice\cite{Lattice} iCE40 model and developed the IceStorm\cite{7910719} tool. \newline
+IceStorm was developed as a translate software from Verilog (Description Language in FPGAs, \ref{sec:Verilog}) and bytestream. This translation was possible thanks to the inverse engineering, this means that the usual usage is not give, but the inverse.
 
-Es por ello que Clifford Wolf decidió interpretar el bytestream del modelo Lattice iCE40 y desarrolló la herramienta IceStorm. \newline
-IceStorm se desarrolló como software de traducción de Verilog (lenguaje de descripción en FPGAs, sección \ref{sec:Verilog}) al bytestream. Esta traducción fue posible gracias a la ingeniería inversa, esto es, no se le da el uso habitual, sino el inverso. 
+There’s no longer dependency on any manufacturer and all knowledge is also available. From these tools you can create any interface or any application that has not been foreseen by the manufacturer. \newline
 
-Ya no se depende de ningun fabricante y todo el conocimiento además esta disponible. A partir de estas herramientas se puede crear cualquier interfaz o cualquier aplicación que no haya sido prevista por el fabricante. \newline
-
-Sólo las FPGAs de Lattice iCE40 (modelos HX1K-TQ144 y HX8K-CT256) son hasta el momento con las que se pueden trabajar (figura \ref{fig:lattice}), pero al ser un proyecto libre \footnote{Proyecto libre: El término libre se refiere a la libertad de los usuarios para ejecutar, copiar, distribuir, estudiar, cambiar y mejorar ese hardware o software.}, muchas personas ya están aumentando sus posibilidades.
+Only Lattice iCE40 FPGAs (HX1K-TQ144 and HX8K-CT256 models) are at the moment the ones that can be worked with (figura \ref{fig:lattice}), but since it is a open project \footnote{Open project: This refers to the user freedom to execute, copy, distribute, study, change and improve that hardware or software.},a lot of people are increasing their chances.
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -174,8 +169,8 @@ Sólo las FPGAs de Lattice iCE40 (modelos HX1K-TQ144 y HX8K-CT256) son hasta el 
 		\label{fig:lattice}
 	\end{figure}
 \end{center}
-
-Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figuras \ref{fig:tiny_fpga}, \ref{fig:blackIceII}, \ref{fig:icoBoard}
+\newpage
+Some FPGAs examples that are now available for users are shown in figures \ref{fig:tiny_fpga}, \ref{fig:blackIceII}, \ref{fig:icoBoard}
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -201,25 +196,25 @@ Algunos ejemplos de FPGAs ya disponibles para ser usadas se exponen en las figur
 	\end{figure}
 \end{center}
 \subsection{IceZum Alhambra}
-Para este trabajo se ha optado por trabajar con la IceZum Alhambra, la cuál ha sido íntegramente diseñada y ensamblada en España.\newline
-Es una FPGA libre y compatible con IceStudio (el cuál se analizará en a sección \ref{sec:IceStudio}). Alguna de sus características más importantes son:
+For this project, IceZum Alhambra\cite{Alhambra} has been used, which has been completely designed and assembled in Granada (Spain).\newline
+This is a free FPGA compatible with IceStudio (to be analyzed in section \ref{sec:IceStudio}). Some of its most important features are:
 \begin{itemize}
-	\item Placa FPGA de desarrollo iCE40HX1K-TQ144 de la empresa Lattice. 
+	\item Development FPGA board iCE40HX1K-TQ144 from Lattice company. 
 	\item Open hardware.
-	\item Compatible con IceStorm toolchain.
-	\item Compatible con shields de Arduino Uno. 
-	\item 12MHz Oscilador.
-	\item Interuptor ON/OFF para activar o desactivar los pines digitales.
-	\item 20 Input/output 5v pines.
-	\item 8 Input/Output 3.3V pines
-	\item USB micro-B para programar la FPGA desde el pc.
-	\item Botón de reset.
-	\item 8 leds de proposito general.
-	\item TX/RX Leds
-	\item 4 entradas analógicas disponibles a través de i2c.
+	\item Compatible with IceStorm toolchain.
+	\item Compatible with Arduino Uno shields. 
+	\item 12MHz oscillator.
+	\item ON/OFF switch to enable or disable digital pins.
+	\item 20 Input/Output 5V pins.
+	\item 8 Input/Output 3.3V pins.
+	\item Micro-B USB to program FPGA from PC.
+	\item Reset button.
+	\item 8 general purpose LEDs.
+	\item TX/RX LEDs.
+	\item 4 analogic inputs available through i2c.
 \end{itemize}
 
-Es conocido que existen placas con mejores carácterísticas, pero el hecho de que sea Open Hardware y que se pueda implementar con IceStudio, ha llevado a la elección final de esta tarjeta para el desarrollo del presente proyecto.\newline
+It is known that there’re better features board, but the fact that it is Open Hardware and that can be implemented with IceStudio, has led to the final choice of this board for the development of this project.\newline
 \begin{center}
 \begin{figure}[H]
 	\center
@@ -228,8 +223,7 @@ Es conocido que existen placas con mejores carácterísticas, pero el hecho de q
 	\label{fig:IceZumAlhambraI}
 \end{figure} 
 \end{center}
-Un punto a tener en cuenta para el desarrollo hardware con esta FPGA es su memoria de 1K lo que ha supuesto una limitación importante en el desarrollo. Para el presente proyecto se ha hecho uso también de la nueva versión de la IceZum Alhambra, IceZum Alhambra II, la cuál aún no estaba en el mercado al inicio del proyecto y que conlleva algunas mejoras, como la ampliación de 8K en su memoria, la mejora del bus de datos i2c, la posibilidad de alimentación mediante batería LIPO, etc. \newline
-La tarjeta IceZum Alhambra II se representa en la figura \ref{fig: IceZumAlhambraII}
+One point to keep in mind for the hardware development with this FPGA is its 1K memory, which has been a significant limitation in the development. For the present project, the new version of the IceZum Alhambra, IceZum Alhambra II, was also used, which was not in the market at the beginning of the project and which takes some improvements, such as the expansion of 8K in its memory, the improvement of the data bus i2c, the possibility of powering through LIPO. battery, etc. IceZum is presented in figure \ref{fig: IceZumAlhambraII}
 \begin{center}
 	\begin{figure}[H]
 		\center
@@ -241,63 +235,55 @@ La tarjeta IceZum Alhambra II se representa en la figura \ref{fig: IceZumAlhambr
 
 
 \subsection{IceStudio}\label{sec:IceStudio}
-Los lenguajes HDL suelen tener una curva de aprendizaje difícil, debido esto en gran medida al nivel de abstracción tan bajo necesario para diseñar un sistema en concreto. Es necesario conocer las características hardware de nuestro sistema para poder trabajar con este tipo de lógica. \newline
+HDL languages usually have a difficult learning curve, this is largely due to the low level of abstraction needed to design a particular system. It is necessary to know the hardware features of our system in order to work with this type of logic. \newline
 
-Como se ha desarrollado anteriormente, algunos fabricantes proporcionan herramientas comerciales para programar sus propias FPGA. Si bien en la actualidad son entornos complejos, cuentan con una gran cantidad de herramientas y funcionalidades. Lamentablemente la mayoría de ellos no son gratuitos y están unidos a la arquitectura de un único fabricante.
+As previously developed, some manufacturers provide commercial tools to program their own FPGAs. Although in the present, they are complex environments, they have a great number of tools and functionalities. Unfortunately, most of them are not free and are linked to the architecture of a unique manufacturer.
 \newline
-Con la evolución de las FPGAs han empezado a aparecer lenguajes que permiten un mayor nivel de abstracción. 
-Además, también han aparecido herramientas centradas en la implementación gráfica. Un ejemplo de este tipo de implementación es LabVIEW FPGA o IceStudio. \newline
-IceStudio es un proyecto Open Source desarrollado por Jesús Arroyo Torrens y en el que nos basaremos a lo largo del presente documento. \newline
+With the evolution of FPGAs, languages that allow a higher level of abstraction have started to appear. In addition, tools focused on the implementation of graphic design have also appeared. An example of this type of implementation is LabVIEW FPGA or IceStudio\cite{IceStudio}. \newline
+IceStudio is an Open Source project developed by Jesús Arroyo Torrens, on which the present document will be based. \newline
 
-IceStudio es IDE gráfico para FPGAs libres y esta construido sobre el proyecto IceStorm. 
-El proyecto IceStorm tiene como objetivo la ingenieria inversa y la documentación del formato bitstream de la FPGA Lattice iCE40 (aunque más adelante fueron surgiendo algunas más). Proporciona herramientas simples para analizar y crear archivos de flujo de bits, esto es, el más bajo de nivel de implementación para una FPGA.\newline
+IceStudio is a graphic IDE for free FPGAs and is built on the IceStorm project. The objective of the IceStorm project is the reverse engineering and the bitstream format of the FPGA Lattice iCE40 (although a few more were emerging) documentation. It provides simple tools to analyze and create bitstream files, that is, the lowest level of implementation for an FPGA.\newline
 
-Para acercar al lector al conocimiento y funcionamiento de IceStudio se irán incorporando a lo largo del documento una serie de capturas de pantalla representativas para que no se pierda la visión de lo que se esta haciendo. Por ejemplo, la ventana principal de IceStudio y sobre la que se desarrollará todo lo demás tendrá la apariencia que se muestra en la \ref{fig:Main_IceStudio}: \newline
+To get the reader closer to the knowledge and operation of IceStudio, a series of representative screenshots will be incorporated throughout the document so that the vision of what is being done is not lost. For example, the main window of IceStudio and on which everything else will be developed, is the same as shown in figure \ref{fig:Main_IceStudio}: \newline
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 20mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Main_IceStudio.pdf}
-	\caption{Ventana principal IceStudio.}
+	\caption{Main Window IceStudio.}
 	\label{fig:Main_IceStudio}
 \end{figure}
 
-El hecho de que IceStudio sea un editor gráfico puede hacer pensar que el nivel de abstracción podría ser más alto de lo deseado, pero lo cierto es que este nivel es configurable. \newline
-Es el usuario final el que decide con que nivel de abstracción se trabaja, siendo necesario para eso una amplia biblioteca de módulos como veremos a continuación. Para poder explicar la potencia de IceStudio, se procederá con un caso práctico;\newline
+The fact that IceStudio is a graphic editor can make believe that the abstraction level could be higher that desired, but the truth is that this a configurable level. The final user who decides which abstraction level will be working with, making necessary for this a large modules library as we will se ahead. In order to explain the IceStudio power, a practical case will be shown.\newline
 
-El módulo que se presenta en la figura \ref{fig:Write_i2c_module} es una escritura normal de i2c, en la cuál se parametriza la dirección del esclavo y la dirección que se quiere leer (más adelante se explicará con más detalle). \newline
+The module represented in figure \ref{fig:Write_i2c_module} is a normal writing of i2c, in which the slave direction is parameterized and also the direction that wants to be read on (will be explained in detail ahead). \newline
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 25mm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module.pdf}
-	\caption{Escritura I2C IceStudio alto nivel.}
+	\caption{High-Level I2C writing}
 	\label{fig:Write_i2c_module}
 \end{figure}
 
-Así, si una persona no experimentada con este tipo de código y cuyo fin no es entenderlo quiere hacer uso de eso no deberá de bajar mucho de nivel.\newline
-No obstante, existe la posibilidad de que se requieran cambiar valores como la frecuencia de reloj, el modo de operación i2c, etc.
-Para ello podemos bajar de nivel e introducirnos en el módulo en cuestión, en este caso, haciendo doble clic, como aparece en la figura \ref{fig:Write_i2c_module2}. 
+Thus, if someone who is not familiarized with this type of code and whose objective is not to understand it but wants to make use of it, it should not lower a lot of level.
+However, there is a possibility that it is necessary to change some values such as clock frequency, i2c operation mode, etc. To do this we can lower the level and enter the module being worked with, in this case, by double clicking, as shown in figure \ref{fig:Write_i2c_module2}. 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 1.5cm 0mm 0mm, clip,scale=0.4]{imagenes/EstadoArte/Write_i2c_module2.pdf}
-	\caption{Escritura I2C IceStudio bajo nivel.}
+	\caption{Low-Level I2C writing}
 	\label{fig:Write_i2c_module2}
 \end{figure}
 
-Se podría decir entonces que se ha bajado un nivel más de abstracción, pudiendo entrar ahora en detalles hardware más específicos si fuese necesario. \newline
+The it could be said that a level of abstraction has been lowered, being now able to enter in more specific hardware details if necessary. \newline
 
-En la anterior caso práctico se ha podido ver una de las ventajas de IceStudio. La modularidad permite configurar el nivel de abstracción.
-Para ello hace falta una biblioteca de módulos, algunos de los cuáles serán desarrollados a lo largo de este trabajo, otros de ellos, están siendo desarrollados, y pueden encontrarse en el siguiente enlace: 
-
-\href{https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre}{https://groups.google.com/forum/forum/fpga-wars-explorando-el-lado-libre}
-
+In the previous practical case, one of the advantages of IceStudio has been seen. Modularity allows to configure the abstraction level. For this, we need a module’s library, some of which will be developed throughout this work, some other modules are being developed, and can be found at \cite{GoogleGroups}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Coexistencia Microcontrolador-FPGA}\label{sec:coexistencia}
-\subsection{Diferencia microcontrolador-FPGA}
-En un principio puede parecer que un procesador y FPGA son dispositivos similares porque ambos pueden realizar ciertas tareas pre-configuradas. Lo cierto es que al profundizar se pueden encontrar mas diferencias que similitudes. Ambos son capaces de implementar una función de transferencia, pero la forma en la que lo hacen es diferente para cada uno de ellos.\newline
+\section{Microcontroller-FPGA coexistence}\label{sec:coexistencia}
+\subsection{Microcontroller-FPGA differences}
+At first it may seem that a processor and FPGA are similar devices because both can perform certain pre-configured tasks. The truth is that digging deeper we can find more differences than similarities. Both are able to implement a transfer function, but the way they do it is different for each of them.\newline
 
-Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la que tenemos unas entradas y ciertas salidas tal y como se muestra en la figura \ref{fig:funcionalidad_FPGA_micro}.\newline
+This, we could see FPGA and microcontrollers in a black box in which we have some inputs and several outputs as shown in figure \ref{fig:funcionalidad_FPGA_micro}.\newline
 
 
 \begin{figure}[H]
@@ -307,115 +293,135 @@ Así, podríamos ver las FPGA y los microcontroladores como una caja negra en la
 	\label{fig:funcionalidad_FPGA_micro}
 \end{figure}
 
-Para comprobar de forma resumida como implementan de manera diferente esa función de transferencia, se explicará brevemente la forma de trabajar con un procesador. \newline
-Un procesador contiene una serie de instrucciones que realizan operaciones sobre un conjunto de bits (sumar, incrementar, leer y escribir de la memoria). Dependiendo del tipo de procesador y de su arquitectura tenemos más o menos instrucciones asociadas, siendo este aspecto uno de los mas importantes que determinan su rendimiento.
+To summarize how they implement this transfer function differently, the way to work with a processor will be briefly explained. \newline
+A processor contains a series of instructions that perform operations on a set of bits (add, increase, read and write in memory). Depending on the processor type and its architecture we have more or less associated instructions, this being one of the most important aspects that determine its performance. 
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.3]{imagenes/EstadoArte/processor.png}
-		\caption{Arquitectura básica procesador}
+		\caption{Basic architecture in a processor}
 		\label{fig:arquitectura_procesador}
 	\end{figure} 
 \end{center}
 
 
-Se dispone de una serie de registros, una memoria para almacenar la información y una pila de instrucciones, que contiene el programa que va a ejecutarse en código máquina, además de un reloj.\newline
+It has a series of registers, a memory to store the information and a stack of instructions, which contains the program to be executed in machine code, in addition to a clock.\newline
 
-Su modo de funcionamiento a alto nivel; en cada ciclo de reloj el procesador lee de su pila de instrucciones los valores necesarios, llama a la instrucción oportuna y ejecuta un determinando cálculo.\newline
-Como se argumentó en la sección \ref{sec:ArquitecturaFPGA}, al implementar un diseño lógico en una FPGA, se está modificando una matriz de conexiones físicas. Modificando esa matriz de conexiones se pueden implementar diferentes bloques de funcionalidad, es decir, se podría representar como varias funciones de transferencia en un mismo sistema hardware.\newline
-En la figura \ref{fig:puertas_logicas} se representa un ejemplo real de como están implementadas las conexiones físicas de puertas lógicas en una FPGA, y de como eso permite tener módulos independientes unos de otros. Además, notese el problema de la memoria en una FPGA, siendo está el número total de puertas lógicas físicas que pueden ser utilizadas.
+Its operation mode at a high level; in each clock cycle the processor reads from its instruction stack all necessary values, calls the appropriate instruction and executes a determining calculation.\newline
+As discussed in \ref{sec:ArquitecturaFPGA}, when implementing a logic design in an FPGA, a matrix of physical connections is being modified. By modifying that connection matrix, different functionality blocks can be implemented, which means, it could be represented as several transfer functions in a same hardware system.\newline
+Figure \ref{fig:puertas_logicas} shows a real example of how the physical connections of logical gates are implemented in an FPGA, and how it allows to have independent modules from each other. Also, notice the problem of the memory in an FPGA, being this the total number of physical logical doors that can be used.
 \begin{center}
 \begin{figure}[H]
 	\center
-	\includegraphics[[trim = 0mm 4cm 0mm 0cm,clip, angle=0,scale=0.4]{imagenes/EstadoArte/puertas_logicas.pdf}
-	\caption{Puertas lógicas después de una implementación hardware.}
+	\includegraphics[scale=0.3]{imagenes/EstadoArte/puertas_logicas.pdf}
+	\caption{Logic gates in a hardware implementation.}
 	\label{fig:puertas_logicas}
 \end{figure}
 \end{center} 
 
-\subsection{Necesidad}
+\subsection{Importance}
 
-Se propone el siguiente caso práctico:\newline
+The following practical case is proposed:\newline
 
-\textsl{Se requiere monitorizar con exactitud 4 diferentes sensores provenientes del exterior, de una manera exacta, los cuatro al mismo tiempo y a una velocidad especificada por un reloj externo, siendo necesario además una posterior actuación por parte del sistema (apertura de válvula, cierra de puertas, etc).}\newline
+\textsl{It’s required to monitor with accuracy 4 different sensors coming from the outside, in an exact way, all four at the same time and at a specific speed by an external clock, being necessary in addition an actuation of the system (valve opening, closes gates, etc).}\newline
 
-El diagrama de bloques del flujo de trabajo en un procesador que implemente lo anterior podría parecerse al siguiente:
+The workflow block diagram in a processor that implements the above, might look like figure \ref{fig:processor_sensor}
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 10cm 0mm 10cm, clip,scale=0.5]{imagenes/EstadoArte/processor_sensor.pdf}
+		\caption{Flow diagram in a processor.}
+		\label{fig:processor_sensor}
+	\end{figure}
+\end{center} 
 
 
+Thus, the end user of this system should be able to check in a cyclic way, each sensor and its following performance, thus failing to meet the specifications (the four sensors will not be monitored at the same time).
+If the work was done with interruptions, the different external interruptions would be configured or cyclic executives would be used in order to approach those final requirements. However, any of these solutions, they are still an approximation.\newline
+In contrast, with the use of an FPGA, the block diagram of the workflow would look like figure \ref{fig:fpga_sensor}:
+
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/EstadoArte/fpga_sensor.pdf}
+		\caption{Flow diagram in a FPGA.}
+		\label{fig:fpga_sensor}
+	\end{figure}
+\end{center} 
 
 
-Se implementarían diferentes funciones de transferencia para cada uno de los bloques a desarrollar, pudiendo ejecutarse estos en paralelo. \newline
+Different transfer functions will be implemented for each one of the blocks to be developed, which can be executed in parallel.
+However, it is not always necessary to have parallel execution, and not only may it not be necessary, but it could be harmful. When a system must be sequential, why to use a parallel nature implementation? \newline
 
-No obstante, no siempre es necesario un ejecutivo en paralelo, y no solo puede no ser necesario sino que podría ser perjudicial. Cuando un sistema debe ser secuencial, ¿por qué utilizar una implementación de naturaleza paralela? \newline
+It is very common to have systems where it is convenient to be able to implement both types of operation, for that reason an \newline
 
-Es muy común tener sistemas donde conviene poder implementar ambos tipos de funcionamiento, por eso una coexistencia FPGA/Micro-controlador podría ser suficiente para adaptarse a los requerimientos. \newline
-
-En la figura \ref{fig:bipedo} se puede ver como ejemplo real de un sistema bípedo, el cuál se explicará con mas detalle en los siguientes capítulos.
+In figure \ref{fig:bipedo} a real example of a bipedal system can be seen, which would be more detailed explained in the following chapters.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4]{imagenes/EstadoArte/bipedo.pdf}
-		\caption{Sistema bipedo coexistencia microcontrolador-FPGA.}
+		\caption{Bipedal System coexistence between microcontroller and FPGA.}
 		\label{fig:bipedo}
 	\end{figure}
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Unidad de medida inercial}\label{sec:IMU}
-El componente central del sistema propuesto esta definido como IMU o unidad de medida inercial. Está compuesto por una serie de sensores los cuales serán utilizados para conocer de manera exacta aspectos de localización del sistema a bordo tales como velocidad, orientación, fuerzas gravitacionales etc. \newline
-Esta información puede ser utilizada para el control o el simple conocimiento del sistema en un momento concreto. \newline
+\section{Inertial Measurement Unit}\label{sec:IMU}
+The central component of the proposed system is defined as IMU or inertial measurement unit. It is composed of a series of sensors which will be used to know exactly many on-board location system aspects such as speed, orientation, gravitational forces, etc. \newline
+This information can be used for control or simple knowledge of the system at a specific time. \newline
 
-En el caso del presente proyecto, será utilizado para obtener los ángulos de navegación o ángulos de Tait-Brain, en los que la orientación se presenta con tres rotaciones ortogonales en torno al eje X, Y y Z. Un ejemplo de este tipo de representación se encuentra en la figura \ref{fig:orientacion}.\newline
+In the case of the present project, it will be used to obtain the navigation angles or Tait-Brain angles, in which the orientation is presented with three orthogonal rotations around the X, Y and Z axis. An example of this type of representation can be found in Figure \ref{fig:orientacion}.\newline
 
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.5]{imagenes/Balancing_robot/orientacion}
-	\caption{Ángulos de Tait-Brain.}
+	\caption{Tait-Brain angles.}
 	\label{fig:orientacion}
 \end{figure}
 
 
-Una IMU queda definida por su número de grados de libertad (DOF) los cuáles dependerán del número de sensores a bordo (acelerómetro, giroscopio) y el número de ejes en los que se aplican. Así una IMU con seis grados de libertad (por ejemplo un acelerómetro de 3 ejes y un giroscopio de 3 ejes) se diría que es 6DOF. \newline
+An IMU is defined by its number of degrees of freedom (DOF) which would depend on the number of sensors on board (accelerometer, gyroscope) and the number of axis on which are applied. Thus, an IMU with six DOF (for example a 3-axis accelerometer and a 3-axis gyroscope) would be said to be 6DOF. \newline
 
-En las figuras \ref{fig:IMU12}, \ref{fig:IMU2}, \ref{fig:IMU2} se presentan algunos ejemplos de IMUs.
+Figures \ref{fig:IMU12}, \ref{fig:IMU2}, \ref{fig:IMU2} present some IMUs examples
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU1}
-	\caption{Unidad de Medida Inercial.}
+	\caption{IMU.}
 	\label{fig:IMU12}
 \end{figure}
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.2]{imagenes/Balancing_robot/IMU2}
-	\caption{Unidad de Medida Inercial.}
+	\caption{IMU.}
 	\label{fig:IMU2}
 \end{figure}
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.25]{imagenes/Balancing_robot/IMU3}
-	\caption{Unidad de Medida Inercial.}
+	\caption{IMU.}
 	\label{fig:IMU3}
 \end{figure}
 
-Otra de las características importantes y de la cuál dependerá en gran medida el precio del producto es el rango de los sensores a bordo y de la disponibilidad en el propio sistema de conversores analógico digitales, encargados estos de convertir el valor del sensor a un valor binario que pueda ser utilizado para posterior análisis. \newline
-A continuación se definen algunos de los aspectos más importantes que pueden ser encontrados en una unidad de medida inercial y los cuáles serán muy útiles a lo largo del presente proyecto.
+Another important feature and one on which will largely depend the price of the product, is the range of the on-board sensors and the availability in the digital analogous converters system, which are in charge to convert the value of the sensor to a binary value that can be used for further analysis. \newline
+Following there are some of the most important aspects that can be found in an Inertial Measurement Unit and those that would be very useful throughout the present project.
 
-\subsubsection{Acelerómetro}
-Un acelerómetro, como su propio nombre indica es un dispositivo que permite medir la aceleración a la que un cuerpo está sometido. Es un componente fundamental en las unidades de medida inercial pues se puede detectar por ejemplo, condiciones de caída libre, aunque el principal uso es para determinar la orientación del sensor. \newline
+\subsubsection{Accelerometer}
+An accelerometer, as its name suggests, is a device that allows measuring the acceleration to which a body is subjected. It is a fundamental component in the inertial measurement units because it can detect, for example, free fall conditions, although the main use is to determine the sensor’s orientation.\newline
 
-Los acelerómetros normalmente son de tres ejes, es decir, son capaces de medir independientemente la aceleración en el eje X, Y y Z, lo que permite conocer la magnitud y dirección del vector aceleración en cada uno de los ejes. \newline
+Normally accelerometer have 3 axis, which means, they are capable to independently measure the acceleration in X, Y and Z axis, which allows to know the magnitude and direction of the acceleration vector on each one of the axis. \newline
 
-El caso que interesa en este proyecto es poder determinar la orientación del sensor. Para ello, se debe aplicar tigonometría. Suponiendo un sistema 2D con el representado en la figura \ref{fig:acelerometro1}.
+The important case in this project is to be able to determine the sensor orientation. For that, trigonometry must be applied. Supposing a 2D system according to Figure \ref{fig:acelerometro1}.
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.4]{imagenes/Balancing_robot/acelerometro1}
-	\caption{Trigonométrica en sensor acelerómetro 2D.}
+	\caption{Trigonometry in accelerometer system 2D.}
 	\label{fig:acelerometro1}
 \end{figure}
 
@@ -423,12 +429,12 @@ El caso que interesa en este proyecto es poder determinar la orientación del se
 \theta = atan\frac{A_{x}}{A_{z}}
 \end{equation}
 
-Si se aplica en una representación 3D como la representada en la \ref{fig:acelerometro2}
+If it’s applied in a 3D representation as shown on Figure \ref{fig:acelerometro2}
 
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.6]{imagenes/Balancing_robot/acelerometro2}
-	\caption{Trigonométrica en sensor acelerómetro 3D.}
+	\caption{Trigonometry in accelerometer system 3D.}
 	\label{fig:acelerometro2}
 \end{figure}
 
@@ -444,179 +450,152 @@ Si se aplica en una representación 3D como la representada en la \ref{fig:acele
 \theta_{z} = atan\frac{A_{z}}{\sqrt{A_{x^2}+A_{y^2}}}
 \end{equation}
 
-\subsubsection{Giroscopio}
-Un giroscopio es un dispositivo que permite medir el ángulo de rotación de un determinado dispositivo. \newline
+\subsubsection{Gyroscope}
+A Gyroscope is a device that allows to measure the rotation angle of a certain device. \newline
 
-En un giroscopio, siempre se miden ángulos relativos a una referencia arbitraria (a diferencia de los acelerómetros). El giroscopio que se emplea en ente proyecto es denominado giroscopio vibratorio de efecto Coriolis. \newline
+In a gyroscope, relative angles are always measured to an arbitrary reference (unlike accelerometers). Gyroscope used in this project is called a Coriolis Vibratory Gyroscope. \newline
 
-Al igual que en el acelerometro del apartado anterior, los giroscopios suelen emplear tres ejes, es decir, son capaces de registrar de forma independiente la rotación en los ejes X, Y y Z, se tiene por tanto el modulo y dirección del vector de rotación. \newline
+As in the accelerometer in the previous section, gyroscopes usually employ three axes, that is, they are able to independently register the rotation in the X, Y and Z axis, so the module and direction of the rotation vector are obtained.\newline
 
-Es importante tener en cuenta que este tipo de giroscopios basados en el efecto Coriolis no detectan el ángulo girado sino la velocidad angular, aspecto importante para su depuración. \newline
+It’s important to keep in mind that this kind of Gyroscopes based in Coriolis effect are not able to detect the rotated angle, but the angular speed, an important aspect to its depuration. \newline
 
-Si se recuerda el concepto de velocidad angular (ecuación \ref{equation:velangular}):
+Reminding the angular speed concept (\ref{equation:velangular}):
 
 \begin{equation} \label{equation:velangular}
 \omega = \frac{\delta \omega}{\delta t}
 \end{equation}
 
-Así, para obtener el ángulo es necesario realizar la integración respecto del tiempo (ecuación \ref{equation:integracion}).
+In order to obtain the angle, it’s necessary to perform the integration with respect to time (ecquation \ref{equation:integracion}):
 
 \begin{equation}\label{equation:integracion}
 \theta_{gyro} = \omega_{gyro}*\Delta t
 \end{equation}
 
-Los acelerómetros son dispositivos que frecuentemente son muy sensibles a las vibraciones, por lo que para su correcto procesamiento hay que tener en cuenta que presentará mucho ruido de alta frecuencia. Un filtrado a una frecuencia determinada resolverá parte de este problema.\newline
+Accelerometers are devices that are often very sensitive to vibrations, so for its correct processing must take into account that it will present a lot of high frequency noise. A filtering at a certain frequency will solve part of this problem.\newline
 
-Tener que hacer una integración con respecto al tiempo lleva consigo algunos problemas, los cuáles serán vistos en la siguiente sección. 
+Having to make an integration with respect to time brings with it some problems which would be seen in the next section.
 
-\subsubsection{Problema de deriva}
+\subsubsection{Drift Problem}
 
-Gran parte de las unidades de medida inercial del mercado están compuestas como mínimo de acelerómetros y giroscopios, el motivo de esta combinación es que uno complementa las limitaciones del otro y viceversa. \newline
+A huge part of the Inertial Measurement Units on the market are at least composed with accelerometers and gyroscopes, the reason for this combination is that one complements the limitations of the other and vice versa. \newline
 
-La deriva en un sensor electrónico o "drift" es una variación con el tiempo de la salida del medidor (con respecto a la medida real) a pesar de que la variable pueda ser constante, es provocado en cierta medida por cambios en la temperatura o por la acumulación de errores. \newline
+The drift in an electronic sensor is a variation over time of the output of the meter (with respect to the real measurement) although the variable may be constant, is in a way cause by extent changes in the temperature or by the accumulation of errors. \newline
 
-Tanto en un acelerómetro con en un giroscopio encontramos errores asociados a la deriva: 
+In both accelerometer and gyroscope, we find drift associated errors: 
 \begin{itemize}
-	\item Los acelerómetros no tienen deriva a medio o largo plazo, sin embargo, se ven influenciados por los movimientos del sensor y el ruido por lo que no son fiables a medio o corto plazo.
-	\item En cuanto a los giroscopios, funcionan muy bien en movimientos bruscos y cortos pero al realizar una integración con respecto al tiempo aparece el problema de deriva a medio o largo plazo. 
+	\item Accelerometers don’t have medium or long-term drift; however, they are influenced by the movements of the sensor and the noise, reason why they are not reliable to medium or short term.
+	\item As for gyroscopes, they work very well in sudden and short movements but when making an integration with respect to time the drift problem appears in the medium or long term.
 \end{itemize} 
 
-Después de analizar los problemas de ambos, parece razonable poder combinar ambas mediciones para obtener orientaciones más precisas. 
+After analyzing both accelerometers and gyroscopes problems, it seems reasonable to combine both measurements to obtain more precise orientations.
 
-\subsubsection{Posibles soluciones}
+\subsubsection{Possible solutions}
 
-Para solucionar algunos de los problemas anteriores, puede ser muy útil aplicar algunas de las soluciones propuestas a contunuación: 
+To solve some of the above problems, it can be very useful to apply some of the following proposed solutions: 
 
 \begin{itemize}
-	\item Combinar y filtrar las señales mediante un filtro complementario. Es el más utilizado en la actualidad debido a su no muy elevada complejidad. Su expresión más sencilla se representa en la ecuación \ref{equation:complementary_filter}.
+	\item Combine and filter the signals by using a complementary filter. It is the most used nowadays due to its not very high complexity. Its simplest expression is represented in equation \ref{equation:complementary_filter}.
 	\begin{equation} \label{equation:complementary_filter}
 	\theta = A * (\theta_{prev}+\theta_{gyro}) + B * \theta_{accel}
 	\end{equation}
-	\item Combinar y filtrar las señales mediante un filtro de Kalman, el cuál realiza una estimación del valor futuro de la medición. Sin embargo, utiliza unos cálculos complejos. 
-	\item Algunas unidades de medida inercial incorporan de manera interna procesadores DMPs (Digital Motion Processor) los cuáles ejecutan complejos algoritmos evitando tener que realizar filtros y liberando al sistema de procesamiento.
+	\item Combine and filter the signals using a Kalman filter, which evaluates the future value of the measurement. However, it uses complex calculations. 
+	\item Some inertial measurement units internally incorporate DMPs processors (Digital Motion Processor) which execute complex algorithms avoiding having to perform filters and freeing the processing system.
 \end{itemize}
 
+One explained the basic features of commercial IMUs, in section \ref{sec:MPU6050} will be developed the IMU chosen for this system and its own features.
 
+\section{Educational Robotics – Motivations and necessity}
 
-Una vez explicados las características básicas de las IMUs comerciales, en la sección \ref{sec:MPU6050} se desarrollará la IMU elegida para este sistema y sus carácterísticas propias.
+Robotics\cite{6826237} can be considered as one of the technological areas with more boom nowadays and based on the study of robots, which are systems composed of mechanisms that allow to make movements and perform specific tasks, programmable and intelligent. \newline
 
-\section{Robótica educativa, motivaciones y necesidad.}
+Depending on the application, therefore, robotics can be extended and generate benefits not only in the industry but also in classrooms, enabling the appearance of new learning systems.\newline
 
-La robótica se puede considerar sin duda como una de las áreas tecnológicas con mas auge de la actualidad y basada en el estudio de los robots, que son sistemas compuestos por mecanismos que le permiten hacer movimientos y realizar tareas específicas, programables e inteligentes. \newline
+In addition, in a world whose future is aimed at the use of robots for any activity, the approach from classrooms with these systems, enables the student’s technological development at an early age, making their integration easier into an adult age.\newline
 
-Dependiendo de la aplicación por tanto, la robótica puede extenderse y generar beneficios no sólo en la industria sino también en las aulas de clase, posibilitando la aparición de nuevos sistemas de aprendizaje.\newline
-
-Además en un mundo cuyo futuro va encaminado a la utilización de robots para cualquier actividad, el acercamiento desde las aulas con estos sistemas posibilita su desarrollo tecnológico a una edad temprana, siendo más fácil su integración a una edad adulta.\newline
-
-Algunos beneficios de la robótica educativa son expuestos a continuación:  
+Some robotics educational benefits are:  
 \begin{itemize}
-	\item Impulsa la iniciativa y la creatividad
-	\item Mayor sociabilización
-	\item Incentiva el pensamiento algorítmico y matemático
-	\item Trabajo en equipo
-	\item Resolución de problemas
-	\item Aprendizaje activo
-	\item Aumento de la autoestima
+	\item Drives initiative and creativity
+	\item Larger sociability
+	\item Encourages algorithmic and mathematical thinking
+	\item Teamwork
+	\item Problem resolution
+	\item Active learning.
+	\item Self-Esteem increase.
 \end{itemize}
 
-No obstante, para que la integración en las aulas de la robótica educativa sea aún mas fácil, los sistemas deben cumplir algunas características:
+However, so that the integration in the classroom of educational robotics could be easier, the systems must fulfill some characteristics:
 
 \begin{itemize}
-	\item No es recomendable la integración a alto nivel tecnológico.
-	\item Los robots deben ser de carácter amigable y divertido. 
-	\item Los entornos de programación no deben ser complejos, y aunque su funcionalidad este algo limitada, tiene que llamar la atención del alumno y hacerle sentir cómodo.
-	\item Es importante que el robot cuente con una serie de sensores y actuadores, unas entradas y salidas para que los resultados sean visuales.
+	\item High technological integration level not recommended
+	\item Robots must be sociable and fun
+	\item Programming environments should not be complex, and even its functionality is kind of limited, it has to draw the attention of the student and make them feel comfortable.
+	\item It’s important that the robot has a series of sensors and actuators, inputs and outputs so that results must be visuals.
 \end{itemize}
 
-Después de haber analizado cuáles son las ventajas de la electrónica digital, resulta conveniente poder acercar estos dos campos de conocimiento; electrónica digital-robótica educativa.\newline
+After analyzing the advantages of digital electronics, it is convenient to be able to bring these two knowledge fields closer together; educational digital-robotics electronics.\newline
 
-Si la electrónica digital y el mundo de los robots están llamados a formar parte de nuestras vidas en un futuro cercano, la necesidad de un acercamiento a estos dos conceptos a edades tempranas es básico para un correcto avance de la tecnología. \newline
+If digital electronics and the world of robots are called to be part of our lives in the near future, the need of an approach to these two concepts at an early age is basic for a correct technological improvement. \newline
 
-Con esta idea nace IceStudio, hacer amigable la electrónica digital para que los más pequeños puedan hacer uso de ella, y además, cumple todas las características antes expuestas.
+IceStudio was born with this idea, making digital electronics to be friendly so that the little aged students can use it, and so, meets the requirements before explained.
 
-\section{Sensores, actuadores y sistema de control }
+\section{Sensors, actuators and control system}
 
-Antes de comenzar con el desarrollo del proyecto, es importante tener claro los conceptos de sensores, actuadores y elementos del sistema de control, los cuáles forman parte de cualquier plataforma robótica móvil. \newline
+Before starting the development of the project, it is important to be clear about the concepts of sensors, actuators and elements of the control system, which are part of any mobile robotic platform.\newline
 
-Cualquier instalación de control, ya sea robótica o inmótica, esta compuesta por tres componentes fundamentales:
+Any control installation, being robotic or imnotic, is composed by three fundamental components.
 \begin{itemize}
-	\item Sensores
-	\item Actuadores
-	\item Sistema de control
+	\item Sensors
+	\item Actuators
+	\item Control systems
 \end{itemize}
 
-Los sensores son dispositivos que recogen información del mundo que nos rodea y lo transforma en señales eléctricas que puedan ser entradas a un sistema de control. \newline
+Sensors are devices that collect information from the world around us and transform it into electrical signals that can be input to a control system. \newline
 
-Así, el sistema de control recibe información del entorno sobre el que queremos realizar algún tipo de acción por medio de los sensores, es la función de transferencia del sistema, a partir de unas entradas de tipo conocido, son generadas unas salidas, normalmente, dependientes de las entradas. \newline
+Thus, the control system receives information from the environment on which we want to perform some kind of action through the sensors, which is the transfer function of the system. From some known type inputs, outputs are generated, usually, dependent on the inputs.\newline
 
-Estas salidas son denominadas actuadores, que son dispositivos que, siguiendo los parámetros dados por el sistema de control realizan acciones que repercuten en el entorno. \newline
+These outputs are called actuators, which are devices that, following the parameters given by the control system, perform actions that affect the environment. \newline
 
 \begin{ejemplo}
-Un sensor indica al sistema de control la intensidad lumínica de nuestra habitación, el sistema de control reconoce que el nivel no es el adecuado para la lectura, y activa un actuador, en este caso, una luz, para contrarrestar ese nivel.
+A sensor indicates to the control system the luminous intensity of a room. The control system recognized that the luminous level is not adequate for reading and activates an actuator, in this case, a light to balance that level.
 \end{ejemplo}
 
-A la hora de elegir un determinado sensor, es importante conocer su modo de operación, para poder configurar o mantener sistemas que lo incorporen. Existen diferentes tipos de sensores según:
+When choosing a specific sensor, it’s important to know its operation module, in order to configure or maintain incorporated systems. There are different type of sensors according to:
 
 \begin{itemize}
-	\item Tipo de salida: \begin{itemize}
-		\item Analogicos
-		\item Binarios
-		\item Digitales
+	\item Ouput: \begin{itemize}
+		\item Analogic
+		\item Binary
+		\item Digitals
 	\end{itemize} 
 	
-	\item Estructura interna: \begin{itemize}
-		\item Pasivos
-		\item Activos
+	\item Internal structure: \begin{itemize}
+		\item Passive
+		\item Active
 	\end{itemize}
 	
-	\item Tipo de parámetros capaces de detectar
+	\item Kind of parameter able to detect.
 \end{itemize}
- En tabla \ref{tabla:modo_operacion_sensores} se muestran algunos de los más interesantes para el desarrollo de este proyecto.
+ 
 
-\renewcommand\tablename{Tabla}
-\begin{table}[H]
-	\begin{center}
-	\begin{tabular}{|c|l|l|}
-		\hline
-		\textbf{Magnitud}                                                                       & \multicolumn{1}{c|}{\textbf{Transductor}} & \multicolumn{1}{c|}{\textbf{Característica}} \\ \hline
-		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Posición lineal y\\   angular\end{tabular}}  & Potenciómetro                             & Analógica                                    \\ \cline{2-3} 
-		& Encoder                                   & Digital                                      \\ \cline{2-3} 
-		& Sensor Hall                               & Digital                                      \\ \hline
-		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Velocidad\\   lineal y angular\end{tabular}} & Dinamo tacométrica                        & Analógica                                    \\ \cline{2-3} 
-		& Encoder                                   & Digital                                      \\ \cline{2-3} 
-		& Detector inductivo                        & Digital                                      \\ \cline{2-3} 
-		& Servo-inclinómetros                       & A/D                                          \\ \cline{2-3} 
-		& RVDT                                      & Analógica                                    \\ \cline{2-3} 
-		& Giróscopo                                 & Digital                                      \\ \hline
-		\multirow{2}{*}{Aceleración}                                                            & Acelerómetro                              & Analógico                                    \\ \cline{2-3} 
-		& Servo-accelerómetros                      &                                              \\ \hline
-		\multirow{2}{*}{Visión artificial}                                                      & Cámaras de video                          & Procesamiento digital                        \\ \cline{2-3} 
-		& Cámaras CCD o CMOS                        & Procesamiento digital                        \\ \hline
-	\end{tabular}
-	\caption{Modo de operación de sensores.}
-	\label{tabla:modo_operacion_sensores}
-\end{center}
-\end{table}
-
-Otra clasificación posible es la del ámbito de aplicación, es decir, donde y para qué son usados estos sensores. \newline
-De entre las carácterísticas técnicas más importantes de un sensor, y haciendo una introducción al posible vocabulario que se utilizará, encontramos:
+Another possible classification is that of the application scope, that is, where and what for these sensors are used. \newline
+Between the most important technical features from a sensor and making an introduction to the possible vocabulary that will be used, there are:
 
 \begin{itemize}
-	\item Rango de medida:  dominio en la magnitud medida en el que puede aplicarse el sensor.
-	\item Precisión: es el error de medida máximo esperado.
-	\item Offset o desviación de cero: valor de la variable de salida cuando la variable de entrada es nula.
-	\item Sensibilidad de un sensor: suponiendo que es de entrada a salida y la variación de la magnitud de entrada.
-	\item Resolución: mínima variación de la magnitud de entrada que puede detectarse a la salida.
-	\item Derivas: son otras magnitudes, aparte de la medida como magnitud de entrada, que influyen en la variable de salida.
+	\item Measurement range: Domain to the measured magnitude to which the sensor can be applied.
+	\item Precision: Expected maximum measurement error.
+	\item Offset or zero deviation: Value of the output variable when the input variable is zero.
+	\item Sensor sensitivity: Assuming it is input to output and the variation of the input magnitude.
+	\item Resolution: Minimum variation of the input magnitude that can be detected at the output.
+	\item Drifts: Are other magnitudes, apart from the measure as input magnitude, that influence the output variable.
 \end{itemize}
 
-Por lo general, la señal de salida de estos sensores no es apta para su lectura directa y a veces tampoco para su procesado, por lo que se usan circuitos de acondicionamiento. Las figuras \ref{fig:camara_CMOS}, \ref{fig:IMU} y \ref{fig:potentiometer} muestran ejemplos de algunos sensores.
+In general, the output signal from these sensors is not suitable for direct reading and sometimes not for processing, which is why conditioning circuits are used Figures \ref{fig:camara_CMOS}, \ref{fig:IMU} and \ref{fig:potentiometer} show some sensors examples.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.1]{imagenes/EstadoArte/sensor_imagen_CMOS.jpg}
-		\caption{Sensor CMOS para adquisición de imágenes.}
+		\caption{Sensor CMOS to image adquisition.}
 		\label{fig:camara_CMOS}
 	\end{figure}
 \end{center}
@@ -625,7 +604,7 @@ Por lo general, la señal de salida de estos sensores no es apta para su lectura
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4]{imagenes/EstadoArte/IMU.jpg}
-		\caption{Unidad de Medida Inercial.}
+		\caption{IMU.}
 		\label{fig:IMU}
 	\end{figure}
 \end{center}
@@ -634,60 +613,60 @@ Por lo general, la señal de salida de estos sensores no es apta para su lectura
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4]{imagenes/EstadoArte/potentiometer.jpg}
-		\caption{Potenciómetro.}
+		\caption{Potenciometter.}
 		\label{fig:potentiometer}
 	\end{figure}
 \end{center}
 
-Los actuadores son dispositivos que permiten al sistema de control ‘actuar’ sobre el ‘mundo real’ para realizar las acciones deseadas. Uno de los actuadores mas conocidos son los motores, el cuál será muy utilizado a lo largo de esta aplicación.  \newline
+Actuators are devices that allow the control system to "act" on the “real world” to perform desired actions. One of the best-known actuators are motors, which will be very used throughout this application.  \newline
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.4]{imagenes/EstadoArte/motor.jpg}
-		\caption{Motor DC.}
+		\caption{DC Motor.}
 		\label{fig:motor_DC}
 	\end{figure}
 \end{center}
 
 
-Hay de muchos diferentes tipos de sistemas de control en relación de la aplicación la cual se quiere desarrollar, normalmente se elije un micro-controlador como sistema de control y se programa la función de transferencia a ser realizada.\newline
-En el caso de este proyecto, y para poder adquirir por un lado las ventajas de una FPGA y por otro las ventajas de un micro-controlador (seccion \ref{sec:coexistencia}), se utilizará tanto Arduino para las tareas secuenciales o la IceZum Alhambra para las tareas que puedan ser paralelizadas. \newline
-\section{Controlador PID clásico}\label{sec:PID}
+There are many different types of control systems in relation to the application to be developed, normally a microcontroller is chosen as a control system and the transfer function to be performed is programmed.\newline
+In the case of this project, and in order to acquire the advantages of an FPGA and on the other hand the advantages of a microcontroller (seccion \ref{sec:coexistencia}), both Arduino will be used for sequential tasks or the IceZum Alhambra for the tasks that can be parallelized. \newline
+\section{Classic PID controller}\label{sec:PID}
 
-Proporcional integral y derivativo (Proportional-Integral-Derivative, PID) [] es el más común de los controles utilizados en la industria y ha sido universalmente aceptado en la industria de control. La popularidad de este control viene dada a su robustez y a su facilidad de uso, lo que permite a ingenieros trabajar de manera simple. \newline
+Proportional, Integral and Derivative (Proportional-Integral-Derivative, PID) \cite{nemadesign} is the most common and the most used control in the industry and has been universally accepted in the control industry. The popularity of this control is due to its robustness and ease of use, which allows engineers to work in a simple way. \newline
 
-Como su nombre indica, el algoritmo consiste en tres operadores básicos, proporcional, integral y derivativo los cuáles son la clave par obtener una respuesta óptima. \newline
+As its name indicates, the algorithm consists in three basic operators: Proportional, Integral and Derivative which are the clue to obtain an optimal response. \newline
 
-La idea básica de un controlador PID es leer un sensor y calcular una respuesta proporcional, integral y derivativa con el objetivo de calcular la mejor salida de un actuador. \newline
+The basic idea of a PID controller is to reed a sensor and calculate a proportional response, integral and derivative with the objective of calculating the best output from an actuator. \newline
 
-Para conocer bien cómo actúa un controlador PID y conocer el significado de cada uno de sus componentes, se hace necesario conocer que significa un sistema en bucle cerrado. 
+To know very well how a PID controller actuates and to know the meaning of each one of its components, it’s necessary to know what a closed loop system is. 
 
-\subsubsection{Sistema en bucle cerrado}
-Un sistema de control de lazo cerrado [] son los sistemas en los que la acción del control está en función de la señal de salida. Los sistemas de circuito cerrado usan la retroalimentación desde un resultado final para ajustar la acción de control en consecuencia. El punto de consigna se define como el valor el cuál el sistema quiere alcanzar. \newline
+\subsubsection{Closed loop system}
+A closed loop control system is s systems in which the action of the control is in function of the output signal. Closed loop systems use feedback from a final result to adjust the control action accordingly. The set point is the value that the system wants to reach. \newline
 
-Ahora sí se profundiza un poco más es cuál es el significado de cada una de las componentes por las que está formado el control PID.\newline
-\subsubsection{Respuesta Proporcional}
+Now it’s digged a little deeper about is what’s the meaning of each of the components by which the PID control is formed.\newline
+\subsubsection{Proportional Response}
 
-La componente proporcional depende sólo de la diferencia entre el valor actual y la consigna. Esta diferencia es referida como el término Error. Así, la ganancia proporcional $K_{p}$ determina la relación entre la respuesta de salida y la señal de error. Si el error tiene magnitud 10, una ganancia proporcional de 5 produciría una respuesta proporcional de 50. La ganancia indica la velocidad de corrección de ese error, pero si es demasiado rápido, el sistema oscilará. 
-\subsubsection{Respuesta Integral}
-La componente integral suma la componente error en el tiempo, un incremento pequeño del error hasta que la componente integral aumente ligeramente con el tiempo. La respuesta integral aumentará continuamente con el tiempo a menos que el error sea cero, por lo que el efecto es llevar el error de estado estacionario a cero.
-\subsubsection{Respuesta Derivativa}
-La respuesta derivativa hace que la salida disminuya sila variable del proceso aumenta rápidamente. La respuesta derivada es proporcional a la tasa de cambio la variable de proceso. El aumento de la constante derivativa $K_{d}$ hará que el sistema de control reacciones con mayor fuerza a los cambios en el término del error y aumentará la velocidad de la respuesta general del sistema de control. 
+The proportional component depends only on the difference between the current value and the setpoint. This difference is known as the “Error”. Thus, the proportional gain $K_{p}$ determines the relationship between the output response and the error signal. If the error has a magnitude of 10, a proportional gain of 5 will produce a proportional response of 50. The gain indicates the correction speed of that error, but if it is too fast, the system will oscillate. 
+\subsubsection{Integral Response}
+The integral component adds the error-in-time component, a small increase in the error until the integral component increases slightly with time. The integral response will increase continuously over time unless the error is zero, so the effect is to bring the steady state error to zero.
+\subsubsection{Derivate Response}
+The derivative response causes the output to decrease if the process variable increases rapidly. The derived response is proportional to the rate of change of the process variable. Increasing the derivative constant $K_{d}$ will make the control system stronger to changes in the error and will increase the speed of the overall response of the control system. 
 
-Un diagramas de bloques del sistema completo de un controlador PID puede verse en la figura \ref{fig:PID}.
+A block diagram of the complete system of a PID controller is shown in Figure \ref{fig:PID}.
 
 \begin{center}
 	\begin{figure}[H]
 		\center
 		\includegraphics[trim = 0mm 4cm 0mm 4cm,clip, angle=0, scale = 0.4]{imagenes/EstadoArte/PID}
-		\caption{Diagrama de bloques controlador PID.}
+		\caption{Block diagram PID controller.}
 		\label{fig:PID}
 	\end{figure}
 \end{center}
 
 \begin{ejemplo}
-Se hace uso de un PID para el control de la temperatura de una habitación. La consigna es la temperatura a la que se quiere llegar, la planta es la habitación en sí, la cuál puede modelarse como una función de transferencia. Un sensor de temperatura cierra el lazo, indicando la temperatura en cada momento, mientras que una válvula abre y cierra el conducto de aire dependiendo de los valores del controlador PID, que se calcularán en relación al valor de consigna y al valor de la temperatura actual de la habitación.
+A PID is used to control the temperature of a room. The set point is the temperature you want to reach, the plant is the room itself, which can be modeled as a transfer function. A temperature sensor closes the loop, indicating the temperature at each moment, while a valve opens and closes the air duct depending on the values of the PID controller, which will be calculated in relation to the setpoint value and to the value of the current temperature in the room.
 \end{ejemplo} 
 
 
