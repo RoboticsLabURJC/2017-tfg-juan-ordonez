@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {3.3.2}Inertial Measurement Unit MPU6050 in Arduino Nano}{61}{subsection.3.3.2}
 \contentsline {subsubsection}{Pin-out}{62}{section*.64}
 \contentsline {subsubsection}{Arduino Nano Program}{62}{section*.66}
-\contentsline {subsection}{\numberline {3.3.3}Implementaci\IeC {\'o}n PCB}{63}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}PCB Implementation}{63}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}IceZum Alhambra-Arduino Nano Implementation}{72}{subsection.3.3.4}
 \contentsline {subsubsection}{Microcontroller POV}{74}{section*.82}
 \contentsline {subsubsection}{FPGA POV}{77}{section*.86}

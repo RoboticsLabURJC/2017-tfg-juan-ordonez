@@ -25,7 +25,7 @@
 \BOOKMARK [1][-]{section.3.3}{System Implementation}{chapter.3}% 25
 \BOOKMARK [2][-]{subsection.3.3.1}{Mechanical Structure Manufacturing}{section.3.3}% 26
 \BOOKMARK [2][-]{subsection.3.3.2}{Inertial Measurement Unit MPU6050 in Arduino Nano}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.3}{Implementaci\363n PCB}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.3}{PCB Implementation}{section.3.3}% 28
 \BOOKMARK [2][-]{subsection.3.3.4}{IceZum Alhambra-Arduino Nano Implementation}{section.3.3}% 29
 \BOOKMARK [2][-]{subsection.3.3.5}{PID Control in IceZum Alhambra}{section.3.3}% 30
 \BOOKMARK [2][-]{subsection.3.3.6}{Motor controller}{section.3.3}% 31
