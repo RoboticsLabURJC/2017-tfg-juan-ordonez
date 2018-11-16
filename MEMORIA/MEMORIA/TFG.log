@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  15 NOV 2018 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  16 NOV 2018 01:14
 entering extended mode
 **./TFG.tex
 (TFG.tex
@@ -1771,11 +1771,7 @@ Package pdftex.def Info: imagenes/Balancing_robot/angle_correction.pdf  used on
  input line 425.
 (pdftex.def)             Requested size: 299.11676pt x 309.26886pt.
 [76 <./imagenes/Balancing_robot/angle_correction.pdf>]
-
-LaTeX Warning: Reference `label' on page 77 undefined on input line 439.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
 
  []
 
@@ -1784,7 +1780,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--455
 File: imagenes/Balancing_robot/arduino_interface.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arduino_interface.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/arduino_interface.PNG  used o
-n input line 458.
+n input line 456.
 (pdftex.def)             Requested size: 263.78752pt x 170.19714pt.
 [77 <./imagenes/Balancing_robot/arduino_interface.PNG>]
 
@@ -1797,21 +1793,21 @@ File: imagenes/Balancing_robot/arduino_interfacefluid.pdf Graphic file (type pd
 f)
 <use imagenes/Balancing_robot/arduino_interfacefluid.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/arduino_interfacefluid.pdf  u
-sed on input line 477.
+sed on input line 475.
 (pdftex.def)             Requested size: 556.4752pt x 410.08678pt.
 
-Overfull \hbox (65.08678pt too wide) in paragraph at lines 477--478
+Overfull \hbox (65.08678pt too wide) in paragraph at lines 475--476
  [] 
  []
 
 [78] [79 <./imagenes/Balancing_robot/arduino_interfacefluid.pdf>]
-Overfull \hbox (13.08841pt too wide) in paragraph at lines 503--504
+Overfull \hbox (13.08841pt too wide) in paragraph at lines 501--502
 \OT1/cmr/m/n/10 (BYTE[]READY) and from where it has to cap-ture the data bus (D
 ATA[]BUFFER).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
@@ -1820,7 +1816,7 @@ pt>
 File: imagenes/Balancing_robot/arrange_arduino.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arrange_arduino.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/arrange_arduino.PNG  used on 
-input line 509.
+input line 507.
 (pdftex.def)             Requested size: 244.50917pt x 126.16913pt.
 [80]
 
@@ -1830,7 +1826,7 @@ See the keyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.533 ...agenes/Balancing_robot/arrange_angle.pdf}
+l.531 ...agenes/Balancing_robot/arrange_angle.pdf}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1844,15 +1840,15 @@ pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arrange_angle.pdf
 File: imagenes/Balancing_robot/arrange_angle.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/arrange_angle.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/arrange_angle.pdf  used on in
-put line 533.
+put line 531.
 (pdftex.def)             Requested size: 795.97182pt x 615.29724pt.
 [81 <./imagenes/Balancing_robot/arrange_arduino.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
  []
 
@@ -1861,7 +1857,7 @@ pt>
 File: imagenes/Balancing_robot/arduino_arrange.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arduino_arrange.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/arduino_arrange.PNG  used on 
-input line 557.
+input line 555.
 (pdftex.def)             Requested size: 269.50209pt x 258.36067pt.
 [82 <./imagenes/Balancing_robot/arrange_angle.pdf>] [83 <./imagenes/Balancing_r
 obot/arduino_arrange.PNG>]
@@ -1871,14 +1867,14 @@ sion: found PDF version <1.7>, but at most version <1.5> allowed
 <imagenes/Balancing_robot/P.pdf, id=2038, 599.23875pt x 847.165pt>
 File: imagenes/Balancing_robot/P.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/P.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/P.pdf  used on input line 572
+Package pdftex.def Info: imagenes/Balancing_robot/P.pdf  used on input line 570
 .
 (pdftex.def)             Requested size: 299.61864pt x 224.41267pt.
 <imagenes/Balancing_robot/Pcontrol.png, id=2041, 314.97675pt x 343.88475pt>
 File: imagenes/Balancing_robot/Pcontrol.png Graphic file (type png)
 <use imagenes/Balancing_robot/Pcontrol.png>
 Package pdftex.def Info: imagenes/Balancing_robot/Pcontrol.png  used on input l
-ine 590.
+ine 588.
 (pdftex.def)             Requested size: 157.48798pt x 171.94196pt.
 [84 <./imagenes/Balancing_robot/P.pdf>] [85 <./imagenes/Balancing_robot/Pcontro
 l.png>]
@@ -1888,11 +1884,11 @@ sion: found PDF version <1.7>, but at most version <1.5> allowed
 <imagenes/Balancing_robot/D.pdf, id=2069, 600.2425pt x 848.16875pt>
 File: imagenes/Balancing_robot/D.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/D.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/D.pdf  used on input line 600
+Package pdftex.def Info: imagenes/Balancing_robot/D.pdf  used on input line 598
 .
 (pdftex.def)             Requested size: 240.09274pt x 339.26149pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
@@ -1900,7 +1896,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 605--606
 File: imagenes/Balancing_robot/Dcontrol.png Graphic file (type png)
 <use imagenes/Balancing_robot/Dcontrol.png>
 Package pdftex.def Info: imagenes/Balancing_robot/Dcontrol.png  used on input l
-ine 612.
+ine 610.
 (pdftex.def)             Requested size: 151.76662pt x 155.98236pt.
 [86 <./imagenes/Balancing_robot/D.pdf>] [87 <./imagenes/Balancing_robot/Dcontro
 l.png>]
@@ -1909,17 +1905,17 @@ t>
 File: imagenes/Balancing_robot/finalIceStudio.png Graphic file (type png)
 <use imagenes/Balancing_robot/finalIceStudio.png>
 Package pdftex.def Info: imagenes/Balancing_robot/finalIceStudio.png  used on i
-nput line 623.
+nput line 621.
 (pdftex.def)             Requested size: 571.53384pt x 229.15556pt.
  [88 <./imagenes/Balancing_robot/finalIceStudio.png>]
 <imagenes/Balancing_robot/pwm_example.png, id=2122, 803.0pt x 397.485pt>
 File: imagenes/Balancing_robot/pwm_example.png Graphic file (type png)
 <use imagenes/Balancing_robot/pwm_example.png>
 Package pdftex.def Info: imagenes/Balancing_robot/pwm_example.png  used on inpu
-t line 634.
+t line 632.
 (pdftex.def)             Requested size: 321.1943pt x 158.99118pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
@@ -1927,7 +1923,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 640--641
 File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
 <use imagenes/Balancing_robot/driver_motor.jpg>
 Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
-ut line 655.
+ut line 653.
 (pdftex.def)             Requested size: 180.67178pt x 144.53743pt.
 [89 <./imagenes/Balancing_robot/pwm_example.png>]
 
@@ -1937,13 +1933,13 @@ pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/driver_motor.pdf)
 File: imagenes/Balancing_robot/driver_motor.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/driver_motor.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.pdf  used on inp
-ut line 663.
+ut line 661.
 (pdftex.def)             Requested size: 317.98236pt x 188.80914pt.
 <imagenes/Balancing_robot/PWM_module.PNG, id=2138, 348.70274pt x 213.79875pt>
 File: imagenes/Balancing_robot/PWM_module.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/PWM_module.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/PWM_module.PNG  used on input
- line 677.
+ line 675.
 (pdftex.def)             Requested size: 174.35094pt x 106.89911pt.
 [90 <./imagenes/Balancing_robot/driver_motor.jpg> <./imagenes/Balancing_robot/d
 river_motor.pdf>]
@@ -1954,26 +1950,26 @@ pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/pwm_control.pdf):
 File: imagenes/Balancing_robot/pwm_control.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/pwm_control.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/pwm_control.pdf  used on inpu
-t line 686.
+t line 684.
 (pdftex.def)             Requested size: 339.66298pt x 240.09274pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--693
+Underfull \hbox (badness 10000) in paragraph at lines 689--691
 
  []
 
 [91 <./imagenes/Balancing_robot/pwm_control.pdf> <./imagenes/Balancing_robot/PW
 M_module.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 723--724
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
@@ -1982,17 +1978,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 723--724
 File: imagenes/Balancing_Robot/LIPO111.jpg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/LIPO111.jpg>
 Package pdftex.def Info: imagenes/Balancing_Robot/LIPO111.jpg  used on input li
-ne 747.
+ne 745.
 (pdftex.def)             Requested size: 213.59827pt x 152.57019pt.
  [93 <./imagenes/Balancing_Robot/LIPO111.jpg>]
 <imagenes/Balancing_Robot/LIPO37.jpg, id=2191, 344.78813pt x 344.78813pt>
 File: imagenes/Balancing_Robot/LIPO37.jpg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/LIPO37.jpg>
 Package pdftex.def Info: imagenes/Balancing_Robot/LIPO37.jpg  used on input lin
-e 759.
+e 757.
 (pdftex.def)             Requested size: 172.39363pt x 172.39363pt.
  [94 <./imagenes/Balancing_Robot/LIPO37.jpg>]
-Overfull \hbox (14.39755pt too wide) in paragraph at lines 806--807
+Overfull \hbox (14.39755pt too wide) in paragraph at lines 804--805
 [][] 
  []
 
@@ -2004,14 +2000,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.813 \newline
+l.811 \newline
               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--815
+Underfull \hbox (badness 10000) in paragraph at lines 812--813
 
  []
 
@@ -2019,20 +2015,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 814--815
 File: imagenes/Balancing_Robot/test1.jpeg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/test1.jpeg>
 Package pdftex.def Info: imagenes/Balancing_Robot/test1.jpeg  used on input lin
-e 823.
+e 821.
 (pdftex.def)             Requested size: 240.89574pt x 321.19432pt.
 <imagenes/Balancing_Robot/test2.jpeg, id=2211, 1606.0pt x 1204.5pt>
 File: imagenes/Balancing_Robot/test2.jpeg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/test2.jpeg>
 Package pdftex.def Info: imagenes/Balancing_Robot/test2.jpeg  used on input lin
-e 832.
+e 830.
 (pdftex.def)             Requested size: 321.19432pt x 240.89574pt.
 [96 <./imagenes/Balancing_Robot/test1.jpeg>]
 <imagenes/Balancing_Robot/vga.jpeg, id=2222, 1606.0pt x 1298.8525pt>
 File: imagenes/Balancing_Robot/vga.jpeg Graphic file (type jpg)
 <use imagenes/Balancing_Robot/vga.jpeg>
 Package pdftex.def Info: imagenes/Balancing_Robot/vga.jpeg  used on input line 
-845.
+843.
 (pdftex.def)             Requested size: 321.19432pt x 259.7659pt.
  [97 <./imagenes/Balancing_Robot/test2.jpeg>]) (capitulos/04_Cuadricoptero.tex 
 [98 <./imagenes/Balancing_Robot/vga.jpeg>]
@@ -2290,10 +2286,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
  ) 
 Here is how much of TeX's memory you used:
- 12070 strings out of 492972
- 193725 string characters out of 3126622
+ 12069 strings out of 492972
+ 193718 string characters out of 3126622
  307869 words of memory out of 3000000
- 15270 multiletter control sequences out of 15000+200000
+ 15269 multiletter control sequences out of 15000+200000
  11042 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,43p,845b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2324,7 +2320,7 @@ public/amsfonts/cm/cmsy7.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jordo/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/jordo/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/feybr10.pfb>
-Output written on TFG.pdf (123 pages, 11498562 bytes).
+Output written on TFG.pdf (123 pages, 11498395 bytes).
 PDF statistics:
  2661 PDF objects out of 2984 (max. 8388607)
  355 named destinations out of 1000 (max. 500000)
