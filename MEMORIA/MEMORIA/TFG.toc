@@ -66,5 +66,5 @@
 \contentsline {subsubsection}{I2C Protocol}{101}{section*.117}
 \contentsline {subsubsection}{Pixels Storage}{105}{section*.123}
 \contentsline {subsubsection}{Volume and position recognize}{106}{section*.124}
-\contentsline {section}{\numberline {4.3}Control Implementation}{110}{section.4.3}
+\contentsline {section}{\numberline {4.3}Control Design}{110}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusions and future work}{113}{chapter.5}

@@ -134,32 +134,32 @@ The recognition of the volume and positioning of the object will be calculated p
 	\item Pixels will arrive sequentially, two bytes per pixels. The OV7670 module has as outputs pins D7, D6, D5, D4, D3, D2, D1, D0 corresponding to the bits of each component of the panel as shown in Figure \ref{fig:OV7670_schematic}.
 	\item An internal counter will be in charge of keeping track of the number of total pixels that has passed through the filter. When the complete frame is finished, the object volume can be obtained, and with it, the distance to it, as shown in equation \ref{equation:filtro}.
 	\begin{equation} \label{equation:filtro}
-		Volumen = Num_{\textup{pixeles filtrados}}/Num_{\textup{píxeles totales}}
+		Volume = Num_{\textup{filtered pixels}}/Num_{\textup{total pixels}}
 	\end{equation}
 	\item Considering the position within the frame where the pixels that have passed through the filter are, the position in columns and rows and from which you can obtain an estimate of the position of the object within the area of view as explained in equations \ref{equation:acumx3} and \ref{equation:acumy3}.
 	
 	\begin{equation}\label{equation:acumx}
-		Acum_{X} = \sum\textup{columna de los pixeles que pasan el filtro}
+		Acum_{X} = \sum\textup{columns of filtered pixels}
 	\end{equation}
 	
 	\begin{equation}\label{equation:acumx2}
-		X_{media} = \frac{Acum_{X}}{Num_{\textup{pixeles filtrados}}}
+		X_{media} = \frac{Acum_{X}}{Num_{\textup{filtered pixels}}}
 	\end{equation}
 
 	\begin{equation}\label{equation:acumx3}
-		Error_{X} = X_{media}- \frac{anchura}{2}
+		Error_{X} = X_{average}- \frac{width}{2}
 	\end{equation}
 	
 	\begin{equation}\label{equation:acumy}
-		Acum_{Y} = \sum\textup{fila de los pixeles que pasan el filtro}
+		Acum_{Y} = \sum\textup{filtered pixels}
  	\end{equation}
 	
 	\begin{equation}\label{equation:acumy2}
-		Y_{media} = \frac{Acum_{Y}}{Num_{\textup{pixeles filtrados}}}
+		Y_{media} = \frac{Acum_{Y}}{Num_{\textup{filtered pixels}}}
 	\end{equation}
 	
 	\begin{equation}\label{equation:acumy3}
-		Error_{Y} = Y_{media}- \frac{altura}{2}
+		Error_{Y} = Y_{average}- \frac{height}{2}
 	\end{equation}
 	
 	\end{itemize}
@@ -255,7 +255,7 @@ There is a horizontal sync signal that will notify the change of the row in the 
 	\end{figure}
 	
  
- 	 If it is observed in figure \ref{fig:assign_bits} in the output of this module the three color components will be obtained and a signal will be in charge to notify when the three color components are ready\newline
+ 	 If it is observed in figure \ref{fig:assign_bits} in the output of this module the three color components will be obtained and a signal will be in charge to notify when the three color components are ready.\newline
 	
 	The next module has enough iformation to implement the whole showed algorithm in \ref{sec:volumen}.
 
