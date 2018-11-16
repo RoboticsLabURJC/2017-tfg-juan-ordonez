@@ -52,7 +52,7 @@ The following chapters will go deeper into each of the previous blocks that form
 \newpage
 \section{System Implementation}\label{sec:Implementacion}
 \subsection{Mechanical Structure Manufacturing}
-Knowing the physics of a self-balancing robot \cite{6845943} \cite{7112017} and with the aim, therefore, of solving the classic problem of the inverted pendulum, the mechanical structure of the Figures \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab},designed with SolidWorks[] is proposed and from which the rest of the components will be assembled.
+Knowing the physics of a self-balancing robot \cite{6845943} \cite{7112017} and with the aim, therefore, of solving the classic problem of the inverted pendulum, the mechanical structure of the Figures \ref{fig:EnsanBalanceFront}, \ref{fig:EnsanBalanceLateral} y \ref{fig:EnsanBalanceCab},designed with SolidWorks is proposed and from which the rest of the components will be assembled.
 
 \begin{center}
 	\begin{figure}[H]
@@ -84,7 +84,7 @@ Knowing the physics of a self-balancing robot \cite{6845943} \cite{7112017} and 
 Different aspects of the design of this structure are considered, which are directly related to the physics of a self-balance Robot, and with it, of the inverted pendulum. \newline
 As argued in section \ref{sec:Descripcion_balancin}, a system at rest is stable when its mass center is closer to the horizontal plane. If we consider that the nature of the proposed system is inherently unstable, it is necessary to know the best point where the mass center must be in order to allow a better stability. \newline
 
-Assuming the of mathematical modeling characterization[][], it is therefore assumed that to achieve greater ease in stabilization, the center of mass should be placed above the midpoint of the vertical axis of our system. Therefore, we must consider the weight of all components for a placement that allows the above. \newline
+Assuming the of mathematical modeling characterization, it is therefore assumed that to achieve greater ease in stabilization, the center of mass should be placed above the midpoint of the vertical axis of our system. Therefore, we must consider the weight of all components for a placement that allows the above. \newline
 In Figure \ref{fig:center_mass}, a SolidWorks calculation is represented from this mass center where there have only been considered the heavier components of the final system, which includes, DC motors, batteries, mechanical structures and wheels.
 
 \begin{figure}[H]
@@ -98,7 +98,7 @@ In Figure \ref{fig:center_mass}, a SolidWorks calculation is represented from th
 
 A constant knowledge of the angle of the system is necessary for its analysis and correction, for this purpose the MPU6050 sensor has been used, connected by an i2c communication to an Arduino Nano. \newline
 
-The MPU6050[] is an Inertial Measure Unit (IMU) with 6 degrees of freedom (6DOF) manufactured by Invensense[]. It has an accelerometer and gyroscope and allows communication by both SPI and i2c bus. To correct some of the data collection problems, mentioned in section \ref{sec:IMU} it incorporates an internal processor (Digital Motion Processor, DMP) that executes data fusion algorithms (Motion Fusion) to combine the measurements of the internal sensors, avoiding having to perform the filters externally.\newline
+The MPU6050 is an Inertial Measure Unit (IMU) with 6 degrees of freedom (6DOF) manufactured by Invensense. It has an accelerometer and gyroscope and allows communication by both SPI and i2c bus. To correct some of the data collection problems, mentioned in section \ref{sec:IMU} it incorporates an internal processor (Digital Motion Processor, DMP) that executes data fusion algorithms (Motion Fusion) to combine the measurements of the internal sensors, avoiding having to perform the filters externally.\newline
 
 Due to its low cost and big quality, this is one of the most used IMUs nowadays. In Figure \ref{fig:IMU1} a MPU6050 image is shown.
 
@@ -122,7 +122,7 @@ Figure \ref{fig:MPU6050_schematic} shows the schematic connections diagram of th
 It has a 3.3V power supply voltage. The clock pin for the I2C connection (Serial Clock Line, SCL) and the data pin (Serial Data Line, SDA) represent the connection for the bus with Arduino Nano. AD0 pin allows the user to change the address of the MPU (slave), which by default is 0x68h connected to GND. If it is connected to Vcc, the address changes to 0x69h. INT pin produces a signal on high when the data in issue is available from the MPU to be captured and will warn by an interruption to the Arduino Nano with the purpose to be obtained.\newline
 
 \subsubsection{Arduino Nano Program}
-For the Arduino Nano implementation it is used a library developed by Jeff Rowberg[]. The reason of the use of this library is because it incorporates the usage of the DMP. This use  exempts the microprocessor (Arduino Nano in this case) from a complex filtered and calculation with the purpose to obtain the values pitch, yaw and roll. A representation of this advantages are represented in Figure \ref{fig:DMPExample}.\newline
+For the Arduino Nano implementation it is used a library developed by Jeff Rowberg. The reason of the use of this library is because it incorporates the usage of the DMP. This use  exempts the microprocessor (Arduino Nano in this case) from a complex filtered and calculation with the purpose to obtain the values pitch, yaw and roll. A representation of this advantages are represented in Figure \ref{fig:DMPExample}.\newline
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 4cm 0mm 2cm, clip,scale=0.6]{imagenes/Balancing_robot/DMPexample.pdf}
@@ -230,7 +230,7 @@ The printed circuit contains the following components and behaviors:
 	\end{center}
 
 
-For a PCB development with the described requirements it has been used Altium Designer[]. The elaboration process of a PCB in Altium can be different depending on the final user, but in this project the following root has been followed:
+For a PCB development with the described requirements it has been used Altium Designer. The elaboration process of a PCB in Altium can be different depending on the final user, but in this project the following root has been followed:
 
 \begin{itemize}
 	\item At first the project in issue is created.
@@ -289,7 +289,7 @@ W_{internas} =  48.6876 mm
 H_{internas} = 	0.035 mm
 \end{equation*}
 
-The thickness of the layer is provided by the manufacturer. In this project, this web has been used for ordering the PCBs []. \newline 
+The thickness of the layer is provided by the manufacturer. In this project, this web has been used for ordering the PCBs. \newline 
 Trace thickness is commonly measured in "oz" and in this case, the manufacturing company allows a 1oz trace thickness in a PCB with, which is equal to a 0.035mm thickness.\newline
 If the results obtained from equation 3.1 are analyzed, the difference between a track in an inner layer and a track in an outer layer is clearly seen.\newline
 A PCB is divided into layers, each of the layers has its function and organizing them properly is a good practice to avoid bad behavior. Thus, once the requirements were analyzed, two layers were necessary for the connection of data pins, in addition a ground plane is always recommended in which all the pins connected to GND have a common layer. This avoids noise and interference besides ensuring a good ground reference. \newline
@@ -645,7 +645,7 @@ The features of a PWM signal are:
 \end{itemize}
 
 
-The motor driver used to control DC motors (MC33926 [] figure \ref{fig:driver_motor_fisico}),needs a series of configurations to work according to the needs which could be obtained from its datasheet[]. The final inputs and outputs diagram and also the necessary connections are detailed in the scheme of the \ref{fig:driver_motor} figure.
+The motor driver used to control DC motors (MC3392 figure \ref{fig:driver_motor_fisico}),needs a series of configurations to work according to the needs which could be obtained from its datasheet. The final inputs and outputs diagram and also the necessary connections are detailed in the scheme of the \ref{fig:driver_motor} figure.
 
 
 \begin{figure}[H]
