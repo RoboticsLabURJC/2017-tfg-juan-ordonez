@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  17 NOV 2018 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  17 NOV 2018 11:42
 entering extended mode
 **./main.tex
 (main.tex
@@ -947,7 +947,7 @@ Package epstopdf Info: Source file: <logo_ugr.eps>
 df logo_ugr.eps>
 (epstopdf)             \includegraphics on input line 107.
 Package epstopdf Info: Output file is already uptodate.
-<logo_ugr-eps-converted-to.pdf, id=26, 86.3225pt x 25.09375pt>
+<logo_ugr-eps-converted-to.pdf, id=50, 86.3225pt x 25.09375pt>
 File: logo_ugr-eps-converted-to.pdf Graphic file (type pdf)
 <use logo_ugr-eps-converted-to.pdf>
 Package pdftex.def Info: logo_ugr-eps-converted-to.pdf  used on input line 107.
@@ -963,7 +963,7 @@ Package epstopdf Info: Source file: <logo_rey.eps>
 df logo_rey.eps>
 (epstopdf)             \includegraphics on input line 107.
 Package epstopdf Info: Output file is already uptodate.
-<logo_rey-eps-converted-to.pdf, id=27, 86.3225pt x 35.13126pt>
+<logo_rey-eps-converted-to.pdf, id=51, 86.3225pt x 35.13126pt>
 File: logo_rey-eps-converted-to.pdf Graphic file (type pdf)
 <use logo_rey-eps-converted-to.pdf>
 Package pdftex.def Info: logo_rey-eps-converted-to.pdf  used on input line 107.
@@ -1304,21 +1304,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: CD9CBAB7955AD86DFD94D1D915700CF9;202
-(rerunfilecheck)             After:  FEA574F7A06D94E2E27AA951EBB89F18;662.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: FEA574F7A06D94E2E27AA951EBB89F18;662.
  ) 
 Here is how much of TeX's memory you used:
- 17225 strings out of 492972
- 335150 string characters out of 3126622
- 403523 words of memory out of 3000000
- 20620 multiletter control sequences out of 15000+200000
+ 17271 strings out of 492972
+ 335561 string characters out of 3126622
+ 404526 words of memory out of 3000000
+ 20666 multiletter control sequences out of 15000+200000
  11730 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,65p,790b,630s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1326,9 +1319,9 @@ Here is how much of TeX's memory you used:
 /cm/cmss10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmss12.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on main.pdf (25 pages, 249441 bytes).
+Output written on main.pdf (25 pages, 259537 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
+ 812 PDF objects out of 1000 (max. 8388607)
  60 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

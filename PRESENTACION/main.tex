@@ -114,7 +114,7 @@
 \section{Introducción, Motivación y objetivos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Metodología de trabajo}
-Rapidamente sobre que hemos usado git, appear, y el diagrama de Gantt
+Rápidamente sobre que hemos usado git, appear, y el diagrama de Gantt
 \end{frame}
 \begin{frame}{Objetivos}
 Objetivos principales de este trabajo
@@ -130,7 +130,7 @@ Introducción sobre FPGAs libres y presentación de IceZum con sus carasterísti
 \section{Robot Balancín}
 \subsection{Diseño del sistema}
 \begin{frame}{Diseño del sistema}
-A muy alto nivel, el problema planteado y una descripcion rapida de la solucion propuesta. A partir de aqui, vamos con cada una de las partes
+A muy alto nivel, el problema planteado y una descripción rápida de la solución propuesta. A partir de aquí, vamos con cada una de las partes
 \end{frame}	
 \subsection{Implementación del sistema}
 \begin{frame}{Estructura mecánica}
@@ -140,39 +140,39 @@ Muy breve, porque esa estructura y no otra(DMP)
 Muy breve como hemos usado la IMU, con un microcontrolador y porque esa IMU y no otra
 \end{frame}
 \begin{frame}{Coexistencia microcontrolador-FPGA}
-Comunicacion para mandar angulo de micro a fpga
+Comunicación para mandar angulo de micro a fpga
 \end{frame}
 \begin{frame}{Control PID}
 Se necesita minimizar el error, para ello se usa PID.
-Se explica muy breve el PID centrandome mas en las ventajas de hacerlo con la FPGA pues seguramente ellos ya conozcan un PID
+Se explica muy breve el PID centrándome mas en las ventajas de hacerlo con la FPGA pues seguramente ellos ya conozcan un PID
 \end{frame}
 \begin{frame}{Control de los motores}
-	Driver para motores y como se implementa el generador PWM
-	No se si seria bueno porque mis diagramas de flujos de cada modulo y explicar alguno
+Driver para motores y como se implementa el generador PWM
+No se si seria bueno porque mis diagramas de flujos de cada modulo y explicar alguno
 \end{frame}
-\begin{frame}{Diseño e implementacion PCB}
+\begin{frame}{Diseño e implementación PCB}
 Hay demasiados cables sueltos y hacemos una PCB, porque 4 capas, porque jumpers, porque posibilidad para 4 motores.
 \end{frame}
 \subsection{Experimentos y sistema final}
 \begin{frame}{Impresión, montaje y ensamblado}
-	Fotos del ensamblado y vídeo final del sistema.
-	Debería meter aquí el módulo VGA que hice para aprender?	
+Fotos del ensamblado y vídeo final del sistema.
+Debería meter aquí el módulo VGA que hice para aprender y el control de brushless?	
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cuadricóptero con visión artificial}
 \begin{frame}{Diseño del sistema}
-	Dejar claro que como ha sobrado tiempo, se hace esto para que no piensen que no hemos llegado. Diagrama de bloques general y separación entre percepción y control.
+Dejar claro que como ha sobrado tiempo, se hace esto para que no piensen que no hemos llegado. Diagrama de bloques general y separación entre percepción y control.
 \end{frame}
 \subsection{Implementación de la percepción}
 \begin{frame}{OV7670 y protocolo I2C}
-	Porque se ha usado esa cámara, y se dice que se ha implementaod un protocolo i2c necesario para los registros, me tire dos meses con ello y tiene que salir :). Se muestra diagrama de bloques del i2c
+Porque se ha usado esa cámara, y se dice que se ha implementado un protocolo i2c necesario para los registros, me tire dos meses con ello y tiene que salir :). Se muestra diagrama de bloques del i2c
 \end{frame}
 \begin{frame}{Reconocimiento del volumen y posición}
-Las formulas básicas de como hemos hecho esa percepcion y la ventaja de hacer eso con una FPGA, no se necesita memoria externa. 
+Las formulas básicas de como hemos hecho esa percepción y la ventaja de hacer eso con una FPGA, no se necesita memoria externa. 
 \end{frame}
 \subsection{Diseño del control}
 \begin{frame}
-Se deja claro que esto falta por implementar pero todo el diseño esta propuesto y deberia funcionar. Se explica rápido
+Se deja claro que esto falta por implementar pero todo el diseño esta propuesto y debería funcionar. Se explica rápido.
 \end{frame}
 \section{Conclusiones y trabajo futuro}
 \begin{frame}{Conclusiones}
