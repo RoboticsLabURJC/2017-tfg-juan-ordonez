@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  16 NOV 2018 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  18 NOV 2018 11:52
 entering extended mode
 **./TFG.tex
 (TFG.tex
@@ -667,11 +667,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (portada/portada.tex
 \centeroffset=\skip77
+
+
+LaTeX Warning: File `imagenes/logo_ugr.eps' not found on input line 12.
+
 Package epstopdf Info: Source file: <imagenes/logo_ugr.eps>
-(epstopdf)                    date: 2017-03-11 12:38:24
-(epstopdf)                    size: 235554 bytes
 (epstopdf)             Output file: <imagenes/logo_ugr-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-04 12:59:07
+(epstopdf)                    date: 2018-11-18 11:48:15
 (epstopdf)                    size: 49928 bytes
 (epstopdf)             Command: <epstopdf --outfile=imagenes/logo_ugr-eps-conve
 rted-to.pdf imagenes/logo_ugr.eps>
@@ -2283,7 +2285,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
 Here is how much of TeX's memory you used:
  12069 strings out of 492972
  193718 string characters out of 3126622
- 307867 words of memory out of 3000000
+ 307866 words of memory out of 3000000
  15269 multiletter control sequences out of 15000+200000
  11042 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2315,7 +2317,7 @@ public/amsfonts/cm/cmsy7.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/jordo/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/jordo/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/feybr10.pfb>
-Output written on TFG.pdf (123 pages, 11498432 bytes).
+Output written on TFG.pdf (123 pages, 11498429 bytes).
 PDF statistics:
  2661 PDF objects out of 2984 (max. 8388607)
  355 named destinations out of 1000 (max. 500000)
