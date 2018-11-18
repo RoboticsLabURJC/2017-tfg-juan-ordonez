@@ -11,6 +11,7 @@
 % notice. 
 
 \documentclass{beamer}
+
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
 % http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
@@ -47,20 +48,22 @@
 \usepackage{multimedia}
 \usepackage{subfig}
 %\usebackgroundtemplate{\includegraphics[width= \paperwidth, height=\paperheight]{imagen2}}
-\setbeamertemplate{footline}{} 
+\setbeamertemplate{footline}[text line]{%
+	\parbox{\linewidth}{\vspace*{-8pt}\insertsection\hfill\insertshortauthor\hfill\insertframenumber}}
+\setbeamertemplate{navigation symbols}{}
 \title{Sistema de control autónomo en FPGAs libres para robots}
 
 % A subtitle is optional and this may be deleted
 \subtitle{}
 
-\author{Juan Ordóñez Cerezo\inst{1}}
+\author{Juan Ordóñez Cerezo}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
 
 \institute[Universidad de Granada] % (optional, but mostly needed)
 {
-  \inst{1}%
+  %
   Universidad de Granada
 }
 % - Use the \inst command only if there are several affiliations.
@@ -94,7 +97,7 @@
 % Let's get started
 \begin{document}
 
-\begin{frame}
+\begin{frame}[plain]
   \begin{center}
   \includegraphics [width =0.5\textwidth ]{logo_ugr}
   \end{center}
@@ -103,8 +106,9 @@
 	\end{center}
   \titlepage
 \end{frame}
+\addtocounter{framenumber}{-1}
 
-\begin{frame}{Index}
+\begin{frame}{Índice}
   \tableofcontents
   % You might wish to add the option [pausesections]
 \end{frame}
@@ -171,7 +175,7 @@
 			\item Tarjeta FPGA con Lattice iCE40HK \pause
 			\item 4K de memoria \pause
 			\item 12 pines digitales \pause
-			\item 3 pines analógicos mediante i2c \pause
+			\item 3 pines analógicos accesibles mediante i2c \pause
 		\end{itemize}
 	\end{block}
 \begin{alertblock}{}
@@ -211,13 +215,14 @@
 \end{frame}
 
 \section{Objetivos}
+
 \begin{frame}{Objetivos}
 \begin{block}{}
 	\begin{itemize}
 		\item Comportamientos robóticos mediante lenguajes de implementación hardware \pause
 		\item Uso de herramientas libres como IceStudio o IceZum Alhambra \pause
-		\item Habilidad para el desarrolla de PCB \pause
-		\item Habilidad para el diseño e impresión de estrucuturas mecánicas \pause
+		\item Habilidad para el desarrollo de PCBs \pause
+		\item Habilidad para el diseño e impresión de estructuras mecánicas \pause
 		\item Entender la importancia de la coexistencia entre microcontrolador y FPGA 
 	\end{itemize}
 \end{block}
@@ -230,8 +235,6 @@
 \begin{figure}[H]
 	\center
 	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Balancing_robot/final.pdf}
-	\caption{}
-	\label{}
 \end{figure}
 \end{frame}	
 \subsection{Implementación del sistema}
@@ -291,12 +294,12 @@
 \begin{frame}{Obtención ángulo}
 \begin{block}{}
 	\begin{itemize}
-		\item Para corregir el ángulo es necesario el conocimiento de este en cada instante.\pause
+		\item Para corregir el ángulo es necesario el conocimiento de éste en cada instante.\pause
 		\item Unidad de medida incercial (IMU) \pause
 	\end{itemize}
 \end{block}
 \begin{alertblock}{}
-	\centering \textbf{MPU6050} \pause
+	\centering \textbf{MPU6050} 
 \end{alertblock}
 	\begin{center}
 	\includegraphics [width =0.3\textwidth ]{imagenes/EstadoArte/IMU1}
@@ -336,7 +339,7 @@
 	\centering \textbf{Coexistencia microcontrador-FPGA}  \pause
 \end{alertblock}
 \begin{alertblock}{}
-	\centering \textbf{Paralelizar los procesos que pueden ser paralelizados} \pause 
+	\centering \textbf{Paralelizar los procesos que pueden ser paralelizados} 
 \end{alertblock}
 \end{frame}
 
@@ -401,7 +404,7 @@
 	\end{itemize}
 \end{block}
 \begin{alertblock}
-	\centering \textbf{PID por su fácil implementación y paralelismo}
+	\centering \textbf{PID por su fácil implementación y posibilidad de paralelismo}
 \end{alertblock}
 \end{frame}
 
@@ -469,7 +472,7 @@
 \end{frame}
 
 
-\begin{frame}{Diseño e Implementación PCB}
+\begin{frame}{Diseño e Implementación de PCB}
 \begin{block}{}
 	\begin{itemize}
 		\item Demasiados cables sueltos y puentes en el sistema final \pause
@@ -478,14 +481,14 @@
 	\end{itemize}
 \end{block}
 \begin{alertblock}{}
-	\centering \textbf{Printed Circuit Board, PCB} \pause
+	\centering \textbf{Printed Circuit Board, PCB} 
 	\begin{center}
 		\includegraphics [width =0.4\textwidth ]{imagenes/altium}
 	\end{center}
 \end{alertblock}
 \end{frame}
 
-\begin{frame}{Diseño e Implementación PCB}
+\begin{frame}{Diseño e Implementación de PCB}
 \begin{figure}[H]
 	\center
 	\includegraphics[scale=0.35, angle=0]{imagenes/Balancing_Robot/layers_altium.PNG}
@@ -493,28 +496,28 @@
 \end{frame}
 
 
-\begin{frame}{Diseño e Implementación PCB}
+\begin{frame}{Diseño e Implementación de PCB}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.45]{imagenes/Balancing_Robot/top_3D.PNG}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Diseño e Implementación PCB}
+\begin{frame}{Diseño e Implementación de PCB}
 		\begin{figure}[H]
 	\center
 	\includegraphics[scale=0.45]{imagenes/Balancing_Robot/bottom_3D.PNG}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Diseño e Implementación PCB}
+\begin{frame}{Diseño e Implementación de PCB}
 		\begin{figure}[H]
 	\center
 	\includegraphics[scale=0.40]{imagenes/Balancing_Robot/Vista3D1.PNG}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Diseño e Implementación PCB}
+\begin{frame}{Diseño e Implementación de PCB}
 	\begin{center}
 	\begin{figure}[H]
 		\center
@@ -552,16 +555,16 @@
 \begin{frame}{OV7670}
 \begin{figure}[H]
 	\center
-	\includegraphics[scale=0.2, angle=0]{imagenes/Cuadricoptero_vision/OV7670}
+	\includegraphics[scale=0.35, angle=0]{imagenes/Cuadricoptero_vision/OV7670}
 \end{figure}
 \begin{block}{}
 	\begin{itemize}
-		\item Transmisión de píxeles mediante 8 bits en paralelo
-		\item Comunicación I2C para la configuración necesaria, 640x480, RGB565, frecuencia de píxeles.
+		\item Transmisión de píxeles mediante 8 bits en paralelo \pause
+		\item Comunicación I2C para la configuración necesaria, 640x480, RGB565, frecuencia de píxeles. \pause
 	\end{itemize}
 \end{block}
 \begin{alertblock}{}
-		\centering \textbf{NECESIDAD DE PROTOCOLO I2C} \pause
+		\centering \textbf{NECESIDAD DE PROTOCOLO I2C} 
 \end{alertblock}
 \end{frame}
 
@@ -590,15 +593,15 @@
 \begin{frame}{Reconocimiento del volumen y posición}
 \begin{alertblock}{}
 		\begin{equation*}\label{equation:acumx}
-	Acum_{X} = \sum\textup{columns of filtered pixels}
+	Acum_{X} = \sum\textup{columna de píxel filtrado}
 	\end{equation*}
 	
 	\begin{equation*}\label{equation:acumx2}
-	X_{media} = \frac{Acum_{X}}{Num_{\textup{filtered pixels}}}
+	X_{media} = \frac{Acum_{X}}{Num_{\textup{píxeles filtrados}}}
 	\end{equation*}
 	
 	\begin{equation*}\label{equation:acumx3}
-	Error_{X} = X_{average}- \frac{width}{2}
+	Error_{X} = X_{media}- \frac{anchura}{2}
 	\end{equation*}
 \end{alertblock}
 \end{frame}
@@ -607,15 +610,15 @@
 \begin{frame}{Reconocimiento del volumen y posición}
 \begin{alertblock}{}
 	\begin{equation*}\label{equation:acumy}
-	Acum_{Y} = \sum\textup{row filtered pixels}
+	Acum_{Y} = \sum\textup{fila de píxel filtrado}
 	\end{equation*}
 
 	\begin{equation*}\label{equation:acumy2}
-	Y_{average} = \frac{Acum_{Y}}{Num_{\textup{filtered pixels}}}
+	Y_{media} = \frac{Acum_{Y}}{Num_{\textup{píxeles filtrados}}}
 	\end{equation*}
 
 	\begin{equation*}\label{equation:acumy3}
-	Error_{Y} = Y_{average}- \frac{height}{2}
+	Error_{Y} = Y_{media}- \frac{altura}{2}
 	\end{equation*}
 \end{alertblock}
 \end{frame}
@@ -629,9 +632,6 @@
 \end{figure}
 \end{frame}
 \section{Conclusiones y trabajo futuro}
-\begin{frame}{Conclusiones}
-Conclusiones de este trabajo
-\end{frame}
 \begin{frame}{Trabajo futuro}
 \begin{block}{}
 	\begin{itemize}
@@ -642,6 +642,27 @@ Conclusiones de este trabajo
 		\item Implementación del control a bordo del cuadricóptero 
 	\end{itemize}
 \end{block}
+\end{frame}
+\begin{frame}{Conclusiones}
+\begin{block}{}
+	\begin{itemize}
+		\item Ser uno de los primeros en trabajar con una plataforma así siempre es importante para un ingeniero \pause
+		\item Dificultades debido a lo anterior \pause
+		\item La unión hace la fuerza, Google groups \pause
+		\item En los artículos siempre está la solución  \pause
+		\item Es importante ofrecer a los más pequeños las herramientas para que puedan aprender aspectos importantes \pause
+	\end{itemize}
+\end{block}
+\begin{alertblock}{}
+	\centering \textbf{Tanto el software como el hardware es esencial}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0cm 0mm 0cm, clip,scale=0.39]{imagenes/Introduction/aplauso}
+	\end{figure}
 \end{frame}
 \end{document}
 

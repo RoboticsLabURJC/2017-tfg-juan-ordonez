@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  18 NOV 2018 19:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.21)  18 NOV 2018 20:35
 entering extended mode
 **./main.tex
 (main.tex
@@ -789,20 +789,20 @@ Package caption Info: Hyperref support is turned off
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -870,7 +870,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 95.
+Package hyperref Info: Link coloring OFF on input line 98.
 
 ("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -882,65 +882,65 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count169
 )
-LaTeX Info: Redefining \ref on input line 95.
-LaTeX Info: Redefining \pageref on input line 95.
-LaTeX Info: Redefining \nameref on input line 95.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 95.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 98.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 95.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 98.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 95.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 95.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 95.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 95.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 98.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 95.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 95.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 95.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 98.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 95.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 95.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 95.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 98.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 95.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 95.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 98.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 95.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 98.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 95.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 95.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 95.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 95.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 95.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 95.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 95.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 98.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 98.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 9
-5.
+8.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-95.
+98.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 95.
+ut line 98.
 
 ("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
 tor-basic-dictionary-English.dict"
@@ -970,6 +970,23 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
  (main.nav)
+LaTeX Font Info:    Try loading font information for U+msa on input line 98.
+
+("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 98.
+("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 98.
+
+("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathaccent\ot1
+mathkerncmss.fd"
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)
 Package epstopdf Info: Source file: <logo_ugr.eps>
 (epstopdf)                    date: 2017-03-11 12:38:24
 (epstopdf)                    size: 235554 bytes
@@ -978,12 +995,12 @@ Package epstopdf Info: Source file: <logo_ugr.eps>
 (epstopdf)                    size: 50388 bytes
 (epstopdf)             Command: <epstopdf --outfile=logo_ugr-eps-converted-to.p
 df logo_ugr.eps>
-(epstopdf)             \includegraphics on input line 105.
+(epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
-<logo_ugr-eps-converted-to.pdf, id=57, 86.3225pt x 25.09375pt>
+<logo_ugr-eps-converted-to.pdf, id=61, 86.3225pt x 25.09375pt>
 File: logo_ugr-eps-converted-to.pdf Graphic file (type pdf)
 <use logo_ugr-eps-converted-to.pdf>
-Package pdftex.def Info: logo_ugr-eps-converted-to.pdf  used on input line 105.
+Package pdftex.def Info: logo_ugr-eps-converted-to.pdf  used on input line 108.
 
 (pdftex.def)             Requested size: 171.14764pt x 49.75772pt.
 Package epstopdf Info: Source file: <logo_rey.eps>
@@ -994,32 +1011,16 @@ Package epstopdf Info: Source file: <logo_rey.eps>
 (epstopdf)                    size: 7321 bytes
 (epstopdf)             Command: <epstopdf --outfile=logo_rey-eps-converted-to.p
 df logo_rey.eps>
-(epstopdf)             \includegraphics on input line 105.
+(epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
-<logo_rey-eps-converted-to.pdf, id=58, 86.3225pt x 35.13126pt>
+<logo_rey-eps-converted-to.pdf, id=62, 86.3225pt x 35.13126pt>
 File: logo_rey-eps-converted-to.pdf Graphic file (type pdf)
 <use logo_rey-eps-converted-to.pdf>
-Package pdftex.def Info: logo_rey-eps-converted-to.pdf  used on input line 105.
+Package pdftex.def Info: logo_rey-eps-converted-to.pdf  used on input line 108.
 
 (pdftex.def)             Requested size: 136.91603pt x 55.7276pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 105.
 
-("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 105.
-("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 105.
-
-("C:\Users\jordo\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathaccent\ot1
-mathkerncmss.fd"
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
-thkerncmss.
-)
-Overfull \vbox (9.37822pt too high) detected at line 105
+Overfull \vbox (1.55344pt too high) detected at line 108
  []
 
 [1
@@ -1028,37 +1029,37 @@ Overfull \vbox (9.37822pt too high) detected at line 105
 eps-converted-to.pdf> <./logo_rey-eps-converted-to.pdf>] (main.toc) [2
 
 ]
-<imagenes/Introduction/roomba.jpg, id=152, 531.9875pt x 531.9875pt>
+<imagenes/Introduction/roomba.jpg, id=117, 531.9875pt x 531.9875pt>
 File: imagenes/Introduction/roomba.jpg Graphic file (type jpg)
 <use imagenes/Introduction/roomba.jpg>
 Package pdftex.def Info: imagenes/Introduction/roomba.jpg  used on input line 1
-26.
+30.
 (pdftex.def)             Requested size: 132.99655pt x 132.99655pt.
-<imagenes/Introduction/boston.jpg, id=154, 451.6875pt x 319.1925pt>
+<imagenes/Introduction/boston.jpg, id=119, 451.6875pt x 319.1925pt>
 File: imagenes/Introduction/boston.jpg Graphic file (type jpg)
 <use imagenes/Introduction/boston.jpg>
 Package pdftex.def Info: imagenes/Introduction/boston.jpg  used on input line 1
-26.
+30.
 (pdftex.def)             Requested size: 158.09299pt x 111.71904pt.
 
 [3
 
  <./imagenes/Introduction/roomba.jpg> <./imagenes/Introduction/boston.jpg>]
-<imagenes/Introduction/robotica.jpg, id=185, 973.6375pt x 473.77pt>
+<imagenes/Introduction/robotica.jpg, id=130, 973.6375pt x 473.77pt>
 File: imagenes/Introduction/robotica.jpg Graphic file (type jpg)
 <use imagenes/Introduction/robotica.jpg>
 Package pdftex.def Info: imagenes/Introduction/robotica.jpg  used on input line
- 136.
+ 140.
 (pdftex.def)             Requested size: 973.63512pt x 473.76884pt.
 
 [4
 
  <./imagenes/Introduction/robotica.jpg>]
-<imagenes/Introduction/IceStudio.png, id=212, 443.6575pt x 114.4275pt>
+<imagenes/Introduction/IceStudio.png, id=139, 443.6575pt x 114.4275pt>
 File: imagenes/Introduction/IceStudio.png Graphic file (type png)
 <use imagenes/Introduction/IceStudio.png>
 Package pdftex.def Info: imagenes/Introduction/IceStudio.png  used on input lin
-e 152.
+e 156.
 (pdftex.def)             Requested size: 443.6564pt x 114.42722pt.
  [5
 
@@ -1066,7 +1067,7 @@ e 152.
 File: imagenes/Introduction/IceStudio.png Graphic file (type png)
 <use imagenes/Introduction/IceStudio.png>
 Package pdftex.def Info: imagenes/Introduction/IceStudio.png  used on input lin
-e 152.
+e 156.
 (pdftex.def)             Requested size: 443.6564pt x 114.42722pt.
  [6
 
@@ -1074,7 +1075,7 @@ e 152.
 File: imagenes/Introduction/IceStudio.png Graphic file (type png)
 <use imagenes/Introduction/IceStudio.png>
 Package pdftex.def Info: imagenes/Introduction/IceStudio.png  used on input lin
-e 152.
+e 156.
 (pdftex.def)             Requested size: 443.6564pt x 114.42722pt.
  [7
 
@@ -1082,44 +1083,44 @@ e 152.
 File: imagenes/Introduction/IceStudio.png Graphic file (type png)
 <use imagenes/Introduction/IceStudio.png>
 Package pdftex.def Info: imagenes/Introduction/IceStudio.png  used on input lin
-e 152.
+e 156.
 (pdftex.def)             Requested size: 443.6564pt x 114.42722pt.
  [8
 
 ]
-<imagenes/Introduction/i2creadandwrite.jpg, id=326, 1204.5pt x 480.79625pt>
+<imagenes/Introduction/i2creadandwrite.jpg, id=175, 1204.5pt x 480.79625pt>
 File: imagenes/Introduction/i2creadandwrite.jpg Graphic file (type jpg)
 <use imagenes/Introduction/i2creadandwrite.jpg>
 Package pdftex.def Info: imagenes/Introduction/i2creadandwrite.jpg  used on inp
-ut line 159.
+ut line 163.
 (pdftex.def)             Requested size: 1204.49707pt x 480.79506pt.
 
-Overfull \hbox (19.05748pt too wide) in paragraph at lines 159--159
+Overfull \hbox (19.05748pt too wide) in paragraph at lines 163--163
  [] 
  []
 
 [9
 
  <./imagenes/Introduction/i2creadandwrite.jpg>]
-<imagenes/Introduction/IceStudioI2c.png, id=354, 1156.32pt x 620.3175pt>
+<imagenes/Introduction/IceStudioI2c.png, id=184, 1156.32pt x 620.3175pt>
 File: imagenes/Introduction/IceStudioI2c.png Graphic file (type png)
 <use imagenes/Introduction/IceStudioI2c.png>
 Package pdftex.def Info: imagenes/Introduction/IceStudioI2c.png  used on input 
-line 166.
+line 170.
 (pdftex.def)             Requested size: 1156.31718pt x 620.316pt.
 
-Overfull \hbox (4.60338pt too wide) in paragraph at lines 166--166
+Overfull \hbox (4.60338pt too wide) in paragraph at lines 170--170
  [] 
  []
 
 [10
 
  <./imagenes/Introduction/IceStudioI2c.png>]
-<imagenes/Introduction/alhambrabits.png, id=384, 1445.4pt x 451.6875pt>
+<imagenes/Introduction/alhambrabits.png, id=195, 1445.4pt x 451.6875pt>
 File: imagenes/Introduction/alhambrabits.png Graphic file (type png)
 <use imagenes/Introduction/alhambrabits.png>
 Package pdftex.def Info: imagenes/Introduction/alhambrabits.png  used on input 
-line 184.
+line 188.
 (pdftex.def)             Requested size: 1445.39648pt x 451.68639pt.
  [11
 
@@ -1127,7 +1128,7 @@ line 184.
 File: imagenes/Introduction/alhambrabits.png Graphic file (type png)
 <use imagenes/Introduction/alhambrabits.png>
 Package pdftex.def Info: imagenes/Introduction/alhambrabits.png  used on input 
-line 184.
+line 188.
 (pdftex.def)             Requested size: 1445.39648pt x 451.68639pt.
  [12
 
@@ -1135,7 +1136,7 @@ line 184.
 File: imagenes/Introduction/alhambrabits.png Graphic file (type png)
 <use imagenes/Introduction/alhambrabits.png>
 Package pdftex.def Info: imagenes/Introduction/alhambrabits.png  used on input 
-line 184.
+line 188.
 (pdftex.def)             Requested size: 1445.39648pt x 451.68639pt.
  [13
 
@@ -1143,7 +1144,7 @@ line 184.
 File: imagenes/Introduction/alhambrabits.png Graphic file (type png)
 <use imagenes/Introduction/alhambrabits.png>
 Package pdftex.def Info: imagenes/Introduction/alhambrabits.png  used on input 
-line 184.
+line 188.
 (pdftex.def)             Requested size: 1445.39648pt x 451.68639pt.
  [14
 
@@ -1151,16 +1152,16 @@ line 184.
 File: imagenes/Introduction/alhambrabits.png Graphic file (type png)
 <use imagenes/Introduction/alhambrabits.png>
 Package pdftex.def Info: imagenes/Introduction/alhambrabits.png  used on input 
-line 184.
+line 188.
 (pdftex.def)             Requested size: 1445.39648pt x 451.68639pt.
  [15
 
 ]
-<imagenes/EstadoArte/IceZumAlhambraII.jpg, id=521, 448.8883pt x 355.24268pt>
+<imagenes/EstadoArte/IceZumAlhambraII.jpg, id=237, 448.8883pt x 355.24268pt>
 File: imagenes/EstadoArte/IceZumAlhambraII.jpg Graphic file (type jpg)
 <use imagenes/EstadoArte/IceZumAlhambraII.jpg>
 Package pdftex.def Info: imagenes/EstadoArte/IceZumAlhambraII.jpg  used on inpu
-t line 191.
+t line 195.
 (pdftex.def)             Requested size: 448.8872pt x 355.2418pt.
  [16
 
@@ -1168,35 +1169,35 @@ t line 191.
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Introduction/Gantt.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Introduction/Gantt.pdf, id=549, 597.55246pt x 845.07718pt>
+<imagenes/Introduction/Gantt.pdf, id=246, 597.55246pt x 845.07718pt>
 File: imagenes/Introduction/Gantt.pdf Graphic file (type pdf)
 <use imagenes/Introduction/Gantt.pdf>
 Package pdftex.def Info: imagenes/Introduction/Gantt.pdf  used on input line 20
-1.
+5.
 (pdftex.def)             Requested size: 560.56244pt x 546.32191pt.
 
-Overfull \hbox (22.06685pt too wide) in paragraph at lines 201--201
+Overfull \hbox (22.06685pt too wide) in paragraph at lines 205--205
  [] 
  []
 
 
-Overfull \vbox (142.96869pt too high) detected at line 201
+Overfull \vbox (142.96869pt too high) detected at line 205
  []
 
 [17
 
  <./imagenes/Introduction/Gantt.pdf>]
-<imagenes/Introduction/github.jpg, id=637, 636.3775pt x 310.15875pt>
+<imagenes/Introduction/github.jpg, id=315, 636.3775pt x 310.15875pt>
 File: imagenes/Introduction/github.jpg Graphic file (type jpg)
 <use imagenes/Introduction/github.jpg>
 Package pdftex.def Info: imagenes/Introduction/github.jpg  used on input line 2
-11.
+15.
 (pdftex.def)             Requested size: 190.91472pt x 93.04834pt.
-<imagenes/Introduction/appear.png, id=639, 513.92pt x 513.92pt>
+<imagenes/Introduction/appear.png, id=317, 513.92pt x 513.92pt>
 File: imagenes/Introduction/appear.png Graphic file (type png)
 <use imagenes/Introduction/appear.png>
 Package pdftex.def Info: imagenes/Introduction/appear.png  used on input line 2
-11.
+15.
 (pdftex.def)             Requested size: 102.78217pt x 102.78217pt.
  [18
 
@@ -1218,46 +1219,43 @@ copy)>] [19
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/final.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/final.pdf, id=834, 796.9775pt x 615.29875pt>
+<imagenes/Balancing_robot/final.pdf, id=378, 796.9775pt x 615.29875pt>
 File: imagenes/Balancing_robot/final.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/final.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/final.pdf  used on input line
- 236.
+ 239.
 (pdftex.def)             Requested size: 239.0951pt x 184.59105pt.
-
-Package hyperref Warning: Ignoring empty anchor on input line 236.
-
 [25
 
  <./imagenes/Balancing_robot/final.pdf>] (main.toc) [26
 
 ]
-<imagenes/Balancing_Robot/EnsanBalanceFront.PDF, id=1179, 845.0471pt x 597.5082
-9pt>
+<imagenes/Balancing_Robot/EnsanBalanceFront.PDF, id=684, 845.0471pt x 597.50829
+pt>
 File: imagenes/Balancing_Robot/EnsanBalanceFront.PDF Graphic file (type pdf)
 <use imagenes/Balancing_Robot/EnsanBalanceFront.PDF>
 Package pdftex.def Info: imagenes/Balancing_Robot/EnsanBalanceFront.PDF  used o
-n input line 246.
+n input line 249.
 (pdftex.def)             Requested size: 739.77023pt x 597.50682pt.
  [27
 
  <./imagenes/Balancing_Robot/EnsanBalanceFront.PDF>]
-<imagenes/Balancing_Robot/EnsanBalanceLateral.PDF, id=1209, 845.0471pt x 597.50
-829pt>
+<imagenes/Balancing_Robot/EnsanBalanceLateral.PDF, id=695, 845.0471pt x 597.508
+29pt>
 File: imagenes/Balancing_Robot/EnsanBalanceLateral.PDF Graphic file (type pdf)
 <use imagenes/Balancing_Robot/EnsanBalanceLateral.PDF>
 Package pdftex.def Info: imagenes/Balancing_Robot/EnsanBalanceLateral.PDF  used
- on input line 255.
+ on input line 258.
 (pdftex.def)             Requested size: 418.25476pt x 597.50682pt.
  [28
 
  <./imagenes/Balancing_Robot/EnsanBalanceLateral.PDF>]
-<imagenes/Balancing_Robot/EnsanBalanceCab.PDF, id=1239, 845.0471pt x 597.50829p
-t>
+<imagenes/Balancing_Robot/EnsanBalanceCab.PDF, id=706, 845.0471pt x 597.50829pt
+>
 File: imagenes/Balancing_Robot/EnsanBalanceCab.PDF Graphic file (type pdf)
 <use imagenes/Balancing_Robot/EnsanBalanceCab.PDF>
 Package pdftex.def Info: imagenes/Balancing_Robot/EnsanBalanceCab.PDF  used on 
-input line 264.
+input line 267.
 (pdftex.def)             Requested size: 560.51822pt x 597.50682pt.
  [29
 
@@ -1271,13 +1269,13 @@ f>
 (epstopdf)                    size: 14877 bytes
 (epstopdf)             Command: <epstopdf --outfile=imagenes/SolidWorks-01-eps-
 converted-to.pdf imagenes/SolidWorks-01.eps>
-(epstopdf)             \includegraphics on input line 282.
+(epstopdf)             \includegraphics on input line 285.
 Package epstopdf Info: Output file is already uptodate.
-<imagenes/SolidWorks-01-eps-converted-to.pdf, id=1269, 366.36874pt x 76.285pt>
+<imagenes/SolidWorks-01-eps-converted-to.pdf, id=717, 366.36874pt x 76.285pt>
 File: imagenes/SolidWorks-01-eps-converted-to.pdf Graphic file (type pdf)
 <use imagenes/SolidWorks-01-eps-converted-to.pdf>
 Package pdftex.def Info: imagenes/SolidWorks-01-eps-converted-to.pdf  used on i
-nput line 282.
+nput line 285.
 (pdftex.def)             Requested size: 136.91603pt x 28.50902pt.
  [30
 
@@ -1291,12 +1289,12 @@ f>
 (epstopdf)                    size: 14877 bytes
 (epstopdf)             Command: <epstopdf --outfile=imagenes/SolidWorks-01-eps-
 converted-to.pdf imagenes/SolidWorks-01.eps>
-(epstopdf)             \includegraphics on input line 282.
+(epstopdf)             \includegraphics on input line 285.
 Package epstopdf Info: Output file is already uptodate.
 File: imagenes/SolidWorks-01-eps-converted-to.pdf Graphic file (type pdf)
 <use imagenes/SolidWorks-01-eps-converted-to.pdf>
 Package pdftex.def Info: imagenes/SolidWorks-01-eps-converted-to.pdf  used on i
-nput line 282.
+nput line 285.
 (pdftex.def)             Requested size: 136.91603pt x 28.50902pt.
  [31
 
@@ -1310,12 +1308,12 @@ f>
 (epstopdf)                    size: 14877 bytes
 (epstopdf)             Command: <epstopdf --outfile=imagenes/SolidWorks-01-eps-
 converted-to.pdf imagenes/SolidWorks-01.eps>
-(epstopdf)             \includegraphics on input line 282.
+(epstopdf)             \includegraphics on input line 285.
 Package epstopdf Info: Output file is already uptodate.
 File: imagenes/SolidWorks-01-eps-converted-to.pdf Graphic file (type pdf)
 <use imagenes/SolidWorks-01-eps-converted-to.pdf>
 Package pdftex.def Info: imagenes/SolidWorks-01-eps-converted-to.pdf  used on i
-nput line 282.
+nput line 285.
 (pdftex.def)             Requested size: 136.91603pt x 28.50902pt.
  [32
 
@@ -1329,53 +1327,48 @@ f>
 (epstopdf)                    size: 14877 bytes
 (epstopdf)             Command: <epstopdf --outfile=imagenes/SolidWorks-01-eps-
 converted-to.pdf imagenes/SolidWorks-01.eps>
-(epstopdf)             \includegraphics on input line 282.
+(epstopdf)             \includegraphics on input line 285.
 Package epstopdf Info: Output file is already uptodate.
 File: imagenes/SolidWorks-01-eps-converted-to.pdf Graphic file (type pdf)
 <use imagenes/SolidWorks-01-eps-converted-to.pdf>
 Package pdftex.def Info: imagenes/SolidWorks-01-eps-converted-to.pdf  used on i
-nput line 282.
+nput line 285.
 (pdftex.def)             Requested size: 136.91603pt x 28.50902pt.
  [33
 
 ]
-<imagenes/Balancing_robot/center_mass.png, id=1375, 1047.915pt x 592.46344pt>
+<imagenes/Balancing_robot/center_mass.png, id=747, 1047.915pt x 592.46344pt>
 File: imagenes/Balancing_robot/center_mass.png Graphic file (type png)
 <use imagenes/Balancing_robot/center_mass.png>
 Package pdftex.def Info: imagenes/Balancing_robot/center_mass.png  used on inpu
-t line 289.
+t line 292.
 (pdftex.def)             Requested size: 314.37692pt x 177.7404pt.
  [34
 
  <./imagenes/Balancing_robot/center_mass.png>]
-<imagenes/EstadoArte/IMU1.jpg, id=1401, 652.4375pt x 652.4375pt>
+<imagenes/EstadoArte/IMU1.jpg, id=754, 652.4375pt x 652.4375pt>
 File: imagenes/EstadoArte/IMU1.jpg Graphic file (type jpg)
 <use imagenes/EstadoArte/IMU1.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 304.
+Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 307.
 (pdftex.def)             Requested size: 102.68962pt x 102.68976pt.
  [35
 
  <./imagenes/EstadoArte/IMU1.jpg>]
 File: imagenes/EstadoArte/IMU1.jpg Graphic file (type jpg)
 <use imagenes/EstadoArte/IMU1.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 304.
+Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 307.
 (pdftex.def)             Requested size: 102.68962pt x 102.68976pt.
  [36
 
 ]
 File: imagenes/EstadoArte/IMU1.jpg Graphic file (type jpg)
 <use imagenes/EstadoArte/IMU1.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 304.
+Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 307.
 (pdftex.def)             Requested size: 102.68962pt x 102.68976pt.
 
 [37
 
-]
-File: imagenes/EstadoArte/IMU1.jpg Graphic file (type jpg)
-<use imagenes/EstadoArte/IMU1.jpg>
-Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 304.
-(pdftex.def)             Requested size: 102.68962pt x 102.68976pt.
- [38
+] [38
 
 ] [39
 
@@ -1385,62 +1378,58 @@ Package pdftex.def Info: imagenes/EstadoArte/IMU1.jpg  used on input line 304.
 
 ] [42
 
-] [43
-
 ]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/DMPexample.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/DMPexample.pdf, id=1629, 599.23875pt x 847.165pt>
+<imagenes/Balancing_robot/DMPexample.pdf, id=804, 599.23875pt x 847.165pt>
 File: imagenes/Balancing_robot/DMPexample.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/DMPexample.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/DMPexample.pdf  used on input
- line 325.
+ line 328.
 (pdftex.def)             Requested size: 239.69125pt x 225.05098pt.
-[44
+[43
 
- <./imagenes/Balancing_robot/DMPexample.pdf>] [45
+ <./imagenes/Balancing_robot/DMPexample.pdf>] [44
+
+] [45
 
 ] [46
 
 ] [47
 
-] [48
-
-] [49
-
 ]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia1.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia1.pdf, id=1801, 796.05406pt x 615.37907pt
->
+<imagenes/Balancing_robot/coexistencia1.pdf, id=856, 796.05406pt x 615.37907pt>
+
 File: imagenes/Balancing_robot/coexistencia1.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia1.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/coexistencia1.pdf  used on in
-put line 349.
+put line 352.
 (pdftex.def)             Requested size: 318.41597pt x 177.86188pt.
-[50
+[48
 
  <./imagenes/Balancing_robot/coexistencia1.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/coexistencia2.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/coexistencia2.pdf, id=1857, 794.00638pt x 614.295pt>
+<imagenes/Balancing_robot/coexistencia2.pdf, id=893, 794.00638pt x 614.295pt>
 File: imagenes/Balancing_robot/coexistencia2.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/coexistencia2.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/coexistencia2.pdf  used on in
-put line 362.
+put line 365.
 (pdftex.def)             Requested size: 238.20375pt x 133.07457pt.
-<imagenes/Balancing_Robot/serial_comunicattion.png, id=1859, 451.6875pt x 82.05
-656pt>
+<imagenes/Balancing_Robot/serial_comunicattion.png, id=895, 451.6875pt x 82.056
+56pt>
 File: imagenes/Balancing_Robot/serial_comunicattion.png Graphic file (type png)
 
 <use imagenes/Balancing_Robot/serial_comunicattion.png>
 Package pdftex.def Info: imagenes/Balancing_Robot/serial_comunicattion.png  use
-d on input line 362.
+d on input line 365.
 (pdftex.def)             Requested size: 338.76479pt x 61.54225pt.
-[51
+[49
 
  <./imagenes/Balancing_robot/coexistencia2.pdf> <./imagenes/Balancing_Robot/ser
 ial_comunicattion.png>]
@@ -1448,97 +1437,113 @@ ial_comunicattion.png>]
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/extraccion_angulo
 .pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
 d
-<imagenes/Balancing_robot/extraccion_angulo.pdf, id=1913, 796.05406pt x 615.379
-07pt>
+<imagenes/Balancing_robot/extraccion_angulo.pdf, id=931, 796.05406pt x 615.3790
+7pt>
 File: imagenes/Balancing_robot/extraccion_angulo.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/extraccion_angulo.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/extraccion_angulo.pdf  used o
-n input line 370.
+n input line 373.
 (pdftex.def)             Requested size: 238.81805pt x 184.61514pt.
-[52
+[50
 
  <./imagenes/Balancing_robot/extraccion_angulo.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/arduino_interface
 fluid.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
-<imagenes/Balancing_robot/arduino_interfacefluid.pdf, id=2013, 794.97pt x 614.2
+<imagenes/Balancing_robot/arduino_interfacefluid.pdf, id=1012, 794.97pt x 614.2
 95pt>
 File: imagenes/Balancing_robot/arduino_interfacefluid.pdf Graphic file (type pd
 f)
 <use imagenes/Balancing_robot/arduino_interfacefluid.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/arduino_interfacefluid.pdf  u
-sed on input line 381.
+sed on input line 384.
 (pdftex.def)             Requested size: 317.98236pt x 234.33275pt.
 
-Overfull \vbox (20.3247pt too high) detected at line 381
+Overfull \vbox (20.3247pt too high) detected at line 384
  []
 
-[53
+[51
 
  <./imagenes/Balancing_robot/arduino_interfacefluid.pdf>]
-<imagenes/Balancing_robot/arduino_arrange.PNG, id=2057, 673.76718pt x 645.91313
+<imagenes/Balancing_robot/arduino_arrange.PNG, id=1037, 673.76718pt x 645.91313
 pt>
 File: imagenes/Balancing_robot/arduino_arrange.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/arduino_arrange.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/arduino_arrange.PNG  used on 
-input line 389.
+input line 392.
 (pdftex.def)             Requested size: 202.13171pt x 193.77544pt.
- [54
+ [52
 
- <./imagenes/Balancing_robot/arduino_arrange.PNG>] [55
+ <./imagenes/Balancing_robot/arduino_arrange.PNG>] [53
 
 ]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/P.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/P.pdf, id=2110, 599.23875pt x 847.165pt>
+<imagenes/Balancing_robot/P.pdf, id=1051, 599.23875pt x 847.165pt>
 File: imagenes/Balancing_robot/P.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/P.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/P.pdf  used on input line 413
+Package pdftex.def Info: imagenes/Balancing_robot/P.pdf  used on input line 416
 .
 (pdftex.def)             Requested size: 299.61864pt x 224.41267pt.
-[56
+[54
 
  <./imagenes/Balancing_robot/P.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/D.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/D.pdf, id=2153, 600.2425pt x 848.16875pt>
+<imagenes/Balancing_robot/D.pdf, id=1075, 600.2425pt x 848.16875pt>
 File: imagenes/Balancing_robot/D.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/D.pdf>
-Package pdftex.def Info: imagenes/Balancing_robot/D.pdf  used on input line 420
+Package pdftex.def Info: imagenes/Balancing_robot/D.pdf  used on input line 423
 .
 (pdftex.def)             Requested size: 180.07413pt x 237.3808pt.
 
-Overfull \vbox (5.64359pt too high) detected at line 420
+Overfull \vbox (5.64359pt too high) detected at line 423
  []
 
-[57
+[55
 
  <./imagenes/Balancing_robot/D.pdf>]
-<imagenes/Balancing_robot/PDControl.PNG, id=2207, 195.129pt x 406.51875pt>
+<imagenes/Balancing_robot/PDControl.PNG, id=1111, 195.129pt x 406.51875pt>
 File: imagenes/Balancing_robot/PDControl.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/PDControl.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/PDControl.PNG  used on input 
-line 427.
+line 430.
 (pdftex.def)             Requested size: 97.56425pt x 203.25887pt.
- [58
+ [56
 
  <./imagenes/Balancing_robot/PDControl.PNG>]
-<imagenes/Balancing_robot/driver_motor.jpg, id=2236, 451.6875pt x 361.35pt>
+<imagenes/Balancing_robot/driver_motor.jpg, id=1121, 451.6875pt x 361.35pt>
 File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
 <use imagenes/Balancing_robot/driver_motor.jpg>
 Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
-ut line 454.
+ut line 457.
 (pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
- [59
+ [57
 
  <./imagenes/Balancing_robot/driver_motor.jpg>]
 File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
 <use imagenes/Balancing_robot/driver_motor.jpg>
 Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
-ut line 454.
+ut line 457.
+(pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
+ [58
+
+]
+File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
+<use imagenes/Balancing_robot/driver_motor.jpg>
+Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
+ut line 457.
+(pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
+ [59
+
+]
+File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
+<use imagenes/Balancing_robot/driver_motor.jpg>
+Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
+ut line 457.
 (pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
  [60
 
@@ -1546,245 +1551,234 @@ ut line 454.
 File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
 <use imagenes/Balancing_robot/driver_motor.jpg>
 Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
-ut line 454.
-(pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
- [61
-
-]
-File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
-<use imagenes/Balancing_robot/driver_motor.jpg>
-Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
-ut line 454.
-(pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
- [62
-
-]
-File: imagenes/Balancing_robot/driver_motor.jpg Graphic file (type jpg)
-<use imagenes/Balancing_robot/driver_motor.jpg>
-Package pdftex.def Info: imagenes/Balancing_robot/driver_motor.jpg  used on inp
-ut line 454.
+ut line 457.
 (pdftex.def)             Requested size: 90.33589pt x 72.2687pt.
 
-[63
+[61
 
 ]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Balancing_robot/pwm_control.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Balancing_robot/pwm_control.pdf, id=2377, 849.1725pt x 600.2425pt>
+<imagenes/Balancing_robot/pwm_control.pdf, id=1167, 849.1725pt x 600.2425pt>
 File: imagenes/Balancing_robot/pwm_control.pdf Graphic file (type pdf)
 <use imagenes/Balancing_robot/pwm_control.pdf>
 Package pdftex.def Info: imagenes/Balancing_robot/pwm_control.pdf  used on inpu
-t line 462.
+t line 465.
 (pdftex.def)             Requested size: 297.21483pt x 210.08801pt.
-[64
+[62
 
  <./imagenes/Balancing_robot/pwm_control.pdf>]
-<imagenes/Balancing_robot/PWM_module.PNG, id=2415, 348.70274pt x 213.79875pt>
+<imagenes/Balancing_robot/PWM_module.PNG, id=1186, 348.70274pt x 213.79875pt>
 File: imagenes/Balancing_robot/PWM_module.PNG Graphic file (type png)
 <use imagenes/Balancing_robot/PWM_module.PNG>
 Package pdftex.def Info: imagenes/Balancing_robot/PWM_module.PNG  used on input
- line 469.
+ line 472.
 (pdftex.def)             Requested size: 174.35094pt x 106.89911pt.
- [65
+ [63
 
  <./imagenes/Balancing_robot/PWM_module.PNG>]
-<imagenes/altium.png, id=2442, 530.73282pt x 231.86626pt>
+<imagenes/altium.png, id=1194, 530.73282pt x 231.86626pt>
 File: imagenes/altium.png Graphic file (type png)
 <use imagenes/altium.png>
-Package pdftex.def Info: imagenes/altium.png  used on input line 486.
+Package pdftex.def Info: imagenes/altium.png  used on input line 489.
 (pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
- [66
+ [64
 
  <./imagenes/altium.png>]
 File: imagenes/altium.png Graphic file (type png)
 <use imagenes/altium.png>
-Package pdftex.def Info: imagenes/altium.png  used on input line 486.
+Package pdftex.def Info: imagenes/altium.png  used on input line 489.
+(pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
+ [65
+
+]
+File: imagenes/altium.png Graphic file (type png)
+<use imagenes/altium.png>
+Package pdftex.def Info: imagenes/altium.png  used on input line 489.
+(pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
+ [66
+
+]
+File: imagenes/altium.png Graphic file (type png)
+<use imagenes/altium.png>
+Package pdftex.def Info: imagenes/altium.png  used on input line 489.
 (pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
  [67
 
 ]
-File: imagenes/altium.png Graphic file (type png)
-<use imagenes/altium.png>
-Package pdftex.def Info: imagenes/altium.png  used on input line 486.
-(pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
- [68
-
-]
-File: imagenes/altium.png Graphic file (type png)
-<use imagenes/altium.png>
-Package pdftex.def Info: imagenes/altium.png  used on input line 486.
-(pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
- [69
-
-]
-File: imagenes/altium.png Graphic file (type png)
-<use imagenes/altium.png>
-Package pdftex.def Info: imagenes/altium.png  used on input line 486.
-(pdftex.def)             Requested size: 136.91603pt x 59.81677pt.
- [70
-
-]
-<imagenes/Balancing_Robot/layers_altium.PNG, id=2570, 813.79031pt x 640.64343pt
+<imagenes/Balancing_Robot/layers_altium.PNG, id=1221, 813.79031pt x 640.64343pt
 >
 File: imagenes/Balancing_Robot/layers_altium.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/layers_altium.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/layers_altium.PNG  used on in
-put line 493.
+put line 496.
 (pdftex.def)             Requested size: 284.83087pt x 224.22856pt.
- [71
+ [68
 
  <./imagenes/Balancing_Robot/layers_altium.PNG>]
-<imagenes/Balancing_Robot/top_3D.PNG, id=2597, 546.24075pt x 463.7325pt>
+<imagenes/Balancing_Robot/top_3D.PNG, id=1229, 546.24075pt x 463.7325pt>
 File: imagenes/Balancing_Robot/top_3D.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/top_3D.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/top_3D.PNG  used on input lin
-e 501.
+e 504.
 (pdftex.def)             Requested size: 245.80606pt x 208.67769pt.
- [72
+ [69
 
  <./imagenes/Balancing_Robot/top_3D.PNG>]
-<imagenes/Balancing_Robot/bottom_3D.PNG, id=2624, 511.31026pt x 416.757pt>
+<imagenes/Balancing_Robot/bottom_3D.PNG, id=1237, 511.31026pt x 416.757pt>
 File: imagenes/Balancing_Robot/bottom_3D.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/bottom_3D.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/bottom_3D.PNG  used on input 
-line 508.
+line 511.
 (pdftex.def)             Requested size: 230.08748pt x 187.53891pt.
- [73
+ [70
 
  <./imagenes/Balancing_Robot/bottom_3D.PNG>]
-<imagenes/Balancing_Robot/Vista3D1.PNG, id=2652, 599.23875pt x 499.8675pt>
+<imagenes/Balancing_Robot/Vista3D1.PNG, id=1245, 599.23875pt x 499.8675pt>
 File: imagenes/Balancing_Robot/Vista3D1.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/Vista3D1.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/Vista3D1.PNG  used on input l
-ine 515.
+ine 518.
 (pdftex.def)             Requested size: 239.69125pt x 199.94345pt.
- [74
+ [71
 
  <./imagenes/Balancing_Robot/Vista3D1.PNG>]
-<imagenes/Balancing_Robot/Vista3D2.PNG, id=2678, 532.99126pt x 293.29575pt>
+<imagenes/Balancing_Robot/Vista3D2.PNG, id=1253, 532.99126pt x 293.29575pt>
 File: imagenes/Balancing_Robot/Vista3D2.PNG Graphic file (type png)
 <use imagenes/Balancing_Robot/Vista3D2.PNG>
 Package pdftex.def Info: imagenes/Balancing_Robot/Vista3D2.PNG  used on input l
-ine 524.
+ine 527.
 (pdftex.def)             Requested size: 266.49498pt x 146.6475pt.
- [75
+ [72
 
- <./imagenes/Balancing_Robot/Vista3D2.PNG>]
-(main.toc) [76
+ <./imagenes/Balancing_Robot/Vista3D2.PNG>] (main.toc)
+[73
 
 ]
-<imagenes/Balancing_robot/finalIceStudio.png, id=2741, 1143.0705pt x 458.31226p
+<imagenes/Balancing_robot/finalIceStudio.png, id=1279, 1143.0705pt x 458.31226p
 t>
 File: imagenes/Balancing_robot/finalIceStudio.png Graphic file (type png)
 <use imagenes/Balancing_robot/finalIceStudio.png>
 Package pdftex.def Info: imagenes/Balancing_robot/finalIceStudio.png  used on i
-nput line 532.
+nput line 535.
 (pdftex.def)             Requested size: 342.9238pt x 137.49474pt.
 
-Overfull \hbox (0.6285pt too wide) in paragraph at lines 532--532
+Overfull \hbox (0.6285pt too wide) in paragraph at lines 535--535
  [] 
  []
 
-[77
+[74
 
- <./imagenes/Balancing_robot/finalIceStudio.png>] [78
+ <./imagenes/Balancing_robot/finalIceStudio.png>] [75
 
-] (main.toc) [79
+] (main.toc) [76
 
 ]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Cuadricoptero_vision/on_board.pdf
 ): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Cuadricoptero_vision/on_board.pdf, id=2830, 844.15375pt x 597.23125pt
+<imagenes/Cuadricoptero_vision/on_board.pdf, id=1310, 844.15375pt x 597.23125pt
 >
 File: imagenes/Cuadricoptero_vision/on_board.pdf Graphic file (type pdf)
 <use imagenes/Cuadricoptero_vision/on_board.pdf>
 Package pdftex.def Info: imagenes/Cuadricoptero_vision/on_board.pdf  used on in
-put line 547.
+put line 550.
 (pdftex.def)             Requested size: 320.78175pt x 216.13809pt.
-[80
+[77
 
- <./imagenes/Cuadricoptero_vision/on_board.pdf>] (main.toc) [81
+ <./imagenes/Cuadricoptero_vision/on_board.pdf>] (main.toc) [78
 
 ]
-<imagenes/Cuadricoptero_vision/OV7670.jpg, id=2911, 311.1625pt x 299.1175pt>
+<imagenes/Cuadricoptero_vision/OV7670.jpg, id=1352, 311.1625pt x 299.1175pt>
 File: imagenes/Cuadricoptero_vision/OV7670.jpg Graphic file (type jpg)
 <use imagenes/Cuadricoptero_vision/OV7670.jpg>
 Package pdftex.def Info: imagenes/Cuadricoptero_vision/OV7670.jpg  used on inpu
-t line 566.
-(pdftex.def)             Requested size: 62.23138pt x 59.82243pt.
- [82
+t line 569.
+(pdftex.def)             Requested size: 108.90851pt x 104.69269pt.
+ [79
 
  <./imagenes/Cuadricoptero_vision/OV7670.jpg>]
 File: imagenes/Cuadricoptero_vision/OV7670.jpg Graphic file (type jpg)
 <use imagenes/Cuadricoptero_vision/OV7670.jpg>
 Package pdftex.def Info: imagenes/Cuadricoptero_vision/OV7670.jpg  used on inpu
-t line 566.
-(pdftex.def)             Requested size: 62.23138pt x 59.82243pt.
- [83
+t line 569.
+(pdftex.def)             Requested size: 108.90851pt x 104.69269pt.
+ [80
 
 ]
-<imagenes/Cuadricoptero_vision/I2C_write.PNG, id=2962, 323.70938pt x 263.48438p
+File: imagenes/Cuadricoptero_vision/OV7670.jpg Graphic file (type jpg)
+<use imagenes/Cuadricoptero_vision/OV7670.jpg>
+Package pdftex.def Info: imagenes/Cuadricoptero_vision/OV7670.jpg  used on inpu
+t line 569.
+(pdftex.def)             Requested size: 108.90851pt x 104.69269pt.
+ [81
+
+]
+<imagenes/Cuadricoptero_vision/I2C_write.PNG, id=1372, 323.70938pt x 263.48438p
 t>
 File: imagenes/Cuadricoptero_vision/I2C_write.PNG Graphic file (type png)
 <use imagenes/Cuadricoptero_vision/I2C_write.PNG>
 Package pdftex.def Info: imagenes/Cuadricoptero_vision/I2C_write.PNG  used on i
-nput line 573.
+nput line 576.
 (pdftex.def)             Requested size: 129.48145pt x 105.39188pt.
- [84
+ [82
 
  <./imagenes/Cuadricoptero_vision/I2C_write.PNG>]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Cuadricoptero_vision/I2C_WRITE.pd
 f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<imagenes/Cuadricoptero_vision/I2C_WRITE.pdf, id=2989, 615.29875pt x 1520.68124
+<imagenes/Cuadricoptero_vision/I2C_WRITE.pdf, id=1380, 615.29875pt x 1520.68124
 pt>
 File: imagenes/Cuadricoptero_vision/I2C_WRITE.pdf Graphic file (type pdf)
 <use imagenes/Cuadricoptero_vision/I2C_WRITE.pdf>
 Package pdftex.def Info: imagenes/Cuadricoptero_vision/I2C_WRITE.pdf  used on i
-nput line 580.
+nput line 583.
 (pdftex.def)             Requested size: 141.51573pt x 231.9574pt.
 
-Overfull \vbox (0.22018pt too high) detected at line 580
+Overfull \vbox (0.22018pt too high) detected at line 583
  []
 
-[85
+[83
 
- <./imagenes/Cuadricoptero_vision/I2C_WRITE.pdf>] [86
+ <./imagenes/Cuadricoptero_vision/I2C_WRITE.pdf>] [84
 
-] [87
+] [85
 
-] [88
+] [86
 
 ] (main.toc)
-[89
+[87
 
 ]
 
 pdfTeX warning: pdflatex.exe (file ./imagenes/Cuadricoptero_vision/control_impl
 ementation.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1
 .5> allowed
-<imagenes/Cuadricoptero_vision/control_implementation.pdf, id=3146, 846.16125pt
+<imagenes/Cuadricoptero_vision/control_implementation.pdf, id=1444, 846.16125pt
  x 598.235pt>
 File: imagenes/Cuadricoptero_vision/control_implementation.pdf Graphic file (ty
 pe pdf)
 <use imagenes/Cuadricoptero_vision/control_implementation.pdf>
 Package pdftex.def Info: imagenes/Cuadricoptero_vision/control_implementation.p
-df  used on input line 630.
+df  used on input line 633.
 (pdftex.def)             Requested size: 330.00156pt x 233.3107pt.
 
-Overfull \vbox (1.57349pt too high) detected at line 630
+Overfull \vbox (1.57349pt too high) detected at line 633
  []
 
-[90
+[88
 
- <./imagenes/Cuadricoptero_vision/control_implementation.pdf>] [91
+ <./imagenes/Cuadricoptero_vision/control_implementation.pdf>] [89
+
+] [90
+
+]
+[91
 
 ] [92
 
-]
-[93
+] [93
 
 ] [94
 
@@ -1792,7 +1786,22 @@ Overfull \vbox (1.57349pt too high) detected at line 630
 
 ] [96
 
+] [97
+
+] [98
+
+] [99
+
 ]
+<imagenes/Introduction/aplauso.png, id=1536, 602.25pt x 602.25pt>
+File: imagenes/Introduction/aplauso.png Graphic file (type png)
+<use imagenes/Introduction/aplauso.png>
+Package pdftex.def Info: imagenes/Introduction/aplauso.png  used on input line 
+666.
+(pdftex.def)             Requested size: 234.87654pt x 234.87654pt.
+ [100
+
+ <./imagenes/Introduction/aplauso.png>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1802,62 +1811,37 @@ Overfull \vbox (1.57349pt too high) detected at line 630
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 646.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 646.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 667.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 667.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 646.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 646.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 1EBF926D41DB14C31A1F6815901D473C;753
-(rerunfilecheck)             After:  FFCCAF0E52C4D8BCED097EB84D8F5CE6;799.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 667.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 667.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 11AC37539792B28F4847A2E31C5CB457;799.
  ) 
 Here is how much of TeX's memory you used:
- 19086 strings out of 492972
- 371989 string characters out of 3126622
- 433205 words of memory out of 3000000
- 22261 multiletter control sequences out of 15000+200000
+ 19087 strings out of 492972
+ 371952 string characters out of 3126622
+ 433171 words of memory out of 3000000
+ 22259 multiletter control sequences out of 15000+200000
  12942 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,65p,790b,818s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Outline0.4.3.89} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.2.81} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.1.79} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.3.76} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.2.26} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.3.1.24} has been referenced but does not e
-xist, replaced by a fixed one
-
-<C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/jordo/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/jordo/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/jordo
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:
-/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mssbx10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmssi10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/jordo/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (96 pages, 9404314 bytes).
+ 56i,15n,65p,773b,819s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmex10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/jordo/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/jordo/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/jor
+do/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><
+C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmssbx10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmssi10.pfb><C:/Users/jordo/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/jordo/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (100 pages, 9285566 bytes).
 PDF statistics:
- 3423 PDF objects out of 3580 (max. 8388607)
- 217 named destinations out of 1000 (max. 500000)
- 654 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1630 PDF objects out of 1728 (max. 8388607)
+ 219 named destinations out of 1000 (max. 500000)
+ 673 words of extra memory for PDF output out of 10000 (max. 10000000)
 
