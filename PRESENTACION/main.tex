@@ -45,7 +45,7 @@
 %\usetheme{Warsaw}
 
 \usepackage{multimedia}
-
+\usepackage{subfig}
 %\usebackgroundtemplate{\includegraphics[width= \paperwidth, height=\paperheight]{imagen2}}
 
 \title{Sistema de control autónomo para robot en FPGAs libres}
@@ -102,8 +102,6 @@
 	\includegraphics [width =0.4\textwidth ]{logo_rey}
 	\end{center}
   \titlepage
-
-
 \end{frame}
 
 \begin{frame}{Index}
@@ -111,45 +109,294 @@
   % You might wish to add the option [pausesections]
 \end{frame}
 
-\section{Introducción, Motivación y objetivos}
+\section{Contexto}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Metodología de trabajo}
-Rápidamente sobre que hemos usado git, appear, y el diagrama de Gantt
+
+\begin{frame}{Contexto}
+	
 \end{frame}
-\begin{frame}{Objetivos}
-Objetivos principales de este trabajo
+
+\begin{frame}{Planificación y Metodología de trabajo}
+	\begin{center}
+		\begin{figure}[H]
+			\center
+			\includegraphics[trim = 1.3cm 0mm 0mm 10.5cm,clip, angle=0, scale = 0.65]{imagenes/Introduction/Gantt.pdf}
+
+		\end{figure}
+	\end{center}
 \end{frame}
+
+\begin{frame}{Planificación y Metodología de trabajo}
+\begin{figure}[H]
+	\center	
+	\subfloat[GitHub]{
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Introduction/github}}
+	\subfloat[Appear]{
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.2]{imagenes/Introduction/appear}}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Infraestructura}
+	
+\end{frame}
+
 \begin{frame}{FPGAs Libres y IceZum Alhambra}
 Introducción sobre FPGAs libres y presentación de IceZum con sus carasterísticas breves
 \end{frame}
 \begin{frame}{IceStudio}
 ¿Qué es IceStudio y para que nace? Ejemplos de su uso
 \end{frame}
+\begin{frame}{Objetivos}
+Objetivos principales de este trabajo
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Robot Balancín}
 \subsection{Diseño del sistema}
 \begin{frame}{Diseño del sistema}
-A muy alto nivel, el problema planteado y una descripción rápida de la solución propuesta. A partir de aquí, vamos con cada una de las partes
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Balancing_robot/final.pdf}
+	\caption{}
+	\label{}
+\end{figure}
 \end{frame}	
 \subsection{Implementación del sistema}
+
 \begin{frame}{Estructura mecánica}
-Muy breve, porque esa estructura y no otra(DMP) 
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 1cm 0mm 2.7cm 0mm,clip, angle=0, scale = 0.35]{imagenes/Balancing_Robot/EnsanBalanceFront.PDF}
+	\end{figure}
+\end{center}
 \end{frame}
+
+\begin{frame}{Estructura mecánica}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 5cm 0mm 10cm 0mm,clip, angle=0, scale = 0.35]{imagenes/Balancing_Robot/EnsanBalanceLateral.PDF}
+	\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}{Estructura mecánica}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 2cm 0mm 8cm 0mm,clip, angle=0, scale = 0.35]{imagenes/Balancing_Robot/EnsanBalanceCab.PDF}
+	\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}{Estructura mecánica}
+	\begin{block}{}	
+		\begin{itemize}
+			\item ¿Cuál es la mejor opción para facilitar la estabilización? \pause
+			\item Caracterización matemática del modelo físico \pause
+			\item Centro de masas en el centro del eje vertical \pause
+		\end{itemize}
+	\end{block}
+	\begin{alertblock}{}
+		SE HACE USO DE SOLIDWORKS PARA EL DISEÑO DE LAS PIEZAS Y EL CÁLCULO DEL CENTRO DE MASAS
+		\begin{center}
+			\includegraphics [width =0.4\textwidth ]{imagenes/SolidWorks-01}
+		\end{center}
+	\end{alertblock}
+
+
+\end{frame}
+
+\begin{frame}{Estructura mecánica}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.3]{imagenes/Balancing_robot/center_mass}
+	\end{figure}
+\end{frame}
+
 \begin{frame}{Obtención ángulo}
-Muy breve como hemos usado la IMU, con un microcontrolador y porque esa IMU y no otra
+\begin{block}{}
+	\begin{itemize}
+		\item Para corregir el ángulo es necesario el conocimiento de este en cada instante.\pause
+		\item Unidad de medida incercial (IMU) \pause
+	\end{itemize}
+\end{block}
+\begin{alertblock}{}
+	\centering \textbf{MPU6050} \pause
+\end{alertblock}
+	\begin{center}
+	\includegraphics [width =0.3\textwidth ]{imagenes/EstadoArte/IMU1}
+\end{center}
 \end{frame}
+
+\begin{frame}{Obtención ángulo}
+		\begin{block}{}
+			\begin{itemize}
+				\item 6DOF \pause
+				\item Acelerómetro y giroscopio \pause
+				\item Comunicación I2C \pause
+				\item Uso de DMP solo para Arduino \pause
+			\end{itemize}
+		\end{block}
+		\begin{alertblock}{}
+			\centering \textbf{MEJOR OPCIÓN CON ARDUINO} 
+		\end{alertblock}
+\end{frame}
+
+\begin{frame}{Obtención ángulo}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 5cm 0mm 5cm, clip,scale=0.4]{imagenes/Balancing_robot/DMPexample.pdf}
+	\end{figure} 
+\end{frame}
+
+
 \begin{frame}{Coexistencia microcontrolador-FPGA}
-Comunicación para mandar angulo de micro a fpga
+\begin{block}{}
+	\begin{itemize}
+		\item Ángulo obtenido por Arduino-Nano \pause
+		\item FPGA necesita conocer el ángulo \pause
+	\end{itemize}
+\end{block}
+\begin{alertblock}{}
+	\centering \textbf{Coexistencia microcontrador-FPGA}  \pause
+\end{alertblock}
+\begin{alertblock}{}
+	\centering \textbf{Paralelizar los procesos que pueden ser paralelizados} \pause 
+\end{alertblock}
 \end{frame}
+
+
+\begin{frame}{Coexistencia microcontrolador-FPGA}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.4]{imagenes/Balancing_robot/coexistencia1.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Coexistencia microcontrolador-FPGA}
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 40mm 0mm 20mm, clip,scale=0.3]{imagenes/Balancing_robot/coexistencia2.pdf}
+\end{figure}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.75, angle=0]{imagenes/Balancing_Robot/serial_comunicattion.png}
+	\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}{Coexistencia microcontrolador-FPGA}
+		\centering \textbf{Desde el punto de vista del microcontrolador}
+		\begin{figure}[H]
+			\center
+			\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.3]{imagenes/Balancing_robot/extraccion_angulo.pdf}
+		\end{figure}
+\end{frame}
+
+\begin{frame}{Coexistencia microcontrolador-FPGA}
+\centering \textbf{Desde el punto de vista de la FPGA}
+\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 10mm, clip,scale=0.4, angle=0]{imagenes/Balancing_robot/arduino_interfacefluid.pdf}
+
+	\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}{Coexistencia microcontrolador-FPGA}
+\centering \textbf{Aspecto en IceStudio de la comunicación}
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.3]{imagenes/Balancing_robot/arduino_arrange.PNG}
+\end{figure}
+\end{frame}
+
+
+
+
+
 \begin{frame}{Control PID}
-Se necesita minimizar el error, para ello se usa PID.
-Se explica muy breve el PID centrándome mas en las ventajas de hacerlo con la FPGA pues seguramente ellos ya conozcan un PID
+\begin{block}{}
+	\begin{itemize}
+		\item Necesidad de minimizar el ángulo, en este caso a 0º
+		\item Surgen muchas opciones, lógica fuzzy, algoritmos genéticos, PID
+		\item PID por su fácil implementación y paralelismo
+	\end{itemize}
+\end{block}
+\begin{alertblock}
+	\centering \textbf{PID por su fácil implementación y paralelismo}
+\end{alertblock}
 \end{frame}
+
+\begin{frame}{Control P}
+		\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0cm 7cm 0mm 7cm, clip,scale=0.5]{imagenes/Balancing_robot/P.pdf}
+		\end{figure}
+\end{frame}
+
+\begin{frame}{Control D}
+			\begin{figure}[H]
+			\center
+			\includegraphics[trim = 0cm 0cm 0mm 2cm, clip,scale=0.3]{imagenes/Balancing_robot/D.pdf}
+		\end{figure}
+\end{frame}
+
+\begin{frame}{Control PD}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0cm 0cm 0mm 0cm, clip,scale=0.5]{imagenes/Balancing_robot/PDControl.PNG}
+	\end{figure}
+\end{frame}
+
+
+
 \begin{frame}{Control de los motores}
-Driver para motores y como se implementa el generador PWM
-No se si seria bueno porque mis diagramas de flujos de cada modulo y explicar alguno
+\begin{block}{}
+	\begin{itemize}
+		\item Traducción de la salida del PD, velocidad y sentido de motores DC \pause
+	\end{itemize}
+\end{block}
+\centering \textbf{MC33926}
+		\begin{figure}[H]
+			\center
+			\includegraphics[trim = 0mm 0cm 0mm 0cm, clip,scale=0.2]{imagenes/Balancing_robot/driver_motor.jpg} \pause
+		\end{figure}
+
+\begin{alertblock}{}
+	\begin{itemize}
+		\item Como entradas: \begin{itemize}
+			\item Señal PWM \pause
+			\item Sentido de giro \pause
+		\end{itemize}
+		\item Como salidas: \begin{itemize}
+		\item Movimiento de los motores 
+	\end{itemize}
+	\end{itemize}
+\end{alertblock}
 \end{frame}
+
+
+\begin{frame}{Módulo PWM}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/pwm_control.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_robot/PWM_module.PNG}
+	\end{figure}
+\end{frame}
+
+
 \begin{frame}{Diseño e implementación PCB}
 Hay demasiados cables sueltos y hacemos una PCB, porque 4 capas, porque jumpers, porque posibilidad para 4 motores.
 \end{frame}
