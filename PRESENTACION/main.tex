@@ -48,7 +48,7 @@
 \usepackage{subfig}
 %\usebackgroundtemplate{\includegraphics[width= \paperwidth, height=\paperheight]{imagen2}}
 
-\title{Sistema de control autónomo para robot en FPGAs libres}
+\title{Sistema de control autónomo en FPGAs libres para robots}
 
 % A subtitle is optional and this may be deleted
 \subtitle{}
@@ -113,7 +113,56 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Contexto}
-	
+\begin{block}{}
+	\centering	\textbf{Robots Autónomos}
+\end{block}
+\begin{figure}[H]
+	\center	
+	\subfloat[Roomba]{
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.25]{imagenes/Introduction/roomba}}
+	\subfloat[Boston dynamics]{
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.35]{imagenes/Introduction/boston}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Contexto}
+\begin{block}{}
+	\centering	\textbf{Robótica Educativa}
+\end{block}
+		\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0cm 0mm 0mm 0cm,clip, angle=0, scale = 0.3]{imagenes/Introduction/robotica}
+\end{figure}
+\end{frame}
+
+\section{Infraestructura}
+\begin{frame}{IceStudio}
+		\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0cm 0mm 0mm 0cm,clip, angle=0, scale = 0.3]{imagenes/Introduction/IceStudio}
+\end{figure}
+	\begin{block}{}
+		\begin{itemize}
+			\item En este contexto nace IceStudio \pause
+			\item Ensalza el uso de FPGAs inlcuyendo todas sus ventajas \pause
+			\item Permite implementación hardware de manera gráfica \pause
+			\item Ventaja: Configuración del nivel de abstracción 
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{IceStudio}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0cm 0mm 0mm 0cm,clip, angle=0, scale = 0.3]{imagenes/Introduction/i2creadandwrite}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{IceStudio}
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0cm 0mm 0mm 0cm,clip, angle=0, scale = 0.3]{imagenes/Introduction/IceStudioI2c}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Planificación y Metodología de trabajo}
@@ -137,16 +186,6 @@
 \end{frame}
 
 
-\begin{frame}{Infraestructura}
-	
-\end{frame}
-
-\begin{frame}{FPGAs Libres y IceZum Alhambra}
-Introducción sobre FPGAs libres y presentación de IceZum con sus carasterísticas breves
-\end{frame}
-\begin{frame}{IceStudio}
-¿Qué es IceStudio y para que nace? Ejemplos de su uso
-\end{frame}
 \begin{frame}{Objetivos}
 Objetivos principales de este trabajo
 \end{frame}
@@ -385,11 +424,11 @@ Objetivos principales de este trabajo
 \begin{frame}{Módulo PWM}
 	\begin{figure}[H]
 		\center
-		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.4]{imagenes/Balancing_robot/pwm_control.pdf}
+		\includegraphics[trim = 0mm 0mm 0mm 0mm, clip,scale=0.35]{imagenes/Balancing_robot/pwm_control.pdf}
 	\end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Módulo PWM}
 	\begin{figure}[H]
 		\center
 		\includegraphics[scale=0.5]{imagenes/Balancing_robot/PWM_module.PNG}
@@ -397,29 +436,164 @@ Objetivos principales de este trabajo
 \end{frame}
 
 
-\begin{frame}{Diseño e implementación PCB}
-Hay demasiados cables sueltos y hacemos una PCB, porque 4 capas, porque jumpers, porque posibilidad para 4 motores.
+\begin{frame}{Diseño e Implementación PCB}
+\begin{block}{}
+	\begin{itemize}
+		\item Demasiados cables sueltos y puentes en el sistema final \pause
+		\item Necesidad de englobarlo todo en un sistema único y compacto \pause
+		\item Que resuelva problemas de ruido y referencia de tierra. \pause
+	\end{itemize}
+\end{block}
+\begin{alertblock}{}
+	\centering \textbf{Printed Circuit Board, PCB} \pause
+	\begin{center}
+		\includegraphics [width =0.4\textwidth ]{imagenes/SolidWorks-01}
+	\end{center}
+\end{alertblock}
 \end{frame}
-\subsection{Experimentos y sistema final}
-\begin{frame}{Impresión, montaje y ensamblado}
-Fotos del ensamblado y vídeo final del sistema.
-Debería meter aquí el módulo VGA que hice para aprender y el control de brushless?	
+
+\begin{frame}{Diseño e Implementación PCB}
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.35, angle=0]{imagenes/Balancing_Robot/layers_altium.PNG}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Diseño e Implementación PCB}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.45]{imagenes/Balancing_Robot/top_3D.PNG}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Diseño e Implementación PCB}
+		\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.45]{imagenes/Balancing_Robot/bottom_3D.PNG}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Diseño e Implementación PCB}
+		\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.40]{imagenes/Balancing_Robot/Vista3D1.PNG}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Diseño e Implementación PCB}
+	\begin{center}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.5]{imagenes/Balancing_Robot/Vista3D2.PNG}
+	\end{figure}
+\end{center}
+\end{frame}
+
+\subsection{Ensamblado y sistema final}
+\begin{frame}{Ensamblado y sistema final}
+	\begin{figure}[H]
+		\center
+		\includegraphics[scale=0.3, angle=0]{imagenes/Balancing_robot/finalIceStudio}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Ensamblado y sistema final}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cuadricóptero con visión artificial}
+
+\subsection{Diseño del sistema}
+
 \begin{frame}{Diseño del sistema}
-Dejar claro que como ha sobrado tiempo, se hace esto para que no piensen que no hemos llegado. Diagrama de bloques general y separación entre percepción y control.
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0.5cm 0mm 0.5cm, clip,scale=0.38]{imagenes/Cuadricoptero_vision/on_board.pdf}
+\end{figure}
 \end{frame}
+
+
 \subsection{Implementación de la percepción}
-\begin{frame}{OV7670 y protocolo I2C}
-Porque se ha usado esa cámara, y se dice que se ha implementado un protocolo i2c necesario para los registros, me tire dos meses con ello y tiene que salir :). Se muestra diagrama de bloques del i2c
+
+\begin{frame}{OV7670}
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.2, angle=0]{imagenes/Cuadricoptero_vision/OV7670}
+\end{figure}
+\begin{block}{}
+	\begin{itemize}
+		\item Transmisión de píxeles mediante 8 bits en paralelo
+		\item Comunicación I2C para la configuración necesaria, 640x480, RGB565, frecuencia de píxeles.
+	\end{itemize}
+\end{block}
+\begin{alertblock}{}
+		\centering \textbf{NECESIDAD DE PROTOCOLO I2C} \pause
+\end{alertblock}
 \end{frame}
+
+\begin{frame}{Protocolo I2C}
+\begin{figure}[H]
+	\center
+	\includegraphics[scale=0.4, angle=0]{imagenes/Cuadricoptero_vision/I2C_write.PNG}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Protocolo I2C}
+	\begin{figure}[H]
+		\center
+		\includegraphics[trim = 0mm 8cm 0mm 10cm, clip,scale=0.23]{imagenes/Cuadricoptero_vision/I2C_WRITE.pdf}
+	\end{figure}
+\end{frame}
+
 \begin{frame}{Reconocimiento del volumen y posición}
-Las formulas básicas de como hemos hecho esa percepción y la ventaja de hacer eso con una FPGA, no se necesita memoria externa. 
+\begin{alertblock}{}
+		\begin{equation*} 
+	Volumen = Num_{\textup{pixeles filtrados}}/Num_{\textup{pixeles totales}}
+	\end{equation*}
+\end{alertblock}
 \end{frame}
+
+\begin{frame}{Reconocimiento del volumen y posición}
+\begin{alertblock}{}
+		\begin{equation*}\label{equation:acumx}
+	Acum_{X} = \sum\textup{columns of filtered pixels}
+	\end{equation*}
+	
+	\begin{equation*}\label{equation:acumx2}
+	X_{media} = \frac{Acum_{X}}{Num_{\textup{filtered pixels}}}
+	\end{equation*}
+	
+	\begin{equation*}\label{equation:acumx3}
+	Error_{X} = X_{average}- \frac{width}{2}
+	\end{equation*}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Reconocimiento del volumen y posición}
+\begin{alertblock}{}
+	\begin{equation*}\label{equation:acumy}
+	Acum_{Y} = \sum\textup{row filtered pixels}
+	\end{equation*}
+
+	\begin{equation*}\label{equation:acumy2}
+	Y_{average} = \frac{Acum_{Y}}{Num_{\textup{filtered pixels}}}
+	\end{equation*}
+
+	\begin{equation*}\label{equation:acumy3}
+	Error_{Y} = Y_{average}- \frac{height}{2}
+	\end{equation*}
+\end{alertblock}
+\end{frame}
+
+
 \subsection{Diseño del control}
-\begin{frame}
-Se deja claro que esto falta por implementar pero todo el diseño esta propuesto y debería funcionar. Se explica rápido.
+\begin{frame}{Diseño del control}
+\begin{figure}[H]
+	\center
+	\includegraphics[trim = 0mm 0cm 0mm 0cm, clip,scale=0.39]{imagenes/Cuadricoptero_vision/control_implementation.pdf}
+\end{figure}
 \end{frame}
 \section{Conclusiones y trabajo futuro}
 \begin{frame}{Conclusiones}
