@@ -1,11 +1,11 @@
 \beamer@sectionintoc {1}{Contexto}{3}{0}{1}
 \beamer@sectionintoc {2}{Infraestructura}{5}{0}{2}
-\beamer@sectionintoc {3}{Robot Balanc\IeC {\'\i }n}{14}{0}{3}
-\beamer@subsectionintoc {3}{1}{Dise\IeC {\~n}o del sistema}{14}{0}{3}
-\beamer@subsectionintoc {3}{2}{Implementaci\IeC {\'o}n del sistema}{16}{0}{3}
-\beamer@subsectionintoc {3}{3}{Ensamblado y sistema final}{66}{0}{3}
-\beamer@sectionintoc {4}{Cuadric\IeC {\'o}ptero con visi\IeC {\'o}n artificial}{69}{0}{4}
-\beamer@subsectionintoc {4}{1}{Dise\IeC {\~n}o del sistema}{69}{0}{4}
-\beamer@subsectionintoc {4}{2}{Implementaci\IeC {\'o}n de la percepci\IeC {\'o}n}{71}{0}{4}
-\beamer@subsectionintoc {4}{3}{Dise\IeC {\~n}o del control}{79}{0}{4}
-\beamer@sectionintoc {5}{Conclusiones y trabajo futuro}{81}{0}{5}
+\beamer@sectionintoc {3}{Robot Balanc\IeC {\'\i }n}{20}{0}{3}
+\beamer@subsectionintoc {3}{1}{Dise\IeC {\~n}o del sistema}{20}{0}{3}
+\beamer@subsectionintoc {3}{2}{Implementaci\IeC {\'o}n del sistema}{22}{0}{3}
+\beamer@subsectionintoc {3}{3}{Ensamblado y sistema final}{72}{0}{3}
+\beamer@sectionintoc {4}{Cuadric\IeC {\'o}ptero con visi\IeC {\'o}n artificial}{75}{0}{4}
+\beamer@subsectionintoc {4}{1}{Dise\IeC {\~n}o del sistema}{75}{0}{4}
+\beamer@subsectionintoc {4}{2}{Implementaci\IeC {\'o}n de la percepci\IeC {\'o}n}{77}{0}{4}
+\beamer@subsectionintoc {4}{3}{Dise\IeC {\~n}o del control}{85}{0}{4}
+\beamer@sectionintoc {5}{Conclusiones y trabajo futuro}{87}{0}{5}
